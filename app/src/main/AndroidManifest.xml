@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Asistente_Crohn">
         <activity
+            android:name=".FirstTime_1_Activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
