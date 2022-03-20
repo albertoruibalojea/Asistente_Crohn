@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstTime_1_Activity"
-    android:background="@drawable/firsttime_background">
+    tools:context=".FirstTime_8Name_Activity"
+    android:background="@drawable/firsttime_8name_background">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
-        android:text="@string/hola"
+        android:text="@string/conozc_monos"
         android:textColor="@color/casiNegro"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,37 +20,23 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="264dp"
-        android:layout_height="74dp"
-        android:fontFamily="@font/bold"
-        android:text="@string/quieres_ver_en_qu_te_puedo_ayudar"
+        android:id="@+id/textView4"
+        android:layout_width="328dp"
+        android:layout_height="51dp"
+        android:fontFamily="@font/regular"
+        android:text="@string/nicamente_necesito_un_nombre_para_dirigirme_a_ti"
         android:textAlignment="center"
         android:textColor="@color/casiNegro"
-        android:textSize="24sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
-    <TextView
-        android:id="@+id/saltar_guia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/saltar_gu_a"
-        android:textColor="@color/casiNegro"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.264" />
 
     <Button
         android:id="@+id/btn"
@@ -59,7 +45,7 @@
         android:width="609sp"
         android:height="41sp"
         android:fontFamily="@font/bold"
-        android:text="@string/siguiente"
+        android:text="@string/listo"
         android:textColor="@color/casiBlanco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,5 +54,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.845" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/tu_nombre"
+        android:labelFor="@id/username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class FirstTime_1_Activity extends AppCompatActivity {
+public class FirstTime_4_Activity extends AppCompatActivity {
 
     Button btn;
     TextView saltar_guia;
@@ -16,13 +16,13 @@ public class FirstTime_1_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_time1);
+        setContentView(R.layout.activity_first_time4);
 
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstTime_1_Activity.this, FirstTime_2_Activity.class);
+                Intent intent = new Intent(FirstTime_4_Activity.this, FirstTime_5_Activity.class);
                 startActivity(intent);
                 finish();
             }
@@ -32,7 +32,7 @@ public class FirstTime_1_Activity extends AppCompatActivity {
         saltar_guia.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(FirstTime_1_Activity.this, FirstTime_7Terms_Activity.class);
+                Intent intent = new Intent(FirstTime_4_Activity.this, FirstTime_7Terms_Activity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Asistente_Crohn</string>
+    <string name="quieres_ver_en_qu_te_puedo_ayudar">¿Quieres ver en qué te puedo ayudar?</string>
+    <string name="hola">¡Hola!</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="conozc_monos">Conozcámonos</string>
+    <string name="listo">Listo</string>
+    <string name="nicamente_necesito_un_nombre_para_dirigirme_a_ti">Únicamente necesito un nombre para dirigirme a ti 😉</string>
+    <string name="tu_nombre">Tu nombre</string>
+    <string name="t_rminos_y_condiciones_de_uso">Términos y condiciones de uso</string>
+    <string name="es_necesario_que_leas_y_aceptes_estos_t_rminos">Es necesario que leas y aceptes estos términos</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="insertar_t_rminos_aqu">insertar términos aquí</string>
+    <string name="saltar_gu_a">SALTAR GUÍA</string>
+    <string name="a_ade_tus_s_ntomas_para_ayudarme_a_detectar_un_posible_brote_y_tener_un_historial_para_ense_rselo_a_tu_especialista">Añade tus síntomas para ayudarme a detectar un posible brote... y tener un historial para enseñárselo a tu especialista ;)</string>
+    <string name="registro_de_s_ntomas">Registro de síntomas</string>
+    <string name="tu_alimentaci_n">Tu alimentación</string>
+    <string name="a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_prohibidos_quot">Añade lo que has comido para tener un historial de si algún alimento te hace daño, añadiéndolo así a tus \"Alimentos Prohibidos\"</string>
+    <string name="recomendaciones">Recomendaciones</string>
+    <string name="encuentra_recomendaciones_y_consejos_para_mejorar_tu_calidad_de_vida">Encuentra recomendaciones y consejos para mejorar tu calidad de vida</string>
+    <string name="detecci_n_de_brotes">Detección de brotes</string>
+    <string name="en_base_a_tus_registros_de_s_ntomas_alimentaci_n_y_nimo_puedo_determinar_tu_estado_ojo_esto_no_sustituye_a_tu_especialista">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado. ¡OJO! esto no sustituye a tu especialista</string>
+    <string name="tus_datos">Tus datos</string>
+    <string name="son_tus_datos_por_lo_que_nada_va_a_salir_de_tu_dispositivo">Son tus datos, por lo que nada va a salir de tu dispositivo</string>
 </resources>

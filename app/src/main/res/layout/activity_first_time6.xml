@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstTime_1_Activity"
-    android:background="@drawable/firsttime_background">
+    tools:context=".FirstTime_6_Activity"
+    android:background="@drawable/firsttime6_background">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
-        android:text="@string/hola"
+        android:text="@string/tus_datos"
         android:textColor="@color/casiNegro"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,23 +20,22 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="264dp"
-        android:layout_height="74dp"
-        android:fontFamily="@font/bold"
-        android:text="@string/quieres_ver_en_qu_te_puedo_ayudar"
+        android:id="@+id/textView4"
+        android:layout_width="325dp"
+        android:layout_height="81dp"
+        android:fontFamily="@font/regular"
+        android:text="@string/son_tus_datos_por_lo_que_nada_va_a_salir_de_tu_dispositivo"
         android:textAlignment="center"
         android:textColor="@color/casiNegro"
-        android:textSize="24sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <TextView
         android:id="@+id/saltar_guia"
