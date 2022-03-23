@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Primary colors -->
+    <color name="violeta">#7571C0</color>
+    <color name="morado">#BD52B0</color>
     <color name="rosa">#F03B7E</color>
     <color name="rosa_variante_1">#CB3D71</color>
+    <color name="azul">#6EA8DB</color>
+    <color name="verde">#88AB75</color>
 
     <!--Base colors -->
     <color name="casiNegro">#373737</color>
+    <color name="negroGris">#646464</color>
+    <color name="grisOscuro">#979797</color>
+    <color name="gris">#CACACA</color>
+    <color name="grisClaro">#F2F2F2</color>
     <color name="casiBlanco">#F6F6F6</color>
 </resources>

@@ -2,19 +2,16 @@ package com.aro.asistente_crohn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.aro.asistente_crohn.data.User;
-
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 
 public class FirstTime_8Name_Activity extends AppCompatActivity {
 
     EditText username;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +20,14 @@ public class FirstTime_8Name_Activity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.username);
 
-        User user = new User(username.toString());
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstTime_8Name_Activity.this, Home_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

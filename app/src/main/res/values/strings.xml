@@ -22,4 +22,14 @@
     <string name="en_base_a_tus_registros_de_s_ntomas_alimentaci_n_y_nimo_puedo_determinar_tu_estado_ojo_esto_no_sustituye_a_tu_especialista">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado. ¡OJO! esto no sustituye a tu especialista</string>
     <string name="tus_datos">Tus datos</string>
     <string name="son_tus_datos_por_lo_que_nada_va_a_salir_de_tu_dispositivo">Son tus datos, por lo que nada va a salir de tu dispositivo</string>
+    <string name="username">Alberto</string>
+    <string name="settings">settings icon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="estado">Estado</string>
+    <string name="conoce_tu_estado_actual">Conoce tu estado actual</string>
+    <string name="s_ntomas">Síntomas</string>
+    <string name="state">state</string>
+    <string name="sintomas">Síntomas</string>
+    <string name="registro">Registro</string>
 </resources>
