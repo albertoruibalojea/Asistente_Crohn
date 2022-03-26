@@ -29,26 +29,17 @@ public class FirstTime_8Name_Activity extends AppCompatActivity {
 
         //Once the user writes the username, we get it and save it into SharedPreferences
         username = (EditText) findViewById(R.id.username);
-        username.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
-                editor.putString("username", (SpannableStringBuilder)s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-
 
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //saving the username
+                SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
+                editor.putString("username", username.getText().toString());
+                editor.commit();
+
                 Intent intent = new Intent(FirstTime_8Name_Activity.this, Home_Activity.class);
                 startActivity(intent);
                 finish();

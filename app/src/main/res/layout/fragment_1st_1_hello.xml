@@ -46,23 +46,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="255dp"
-        android:layout_height="186dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="590dp"
-        android:contentDescription="@string/logo"
-        android:src="@mipmap/logo_banner_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        android:layout_marginTop="109dp"
+        android:src="@drawable/logo_banner"
+        android:contentDescription="@string/logo_and_banner" />
+
 
 </RelativeLayout>

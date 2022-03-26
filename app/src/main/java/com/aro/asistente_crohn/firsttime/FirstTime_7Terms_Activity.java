@@ -26,6 +26,7 @@ public class FirstTime_7Terms_Activity extends AppCompatActivity {
 
                 SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
                 editor.putBoolean("termsAccepted", true);
+                editor.commit();
 
                 Intent intent = new Intent(FirstTime_7Terms_Activity.this, FirstTime_8Name_Activity.class);
                 startActivity(intent);

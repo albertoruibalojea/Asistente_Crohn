@@ -2,22 +2,16 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "72deed2c1e91e8a5a5feab4607da9bb1",
+    "identityHash": "1a005b826513d1d18f3ac6faf22d533d",
     "entities": [
       {
         "tableName": "CrohnState",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `username` TEXT, `active` INTEGER, `relatedSymptoms` TEXT, `detectionDate` INTEGER, `limitDate` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `active` INTEGER, `relatedSymptoms` TEXT, `detectionDate` INTEGER, `limitDate` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "username",
-            "columnName": "username",
-            "affinity": "TEXT",
             "notNull": false
           },
           {
@@ -172,7 +166,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '72deed2c1e91e8a5a5feab4607da9bb1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a005b826513d1d18f3ac6faf22d533d')"
     ]
   }
 }

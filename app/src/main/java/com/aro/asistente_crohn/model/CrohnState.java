@@ -13,8 +13,6 @@ public class CrohnState {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
-    private String username;
-    @ColumnInfo
     private Boolean active;
     @ColumnInfo
     private String relatedSymptoms;
@@ -25,7 +23,6 @@ public class CrohnState {
 
     public CrohnState() {
         this.id = null;
-        this.username = "";
         this.active = false;
         this.relatedSymptoms = "";
         this.detectionDate = null;
@@ -33,9 +30,8 @@ public class CrohnState {
     }
 
     @Ignore
-    public CrohnState(Integer id, String username, Boolean active, String relatedSymptoms, Date detectionDate, Date limitDate) {
+    public CrohnState(Integer id, Boolean active, String relatedSymptoms, Date detectionDate, Date limitDate) {
         this.id = id;
-        this.username = username;
         this.active = active;
         this.relatedSymptoms = relatedSymptoms;
         this.detectionDate = detectionDate;
@@ -48,14 +44,6 @@ public class CrohnState {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public Boolean getActive() {

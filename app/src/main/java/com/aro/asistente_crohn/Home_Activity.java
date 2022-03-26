@@ -30,6 +30,7 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
         switch (item.getItemId()) {
             case R.id.home:
                 openFragment(new FragmentFirst());
+                return true;
             case R.id.symptoms:
                 openFragment(new FragmentSecond());
                 return true;

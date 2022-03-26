@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
                 SharedPreferences sharedPrefs = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE);
 
-                if(!sharedPrefs.getBoolean("termsAccepted", false)){
+                if(!areTermsAccepted()){
                     Intent firstTime1 = new Intent(MainActivity.this, Activity_1stTime.class);
                     startActivity (firstTime1);
                     finish();
                 } else {
-                    if(sharedPrefs.getString("username", null) == null){
+                    if(!isUsername()){
                         Intent firstTime8 = new Intent(MainActivity.this, FirstTime_8Name_Activity.class);
                         startActivity (firstTime8);
                         finish();
@@ -49,5 +49,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }, SPLASH_TIME_OUT);
+    }
+
+    public boolean areTermsAccepted(){
+        return getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).getBoolean("termsAccepted", false);
+    }
+
+    public boolean isUsername(){
+        return getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).getString("username", null) != null;
+
     }
 }
