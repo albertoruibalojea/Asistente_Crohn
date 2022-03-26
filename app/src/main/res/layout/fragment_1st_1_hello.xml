@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment_1st_1Hello"
+    tools:context=".firsttime.Fragment_1st_1Hello"
     android:background="@color/casiBlanco">
 
     <TextView
@@ -57,12 +57,12 @@
         android:layout_marginTop="90dp"
         android:layout_marginEnd="77dp"
         android:layout_marginBottom="590dp"
+        android:contentDescription="@string/logo"
+        android:src="@mipmap/logo_banner_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147"
-        app:srcCompat="@drawable/logo_banner"
-        android:contentDescription="@string/logo" />
+        app:layout_constraintVertical_bias="0.147" />
 
 </RelativeLayout>

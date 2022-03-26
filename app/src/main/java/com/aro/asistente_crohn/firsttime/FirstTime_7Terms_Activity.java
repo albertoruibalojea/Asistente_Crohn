@@ -1,30 +1,33 @@
-package com.aro.asistente_crohn;
+package com.aro.asistente_crohn.firsttime;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-public class FirstTime_8Name_Activity extends AppCompatActivity {
+import com.aro.asistente_crohn.R;
 
-    EditText username;
+public class FirstTime_7Terms_Activity extends AppCompatActivity {
+
     Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_time8_name_background);
-
-        username = (EditText) findViewById(R.id.username);
+        setContentView(R.layout.activity_first_time7_terms);
 
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstTime_8Name_Activity.this, Home_Activity.class);
+
+                SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
+                editor.putBoolean("termsAccepted", true);
+
+                Intent intent = new Intent(FirstTime_7Terms_Activity.this, FirstTime_8Name_Activity.class);
                 startActivity(intent);
                 finish();
             }

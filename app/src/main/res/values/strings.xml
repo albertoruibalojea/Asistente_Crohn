@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Asistente_Crohn</string>
+    <string name="app_name">Asistente Crohn</string>
     <string name="quieres_ver_en_qu_te_puedo_ayudar">¿Quieres ver en qué te puedo ayudar?</string>
     <string name="hola">¡Hola!</string>
     <string name="siguiente">Siguiente</string>
@@ -33,4 +33,5 @@
     <string name="sintomas">Síntomas</string>
     <string name="registro">Registro</string>
     <string name="logo">logo</string>
+    <string name="home">Home</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.aro.asistente_crohn;
+package com.aro.asistente_crohn.firsttime;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.aro.asistente_crohn.R;
 
 public class Activity_1stTime extends AppCompatActivity {
 
