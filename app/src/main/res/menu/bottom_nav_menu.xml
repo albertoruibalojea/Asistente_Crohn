@@ -3,13 +3,16 @@
     <item
         android:id="@+id/home"
         android:title="Home"
+        android:fontFamily="@font/regular"
         android:icon="@drawable/ic_house_1214327"/>
     <item
         android:id="@+id/symptoms"
         android:title="Síntomas"
+        android:fontFamily="@font/regular"
         android:icon="@drawable/ic_numbered_list_2538271"/>
     <item
         android:id="@+id/state"
         android:title="Estado"
+        android:fontFamily="@font/regular"
         android:icon="@drawable/ic_approve_1214354"/>
 </menu>

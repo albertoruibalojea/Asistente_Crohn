@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent firstTime1 = new Intent(MainActivity.this, FirstTime_1_Activity.class);
+                Intent firstTime1 = new Intent(MainActivity.this, Activity_1stTime.class);
                 startActivity (firstTime1);
                 finish();
             }

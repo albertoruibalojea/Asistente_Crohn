@@ -20,22 +20,8 @@
             android:name=".FirstTime_7Terms_Activity"
             android:exported="false" />
         <activity
-            android:name=".FirstTime_6_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime_5_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime_4_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime_3_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime_2_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime_1_Activity"
+            android:name=".Activity_1stTime"
+            android:parentActivityName=".Activity_1stTime"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -25,10 +25,6 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
         bottomNavigationView.setSelectedItemId(R.id.home);
     }
 
-    FragmentFirst firstFragment = new FragmentFirst();
-    FragmentSecond secondFragment = new FragmentSecond();
-    FragmentThird thirdFragment = new FragmentThird();
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
