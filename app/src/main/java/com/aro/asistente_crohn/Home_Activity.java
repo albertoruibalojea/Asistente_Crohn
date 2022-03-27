@@ -29,13 +29,13 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                openFragment(new FragmentFirst());
+                openFragment(new Fragment_Home());
                 return true;
             case R.id.symptoms:
-                openFragment(new FragmentSecond());
+                openFragment(new Fragment_Symptoms());
                 return true;
             case R.id.state:
-                openFragment(new FragmentThird());
+                openFragment(new Fragment_State());
                 return true;
         }
         return false;

@@ -56,6 +56,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="74dp"
         android:layout_marginTop="200dp"
-        android:src="@drawable/firsttime_happy_businessman" />
+        android:src="@drawable/firsttime_happy_businessman"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/recomendaciones" />
 
 </RelativeLayout>
