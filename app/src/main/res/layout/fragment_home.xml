@@ -39,10 +39,11 @@
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/bold"
-                android:text="Recomendaciones"
+                android:text="@string/recomendaciones"
                 android:textColor="@color/casiBlanco"
                 android:textSize="24sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,10 +56,11 @@
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="22dp"
                 android:fontFamily="@font/bold"
-                android:text="Accede a recursos médicos"
+                android:text="@string/accede_a_recursos_medicos"
                 android:textColor="@color/casiBlanco"
                 android:textSize="15sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <ImageView
                 android:layout_width="97dp"
@@ -99,10 +101,11 @@
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/bold"
-                android:text="Alimentación"
+                android:text="@string/alimentacion"
                 android:textColor="@color/casiBlanco"
                 android:textSize="24sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,10 +118,11 @@
                 android:layout_marginEnd="70dp"
                 android:layout_marginBottom="23dp"
                 android:fontFamily="@font/bold"
-                android:text="Registra lo que comes"
+                android:text="@string/registra_lo_que_comes"
                 android:textColor="@color/casiBlanco"
                 android:textSize="15sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <ImageView
                 android:layout_width="97dp"
@@ -224,7 +228,8 @@
                 android:text="@string/sintomas"
                 android:textColor="@color/casiBlanco"
                 android:textSize="24sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -240,7 +245,8 @@
                 android:text="@string/registro"
                 android:textColor="@color/casiBlanco"
                 android:textSize="15sp"
-                tools:ignore="TextContrastCheck"></TextView>
+                tools:ignore="TextContrastCheck">
+            </TextView>
 
             <ImageView
                 android:layout_width="97dp"

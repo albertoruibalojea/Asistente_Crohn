@@ -36,6 +36,6 @@ public class Fragment_State extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_State, container, false);
+        return inflater.inflate(R.layout.fragment_state, container, false);
     }
 }
