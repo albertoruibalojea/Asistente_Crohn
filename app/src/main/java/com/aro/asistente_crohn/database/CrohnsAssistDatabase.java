@@ -10,7 +10,7 @@ import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.model.Symptom;
 
 // bump version number if the schema changes
-@Database(entities={CrohnState.class, Food.class, Recommendation.class, Symptom.class}, version=1)
+@Database(entities={CrohnState.class, Food.class, Recommendation.class, Symptom.class}, version=2)
 @TypeConverters({DateConverter.class})
 public abstract class CrohnsAssistDatabase extends RoomDatabase {
 

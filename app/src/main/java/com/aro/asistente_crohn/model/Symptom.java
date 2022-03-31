@@ -29,8 +29,8 @@ public class Symptom {
     }
 
     @Ignore
-    public Symptom(Integer id, String name, Date registeredDate, Date limitDate) {
-        this.id = id;
+    public Symptom(String name, Date registeredDate, Date limitDate) {
+        this.id = null;
         this.name = name;
         this.registeredDate = registeredDate;
         this.limitDate = limitDate;
