@@ -139,4 +139,13 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="perdi_peso">Perdí peso</string>
+    <string name="dolor_anal">Dolor anal</string>
+    <string name="heridas">Heridas</string>
+    <string name="sangrado">Sangrado</string>
+    <string name="_0">0</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
 </resources>

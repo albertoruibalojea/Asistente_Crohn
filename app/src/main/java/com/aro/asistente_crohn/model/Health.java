@@ -8,32 +8,36 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 @Entity
-public class CrohnState {
+public class Health {
     @ColumnInfo
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
-    private Boolean active;
+    private Boolean crohnActive;
     @ColumnInfo
     private String relatedSymptoms;
+    @ColumnInfo
+    private Integer courage; //from 0-4, less to more happy
     @ColumnInfo
     Date detectionDate;
     @ColumnInfo
     Date limitDate;
 
-    public CrohnState() {
+    public Health() {
         this.id = null;
-        this.active = false;
+        this.crohnActive = false;
         this.relatedSymptoms = "";
+        this.courage = 2;
         this.detectionDate = null;
         this.limitDate = null;
     }
 
     @Ignore
-    public CrohnState(Integer id, Boolean active, String relatedSymptoms, Date detectionDate, Date limitDate) {
+    public Health(Integer id, Boolean crohnActive, String relatedSymptoms, Integer courage, Date detectionDate, Date limitDate) {
         this.id = id;
-        this.active = active;
+        this.crohnActive = crohnActive;
         this.relatedSymptoms = relatedSymptoms;
+        this.courage = courage;
         this.detectionDate = detectionDate;
         this.limitDate = limitDate;
     }
@@ -46,12 +50,12 @@ public class CrohnState {
         this.id = id;
     }
 
-    public Boolean getActive() {
-        return active;
+    public Boolean getCrohnActive() {
+        return crohnActive;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
+    public void setCrohnActive(Boolean crohnActive) {
+        this.crohnActive = crohnActive;
     }
 
     public String getRelatedSymptoms() {
@@ -60,6 +64,14 @@ public class CrohnState {
 
     public void setRelatedSymptoms(String relatedSymptoms) {
         this.relatedSymptoms = relatedSymptoms;
+    }
+
+    public Integer getCourage() {
+        return courage;
+    }
+
+    public void setCourage(Integer courage) {
+        this.courage = courage;
     }
 
     public Date getDetectionDate() {

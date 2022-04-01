@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Fragment_Home extends Fragment {
@@ -49,6 +51,26 @@ public class Fragment_Home extends Fragment {
         SharedPreferences preferences = getActivity().getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE);
         displayName.setText(preferences.getString("username", null));
 
+        this.generateClickeableLayouts(rootView);
+
         return rootView;
+    }
+
+    public void generateClickeableLayouts(View rootView){
+        /*RelativeLayout card_state = (RelativeLayout) rootView.findViewById(R.id.card_state);
+        card_state.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Home_Activity) getActivity()).openFragment(new Fragment_State());
+            }
+        });*/
+
+        RelativeLayout card_symptoms = (RelativeLayout) rootView.findViewById(R.id.card_symptoms);
+        card_symptoms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Home_Activity) getActivity()).openFragment(new Fragment_Symptoms());
+            }
+        });
     }
 }

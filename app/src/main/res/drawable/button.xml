@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:radius="4sp"/>
-    <solid android:color="@color/rosa"></solid>
-</shape>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="true"
+        android:drawable="@color/rosa"/>
+    <item
+        android:state_enabled="false"
+        android:drawable="@color/negroGris"/>
+</selector>

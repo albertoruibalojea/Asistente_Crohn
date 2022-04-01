@@ -11,20 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.Symptom;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 
 
 public class Fragment_Symptoms extends Fragment {
 
     private ArrayList<Symptom> selectedSymptoms;
+    private Health health;
+    private Button btn;
 
     public Fragment_Symptoms() {
         // Required empty public constructor
@@ -47,6 +53,7 @@ public class Fragment_Symptoms extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         selectedSymptoms = new ArrayList<>();
+        health = new Health();
     }
 
     @Override
@@ -55,11 +62,11 @@ public class Fragment_Symptoms extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_symptoms, container, false);
 
-        GridLayout grid = (GridLayout) rootView.findViewById(R.id.symptomGrid);
-        int childCount = grid.getChildCount();
+        btn = (Button) rootView.findViewById(R.id.btn);
 
-        for (int i= 0; i < childCount; i++){
-            CardView card = (CardView) grid.getChildAt(i);
+        GridLayout symptomGrid = (GridLayout) rootView.findViewById(R.id.symptomGrid);
+        for (int i= 0; i < symptomGrid.getChildCount(); i++){
+            CardView card = (CardView) symptomGrid.getChildAt(i);
             card.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view){
                     //Checking the actual color
@@ -84,10 +91,52 @@ public class Fragment_Symptoms extends Fragment {
                     else if(card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.violeta)){
                         card.setCardBackgroundColor(getResources().getColor(R.color.negroGris));
 
+                        //it means it was selected before, so we put off the symptom from the array
+                        Iterator it = selectedSymptoms.iterator();
+                        while(it.hasNext()){
+                            if( ((Symptom) it.next()).getName().equalsIgnoreCase(card.getChildAt(0).getContentDescription().toString()) ){
+                                it.remove();
+                            }
+                        }
                     }
                 }
             });
         }
+
+        GridLayout courageGrid = (GridLayout) rootView.findViewById(R.id.courageGrid);
+        for (int i= 0; i < courageGrid.getChildCount(); i++){
+            TextView text = (TextView) courageGrid.getChildAt(i);
+            text.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+
+                    text.setTextSize(48);
+
+                    //we need to reajust other child in case they were selected before
+                    for (int i= 0; i < courageGrid.getChildCount(); i++){
+                        TextView text2 = (TextView) courageGrid.getChildAt(i);
+                        if(!text2.equals(text)){
+                            text2.setTextSize(36);
+                        }
+                    }
+
+                    //Adding actual courage to Health
+                    //relatedSymptoms arraylist in Health only shows symptoms if crohnActive==true
+                    health.setCourage(Integer.parseInt(text.getContentDescription().toString()));
+
+                    btn.setEnabled(true);
+                }
+            });
+        }
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //we need to check if there is symptoms and the courage level
+                //we sent this to the Parent Activity
+
+            }
+        });
+
 
         return rootView;
     }

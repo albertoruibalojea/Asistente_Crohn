@@ -34,9 +34,9 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
             case R.id.symptoms:
                 openFragment(new Fragment_Symptoms());
                 return true;
-            case R.id.state:
+            /*case R.id.state:
                 openFragment(new Fragment_State());
-                return true;
+                return true;*/
         }
         return false;
     }
@@ -48,4 +48,5 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
         fragmentTransaction.commit();
 
     }
+
 }

@@ -6,16 +6,16 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.aro.asistente_crohn.model.CrohnState;
+import com.aro.asistente_crohn.model.Health;
 
 @Dao
-public interface CrohnStateDAO {
-    @Query("SELECT * FROM CrohnState where id like :id")
-    public CrohnState getById(int id);
+public interface HealthDAO {
+    @Query("SELECT * FROM Health where id like :id")
+    public Health getById(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public Long insertState(CrohnState state);
+    public Long insertState(Health state);
 
     @Delete
-    public void deleteState(CrohnState state);
+    public void deleteState(Health state);
 }
