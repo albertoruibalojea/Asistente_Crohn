@@ -14,8 +14,8 @@ public interface HealthDAO {
     public Health getById(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public Long insertState(Health state);
+    public Long insert(Health health);
 
     @Delete
-    public void deleteState(Health state);
+    public void delete(Health health);
 }

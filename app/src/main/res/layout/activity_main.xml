@@ -21,11 +21,11 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="248dp"
-        android:layout_height="271dp"
+        android:layout_width="176dp"
+        android:layout_height="193dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />

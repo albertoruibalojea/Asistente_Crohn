@@ -2,4 +2,7 @@
 <resources>
     <dimen name="table_symptoms_margin">8dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="ic_clear_margin">56dp</dimen>
 </resources>

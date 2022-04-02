@@ -1,76 +1,72 @@
 package com.aro.asistente_crohn;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
-import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.model.Health;
+import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 
 
-public class Fragment_Symptoms extends Fragment {
+public class Symptoms_Activity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private ItemViewModel viewModel;
     private ArrayList<Symptom> selectedSymptoms;
     private Health health;
     private Button btn;
-
-    public Fragment_Symptoms() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment SecondFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragment_Symptoms newInstance() {
-        Fragment_Symptoms fragment = new Fragment_Symptoms();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
+    BottomNavigationView bottomNavigationView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_symptoms);
+
         selectedSymptoms = new ArrayList<>();
         health = new Health();
-    }
+        btn = (Button) findViewById(R.id.btn);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_symptoms, container, false);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        btn = (Button) rootView.findViewById(R.id.btn);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.symptoms);
 
-        GridLayout symptomGrid = (GridLayout) rootView.findViewById(R.id.symptomGrid);
+        viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+
+
+        CardView card_viewRegistres = (CardView) findViewById(R.id.card_viewRegistres);
+        card_viewRegistres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFragment(new Symptoms_Fragment());
+            }
+        });
+
+
+        GridLayout symptomGrid = (GridLayout) findViewById(R.id.symptomGrid);
         for (int i= 0; i < symptomGrid.getChildCount(); i++){
             CardView card = (CardView) symptomGrid.getChildAt(i);
             card.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view){
                     //Checking the actual color
-                      //Select a symptom
+                    //Select a symptom
                     if(card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.negroGris)){
                         card.setCardBackgroundColor(getResources().getColor(R.color.violeta));
 
@@ -99,11 +95,15 @@ public class Fragment_Symptoms extends Fragment {
                             }
                         }
                     }
+
+                    if(health != null){
+                        btn.setEnabled(true);
+                    }
                 }
             });
         }
 
-        GridLayout courageGrid = (GridLayout) rootView.findViewById(R.id.courageGrid);
+        GridLayout courageGrid = (GridLayout) findViewById(R.id.courageGrid);
         for (int i= 0; i < courageGrid.getChildCount(); i++){
             TextView text = (TextView) courageGrid.getChildAt(i);
             text.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +123,10 @@ public class Fragment_Symptoms extends Fragment {
                     //relatedSymptoms arraylist in Health only shows symptoms if crohnActive==true
                     health.setCourage(Integer.parseInt(text.getContentDescription().toString()));
 
-                    btn.setEnabled(true);
+                    if(!selectedSymptoms.isEmpty()){
+                        btn.setEnabled(true);
+                    }
+
                 }
             });
         }
@@ -132,12 +135,45 @@ public class Fragment_Symptoms extends Fragment {
             @Override
             public void onClick(View view) {
                 //we need to check if there is symptoms and the courage level
-                //we sent this to the Parent Activity
+                if(!selectedSymptoms.isEmpty() && (health.getCourage() != null)){
 
+                    //we save the data into the Room Persistence Database
+                    for(Symptom s : selectedSymptoms){
+                        viewModel.insertSymptom(s);
+                    }
+
+                    viewModel.insertHealth(health);
+
+                    //System.out.println(viewModel.getAllSymptoms().getValue());
+                    //System.out.println(viewModel.getAllSymptoms().getValue().get(0));
+                    //System.out.println(viewModel.getAllSymptoms().getValue().size());
+                }
             }
         });
+    }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent intent = new Intent(Symptoms_Activity.this, Home_Activity.class);
+                startActivity(intent);
+                finish();
+            /*case R.id.symptoms:
+                openFragment(new Symptoms_Activity());
+                return true;*/
+            /*case R.id.state:
+                openFragment(new Fragment_State());
+                return true;*/
+        }
+        return false;
+    }
 
-        return rootView;
+    void openFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.constraintView, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
     }
 }
