@@ -3,23 +3,24 @@ package com.aro.asistente_crohn.model;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
+import java.util.List;
+
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
 
-    private Symptom[] listdata;
+    private List<Symptom> listdata;
 
     // RecyclerView recyclerView;
-    public MyListAdapter(Symptom[] listdata) {
+    public MyListAdapter(List<Symptom> listdata) {
         this.listdata = listdata;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -30,25 +31,29 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText(listdata[position].getName());
-        holder.textView.setText(listdata[position].getRegisteredDate().toString());
+        if(listdata.size() == 0){
+            holder.symptoms.setText("No hay síntomas registrados");
+        } else {
+            holder.symptoms.setText(listdata.get(position).getName());
+            holder.date.setText(listdata.get(position).getRegisteredDate().toString());
+        }
     }
 
 
     @Override
     public int getItemCount() {
-        return listdata.length;
+        return listdata.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textView;
-        public TextView textView2;
-        public RelativeLayout relativeLayout;
+        public TextView date;
+        public TextView symptoms;
+        public ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.textView = (TextView) itemView.findViewById(R.id.textView);
-            this.textView2 = (TextView) itemView.findViewById(R.id.textView2);
-            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
+            this.date = (TextView) itemView.findViewById(R.id.date);
+            this.symptoms = (TextView) itemView.findViewById(R.id.symptoms);
+            relativeLayout = (ConstraintLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
 }

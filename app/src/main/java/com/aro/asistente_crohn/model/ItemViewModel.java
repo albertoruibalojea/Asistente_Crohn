@@ -19,7 +19,7 @@ public class ItemViewModel extends AndroidViewModel {
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    public final LiveData<List<Symptom>> allSymptoms;
+    private LiveData<List<Symptom>> allSymptoms;
 
     public ItemViewModel(Application application) {
         super(application);
@@ -30,7 +30,10 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Symptom>> getAllSymptoms() {
-        return symptomRepository.getAllSymptoms();
+        if (allSymptoms == null) {
+            allSymptoms = symptomRepository.getAllSymptoms();
+        }
+        return allSymptoms;
     }
 
     public void insertSymptom(Symptom symptom) {

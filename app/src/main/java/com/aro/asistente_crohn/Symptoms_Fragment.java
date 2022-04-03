@@ -1,11 +1,13 @@
 package com.aro.asistente_crohn;
 
 import android.icu.text.AlphabeticIndex;
+import android.media.SyncParams;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -55,37 +57,30 @@ public class Symptoms_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_symptoms, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-
-        System.out.println(viewModel.getAllSymptoms().getValue());
-        System.out.println(viewModel.getAllSymptoms().getValue().get(0));
-        System.out.println(viewModel.getAllSymptoms().getValue().size());
-
-        Symptom[] myListData = new Symptom[100];
-        for(int i=0; i < viewModel.allSymptoms.getValue().size(); i++){
-            myListData[i] = viewModel.allSymptoms.getValue().get(i);
-        }
-
-        MyListAdapter adapter = new MyListAdapter(myListData);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
-
-
-
-        /*viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MyListAdapter adapter = new MyListAdapter(getActivity());
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
 
         viewModel.getAllSymptoms().observe(getActivity(), new Observer<List<Symptom>>() {
             @Override
-            public void onChanged(List<Symptom> records) {
-                adapter.updateWith(records);
+            public void onChanged(List<Symptom> symptomList) {
+                RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+                //Symptom[] myListData = new Symptom[symptomList.size()];
+                MyListAdapter adapter = new MyListAdapter(symptomList);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.setAdapter(adapter);
             }
-        });*/
+        });
+
+        /*if(viewModel.getAllSymptoms().getValue() == null){
+            RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+            Symptom[] myListData = new Symptom[0];
+            MyListAdapter adapter = new MyListAdapter(myListData);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setAdapter(adapter);
+        }*/
+
+
 
         return rootView;
     }

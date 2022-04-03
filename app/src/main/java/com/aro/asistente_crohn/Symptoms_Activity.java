@@ -96,7 +96,7 @@ public class Symptoms_Activity extends AppCompatActivity implements BottomNaviga
                         }
                     }
 
-                    if(health != null){
+                    if(health.getCourage() != null){
                         btn.setEnabled(true);
                     }
                 }
@@ -147,6 +147,23 @@ public class Symptoms_Activity extends AppCompatActivity implements BottomNaviga
                     //System.out.println(viewModel.getAllSymptoms().getValue());
                     //System.out.println(viewModel.getAllSymptoms().getValue().get(0));
                     //System.out.println(viewModel.getAllSymptoms().getValue().size());
+
+
+                    //reset ui
+                    GridLayout symptomGrid = (GridLayout) findViewById(R.id.symptomGrid);
+                    for (int i= 0; i < symptomGrid.getChildCount(); i++) {
+                        CardView card = (CardView) symptomGrid.getChildAt(i);
+                        if(card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.violeta)) {
+                            card.setCardBackgroundColor(getResources().getColor(R.color.negroGris));
+                        }
+                    }
+
+                    for (int i= 0; i < courageGrid.getChildCount(); i++){
+                        TextView text2 = (TextView) courageGrid.getChildAt(i);
+                        text2.setTextSize(36);
+                    }
+
+                    btn.setEnabled(false);
                 }
             }
         });
