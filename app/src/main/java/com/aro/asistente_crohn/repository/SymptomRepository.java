@@ -22,7 +22,7 @@ public class SymptomRepository {
     public SymptomRepository(Application application) {
         CrohnsAssistDatabase db = CrohnsAssistDatabase.getDatabase(application);
         symptomDao = db.symptomDAO();
-        allSymptoms = symptomDao.getSymptoms(Calendar.getInstance().getTime());
+        allSymptoms = symptomDao.getSymptoms();
     }
 
     // Room executes all queries on a separate thread.

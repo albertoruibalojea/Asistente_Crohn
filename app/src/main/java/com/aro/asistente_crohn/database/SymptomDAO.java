@@ -23,6 +23,6 @@ public interface SymptomDAO {
     @Delete
     public void deleteSymptom(Symptom symptom);
 
-    @Query("SELECT * FROM Symptom WHERE limitDate < :actualDate")
-    LiveData<List<Symptom>> getSymptoms(Date actualDate);
+    @Query("SELECT * FROM Symptom")
+    LiveData<List<Symptom>> getSymptoms();
 }

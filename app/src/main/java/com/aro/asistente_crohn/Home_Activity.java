@@ -2,9 +2,6 @@ package com.aro.asistente_crohn;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +11,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.aro.asistente_crohn.model.ItemViewModel;
+import com.aro.asistente_crohn.ui.SymptomsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home_Activity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
@@ -47,7 +44,7 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
                 openFragment(new Fragment_Home());
                 return true;*/
             case R.id.symptoms:
-                Intent intent = new Intent(Home_Activity.this, Symptoms_Activity.class);
+                Intent intent = new Intent(Home_Activity.this, SymptomsActivity.class);
                 startActivity(intent);
                 finish();
                 return true;
@@ -71,7 +68,7 @@ public class Home_Activity extends AppCompatActivity implements BottomNavigation
         card_symptoms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_Activity.this, Symptoms_Activity.class);
+                Intent intent = new Intent(Home_Activity.this, SymptomsActivity.class);
                 startActivity(intent);
                 //finish();
             }

@@ -10,7 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
+import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
 
@@ -24,7 +30,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_item, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.symptom_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
@@ -35,7 +41,13 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             holder.symptoms.setText("No hay síntomas registrados");
         } else {
             holder.symptoms.setText(listdata.get(position).getName());
-            holder.date.setText(listdata.get(position).getRegisteredDate().toString());
+            //holder.date.setText(listdata.get(position).getRegisteredDate().toString());
+
+            SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
+            holder.date.setText(simpleDateFormat.format(new Date()));
+
+
+
         }
     }
 
