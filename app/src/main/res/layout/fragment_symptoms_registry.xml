@@ -1,16 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/casiBlanco"
     tools:context=".ui.SymptomsRegistryFragment">
 
+    <RelativeLayout
+        android:id="@+id/elipse"
+        android:layout_width="435dp"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-11dp"
+        android:layout_marginTop="-61dp"
+        android:layout_marginEnd="-7dp"
+        android:background="@drawable/purple_elipse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="179dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="109dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="31dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/consulta_tus_sintomas"
+            android:textColor="@color/casiBlanco"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="78dp"
+            android:layout_marginEnd="134dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/tus_sintomas"
+            android:textColor="@color/casiBlanco"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        android:layout_height="761dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-2dp"
+        android:scrollbars="vertical" />
 
 </RelativeLayout>

@@ -11,10 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Asistente_Crohn">
         <activity
-            android:name=".Home_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.SymptomsActivity"
+            android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".firsttime.FirstTime_8Name_Activity"
@@ -27,7 +24,7 @@
             android:parentActivityName=".firsttime.Activity_1stTime"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,11 @@
+
+C
+java:S16042"(Make this anonymous inner class a lambda(Ş‘Ğÿÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÅØÚ—şÿÿÿÿ
+s
+java:S1450"XRemove the "viewModel" field and declare it as a local variable in the relevant methods.(•Ÿ¬ûÿÿÿÿ
+>
+java:S1185""(Remove this method to simply inherit it.(ßìê¯
+[
+java:S11175"@Rename "recyclerView" which hides the field declared at line 28.(ùåœıÿÿÿÿ

@@ -57,7 +57,7 @@ public class SymptomsFragment extends Fragment {
         card_viewRegistres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((SymptomsActivity) requireActivity()).openFragment(new SymptomsRegistryFragment());
+                ((HomeActivity) requireActivity()).openFragment(new SymptomsRegistryFragment());
             }
         });
 

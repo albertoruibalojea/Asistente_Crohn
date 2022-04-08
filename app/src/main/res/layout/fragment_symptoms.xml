@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/casiBlanco"
-    tools:context=".ui.SymptomsActivity">
+    tools:context=".ui.SymptomsFragment">
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="728dp"
+        android:layout_height="763dp"
         android:layout_below="@+id/elipse"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="0dp"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
