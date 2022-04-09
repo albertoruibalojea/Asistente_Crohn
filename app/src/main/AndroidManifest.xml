@@ -14,14 +14,14 @@
             android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.FirstTime_8Name_Activity"
+            android:name=".firsttime.FirstTime8NameActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.FirstTime_7Terms_Activity"
+            android:name=".firsttime.FirstTime7TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.Activity_1stTime"
-            android:parentActivityName=".firsttime.Activity_1stTime"
+            android:name=".firsttime.Activity1stTime"
+            android:parentActivityName=".firsttime.Activity1stTime"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"

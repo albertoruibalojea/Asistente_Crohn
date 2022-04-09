@@ -10,20 +10,21 @@
 
     <ScrollView
         android:id="@+id/panel"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="411dp"
+        android:layout_height="725dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="91dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:id="@+id/cardLayout"
             android:layout_width="wrap_content"
             android:layout_height="746dp"
-            android:layout_below="@+id/topNav"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="0dp"
             android:gravity="center_horizontal"
-            android:paddingTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -55,7 +56,7 @@
                     android:text="@string/recomendaciones"
                     android:textColor="@color/casiBlanco"
                     android:textSize="24sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,7 +72,7 @@
                     android:text="@string/accede_a_recursos_medicos"
                     android:textColor="@color/casiBlanco"
                     android:textSize="15sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageView
                     android:layout_width="97dp"
@@ -116,7 +117,7 @@
                     android:text="@string/alimentacion"
                     android:textColor="@color/casiBlanco"
                     android:textSize="24sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,7 +133,7 @@
                     android:text="@string/registra_lo_que_comes"
                     android:textColor="@color/casiBlanco"
                     android:textSize="15sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageView
                     android:layout_width="97dp"
@@ -179,7 +180,7 @@
                     android:text="@string/estado"
                     android:textColor="@color/casiBlanco"
                     android:textSize="24sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,7 +196,7 @@
                     android:text="@string/conoce_tu_estado_actual"
                     android:textColor="@color/casiBlanco"
                     android:textSize="15sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageView
                     android:layout_width="97dp"
@@ -240,7 +241,7 @@
                     android:text="@string/sintomas"
                     android:textColor="@color/casiBlanco"
                     android:textSize="24sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -256,7 +257,7 @@
                     android:text="@string/registro"
                     android:textColor="@color/casiBlanco"
                     android:textSize="15sp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageView
                     android:layout_width="97dp"

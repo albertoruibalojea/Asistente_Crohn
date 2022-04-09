@@ -55,7 +55,7 @@ public abstract class CrohnsAssistDatabase extends RoomDatabase {
     // Declaring data access objects as abstract
     public abstract HealthDAO healthDAO();
 
-    public abstract FoodDAO FoodDao();
+    public abstract FoodDAO foodDAO();
 
     public abstract RecommendationDAO recommendationDAO();
 

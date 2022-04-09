@@ -9,7 +9,6 @@ import androidx.room.Query;
 
 import com.aro.asistente_crohn.model.Symptom;
 
-import java.util.Date;
 import java.util.List;
 
 @Dao

@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.aro.asistente_crohn.R;
-import com.aro.asistente_crohn.firsttime.Activity_1stTime;
-import com.aro.asistente_crohn.firsttime.FirstTime_8Name_Activity;
+import com.aro.asistente_crohn.firsttime.Activity1stTime;
+import com.aro.asistente_crohn.firsttime.FirstTime8NameActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
 
             if(!areTermsAccepted()){
-                Intent firstTime1 = new Intent(MainActivity.this, Activity_1stTime.class);
+                Intent firstTime1 = new Intent(MainActivity.this, Activity1stTime.class);
                 startActivity (firstTime1);
                 finish();
             } else {
                 if(!isUsername()){
-                    Intent firstTime8 = new Intent(MainActivity.this, FirstTime_8Name_Activity.class);
+                    Intent firstTime8 = new Intent(MainActivity.this, FirstTime8NameActivity.class);
                     startActivity (firstTime8);
                     finish();
                 } else {

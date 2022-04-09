@@ -22,7 +22,6 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
 
     private List<Symptom> listdata;
 
-    // RecyclerView recyclerView;
     public MyListAdapter(List<Symptom> listdata) {
         this.listdata = listdata;
     }
@@ -31,23 +30,18 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.symptom_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(listItem);
-        return viewHolder;
+        return new ViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        if(listdata.size() == 0){
+        if(listdata.isEmpty()){
             holder.symptoms.setText("No hay síntomas registrados");
         } else {
             holder.symptoms.setText(listdata.get(position).getName());
-            //holder.date.setText(listdata.get(position).getRegisteredDate().toString());
 
             SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
             holder.date.setText(simpleDateFormat.format(new Date()));
-
-
-
         }
     }
 
@@ -63,9 +57,9 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.date = (TextView) itemView.findViewById(R.id.date);
-            this.symptoms = (TextView) itemView.findViewById(R.id.symptoms);
-            relativeLayout = (ConstraintLayout)itemView.findViewById(R.id.relativeLayout);
+            date = itemView.findViewById(R.id.date);
+            symptoms =  itemView.findViewById(R.id.symptoms);
+            relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }
     }
 }

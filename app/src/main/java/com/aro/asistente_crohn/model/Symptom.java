@@ -1,7 +1,5 @@
 package com.aro.asistente_crohn.model;
 
-import android.graphics.Picture;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;

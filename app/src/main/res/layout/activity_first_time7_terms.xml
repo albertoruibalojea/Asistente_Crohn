@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firsttime.FirstTime_7Terms_Activity"
+    tools:context=".firsttime.FirstTime7TermsActivity"
+    android:orientation="vertical"
     android:background="@color/casiBlanco">
 
     <TextView
@@ -86,8 +87,8 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <ScrollView
-        android:layout_width="371dp"
-        android:layout_height="504dp"
+        android:layout_width="361dp"
+        android:layout_height="510dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +107,7 @@
                 android:justificationMode="inter_word"
                 android:text="@string/terminos_uso"
                 android:textColor="@color/casiNegro"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 

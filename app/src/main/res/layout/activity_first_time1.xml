@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firsttime.Activity_1stTime"
+    tools:context=".firsttime.Activity1stTime"
+    android:orientation="vertical"
     android:background="@color/casiBlanco">
 
     <RelativeLayout
@@ -15,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784"></RelativeLayout>
+        app:layout_constraintVertical_bias="0.784" />
 
     <TextView
         android:id="@+id/saltar_guia"
@@ -68,7 +69,7 @@
         android:id="@+id/progressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guía de Inicio    -   5% completado"
+        android:text="@string/guia_inicio_5_completado"
         android:fontFamily="@font/bold"
         android:textColor="@color/casiNegro"
         android:textSize="14sp"

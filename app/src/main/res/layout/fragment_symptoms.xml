@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/casiBlanco"
+    android:orientation="vertical"
     tools:context=".ui.SymptomsFragment">
 
     <ScrollView
@@ -24,15 +25,12 @@
             android:id="@+id/constraintView"
             android:layout_width="match_parent"
             android:layout_height="715dp"
-            android:layout_below="@+id/elipse"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="3dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_viewRegistres"
+                android:id="@+id/card_viewRegistries"
                 android:layout_width="332dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="32dp"
@@ -50,9 +48,9 @@
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
+                    android:layout_gravity="start|center"
                     android:fontFamily="@font/bold"
-                    android:paddingLeft="16dp"
+                    android:paddingStart="16dp"
                     android:text="@string/ver_mis_registros"
                     android:textColor="@color/casiBlanco"
                     android:textSize="18sp" />
@@ -61,9 +59,9 @@
                     android:id="@+id/imageView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
+                    android:layout_gravity="end|center"
                     android:contentDescription="@string/todo"
-                    android:paddingRight="16dp"
+                    android:paddingEnd="16dp"
                     app:srcCompat="@drawable/right_arrow" />
             </androidx.cardview.widget.CardView>
 
@@ -85,20 +83,19 @@
 
             <GridLayout
                 android:id="@+id/symptomGrid"
-                android:layout_width="339dp"
-                android:layout_height="372dp"
+                android:layout_width="349dp"
+                android:layout_height="367dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="128dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
                 android:columnCount="3"
-                android:gravity="center|center_horizontal|center_vertical"
+                android:gravity="center"
                 android:rowCount="3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
-                app:layout_constraintVertical_bias="0.073">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.1">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_diaree"
@@ -113,8 +110,8 @@
 
                     <TextView
                         android:id="@+id/text_diaree"
-                        android:layout_width="103dp"
-                        android:layout_height="104dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:contentDescription="@string/diarrea"
                         android:fontFamily="@font/regular"
@@ -127,7 +124,7 @@
                     <ImageView
                         android:id="@+id/image_diaree"
                         android:layout_width="wrap_content"
-                        android:layout_height="62dp"
+                        android:layout_height="69dp"
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/diarrea"
                         android:paddingTop="8dp"
@@ -346,7 +343,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/sangrado"
-                        android:paddingTop="12dp"
+                        android:paddingTop="16dp"
                         app:srcCompat="@drawable/ic_sympt_blood"
                         tools:ignore="ImageContrastCheck" />
 
@@ -374,7 +371,8 @@
                         android:paddingBottom="4dp"
                         android:text="@string/cansancio"
                         android:textColor="@color/casiBlanco"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="TextContrastCheck" />
 
                     <ImageView
                         android:id="@+id/image_tired"
@@ -398,7 +396,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/bold"
-                android:text="¿Qué tal de ánimo?"
+                android:text="@string/que_tal_de_animo"
                 android:textColor="@color/casiNegro"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/courageGrid"
@@ -431,13 +429,9 @@
                     android:layout_margin="@dimen/table_symptoms_margin"
                     android:contentDescription="@string/_0"
                     android:gravity="center"
-                    android:shadowColor="@color/negroGris"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="😭"
-                    android:textSize="36dp"
-                    tools:ignore="TextContrastCheck"></TextView>
+                    android:text="@string/courage_0"
+                    android:textSize="36sp"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -445,12 +439,8 @@
                     android:layout_margin="@dimen/table_symptoms_margin"
                     android:contentDescription="@string/_1"
                     android:gravity="center"
-                    android:shadowColor="@color/negroGris"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="😔"
-                    android:textSize="36dp"></TextView>
+                    android:text="@string/courage_1"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -458,12 +448,8 @@
                     android:layout_margin="@dimen/table_symptoms_margin"
                     android:contentDescription="@string/_2"
                     android:gravity="center"
-                    android:shadowColor="@color/negroGris"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="😑"
-                    android:textSize="36dp"></TextView>
+                    android:text="@string/courage_2"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -471,12 +457,8 @@
                     android:layout_margin="@dimen/table_symptoms_margin"
                     android:contentDescription="@string/_3"
                     android:gravity="center"
-                    android:shadowColor="@color/negroGris"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="😊"
-                    android:textSize="36dp"></TextView>
+                    android:text="@string/courage_3"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -484,12 +466,8 @@
                     android:layout_margin="@dimen/table_symptoms_margin"
                     android:contentDescription="@string/_4"
                     android:gravity="center"
-                    android:shadowColor="@color/negroGris"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="😁"
-                    android:textSize="36dp"></TextView>
+                    android:text="@string/courage_4"
+                    android:textSize="36sp" />
 
             </GridLayout>
 
@@ -507,7 +485,7 @@
                 android:enabled="false"
                 android:fontFamily="@font/bold"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="Finalizar registro"
+                android:text="@string/finalizar_registro"
                 android:textColor="@color/casiBlanco"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

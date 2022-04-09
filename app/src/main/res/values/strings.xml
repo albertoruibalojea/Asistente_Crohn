@@ -149,4 +149,21 @@
     <string name="_3">3</string>
     <string name="_4">4</string>
     <string name="consulta_tus_sintomas">Consulta tus síntomas</string>
+    <string name="guia_inicio_70_completado">Guía de Inicio    -   70% completado</string>
+    <string name="guia_inicio_55_completado">Guía de Inicio    -   55% completado</string>
+    <string name="guia_inicio_40_completado">Guía de Inicio    -   40% completado</string>
+    <string name="guia_inicio_25_completado">Guía de Inicio    -   25% completado</string>
+    <string name="guia_inicio_15_completado">Guía de Inicio    -   15% completado</string>
+    <string name="guia_inicio_5_completado">Guía de Inicio - 5% completado</string>
+    <string name="personalizacion_95_completado">Personalización - 95% completado</string>
+    <string name="que_tal_de_animo">¿Qué tal de ánimo?</string>
+    <string name="courage_0">😭</string>
+    <string name="courage_1">😔</string>
+    <string name="courage_2">😑</string>
+    <string name="courage_3">😊</string>
+    <string name="courage_4">😁</string>
+    <string name="finalizar_registro">Finalizar registro</string>
+    <string name="symptom_item_date" />
+    <string name="string_symptom_item_date">date</string>
+    <string name="symptom_item_name">symptom</string>
 </resources>

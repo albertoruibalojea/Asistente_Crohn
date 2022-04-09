@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".firsttime.Fragment_1st_5State"
+    tools:context=".firsttime.Fragment1St5State"
+    android:orientation="vertical"
     android:background="@color/casiBlanco">
 
     <TextView

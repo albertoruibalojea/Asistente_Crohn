@@ -21,18 +21,12 @@ import com.aro.asistente_crohn.model.Symptom;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SymptomsRegistryFragment extends Fragment {
 
-    private ItemViewModel viewModel;
-    private RecyclerView recyclerView;
-
     public SymptomsRegistryFragment() {
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        // Required empty public constructor
     }
 
     @Override
@@ -45,22 +39,22 @@ public class SymptomsRegistryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+        ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
 
-        viewModel.getAllSymptoms().observe(getActivity(), new Observer<List<Symptom>>() {
-            @Override
-            public void onChanged(List<Symptom> symptomList) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-                List<Symptom> cacheSymptomList = new ArrayList<>();
-                if (symptomList != null) {
-                    cacheSymptomList.addAll(symptomList);
-                }
-                MyListAdapter adapter = new MyListAdapter(cacheSymptomList);
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                recyclerView.setAdapter(adapter);
+        //Observer from Repository to lookup the LiveData
+        viewModel.getAllSymptoms().observe(requireActivity(), symptomList -> {
+            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+            List<Symptom> cacheSymptomList = new ArrayList<>();
+            if (symptomList != null) {
+                cacheSymptomList.addAll(symptomList);
             }
+            MyListAdapter adapter = new MyListAdapter(cacheSymptomList);
+            recyclerView.setHasFixedSize(true);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            linearLayoutManager.setReverseLayout(true);
+            linearLayoutManager.setStackFromEnd(true);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(adapter);
         });
-
     }
 }
