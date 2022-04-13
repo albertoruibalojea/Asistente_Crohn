@@ -13,8 +13,6 @@ r
 Bapp/src/main/java/com/aro/asistente_crohn/model/MyListAdapter.java,b\c\bcacbfa5659844476181f9e6054b8c2ed6d73426
 r
 Bapp/src/main/java/com/aro/asistente_crohn/model/ItemViewModel.java,8\f\8fba1aa6b3267cb4530b7c0ced18af328e018c7b
-i
-9app/src/main/java/com/aro/asistente_crohn/model/Food.java,4\c\4c970efb88ff683655dc0cbe62755b3f6a0d2810
 k
 ;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769
 }
@@ -47,19 +45,27 @@ u
 Eapp/src/main/java/com/aro/asistente_crohn/database/DateConverter.java,f\3\f3ac2e0e3cb53df1ee4ff6107c518dba26b85ecc
 |
 Lapp/src/main/java/com/aro/asistente_crohn/database/CrohnsAssistDatabase.java,0\c\0c5469c751cf645c3de1f78adc1d15e07f73a967
-n
->app/src/main/java/com/aro/asistente_crohn/ui/HomeActivity.java,f\e\fe3261d489fc273ddb54cf2caebb88a6beb0265f
-n
->app/src/main/java/com/aro/asistente_crohn/ui/HomeFragment.java,f\6\f67b3893a615a0ef4095c537482a6e46e8d42218
 z
 Japp/src/main/java/com/aro/asistente_crohn/repository/HealthRepository.java,6\7\6718e5b79e394677788dcfb82cb9a8f158f132c8
-r
-Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
 z
 Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9\f9ca5d35082a74e25c021f2944c5539b8751e6be
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+r
+Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
+q
+Aapp/src/main/java/com/aro/asistente_crohn/ui/ListViewAdapter.java,d\7\d78f7045d7bc7e52045875750291e1ea8a178fb0
+n
+>app/src/main/java/com/aro/asistente_crohn/ui/HomeActivity.java,f\e\fe3261d489fc273ddb54cf2caebb88a6beb0265f
+n
+>app/src/main/java/com/aro/asistente_crohn/ui/HomeFragment.java,f\6\f67b3893a615a0ef4095c537482a6e46e8d42218
+i
+9app/src/main/java/com/aro/asistente_crohn/model/Food.java,4\c\4c970efb88ff683655dc0cbe62755b3f6a0d2810
+t
+Dapp/src/main/java/com/aro/asistente_crohn/ui/SearchableActivity.java,7\b\7bd18e679fbce331a817441f7e148ac30c42b3f7
+n
+>app/src/main/java/com/aro/asistente_crohn/ui/FoodFragment.java,4\2\422befb6dcdbf1ec9cc5a863fc38e6ad602c6a11

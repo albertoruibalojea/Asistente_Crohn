@@ -166,4 +166,8 @@
     <string name="symptom_item_date" />
     <string name="string_symptom_item_date">date</string>
     <string name="symptom_item_name">symptom</string>
+    <string name="tu_alimentacion">Tu alimentación</string>
+    <string name="registra_tu_alimentacion">Registra tu alimentación</string>
+    <string name="mis_alimentos_prohibidos">Mis alimentos prohibidos</string>
+    <string name="search_hint">Escribe aquí</string>
 </resources>

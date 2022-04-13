@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -36,6 +37,19 @@ public class Food {
         this.forbidden = forbidden;
         this.eatenDate = eatenDate;
         this.limitDate = limitDate;
+    }
+
+    @Ignore
+    public Food(String name) {
+        this.id = null;
+        this.name = name;
+        this.forbidden = false;
+        this.eatenDate = Calendar.getInstance().getTime();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(eatenDate);
+        calendar.add(Calendar.DAY_OF_YEAR, 90);
+        this.limitDate = calendar.getTime();
     }
 
     public Integer getId() {
