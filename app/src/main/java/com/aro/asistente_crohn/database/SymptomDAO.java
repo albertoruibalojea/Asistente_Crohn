@@ -24,4 +24,7 @@ public interface SymptomDAO {
 
     @Query("SELECT * FROM Symptom")
     LiveData<List<Symptom>> getSymptoms();
+
+    @Query("SELECT * FROM Symptom WHERE registeredDate BETWEEN :before AND :after")
+    LiveData<List<Symptom>> getTodaySymptoms(Long before, Long after);
 }

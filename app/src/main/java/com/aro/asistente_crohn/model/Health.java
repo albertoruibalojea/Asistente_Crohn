@@ -19,9 +19,9 @@ public class Health {
     @ColumnInfo
     private Integer courage; //from 0-4, less to more happy
     @ColumnInfo
-    Date detectionDate;
+    private Date detectionDate;
     @ColumnInfo
-    Date limitDate;
+    private Date limitDate;
 
     public Health() {
         this.id = null;

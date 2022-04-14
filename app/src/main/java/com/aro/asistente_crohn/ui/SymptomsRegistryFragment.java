@@ -48,7 +48,7 @@ public class SymptomsRegistryFragment extends Fragment {
             if (symptomList != null) {
                 cacheSymptomList.addAll(symptomList);
             }
-            MyListAdapter adapter = new MyListAdapter(cacheSymptomList);
+            MyListAdapter adapter = new MyListAdapter(cacheSymptomList, viewModel);
             recyclerView.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setReverseLayout(true);

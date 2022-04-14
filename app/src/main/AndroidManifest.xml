@@ -11,14 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Asistente_Crohn">
         <activity
-            android:name=".ui.SearchableActivity"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
-        </activity>
-        <activity
             android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity

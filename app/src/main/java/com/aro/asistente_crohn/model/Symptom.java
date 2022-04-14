@@ -13,11 +13,11 @@ public class Symptom {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
-    String name;
+    private String name;
     @ColumnInfo
-    Date registeredDate;
+    private Date registeredDate;
     @ColumnInfo
-    Date limitDate;
+    private Date limitDate;
 
     public Symptom() {
         this.id = null;

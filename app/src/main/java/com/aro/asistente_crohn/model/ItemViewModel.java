@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import com.aro.asistente_crohn.repository.HealthRepository;
 import com.aro.asistente_crohn.repository.SymptomRepository;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class ItemViewModel extends AndroidViewModel {
@@ -17,12 +18,13 @@ public class ItemViewModel extends AndroidViewModel {
     // - We can put an observer on the data (instead of polling for changes) and only update the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     private LiveData<List<Symptom>> allSymptoms;
+    private LiveData<List<Symptom>> todaySymptoms;
 
     public ItemViewModel(Application application) {
         super(application);
         symptomRepository = new SymptomRepository(application);
         allSymptoms = symptomRepository.getAllSymptoms();
-
+        todaySymptoms = symptomRepository.getTodaySymptoms();
         healthRepository = new HealthRepository(application);
     }
 
@@ -33,11 +35,22 @@ public class ItemViewModel extends AndroidViewModel {
         return allSymptoms;
     }
 
+    public LiveData<List<Symptom>> getTodaySymptoms(){
+        if (todaySymptoms == null) {
+            todaySymptoms = symptomRepository.getTodaySymptoms();
+        }
+        return todaySymptoms;
+    }
+
     public void insertSymptom(Symptom symptom) {
         symptomRepository.insert(symptom);
     }
 
     public void insertHealth(Health health){
         healthRepository.insert(health);
+    }
+
+    public void deleteSymptom(Symptom symptom){
+        symptomRepository.delete(symptom);
     }
 }

@@ -170,4 +170,5 @@
     <string name="registra_tu_alimentacion">Registra tu alimentación</string>
     <string name="mis_alimentos_prohibidos">Mis alimentos prohibidos</string>
     <string name="search_hint">Escribe aquí</string>
+    <string name="escribe_aqui_un_alimento">Escribe aquí un alimento...</string>
 </resources>

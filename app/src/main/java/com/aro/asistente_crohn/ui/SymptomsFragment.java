@@ -75,8 +75,32 @@ public class SymptomsFragment extends Fragment {
                     calendar.add(Calendar.DAY_OF_YEAR, 90);
                     symptom.setLimitDate(calendar.getTime());
 
-                    //adding it to the arraylist
-                    selectedSymptoms.add(symptom);
+                    //check if the symptom is not already registered today
+                    //Observer from Repository to lookup the LiveData
+                    viewModel.getTodaySymptoms().observe(requireActivity(), symptomList -> {
+                        List<Symptom> cacheSymptomList = new ArrayList<>();
+                        if (symptomList != null) {
+                            cacheSymptomList.addAll(symptomList);
+                        }
+
+                        //If not empty, it means the user has registered symptoms today
+                        int eq = 0;
+                        if(!cacheSymptomList.isEmpty()){
+                            for(Symptom s : cacheSymptomList){
+                                if(s.getName().equals(symptom.getName())){
+                                    eq = 1;
+                                    break;
+                                }
+                            }
+                        }
+
+                        //If the symptom is not registered today, we add it to the array
+                        if(cacheSymptomList.isEmpty() || eq == 0) {
+                            //adding it to the arraylist
+                            selectedSymptoms.add(symptom);
+                        }
+                    });
+
 
                 } //Unselect a symptom
                 else if (card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.violeta)) {

@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -18,14 +21,10 @@ import com.aro.asistente_crohn.model.Food;
 
 import java.util.ArrayList;
 
-public class FoodFragment extends Fragment implements SearchView.OnQueryTextListener{
+public class FoodFragment extends Fragment{
 
-    ListView list;
-    ListViewAdapter adapter;
-    SearchView searchBox;
     String[] foodNameList;
-    ArrayList<Food> arraylist = new ArrayList<Food>();
-    boolean flag = false;
+
 
     public FoodFragment() {
         // Required empty public constructor
@@ -48,51 +47,12 @@ public class FoodFragment extends Fragment implements SearchView.OnQueryTextList
                 "Cat", "Tortoise", "Rat", "Elephant", "Fox",
                 "Cow","Donkey","Monkey"};
 
-        // Locate the ListView in listview_main.xml
-        list = (ListView) requireActivity().findViewById(R.id.listview);
-
-        for (int i = 0; i < foodNameList.length; i++) {
-            Food animalNames = new Food(foodNameList[i]);
-            // Binds all strings into an array
-            arraylist.add(animalNames);
-        }
-
-        // Pass results to ListViewAdapter Class
-        adapter = new ListViewAdapter(requireActivity(), arraylist);
-
-        // Binds the Adapter to the ListView
-        list.setAdapter((ListAdapter) adapter);
-        list.setVisibility(View.INVISIBLE);
-
-        // Locate the EditText in listview_main.xml
-        searchBox = (SearchView) requireActivity().findViewById(R.id.searchBox);
-        searchBox.setOnQueryTextListener(this);
-        searchBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (flag){
-                    // means true
-                    list.setVisibility(View.INVISIBLE);
-                    flag = false;
-                }
-                else{
-                    list.setVisibility(View.VISIBLE);
-                    flag = true;
-                }
-
-            }
-        });
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        String text = s;
-        adapter.filter(text);
-        return false;
+        //Creating the instance of ArrayAdapter containing list of language names
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(requireActivity(),android.R.layout.select_dialog_item,foodNameList);
+        //Getting the instance of AutoCompleteTextView
+        AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);
+        actv.setThreshold(1);//will start working from first character
+        actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+        actv.setTextColor(Color.BLACK);
     }
 }

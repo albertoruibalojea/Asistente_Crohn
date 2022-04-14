@@ -16,11 +16,11 @@ public class Food {
     @ColumnInfo
     private String name;
     @ColumnInfo
-    Boolean forbidden;
+    private Boolean forbidden;
     @ColumnInfo
-    Date eatenDate;
+    private Date eatenDate;
     @ColumnInfo
-    Date limitDate;
+    private Date limitDate;
 
     public Food() {
         this.id = null;

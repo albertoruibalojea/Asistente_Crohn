@@ -1,9 +1,0 @@
-
-J
-java:S1874
-"4Remove this use of "ListActivity"; it is deprecated.(¤øÏø
-V
-java:S1854"9Remove this useless assignment to local variable "query".(›¬Ú8†±›‚0
-G
-java:S1481"*Remove this unused "query" local variable.(›¬Ú8Œ±›‚0
-X	java:S125"<This block of commented-out lines of code should be removed.(øóßâ8±›‚0
