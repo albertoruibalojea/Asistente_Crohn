@@ -27,7 +27,13 @@ public class FirstTime8NameActivity extends AppCompatActivity {
 
             //saving the username
             SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
-            editor.putString("username", username.getText().toString());
+
+            if(username.getText() != null){
+                editor.putString("username", username.getText().toString());
+            } else {
+                editor.putString("username", "Usuario/a");
+            }
+
             editor.apply();
 
             Intent intent = new Intent(FirstTime8NameActivity.this, HomeActivity.class);

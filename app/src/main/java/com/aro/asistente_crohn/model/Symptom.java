@@ -1,10 +1,12 @@
 package com.aro.asistente_crohn.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -13,17 +15,20 @@ public class Symptom {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
+    @NonNull
     private String name;
     @ColumnInfo
+    @NonNull
     private Date registeredDate;
     @ColumnInfo
+    @NonNull
     private Date limitDate;
 
     public Symptom() {
         this.id = null;
         this.name = "";
-        this.registeredDate = null;
-        this.limitDate = null;
+        this.registeredDate = Calendar.getInstance().getTime();
+        this.limitDate = Calendar.getInstance().getTime();
     }
 
     @Ignore

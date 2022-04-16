@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.ui;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,8 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +19,10 @@ import android.widget.TextView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
-import com.aro.asistente_crohn.model.MyListAdapter;
 import com.aro.asistente_crohn.model.Symptom;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.List;
 
 public class SymptomsFragment extends Fragment {
@@ -168,6 +165,20 @@ public class SymptomsFragment extends Fragment {
                 }
 
                 btn.setEnabled(false);
+
+                //Success alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+                ViewGroup viewGroup = view.findViewById(android.R.id.content);
+                View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+                builder.setView(dialogView);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
             }
         });
     }

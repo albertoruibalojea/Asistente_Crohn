@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/rosa</item>
         <item name="colorPrimaryDark">@color/rosa_variante_1</item>
         <item name="colorAccent">@color/casiNegro</item>
+        <item name= "android:fontFamily" > @font/regular </item>
     </style>
 
 </resources>

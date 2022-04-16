@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +15,11 @@ import android.view.ViewGroup;
 
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.ItemViewModel;
-import com.aro.asistente_crohn.model.MyListAdapter;
+import com.aro.asistente_crohn.model.SymptomListAdapter;
 import com.aro.asistente_crohn.model.Symptom;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class SymptomsRegistryFragment extends Fragment {
 
@@ -48,7 +46,7 @@ public class SymptomsRegistryFragment extends Fragment {
             if (symptomList != null) {
                 cacheSymptomList.addAll(symptomList);
             }
-            MyListAdapter adapter = new MyListAdapter(cacheSymptomList, viewModel);
+            SymptomListAdapter adapter = new SymptomListAdapter(cacheSymptomList, viewModel);
             recyclerView.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setReverseLayout(true);

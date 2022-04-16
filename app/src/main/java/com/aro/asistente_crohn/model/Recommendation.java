@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -11,8 +12,10 @@ public class Recommendation {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
+    @NonNull
     private String title;
     @ColumnInfo
+    @NonNull
     private String description;
 
     public Recommendation() {

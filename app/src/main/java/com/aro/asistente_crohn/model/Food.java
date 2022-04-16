@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -14,20 +15,24 @@ public class Food {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
+    @NonNull
     private String name;
     @ColumnInfo
+    @NonNull
     private Boolean forbidden;
     @ColumnInfo
+    @NonNull
     private Date eatenDate;
     @ColumnInfo
+    @NonNull
     private Date limitDate;
 
     public Food() {
         this.id = null;
         this.name = "";
         this.forbidden = false;
-        this.eatenDate = null;
-        this.limitDate = null;
+        this.eatenDate = Calendar.getInstance().getTime();
+        this.limitDate = Calendar.getInstance().getTime();
     }
 
     @Ignore

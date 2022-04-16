@@ -9,6 +9,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.aro.asistente_crohn.model.FoodRepo;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.Recommendation;
@@ -18,12 +19,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 // bump version number if the schema changes
-@Database(entities={Health.class, Food.class, Recommendation.class, Symptom.class}, version=3)
+@Database(entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class}, version=4)
 @TypeConverters({DateConverter.class})
 public abstract class CrohnsAssistDatabase extends RoomDatabase {
 
     // Database name to be used
-    public static final String NAME = "CrohnsAssistDatabase";
+    public static final String NAME = "CrohnsAssistDatabase.db";
 
     // marking the instance as volatile to ensure atomic access to the variable
     private static volatile CrohnsAssistDatabase INSTANCE;
@@ -34,8 +35,8 @@ public abstract class CrohnsAssistDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (CrohnsAssistDatabase.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            CrohnsAssistDatabase.class, NAME)
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), CrohnsAssistDatabase.class, NAME)
+                            .createFromAsset("database/CrohnsAssistDatabase.db")
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
@@ -56,6 +57,8 @@ public abstract class CrohnsAssistDatabase extends RoomDatabase {
     public abstract HealthDAO healthDAO();
 
     public abstract FoodDAO foodDAO();
+
+    public abstract FoodRepoDAO foodRepoDAO();
 
     public abstract RecommendationDAO recommendationDAO();
 

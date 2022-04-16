@@ -1,10 +1,12 @@
 package com.aro.asistente_crohn.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -13,14 +15,19 @@ public class Health {
     @PrimaryKey(autoGenerate=true)
     private Integer id;
     @ColumnInfo
+    @NonNull
     private Boolean crohnActive;
     @ColumnInfo
+    @NonNull
     private String relatedSymptoms;
     @ColumnInfo
+    @NonNull
     private Integer courage; //from 0-4, less to more happy
     @ColumnInfo
+    @NonNull
     private Date detectionDate;
     @ColumnInfo
+    @NonNull
     private Date limitDate;
 
     public Health() {
@@ -28,8 +35,8 @@ public class Health {
         this.crohnActive = false;
         this.relatedSymptoms = "";
         this.courage = 2;
-        this.detectionDate = null;
-        this.limitDate = null;
+        this.detectionDate = Calendar.getInstance().getTime();
+        this.limitDate = Calendar.getInstance().getTime();
     }
 
     @Ignore
