@@ -36,15 +36,6 @@ public class Food {
     }
 
     @Ignore
-    public Food(Integer id, String name, Boolean forbidden, Date eatenDate, Date limitDate) {
-        this.id = id;
-        this.name = name;
-        this.forbidden = forbidden;
-        this.eatenDate = eatenDate;
-        this.limitDate = limitDate;
-    }
-
-    @Ignore
     public Food(String name) {
         this.id = null;
         this.name = name;

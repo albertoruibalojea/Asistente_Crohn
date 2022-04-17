@@ -36,7 +36,11 @@ public class Health {
         this.relatedSymptoms = "";
         this.courage = 2;
         this.detectionDate = Calendar.getInstance().getTime();
-        this.limitDate = Calendar.getInstance().getTime();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(detectionDate);
+        calendar.add(Calendar.DAY_OF_YEAR, 90);
+        this.limitDate = calendar.getTime();
     }
 
     @Ignore

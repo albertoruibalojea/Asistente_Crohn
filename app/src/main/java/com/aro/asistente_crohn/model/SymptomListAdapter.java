@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.model;
 
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,12 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
 
     private List<Symptom> listdata;
     private ItemViewModel viewModel;
+    private View view;
 
-    public SymptomListAdapter(List<Symptom> listdata, ItemViewModel viewModel) {
+    public SymptomListAdapter(List<Symptom> listdata, ItemViewModel viewModel, View view) {
         this.listdata = listdata;
         this.viewModel = viewModel;
+        this.view = view;
     }
 
     @Override
@@ -44,14 +47,34 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
 
             Symptom symptom = listdata.get(position);
 
-            holder.deleteImg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    viewModel.deleteSymptom(symptom);
-                    notifyDataSetChanged();
-                }
+            holder.deleteImg.setOnClickListener(view -> {
+                viewModel.deleteSymptom(symptom);
+                this.sendAlert("Eliminado", "Registro eliminado correctamente");
+                notifyDataSetChanged();
             });
         }
+    }
+
+    public void sendAlert(String title, String description){
+        //Success alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        ViewGroup viewGroup = view.findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+
+        TextView t = dialogView.findViewById(R.id.title);
+        t.setText(title);
+        t = dialogView.findViewById(R.id.description);
+        t.setText(description);
+
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
     }
 
     @Override

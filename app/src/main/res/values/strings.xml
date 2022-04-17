@@ -171,4 +171,10 @@
     <string name="mis_alimentos_prohibidos">Mis alimentos prohibidos</string>
     <string name="search_hint">Escribe aquí</string>
     <string name="escribe_aqui_un_alimento">Escribe aquí un alimento...</string>
+    <string name="se_ha_anadido_a_tus_registros">Se ha añadido a tus registros</string>
+    <string name="registrado">Registrado</string>
+    <string name="food_item_name">food</string>
+    <string name="string_food_item_date">date</string>
+    <string name="consulta_que_has_comido">Consulta qué has comido</string>
+    <string name="consulta_que_te_hace_dano">Consulta qué te hace daño</string>
 </resources>

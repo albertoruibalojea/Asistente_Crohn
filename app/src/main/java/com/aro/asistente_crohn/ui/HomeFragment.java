@@ -2,6 +2,7 @@ package com.aro.asistente_crohn.ui;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -42,6 +43,7 @@ public class HomeFragment extends Fragment {
         displayName.setText(preferences.getString("username", null));
 
         this.generateClickeableLayouts();
+        this.sendAlert(view, "@Alpha Testers", "Elimina todos los datos de la app desde los ajustes en Android. Se ha añadido el módulo de alimentación. Se necesitan sugerencias sobre visualización de registros.");
     }
 
     public void generateClickeableLayouts(){
@@ -51,5 +53,27 @@ public class HomeFragment extends Fragment {
 
         RelativeLayout cardFood = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_food);
         cardFood.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new FoodFragment()));
+    }
+
+    public void sendAlert(View view, String title, String description){
+        //Success alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        ViewGroup viewGroup = view.findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+
+        TextView t = dialogView.findViewById(R.id.title);
+        t.setText(title);
+        t = dialogView.findViewById(R.id.description);
+        t.setText(description);
+
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
     }
 }

@@ -9,19 +9,21 @@
         android:orientation="vertical"
         android:padding="16dp">
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrado"
+            android:text="@string/registrado"
             android:textColor="@color/casiNegro"
             android:fontFamily="@font/bold"
             android:textSize="24sp"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
         <TextView
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Registro completado con éxito"
+            android:text="@string/se_ha_anadido_a_tus_registros"
             android:textColor="@color/casiNegro"
             android:fontFamily="@font/bold"
             android:textSize="16sp"
@@ -37,6 +39,6 @@
             android:textColor="@color/casiBlanco"
             android:fontFamily="@font/bold"
             android:textSize="16sp"
-            android:text="Aceptar"/>
+            android:text="@string/aceptar"/>
     </LinearLayout>
 </LinearLayout>

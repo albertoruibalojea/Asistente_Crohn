@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.ui;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.ItemViewModel;
@@ -43,16 +45,40 @@ public class SymptomsRegistryFragment extends Fragment {
         viewModel.getAllSymptoms().observe(requireActivity(), symptomList -> {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
             List<Symptom> cacheSymptomList = new ArrayList<>();
-            if (symptomList != null) {
+            if (!symptomList.isEmpty()) {
                 cacheSymptomList.addAll(symptomList);
+            } else {
+                this.sendAlert(view, "¡Qué gustazo!", "Si tienes algún síntoma, regístralo en la ventana anterior");
             }
-            SymptomListAdapter adapter = new SymptomListAdapter(cacheSymptomList, viewModel);
+            SymptomListAdapter adapter = new SymptomListAdapter(cacheSymptomList, viewModel, view);
             recyclerView.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setReverseLayout(true);
             linearLayoutManager.setStackFromEnd(true);
             recyclerView.setLayoutManager(linearLayoutManager);
             recyclerView.setAdapter(adapter);
+        });
+    }
+
+    public void sendAlert(View view, String title, String description){
+        //Success alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        ViewGroup viewGroup = view.findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+
+        TextView t = dialogView.findViewById(R.id.title);
+        t.setText(title);
+        t = dialogView.findViewById(R.id.description);
+        t.setText(description);
+
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
         });
     }
 }

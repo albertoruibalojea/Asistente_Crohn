@@ -28,7 +28,11 @@ public class Symptom {
         this.id = null;
         this.name = "";
         this.registeredDate = Calendar.getInstance().getTime();
-        this.limitDate = Calendar.getInstance().getTime();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(registeredDate);
+        calendar.add(Calendar.DAY_OF_YEAR, 90);
+        this.limitDate = calendar.getTime();
     }
 
     @Ignore
