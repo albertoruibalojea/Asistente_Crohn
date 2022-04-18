@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/casiBlanco"
+    android:background="?attr/backgroundColor"
     android:orientation="vertical"
     tools:context=".ui.SymptomsRegistryFragment">
 
@@ -42,7 +42,7 @@
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/consulta_tus_sintomas"
-            android:textColor="@color/casiBlanco"
+            android:textColor="?attr/colorSurface"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/tus_sintomas"
-            android:textColor="@color/casiBlanco"
+            android:textColor="?attr/colorSurface"
             android:textSize="24sp" />
 
     </RelativeLayout>

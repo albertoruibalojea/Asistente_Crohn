@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".firsttime.Fragment1st4Recommendations"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/date"
@@ -19,7 +19,7 @@
         android:layout_marginTop="145dp"
         android:fontFamily="@font/bold"
         android:text="@string/recomendaciones"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
         android:fontFamily="@font/regular"
         android:text="@string/encuentra_recomendaciones_y_consejos_para_mejorar_tu_calidad_de_vida"
         android:textAlignment="center"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

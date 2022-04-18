@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/casiBlanco"
+    android:background="?attr/backgroundColor"
     android:orientation="vertical"
     tools:context=".ui.FoodFragment">
 
@@ -40,7 +40,7 @@
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/consulta_registro_sintomas"
-            android:textColor="@color/casiBlanco"
+            android:textColor="?attr/colorSurface"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/tu_alimentacion"
-            android:textColor="@color/casiBlanco"
+            android:textColor="?attr/colorSurface"
             android:textSize="24sp" />
 
     </RelativeLayout>
@@ -82,7 +82,7 @@
             android:layout_marginTop="32dp"
             android:fontFamily="@font/bold"
             android:text="Mis alimentos de hoy"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +114,7 @@
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
                 android:text="@string/mis_alimentos_prohibidos"
-                android:textColor="@color/casiBlanco"
+                android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
             <ImageView
@@ -151,7 +151,7 @@
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
                 android:text="@string/ver_mis_registros"
-                android:textColor="@color/casiBlanco"
+                android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
             <ImageView
@@ -171,7 +171,7 @@
             android:layout_marginTop="176dp"
             android:fontFamily="@font/bold"
             android:text="@string/registra_tu_alimentacion"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -191,8 +191,9 @@
             android:drawableRight="@drawable/ic_baseline_search_24"
             android:fontFamily="@font/bold"
             android:hint="@string/escribe_aqui_un_alimento"
+            android:textColorHint="?attr/itemTextColor"
             android:text=""
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".firsttime.Activity1stTime"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/saltar_gu_a"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,8 @@
         android:height="41sp"
         android:fontFamily="@font/bold"
         android:text="@string/siguiente"
-        android:textColor="@color/casiBlanco"
+        android:textColor="?attr/colorSurface"
+        android:background="@color/rosa"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +58,7 @@
         android:indeterminate="false"
         android:max="100"
         android:progress="5"
-        android:progressTint="#E91E63"
+        android:progressTint="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
@@ -71,7 +72,7 @@
         android:layout_height="wrap_content"
         android:text="@string/guia_inicio_5_completado"
         android:fontFamily="@font/bold"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

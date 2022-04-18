@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".firsttime.Fragment1St5State"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/date"
@@ -19,7 +19,7 @@
         android:layout_marginTop="145dp"
         android:fontFamily="@font/bold"
         android:text="@string/detecci_n_de_brotes"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
         android:fontFamily="@font/regular"
         android:text="@string/en_base_a_tus_registros_de_s_ntomas_alimentaci_n_y_nimo_puedo_determinar_tu_estado_ojo_esto_no_sustituye_a_tu_especialista"
         android:textAlignment="center"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

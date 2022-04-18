@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         displayName.setText(preferences.getString("username", null));
 
         this.generateClickeableLayouts();
-        this.sendAlert(view, "@Alpha Testers", "Elimina todos los datos de la app desde los ajustes en Android. Se ha añadido el módulo de alimentación. Se necesitan sugerencias sobre visualización de registros.");
+        this.sendAlert(view, "@Alpha Testers", "Elimina todos los datos de la app desde los ajustes en Android. Se ha añadido el módulo de alimentación. Se necesitan sugerencias  de diseño y búsqueda de bugs.");
     }
 
     public void generateClickeableLayouts(){

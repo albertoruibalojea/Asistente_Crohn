@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/casiBlanco"
+    android:background="?attr/backgroundColor"
     android:orientation="vertical"
     tools:context=".ui.HomeFragment">
 
@@ -54,7 +54,7 @@
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/recomendaciones"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -70,7 +70,7 @@
                     android:layout_marginBottom="22dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/accede_a_recursos_medicos"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -115,7 +115,7 @@
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/alimentacion"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -131,7 +131,7 @@
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/registra_lo_que_comes"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -178,7 +178,7 @@
                     android:layout_marginEnd="141dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/estado"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -194,7 +194,7 @@
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/conoce_tu_estado_actual"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -239,7 +239,7 @@
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/sintomas"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -255,7 +255,7 @@
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/registro"
-                    android:textColor="@color/casiBlanco"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
 
@@ -304,7 +304,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="26dp"
             android:layout_marginTop="17dp"
-            android:contentDescription="@string/settings"
+            android:contentDescription="@string/logo"
             android:src="@drawable/logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -323,7 +323,7 @@
             android:layout_marginTop="21dp"
             android:fontFamily="@font/bold"
             android:text="@string/hola"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -346,7 +346,7 @@
             android:layout_marginBottom="17dp"
             android:fontFamily="@font/bold"
             android:text="@string/username"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

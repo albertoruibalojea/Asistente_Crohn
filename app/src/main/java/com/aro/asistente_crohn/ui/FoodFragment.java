@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.FoodListAdapter;
+import com.aro.asistente_crohn.model.IgnoreAccentsArrayAdapter;
 import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 import com.aro.asistente_crohn.model.SymptomListAdapter;
@@ -68,10 +69,11 @@ public class FoodFragment extends Fragment{
             }
 
             //Creating the instance of ArrayAdapter containing list of language names
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(requireActivity().getBaseContext(),android.R.layout.select_dialog_item,foodNameList);
+            IgnoreAccentsArrayAdapter<String> adapter = new IgnoreAccentsArrayAdapter<>(requireActivity().getBaseContext(),android.R.layout.select_dialog_item,foodNameList);
             //Getting the instance of AutoCompleteTextView
             AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);
             actv.setThreshold(1);//will start working from first character
+
             actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
             actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

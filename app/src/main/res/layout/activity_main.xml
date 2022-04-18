@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/textView7"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".firsttime.Fragment1st1Hello"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/date"
@@ -17,7 +17,7 @@
         android:layout_marginTop="316dp"
         android:fontFamily="@font/bold"
         android:text="@string/hola"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:fontFamily="@font/bold"
         android:text="@string/quieres_ver_en_qu_te_puedo_ayudar"
         android:textAlignment="center"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

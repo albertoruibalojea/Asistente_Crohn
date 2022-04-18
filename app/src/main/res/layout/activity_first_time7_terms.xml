@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".firsttime.FirstTime7TermsActivity"
     android:orientation="vertical"
-    android:background="@color/casiBlanco">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/date"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
         android:text="@string/t_rminos_y_condiciones_de_uso"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
         android:fontFamily="@font/regular"
         android:text="@string/es_necesario_que_leas_y_aceptes_estos_t_rminos"
         android:textAlignment="center"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,8 @@
         android:height="41sp"
         android:fontFamily="@font/bold"
         android:text="@string/aceptar"
-        android:textColor="@color/casiBlanco"
+        android:textColor="?attr/colorSurface"
+        android:background="?attr/colorPrimary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +64,7 @@
         android:indeterminate="false"
         android:max="100"
         android:progress="80"
-        android:progressTint="#E91E63"
+        android:progressTint="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
@@ -77,7 +78,7 @@
         android:layout_height="wrap_content"
         android:text="@string/terminos_de_uso_80_completado"
         android:fontFamily="@font/bold"
-        android:textColor="@color/casiNegro"
+        android:textColor="?attr/itemTextColor"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,8 +88,10 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <ScrollView
-        android:layout_width="361dp"
-        android:layout_height="510dp"
+        android:layout_width="331dp"
+        android:layout_height="503dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +109,7 @@
                 android:fontFamily="@font/regular"
                 android:justificationMode="inter_word"
                 android:text="@string/terminos_uso"
-                android:textColor="@color/casiNegro"
+                android:textColor="?attr/itemTextColor"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>

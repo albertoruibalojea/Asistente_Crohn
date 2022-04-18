@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?attr/backgroundColor">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/registrado"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:fontFamily="@font/bold"
             android:textSize="24sp"
             android:textAlignment="center"
@@ -24,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/se_ha_anadido_a_tus_registros"
-            android:textColor="@color/casiNegro"
+            android:textColor="?attr/itemTextColor"
             android:fontFamily="@font/bold"
             android:textSize="16sp"
             android:textAlignment="center"
@@ -35,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:background="@color/rosa"
-            android:textColor="@color/casiBlanco"
+            android:background="?attr/colorPrimary"
+            android:textColor="?attr/colorSurface"
             android:fontFamily="@font/bold"
             android:textSize="16sp"
             android:text="@string/aceptar"/>
