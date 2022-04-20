@@ -177,4 +177,6 @@
     <string name="string_food_item_date">date</string>
     <string name="consulta_que_has_comido">Consulta qué has comido</string>
     <string name="consulta_que_te_hace_dano">Consulta qué te hace daño</string>
+    <string name="registra_tus_sintomas">Registra tus síntomas</string>
+    <string name="fecha_seleccionada">fecha seleccionada</string>
 </resources>

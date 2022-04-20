@@ -40,13 +40,9 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         if(listdata.isEmpty()){
             holder.symptoms.setText("No hay síntomas registrados");
         } else {
-            holder.symptoms.setText(listdata.get(position).getName());
-
-            SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
-            holder.date.setText(simpleDateFormat.format(listdata.get(position).getRegisteredDate()));
-
             Symptom symptom = listdata.get(position);
 
+            holder.symptoms.setText(symptom.getName());
             holder.deleteImg.setOnClickListener(view -> {
                 viewModel.deleteSymptom(symptom);
                 this.sendAlert("Eliminado", "Registro eliminado correctamente");
@@ -83,13 +79,11 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView date;
         public TextView symptoms;
         public ImageView deleteImg;
         public ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            date = itemView.findViewById(R.id.date);
             symptoms =  itemView.findViewById(R.id.symptoms);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);

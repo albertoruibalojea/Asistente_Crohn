@@ -1,4 +1,6 @@
 
+
+java:S1488-"kImmediately return this expression instead of assigning it to the temporary variable "selectedDaySymptoms".(§ÚÆ€úÿÿÿÿ8ƒÖ¸¾„0
 K
 java:S1874"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
 M

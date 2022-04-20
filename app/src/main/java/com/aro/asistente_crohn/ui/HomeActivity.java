@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 
+import java.util.Date;
+
 public class HomeActivity extends AppCompatActivity{
 
     @Override
@@ -31,6 +33,16 @@ public class HomeActivity extends AppCompatActivity{
 
     public void openFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentView, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    public void openFragment(Fragment fragment, Date date) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putString("date", date.toString());
+        fragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.fragmentView, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

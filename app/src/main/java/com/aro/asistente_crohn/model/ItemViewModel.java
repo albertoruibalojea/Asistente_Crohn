@@ -10,6 +10,7 @@ import com.aro.asistente_crohn.repository.FoodRepository;
 import com.aro.asistente_crohn.repository.HealthRepository;
 import com.aro.asistente_crohn.repository.SymptomRepository;
 
+import java.util.Date;
 import java.util.List;
 
 public class ItemViewModel extends AndroidViewModel {
@@ -57,6 +58,11 @@ public class ItemViewModel extends AndroidViewModel {
             todaySymptoms = symptomRepository.getTodaySymptoms();
         }
         return todaySymptoms;
+    }
+
+    public LiveData<List<Symptom>> getSelectedDaySymptoms(Date before, Date after){
+        LiveData<List<Symptom>> selectedDaySymptoms = symptomRepository.getSelectedDaySymptoms(before, after);
+        return selectedDaySymptoms;
     }
 
     public void insertSymptom(Symptom symptom) {
