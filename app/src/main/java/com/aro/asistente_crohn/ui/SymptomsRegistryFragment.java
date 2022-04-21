@@ -8,8 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +19,6 @@ import android.widget.TextView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
-import com.aro.asistente_crohn.model.SymptomListAdapter;
 import com.aro.asistente_crohn.model.Symptom;
 
 import java.text.ParseException;
@@ -34,8 +31,18 @@ import java.util.Locale;
 
 public class SymptomsRegistryFragment extends Fragment {
 
+    String paramDate;
+
     public SymptomsRegistryFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            paramDate = getArguments().getString("date");
+        }
     }
 
     @Override
@@ -49,16 +56,20 @@ public class SymptomsRegistryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm:ss zzz", new Locale("es", "ES"));
         Date date = Calendar.getInstance().getTime();
 
-        if(getArguments().getString("key") != null){
+        if(!paramDate.isEmpty()){
             try {
-                date = simpleDateFormat.parse(getArguments().getString("key"));
+                date = simpleDateFormat.parse(paramDate);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         }
+
+        simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
+        TextView textDate = view.findViewById(R.id.textDate);
+        textDate.setText(simpleDateFormat.format(date));
 
 
         ArrayList<Symptom> selectedSymptoms = new ArrayList<>();
@@ -70,7 +81,14 @@ public class SymptomsRegistryFragment extends Fragment {
         GridLayout symptomGrid = view.findViewById(R.id.symptomGrid);
         for (int i = 0; i < symptomGrid.getChildCount(); i++) {
             CardView card = (CardView) symptomGrid.getChildAt(i);
+
+            //we need the actual registry date
             Date finalDate = date;
+            Date before = Calendar.getInstance().getTime();
+            Date after = Calendar.getInstance().getTime();
+            before.setDate(date.getDate());before.setHours(00); before.setMinutes(00); before.setSeconds(00);
+            after.setDate(date.getDate());after.setHours(23); after.setMinutes(59); after.setSeconds(59);
+
             card.setOnClickListener(view12 -> {
                 //Checking the actual color
                 //Select a symptom
@@ -89,7 +107,7 @@ public class SymptomsRegistryFragment extends Fragment {
 
                     //check if the symptom is not already registered today
                     //Observer from Repository to lookup the LiveData
-                    viewModel.getTodaySymptoms().observe(requireActivity(), symptomList -> {
+                    viewModel.getSelectedDaySymptoms(before, after).observe(requireActivity(), symptomList -> {
                         List<Symptom> cacheSymptomList = new ArrayList<>();
                         if (symptomList != null) {
                             cacheSymptomList.addAll(symptomList);
@@ -182,41 +200,19 @@ public class SymptomsRegistryFragment extends Fragment {
                 btn.setEnabled(false);
 
                 //Success alert dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
-                ViewGroup viewGroup = view.findViewById(android.R.id.content);
-                View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
-                builder.setView(dialogView);
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-                alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        alertDialog.dismiss();
-                    }
-                });
+                this.sendAlert(view);
             }
         });
     }
 
-    public void sendAlert(View view, String title, String description){
+    public void sendAlert(View view){
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
         View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
-
-        TextView t = dialogView.findViewById(R.id.title);
-        t.setText(title);
-        t = dialogView.findViewById(R.id.description);
-        t.setText(description);
-
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
     }
 }

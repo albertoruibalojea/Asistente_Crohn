@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity{
 
@@ -41,7 +43,8 @@ public class HomeActivity extends AppCompatActivity{
     public void openFragment(Fragment fragment, Date date) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         Bundle bundle = new Bundle();
-        bundle.putString("date", date.toString());
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm:ss zzz", new Locale("es", "ES"));
+        bundle.putString("date", simpleDateFormat.format(date));
         fragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.fragmentView, fragment);
         fragmentTransaction.addToBackStack(null);
