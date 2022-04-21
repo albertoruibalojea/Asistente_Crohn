@@ -179,4 +179,5 @@
     <string name="consulta_que_te_hace_dano">Consulta qué te hace daño</string>
     <string name="registra_tus_sintomas">Registra tus síntomas</string>
     <string name="fecha_seleccionada">fecha seleccionada</string>
+    <string name="anadir_mi_alimentacion_de_hoy">Añadir mi alimentación de hoy</string>
 </resources>

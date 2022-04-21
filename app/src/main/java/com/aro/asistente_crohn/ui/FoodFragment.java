@@ -17,9 +17,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
+import com.aro.asistente_crohn.database.DateConverter;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.FoodListAdapter;
 import com.aro.asistente_crohn.model.IgnoreAccentsArrayAdapter;
@@ -27,13 +30,18 @@ import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 import com.aro.asistente_crohn.model.SymptomListAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class FoodFragment extends Fragment{
 
-    List<String> foodNameList;
-
+    final Date[] date = {Calendar.getInstance().getTime()};
+    final Date[] before = {Calendar.getInstance().getTime()};
+    final Date[] after = {Calendar.getInstance().getTime()};
 
     public FoodFragment() {
         // Required empty public constructor
@@ -50,80 +58,68 @@ public class FoodFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CardView cardViewRegistries = view.findViewById(R.id.card_viewRegistries);
-        cardViewRegistries.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new FoodRegistryFragment()));
+        ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+
+        CardView cardViewRegistries = view.findViewById(R.id.card_addRegistries);
+        cardViewRegistries.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new FoodRegistryFragment(), Calendar.getInstance().getTime()));
 
         CardView cardViewForbidden = view.findViewById(R.id.card_viewForbiddenFood);
         cardViewForbidden.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new FoodForbiddenFragment()));
 
+        ImageView addSymptomsImg = view.findViewById(R.id.addFoods);
+        addSymptomsImg.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new FoodRegistryFragment(), date[0]));
 
-        foodNameList = new ArrayList<>();
-        ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+        //Set default date
+        this.setDates(view);
 
-        //Observer from Repository to lookup the LiveData
-        viewModel.getAllRepoFoods().observe(requireActivity(), foodsList -> {
-            if (foodsList != null) {
-                for(int i=0; i< foodsList.size(); i++){
-                    foodNameList.add(foodsList.get(i).getName());
-                }
-            }
+        //Listener when the user sets a date in Calendar
+        CalendarView calendarView = view.findViewById(R.id.calendarView);
+        calendarView.setDate(DateConverter.fromDate(date[0]));
+        calendarView.setOnDateChangeListener((calendarView1, year, month, dayOfMonth) -> {
 
-            //Creating the instance of ArrayAdapter containing list of language names
-            IgnoreAccentsArrayAdapter<String> adapter = new IgnoreAccentsArrayAdapter<>(requireActivity().getBaseContext(),android.R.layout.select_dialog_item,foodNameList);
-            //Getting the instance of AutoCompleteTextView
-            AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);
-            actv.setThreshold(1);//will start working from first character
+            //Set date
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(year, month, dayOfMonth);
+            date[0] = calendar.getTime();
 
-            actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
-            actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Food food = new Food(adapter.getItem(i));
+            setDates(view);
 
-                    //add Food to DAO
-                    viewModel.insertFood(food);
-                    adapter.notifyDataSetChanged();
-                    actv.performCompletion();
-                }
-            });
+            //Observer from Repository to lookup the LiveData
+            viewModel.getSelectedDayFoods(before[0], after[0]).observe(requireActivity(), foodsList -> setSelectedDay(view, viewModel, foodsList));
         });
 
-        //Observer from Repository to lookup the LiveData
-        viewModel.getTodayFoods().observe(requireActivity(), foods -> {
-            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-            List<Food> cacheFoodsList = new ArrayList<>();
-            if (foods != null) {
-                cacheFoodsList.addAll(foods);
-            }
-            FoodListAdapter adapter = new FoodListAdapter(cacheFoodsList, viewModel, view);
-            recyclerView.setHasFixedSize(true);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            linearLayoutManager.setReverseLayout(true);
-            linearLayoutManager.setStackFromEnd(true);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            recyclerView.setAdapter(adapter);
+        //Default view is the actual Date
+        viewModel.getTodayFoods().observe(requireActivity(), foodsList -> {
+            date[0] = Calendar.getInstance().getTime();
+            calendarView.setDate(DateConverter.fromDate(date[0]));
+            setDates(view);
+            setSelectedDay(view, viewModel, foodsList);
         });
+
     }
 
-    public void sendAlert(View view, String title, String description){
-        //Success alert dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+    private void setSelectedDay(View view, ItemViewModel viewModel, List<Food> foodsList){
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        List<Food> cacheFoodList = new ArrayList<>();
+        if (!foodsList.isEmpty()) {
+            cacheFoodList.addAll(foodsList);
+        }
 
-        TextView t = dialogView.findViewById(R.id.title);
-        t.setText(title);
-        t = dialogView.findViewById(R.id.description);
-        t.setText(description);
+        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
+    }
 
-        builder.setView(dialogView);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+    private void setDates(View view){
+        before[0].setDate(date[0].getDate());before[0].setHours(00); before[0].setMinutes(00); before[0].setSeconds(00);
+        after[0].setDate(date[0].getDate());after[0].setHours(23); after[0].setMinutes(59); after[0].setSeconds(59);
+
+        TextView dateTextView = view.findViewById(R.id.dateTextView);
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
+        dateTextView.setText(simpleDateFormat.format(before[0]));
     }
 }

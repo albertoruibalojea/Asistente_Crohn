@@ -42,9 +42,6 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         } else {
             holder.foods.setText(listdata.get(position).getName());
 
-            SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
-            holder.date.setText(simpleDateFormat.format(listdata.get(position).getEatenDate()));
-
             Food food = listdata.get(position);
 
             holder.deleteImg.setOnClickListener(view -> {
@@ -97,14 +94,12 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView date;
         public TextView foods;
         public ImageView deleteImg;
         public ImageView forbiddenImg;
         public ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            date = itemView.findViewById(R.id.date);
             foods =  itemView.findViewById(R.id.foods);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             forbiddenImg = itemView.findViewById(R.id.forbiddenImg);

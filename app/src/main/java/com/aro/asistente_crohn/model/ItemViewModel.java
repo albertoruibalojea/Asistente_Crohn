@@ -95,6 +95,11 @@ public class ItemViewModel extends AndroidViewModel {
         return todayFoods;
     }
 
+    public LiveData<List<Food>> getSelectedDayFoods(Date before, Date after){
+        LiveData<List<Food>> selectedDayFoods = foodRepository.getSelectedDayFoods(before, after);
+        return selectedDayFoods;
+    }
+
     public LiveData<List<Food>> getForbiddenFoods() {
         if (forbiddenFoods == null) {
             forbiddenFoods = foodRepository.getForbiddenFoods();

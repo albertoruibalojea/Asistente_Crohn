@@ -8,6 +8,7 @@ import com.aro.asistente_crohn.database.CrohnsAssistDatabase;
 import com.aro.asistente_crohn.database.DateConverter;
 import com.aro.asistente_crohn.database.FoodDAO;
 import com.aro.asistente_crohn.model.Food;
+import com.aro.asistente_crohn.model.Symptom;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -40,6 +41,11 @@ public class FoodRepository {
 
     public LiveData<List<Food>> getTodayFoods(){
         return todayFoods;
+    }
+
+    public LiveData<List<Food>> getSelectedDayFoods(Date before, Date after){
+        LiveData<List<Food>> selectedDayFoods = foodDao.getTodayFoods(DateConverter.fromDate(before), DateConverter.fromDate(after));
+        return selectedDayFoods;
     }
 
     public LiveData<List<Food>> getForbiddenFoods(){

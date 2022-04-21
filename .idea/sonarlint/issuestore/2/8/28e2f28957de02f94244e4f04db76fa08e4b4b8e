@@ -1,13 +1,17 @@
 
+…
+java:S1488/"hImmediately return this expression instead of assigning it to the temporary variable "selectedDayFoods".(Ö£Ú´8­‘îë„0
 K
-java:S1874"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+java:S1874"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
 M
-java:S1874"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+java:S1874"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
 M
-java:S1874"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+java:S1874"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
 F
-java:S1874"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+java:S1874 "0Remove this use of "setHours"; it is deprecated.(óÙşÕ
 H
-java:S1874"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+java:S1874 "2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
 H
-java:S1874"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+java:S1874 "2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+d
+java:S1128"BRemove this unused import 'com.aro.asistente_crohn.model.Symptom'.(©‹ ÿùÿÿÿÿ8†Èïë„0
