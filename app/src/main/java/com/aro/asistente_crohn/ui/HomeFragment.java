@@ -48,6 +48,9 @@ public class HomeFragment extends Fragment {
 
     public void generateClickeableLayouts(){
 
+        RelativeLayout cardHealth = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_health);
+        cardHealth.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new HealthFragment()));
+
         RelativeLayout cardSymptoms = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_symptoms);
         cardSymptoms.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new SymptomsFragment()));
 

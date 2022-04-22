@@ -126,25 +126,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/dateTextView"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
+            app:layout_constraintVertical_bias="0.555" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="568dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
             android:fontFamily="@font/bold"
             android:text="Consulta tus alimentos"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_addRegistries"
-            app:layout_constraintVertical_bias="0.769" />
+            app:layout_constraintTop_toBottomOf="@+id/card_addRegistries" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_viewForbiddenFood"
@@ -188,7 +187,6 @@
             android:layout_marginEnd="32dp"
             app:cardBackgroundColor="@color/morado"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_viewForbiddenFood">
 

@@ -101,21 +101,18 @@ public class FoodRegistryFragment extends Fragment {
             actv.setThreshold(1);//will start working from first character
 
             actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
-            actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Food food = new Food(adapter.getItem(i));
-                    food.setEatenDate(finalDate);
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(finalDate);
-                    calendar.add(Calendar.DAY_OF_YEAR, 90);
-                    food.setLimitDate(calendar.getTime());
+            actv.setOnItemClickListener((adapterView, view1, i, l) -> {
+                Food food = new Food(adapter.getItem(i));
+                food.setEatenDate(finalDate);
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(finalDate);
+                calendar.add(Calendar.DAY_OF_YEAR, 90);
+                food.setLimitDate(calendar.getTime());
 
-                    //add Food to DAO
-                    viewModel.insertFood(food);
-                    adapter.notifyDataSetChanged();
-                    actv.performCompletion();
-                }
+                //add Food to DAO
+                viewModel.insertFood(food);
+                adapter.notifyDataSetChanged();
+                actv.performCompletion();
             });
         });
 

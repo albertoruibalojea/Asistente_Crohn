@@ -73,7 +73,6 @@ public class SymptomsRegistryFragment extends Fragment {
 
 
         ArrayList<Symptom> selectedSymptoms = new ArrayList<>();
-        Health health = new Health();
         Button btn = view.findViewById(R.id.btn);
 
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
@@ -90,6 +89,8 @@ public class SymptomsRegistryFragment extends Fragment {
             after.setDate(date.getDate());after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
             card.setOnClickListener(view12 -> {
+                btn.setEnabled(true);
+
                 //Checking the actual color
                 //Select a symptom
                 if (card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.negroGris)) {
@@ -139,49 +140,17 @@ public class SymptomsRegistryFragment extends Fragment {
                     //it means it was selected before, so we put off the symptom from the array
                     selectedSymptoms.removeIf(o -> o.getName().equalsIgnoreCase(card.getChildAt(0).getContentDescription().toString()));
                 }
-
-                if (health.getCourage() != null) {
-                    btn.setEnabled(true);
-                }
-            });
-        }
-
-        GridLayout courageGrid = view.findViewById(R.id.courageGrid);
-        for (int i = 0; i < courageGrid.getChildCount(); i++) {
-            TextView text = (TextView) courageGrid.getChildAt(i);
-            text.setOnClickListener(view13 -> {
-
-                text.setTextSize(48);
-
-                //we need to reajust other child in case they were selected before
-                for (int i1 = 0; i1 < courageGrid.getChildCount(); i1++) {
-                    TextView text2 = (TextView) courageGrid.getChildAt(i1);
-                    if (!text2.equals(text)) {
-                        text2.setTextSize(36);
-                    }
-                }
-
-                //Adding actual courage to Health
-                //relatedSymptoms arraylist in Health only shows symptoms if crohnActive==true
-                health.setCourage(Integer.parseInt(text.getContentDescription().toString()));
-
-                if (!selectedSymptoms.isEmpty()) {
-                    btn.setEnabled(true);
-                }
-
             });
         }
 
         btn.setOnClickListener(view14 -> {
             //we need to check if there is symptoms and the courage level
-            if (!selectedSymptoms.isEmpty() && (health.getCourage() != null)) {
+            if (!selectedSymptoms.isEmpty()) {
 
                 //we save the data into the Room Persistence Database
                 for (Symptom s : selectedSymptoms) {
                     viewModel.insertSymptom(s);
                 }
-
-                viewModel.insertHealth(health);
 
                 //reset ui
                 GridLayout symptomGrid1 = requireView().findViewById(R.id.symptomGrid);
@@ -190,11 +159,6 @@ public class SymptomsRegistryFragment extends Fragment {
                     if (card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.violeta)) {
                         card.setCardBackgroundColor(getResources().getColor(R.color.negroGris));
                     }
-                }
-
-                for (int i = 0; i < courageGrid.getChildCount(); i++) {
-                    TextView text2 = (TextView) courageGrid.getChildAt(i);
-                    text2.setTextSize(36);
                 }
 
                 btn.setEnabled(false);

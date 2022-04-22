@@ -13,6 +13,9 @@
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/border.xml" value="0.357" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/button.xml" value="0.1805" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_approve_1214354.xml" value="0.1805" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_baseline_app_registration_24.xml" value="0.3635" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.3635" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.3635" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_numbered_list_2538271.xml" value="0.1805" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/drawable/ic_setting_1881213.xml" value="0.1" />
@@ -31,6 +34,7 @@
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/activity_searchable.xml" value="0.25" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/activity_symptoms.xml" value="0.25" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/card_layout_symptoms.xml" value="0.14407866609662248" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/dialog_courage.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/food_item.xml" value="0.33" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_1st_1_hello.xml" value="0.1" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_1st_2_symptoms.xml" value="0.22" />
@@ -44,7 +48,8 @@
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_food.xml" value="0.25" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_food_forbidden.xml" value="0.25" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_food_registry.xml" value="0.2" />
-        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_health.xml" value="0.25" />
+        <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_register_symptoms.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_second.xml" value="0.15942028985507245" />
         <entry key="..\:/Users/alber/Desktop/Asistente_Crohn/Asistente_Crohn/app/src/main/res/layout/fragment_state.xml" value="0.19581017528858485" />

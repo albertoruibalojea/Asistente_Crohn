@@ -19,8 +19,6 @@ x
 Happ/src/main/java/com/aro/asistente_crohn/firsttime/Activity1stTime.java,a\5\a577efe414b17eff348f4f5b49e1d9a5f819853b
 y
 Iapp/src/main/java/com/aro/asistente_crohn/database/RecommendationDAO.java,8\0\809d25720c715a8f4db6ef2692e99e05feb0be11
-q
-Aapp/src/main/java/com/aro/asistente_crohn/database/HealthDAO.java,5\6\56230b3184f3ffbdb9b2070f30dada098ab5a121
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 u
@@ -29,8 +27,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-z
-Japp/src/main/java/com/aro/asistente_crohn/repository/HealthRepository.java,6\7\6718e5b79e394677788dcfb82cb9a8f158f132c8
 s
 Capp/src/main/java/com/aro/asistente_crohn/database/FoodRepoDAO.java,a\9\a9ffab08e8404e06c4050f97afcf47cff68418eb
 |
@@ -39,10 +35,6 @@ s
 Capp/src/main/java/com/aro/asistente_crohn/model/Recommendation.java,f\c\fc48a8c62a368f58e5681f8293402a8c15e0d666
 l
 <app/src/main/java/com/aro/asistente_crohn/model/Symptom.java,5\9\592a8f345b0ba93952a15ec335b86902a08295b3
-k
-;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769
-o
-?app/src/main/java/com/aro/asistente_crohn/database/FoodDAO.java,2\7\27f2f2f1a64c164cdc41677ea1b7a12c74004b97
 
 Oapp/src/main/java/com/aro/asistente_crohn/firsttime/FirstTime8NameActivity.java,f\8\f8392d475437b69982f33adbad01507cf681645c
 n
@@ -58,26 +50,6 @@ Gapp/src/main/java/com/aro/asistente_crohn/ui/FoodForbiddenFragment.java,9\c\9c
 |
 Lapp/src/main/java/com/aro/asistente_crohn/repository/FoodRepoRepository.java,4\c\4cfc818ab5b8f110a930ce137cb901402aa4d634
 n
->app/src/main/java/com/aro/asistente_crohn/ui/HomeFragment.java,f\6\f67b3893a615a0ef4095c537482a6e46e8d42218
-n
 >app/src/main/java/com/aro/asistente_crohn/ui/HomeActivity.java,f\e\fe3261d489fc273ddb54cf2caebb88a6beb0265f
-x
-Happ/src/main/java/com/aro/asistente_crohn/repository/FoodRepository.java,2\8\28e2f28957de02f94244e4f04db76fa08e4b4b8e
-r
-Bapp/src/main/java/com/aro/asistente_crohn/model/ItemViewModel.java,8\f\8fba1aa6b3267cb4530b7c0ced18af328e018c7b
 {
 Kapp/src/main/java/com/aro/asistente_crohn/repository/SymptomRepository.java,a\c\ac23acbe9aac14c08e727eb72494e7a894589e01
-r
-Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
-w
-Gapp/src/main/java/com/aro/asistente_crohn/model/SymptomListAdapter.java,8\3\8372c4c9a89dbc0d10114c523ebf490edeaf038d
-t
-Dapp/src/main/java/com/aro/asistente_crohn/model/FoodListAdapter.java,5\0\509aebff9dc178a4f29914e1a2aff2978ddc9b83
-z
-Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9\f9ca5d35082a74e25c021f2944c5539b8751e6be
-n
->app/src/main/java/com/aro/asistente_crohn/ui/FoodFragment.java,4\2\422befb6dcdbf1ec9cc5a863fc38e6ad602c6a11
-i
-9app/src/main/java/com/aro/asistente_crohn/model/Food.java,4\c\4c970efb88ff683655dc0cbe62755b3f6a0d2810
-v
-Fapp/src/main/java/com/aro/asistente_crohn/ui/FoodRegistryFragment.java,c\f\cfa15ef9f24a12dd2836ce67b6063c48b37b5cae

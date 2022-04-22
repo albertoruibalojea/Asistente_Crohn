@@ -114,6 +114,11 @@ public class ItemViewModel extends AndroidViewModel {
     public void updateFood(Food food) { foodRepository.update(food);}
 
 
+    public LiveData<List<Health>> getSelectedDayHealth(Date before, Date after){
+        LiveData<List<Health>> selectedDayHealth = healthRepository.getSelectedDayHealth(before, after);
+        return selectedDayHealth;
+    }
+
 
     public void insertHealth(Health health){
         healthRepository.insert(health);

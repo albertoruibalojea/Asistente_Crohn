@@ -412,95 +412,11 @@
 
             </GridLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/bold"
-                android:text="@string/que_tal_de_animo"
-                android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/courageGrid"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.054"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/symptomGrid"
-                app:layout_constraintVertical_bias="0.0">
-
-            </TextView>
-
-            <GridLayout
-                android:id="@+id/courageGrid"
-                android:layout_width="310dp"
-                android:layout_height="84dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="44dp"
-                android:layout_marginEnd="32dp"
-                android:columnCount="5"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:rowCount="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.486"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/symptomGrid">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    android:contentDescription="@string/_0"
-                    android:gravity="center"
-                    android:text="@string/courage_0"
-                    android:textSize="36sp"
-                    tools:ignore="TextContrastCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    android:contentDescription="@string/_1"
-                    android:gravity="center"
-                    android:text="@string/courage_1"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    android:contentDescription="@string/_2"
-                    android:gravity="center"
-                    android:text="@string/courage_2"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    android:contentDescription="@string/_3"
-                    android:gravity="center"
-                    android:text="@string/courage_3"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    android:contentDescription="@string/_4"
-                    android:gravity="center"
-                    android:text="@string/courage_4"
-                    android:textSize="36sp" />
-
-            </GridLayout>
-
             <Button
                 android:id="@+id/btn"
                 android:layout_width="332dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="64dp"
                 android:width="609sp"
@@ -516,8 +432,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/courageGrid"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/symptomGrid" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
