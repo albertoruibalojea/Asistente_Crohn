@@ -32,7 +32,7 @@
 
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -52,8 +52,8 @@
             android:id="@+id/courageGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="12dp"
             android:columnCount="5"
             android:gravity="center|center_horizontal|center_vertical"
@@ -69,7 +69,7 @@
                 android:contentDescription="@string/_0"
                 android:gravity="center"
                 android:text="@string/courage_0"
-                android:textSize="36sp"
+                android:textSize="32sp"
                 tools:ignore="TextContrastCheck" />
 
             <TextView
@@ -79,7 +79,7 @@
                 android:contentDescription="@string/_1"
                 android:gravity="center"
                 android:text="@string/courage_1"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                 android:contentDescription="@string/_2"
                 android:gravity="center"
                 android:text="@string/courage_2"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                 android:contentDescription="@string/_3"
                 android:gravity="center"
                 android:text="@string/courage_3"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
                 android:contentDescription="@string/_4"
                 android:gravity="center"
                 android:text="@string/courage_4"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
         </GridLayout>
 
@@ -115,7 +115,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="48dp"
             android:background="?attr/colorPrimary"
             android:fontFamily="@font/bold"
             android:text="@string/aceptar"
@@ -126,23 +126,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/courageGrid" />
 
-        <TextView
-            android:id="@+id/alert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/bold"
-            android:text=""
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="?attr/itemTextColor"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonOk"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/courageGrid"
-            app:layout_constraintVertical_bias="0.49" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

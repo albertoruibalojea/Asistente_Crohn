@@ -1,7 +1,6 @@
 package com.aro.asistente_crohn.ui;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,6 @@ import android.widget.TextView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
-import com.aro.asistente_crohn.model.Symptom;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,6 +25,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HealthFragment extends Fragment {
 
@@ -55,61 +54,63 @@ public class HealthFragment extends Fragment {
         //cardViewRegistries.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new HealthRegistryFragment(), Calendar.getInstance().getTime()));
 
         CardView cardAddCourage = view.findViewById(R.id.card_addCourage);
-        cardAddCourage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                ViewGroup viewGroup = view.findViewById(android.R.id.content);
-                View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_courage, viewGroup, false);
-                builder.setView(dialogView);
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-                alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
+        cardAddCourage.setOnClickListener(view12 -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(view12.getContext());
+            ViewGroup viewGroup = view12.findViewById(android.R.id.content);
+            View dialogView = LayoutInflater.from(view12.getContext()).inflate(R.layout.dialog_courage, viewGroup, false);
+            builder.setView(dialogView);
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
+            TextView date = alertDialog.findViewById(R.id.date);
+            date.setText(simpleDateFormat.format(Calendar.getInstance().getTime()));
 
 
-                Date before = Calendar.getInstance().getTime();
-                Date after = Calendar.getInstance().getTime();
-                before.setHours(00); before.setMinutes(00); before.setSeconds(00);
-                after.setHours(23); after.setMinutes(59); after.setSeconds(59);
+            Date before = Calendar.getInstance().getTime();
+            Date after = Calendar.getInstance().getTime();
+            before.setHours(00); before.setMinutes(00); before.setSeconds(00);
+            after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
-                viewModel.getSelectedDayHealth(before, after).observe(requireActivity(), healthList -> {
-                    List<Health> cacheHealthList = new ArrayList<>();
-                    GridLayout courageGrid = alertDialog.findViewById(R.id.courageGrid);
-                    if (healthList != null) {
-                        cacheHealthList.addAll(healthList);
-                        //it means there is already a courage state saved for today
-                        TextView alert = alertDialog.findViewById(R.id.alert);
-                        alert.setText("Al presionar OK, cambias el estado de ánimo antiguo por el nuevo");
+            viewModel.getSelectedDayHealth(before, after).observe(requireActivity(), healthList -> {
+                List<Health> cacheHealthList = new ArrayList<>();
+                GridLayout courageGrid = alertDialog.findViewById(R.id.courageGrid);
+                Health health = new Health();
+                if (!healthList.isEmpty()) {
+                    cacheHealthList.addAll(healthList);
 
-                        TextView text2 = (TextView) courageGrid.getChildAt(cacheHealthList.get(0).getCourage());
-                        text2.setTextSize(48);
-                    }
+                    TextView text2 = (TextView) courageGrid.getChildAt(cacheHealthList.get(0).getCourage());
+                    text2.setTextSize(44);
+                }
 
-                    for (int i = 0; i < courageGrid.getChildCount(); i++) {
-                        TextView text = (TextView) courageGrid.getChildAt(i);
-                        text.setOnClickListener(view13 -> {
+                for (int i = 0; i < courageGrid.getChildCount(); i++) {
+                    TextView text = (TextView) courageGrid.getChildAt(i);
+                    text.setOnClickListener(view13 -> {
 
-                            text.setTextSize(48);
+                        text.setTextSize(44);
 
-                            //we need to reajust other child in case they were selected before
-                            for (int i1 = 0; i1 < courageGrid.getChildCount(); i1++) {
-                                TextView text2 = (TextView) courageGrid.getChildAt(i1);
-                                if (!text2.equals(text)) {
-                                    text2.setTextSize(36);
-                                }
+                        //we need to reajust other child in case they were selected before
+                        for (int i1 = 0; i1 < courageGrid.getChildCount(); i1++) {
+                            TextView text2 = (TextView) courageGrid.getChildAt(i1);
+                            if (!text2.equals(text)) {
+                                text2.setTextSize(32);
                             }
+                        }
 
-                            //Adding actual courage to Health
-                            //relatedSymptoms arraylist in Health only shows symptoms if crohnActive==true
-                            Health health = new Health();
-                            health.setCourage(Integer.parseInt(text.getContentDescription().toString()));
+                        //Adding actual courage to Health
+                        //relatedSymptoms arraylist in Health only shows symptoms if crohnActive==true
+                        health.setCourage(Integer.parseInt(text.getContentDescription().toString()));
 
+                        if(cacheHealthList.isEmpty()){
                             viewModel.insertHealth(health);
-
-                        });
-                    }
-                });
-            }
+                        } else {
+                            //we need to replace courage
+                            Health health1 = cacheHealthList.get(0);
+                            health1.setCourage(health.getCourage());
+                            viewModel.updateHealth(health1);
+                        }
+                    });
+                }
+            });
         });
 
 

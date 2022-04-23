@@ -1,0 +1,16 @@
+
+V	java:S125@"<This block of commented-out lines of code should be removed.(‡Ÿ«±üÿÿÿÿ
+m
+java:S3776Z"RRefactor this method to reduce its Cognitive Complexity from 80 to the 15 allowed.(Š±Î¡ûÿÿÿÿ
+K
+java:S1874r"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874r"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874r"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+F
+java:S1874s"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+H
+java:S1874s"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+H
+java:S1874s"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ

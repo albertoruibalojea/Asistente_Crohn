@@ -15,7 +15,7 @@ import java.util.List;
 @Dao
 public interface FoodDAO {
     @Query("SELECT * FROM Food where id like :id")
-    public Food getById(int id);
+    public LiveData<Food> getById(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public Long insertFood(Food food);

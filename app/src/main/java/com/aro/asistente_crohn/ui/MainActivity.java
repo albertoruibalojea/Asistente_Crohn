@@ -19,10 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //we should have 2 different handlers
-        // - first time
-        // - the rest
-
         //handler to create the splash screen
         int splashTimeOut = 4000;
         new Handler().postDelayed(() -> {

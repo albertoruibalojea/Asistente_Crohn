@@ -16,6 +16,9 @@ public interface SymptomDAO {
     @Query("SELECT * FROM Symptom where id like :id")
     public Symptom getById(int id);
 
+    @Query("SELECT * FROM Symptom where name like :symptom")
+    public LiveData<List<Symptom>> getBySymptom(String symptom);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public Long insertSymptom(Symptom symptom);
 

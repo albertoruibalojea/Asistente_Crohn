@@ -38,7 +38,7 @@
         android:layout_marginTop="517dp"
         android:layout_marginEnd="46dp"
         android:fontFamily="@font/regular"
-        android:text="@string/a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_prohibidos_quot"
+        android:text="@string/a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_desaconsejados_quot"
         android:textAlignment="center"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"

@@ -36,6 +36,7 @@ public class FoodForbiddenFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_food_forbidden, container, false);
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -75,11 +76,6 @@ public class FoodForbiddenFragment extends Fragment {
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
     }
 }

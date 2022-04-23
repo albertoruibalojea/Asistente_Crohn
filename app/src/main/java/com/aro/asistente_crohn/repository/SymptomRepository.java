@@ -41,9 +41,12 @@ public class SymptomRepository {
         return todaySymptoms;
     }
 
+    public LiveData<List<Symptom>> getBySymptom(String symptom){
+        return symptomDao.getBySymptom(symptom);
+    }
+
     public LiveData<List<Symptom>> getSelectedDaySymptoms(Date before, Date after){
-        LiveData<List<Symptom>> selectedDaySymptoms = symptomDao.getTodaySymptoms(DateConverter.fromDate(before), DateConverter.fromDate(after));
-        return selectedDaySymptoms;
+        return symptomDao.getTodaySymptoms(DateConverter.fromDate(before), DateConverter.fromDate(after));
     }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures

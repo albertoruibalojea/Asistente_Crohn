@@ -61,8 +61,11 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Symptom>> getSelectedDaySymptoms(Date before, Date after){
-        LiveData<List<Symptom>> selectedDaySymptoms = symptomRepository.getSelectedDaySymptoms(before, after);
-        return selectedDaySymptoms;
+        return symptomRepository.getSelectedDaySymptoms(before, after);
+    }
+
+    public LiveData<List<Symptom>> getBySymptom(String symptom){
+        return symptomRepository.getBySymptom(symptom);
     }
 
     public void insertSymptom(Symptom symptom) {
@@ -73,6 +76,10 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
 
+
+    public LiveData<Food> getFoodById(Integer id){
+        return foodRepository.getById(id);
+    }
 
     public LiveData<List<FoodRepo>> getAllRepoFoods() {
         if (allFoods == null) {
@@ -96,8 +103,7 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Food>> getSelectedDayFoods(Date before, Date after){
-        LiveData<List<Food>> selectedDayFoods = foodRepository.getSelectedDayFoods(before, after);
-        return selectedDayFoods;
+        return foodRepository.getSelectedDayFoods(before, after);
     }
 
     public LiveData<List<Food>> getForbiddenFoods() {
@@ -115,15 +121,14 @@ public class ItemViewModel extends AndroidViewModel {
 
 
     public LiveData<List<Health>> getSelectedDayHealth(Date before, Date after){
-        LiveData<List<Health>> selectedDayHealth = healthRepository.getSelectedDayHealth(before, after);
-        return selectedDayHealth;
+        return healthRepository.getSelectedDayHealth(before, after);
     }
 
 
     public void insertHealth(Health health){
         healthRepository.insert(health);
     }
-
+    public void updateHealth(Health health) { healthRepository.update(health);}
 
 
 

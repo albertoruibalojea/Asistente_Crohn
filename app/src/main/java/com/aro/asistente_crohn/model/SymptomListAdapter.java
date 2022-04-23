@@ -65,12 +65,7 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(alert -> alertDialog.dismiss());
     }
 
     @Override
@@ -79,9 +74,9 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView symptoms;
-        public ImageView deleteImg;
-        public ConstraintLayout relativeLayout;
+        private TextView symptoms;
+        private ImageView deleteImg;
+        private ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             symptoms =  itemView.findViewById(R.id.symptoms);

@@ -6,8 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
-import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.Health;
 
 import java.util.List;
@@ -19,6 +19,9 @@ public interface HealthDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public Long insert(Health health);
+
+    @Update
+    public void update(Health health);
 
     @Delete
     public void delete(Health health);

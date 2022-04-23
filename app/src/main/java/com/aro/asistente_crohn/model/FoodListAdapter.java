@@ -51,15 +51,15 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
             });
 
             holder.forbiddenImg.setOnClickListener(view -> {
-                if(!food.getForbidden()){
+                if(Boolean.FALSE.equals(food.getForbidden())){
                     food.setForbidden(true);
                     viewModel.updateFood(food);
-                    this.sendAlert("Añadido", "Nuevo alimento prohibido");
+                    this.sendAlert("Añadido", "Nuevo alimento desaconsejado");
                     notifyDataSetChanged();
                 } else {
                     food.setForbidden(false);
                     viewModel.updateFood(food);
-                    this.sendAlert("Eliminado", "Este alimento ya no está prohibido");
+                    this.sendAlert("Eliminado", "Este alimento ya no está desaconsejado");
                     notifyDataSetChanged();
                 }
             });
@@ -80,12 +80,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(alert -> alertDialog.dismiss());
     }
 
     @Override
@@ -94,10 +89,10 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView foods;
-        public ImageView deleteImg;
-        public ImageView forbiddenImg;
-        public ConstraintLayout relativeLayout;
+        private TextView foods;
+        private ImageView deleteImg;
+        private ImageView forbiddenImg;
+        private ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             foods =  itemView.findViewById(R.id.foods);

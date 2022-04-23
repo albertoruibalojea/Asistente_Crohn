@@ -15,7 +15,6 @@ import java.util.List;
 public class HealthRepository {
     private HealthDAO healthDAO;
     private Health health;
-    private LiveData<List<Health>> todayHealth;
 
     public HealthRepository(Application application) {
         CrohnsAssistDatabase db = CrohnsAssistDatabase.getDatabase(application);
@@ -30,13 +29,16 @@ public class HealthRepository {
     }
 
     public LiveData<List<Health>> getSelectedDayHealth(Date before, Date after){
-        LiveData<List<Health>> selectedDayHealth = healthDAO.getTodayHealth(DateConverter.fromDate(before), DateConverter.fromDate(after));
-        return selectedDayHealth;
+        return healthDAO.getTodayHealth(DateConverter.fromDate(before), DateConverter.fromDate(after));
     }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     public void insert(Health health) {
         CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> healthDAO.insert(health));
+    }
+
+    public void update(Health health) {
+        CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> healthDAO.update(health));
     }
 }

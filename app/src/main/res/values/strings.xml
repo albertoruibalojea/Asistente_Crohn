@@ -15,7 +15,7 @@
     <string name="a_ade_tus_s_ntomas_para_ayudarme_a_detectar_un_posible_brote_y_tener_un_historial_para_ense_rselo_a_tu_especialista">Añade tus síntomas para ayudarme a detectar un posible brote... y tener un historial para enseñárselo a tu especialista ;)</string>
     <string name="registro_de_s_ntomas">Registro de síntomas</string>
     <string name="tu_alimentaci_n">Tu alimentación</string>
-    <string name="a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_prohibidos_quot">Añade lo que has comido para tener un historial de si algún alimento te hace daño, añadiéndolo así a tus \"Alimentos Prohibidos\"</string>
+    <string name="a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_desaconsejados_quot">Añade lo que has comido para poder detectar si algún alimento te hace daño, añadiéndolo así a tus \"Alimentos Desaconsejados\"</string>
     <string name="recomendaciones">Recomendaciones</string>
     <string name="encuentra_recomendaciones_y_consejos_para_mejorar_tu_calidad_de_vida">Encuentra recomendaciones y consejos para mejorar tu calidad de vida</string>
     <string name="detecci_n_de_brotes">Detección de brotes</string>
@@ -78,7 +78,7 @@
     <string name="symptom_item_name">symptom</string>
     <string name="tu_alimentacion">Tu alimentación</string>
     <string name="registra_tu_alimentacion">Registra tu alimentación</string>
-    <string name="mis_alimentos_prohibidos">Mis alimentos prohibidos</string>
+    <string name="mis_alimentos_desaconsejados">Alimentos desaconsejados</string>
     <string name="search_hint">Escribe aquí</string>
     <string name="escribe_aqui_un_alimento">Escribe aquí un alimento...</string>
     <string name="se_ha_anadido_a_tus_registros">Se ha añadido a tus registros</string>
@@ -93,4 +93,5 @@
     <string name="registra_y_consulta">Registra y consulta</string>
     <string name="salud">Salud</string>
     <string name="todo_bien">Todo bien</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
