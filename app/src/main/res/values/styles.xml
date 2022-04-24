@@ -9,4 +9,18 @@
         <item name= "android:fontFamily" > @font/regular </item>
     </style>
 
+    <style name="CalendarViewCustom" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorAccent">@color/rosa</item>
+        <item name="android:textColor">?attr/itemTextColor</item>
+    </style>
+
+    <style name="CalendarViewDateCustomText" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:textColor">?attr/itemTextColor</item>
+        <item name="android:weekNumberColor">?attr/itemTextColor</item>
+    </style>
+
+    <style name="CalendarViewWeekCustomText" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:textColor">?attr/itemTextColor</item>
+    </style>
+
 </resources>

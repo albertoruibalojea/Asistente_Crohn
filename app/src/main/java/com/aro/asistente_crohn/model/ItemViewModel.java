@@ -10,6 +10,7 @@ import com.aro.asistente_crohn.repository.FoodRepository;
 import com.aro.asistente_crohn.repository.HealthRepository;
 import com.aro.asistente_crohn.repository.SymptomRepository;
 
+import java.util.Date;
 import java.util.List;
 
 public class ItemViewModel extends AndroidViewModel {
@@ -59,6 +60,14 @@ public class ItemViewModel extends AndroidViewModel {
         return todaySymptoms;
     }
 
+    public LiveData<List<Symptom>> getSelectedDaySymptoms(Date before, Date after){
+        return symptomRepository.getSelectedDaySymptoms(before, after);
+    }
+
+    public LiveData<List<Symptom>> getBySymptom(String symptom){
+        return symptomRepository.getBySymptom(symptom);
+    }
+
     public void insertSymptom(Symptom symptom) {
         symptomRepository.insert(symptom);
     }
@@ -67,6 +76,10 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
 
+
+    public LiveData<Food> getFoodById(Integer id){
+        return foodRepository.getById(id);
+    }
 
     public LiveData<List<FoodRepo>> getAllRepoFoods() {
         if (allFoods == null) {
@@ -89,6 +102,10 @@ public class ItemViewModel extends AndroidViewModel {
         return todayFoods;
     }
 
+    public LiveData<List<Food>> getSelectedDayFoods(Date before, Date after){
+        return foodRepository.getSelectedDayFoods(before, after);
+    }
+
     public LiveData<List<Food>> getForbiddenFoods() {
         if (forbiddenFoods == null) {
             forbiddenFoods = foodRepository.getForbiddenFoods();
@@ -103,11 +120,15 @@ public class ItemViewModel extends AndroidViewModel {
     public void updateFood(Food food) { foodRepository.update(food);}
 
 
+    public LiveData<List<Health>> getSelectedDayHealth(Date before, Date after){
+        return healthRepository.getSelectedDayHealth(before, after);
+    }
+
 
     public void insertHealth(Health health){
         healthRepository.insert(health);
     }
-
+    public void updateHealth(Health health) { healthRepository.update(health);}
 
 
 

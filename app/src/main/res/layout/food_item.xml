@@ -4,33 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="32dp"
     android:layout_marginRight="32dp"
     android:layout_marginBottom="8dp"
     android:background="@drawable/border">
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="38dp"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/bold"
-        android:text="@string/string_food_item_date"
-        android:textColor="?attr/itemTextColor"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/foods"
@@ -38,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
         android:text="@string/food_item_name"
@@ -53,28 +32,26 @@
 
     <ImageView
         android:id="@+id/deleteImg"
-        android:layout_width="37dp"
-        android:layout_height="39dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
 
     <ImageView
         android:id="@+id/forbiddenImg"
-        android:layout_width="37dp"
-        android:layout_height="39dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/deleteImg"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
-        app:srcCompat="@drawable/ic_baseline_clear_24" />
+        app:srcCompat="@drawable/ic_baseline_block_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

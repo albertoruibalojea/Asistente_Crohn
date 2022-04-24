@@ -86,7 +86,7 @@
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
                     android:contentDescription="@string/state"
-                    android:src="@drawable/ic_numbered_list_2538271"
+                    android:src="@drawable/ic_baseline_library_books_24"
                     tools:ignore="ImageContrastCheck">
 
                 </ImageView>
@@ -155,7 +155,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/card_state"
+                android:id="@+id/card_health"
                 android:layout_width="wrap_content"
                 android:layout_height="96dp"
                 android:layout_alignParentStart="true"
@@ -174,10 +174,10 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="-1dp"
-                    android:layout_marginTop="23dp"
-                    android:layout_marginEnd="141dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="154dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/estado"
+                    android:text="@string/salud"
                     android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
@@ -190,10 +190,10 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="54dp"
-                    android:layout_marginEnd="56dp"
+                    android:layout_marginEnd="64dp"
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/conoce_tu_estado_actual"
+                    android:text="@string/conoce_tu_salud_actual"
                     android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
@@ -210,7 +210,7 @@
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
                     android:contentDescription="@string/state"
-                    android:src="@drawable/ic_approve_1214354"
+                    android:src="@drawable/ic_baseline_person_outline_24"
                     tools:ignore="ImageContrastCheck">
 
                 </ImageView>
@@ -221,7 +221,7 @@
                 android:id="@+id/card_symptoms"
                 android:layout_width="wrap_content"
                 android:layout_height="96dp"
-                android:layout_below="@+id/card_state"
+                android:layout_below="@+id/card_health"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="32dp"
@@ -250,11 +250,11 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="54dp"
-                    android:layout_marginEnd="158dp"
-                    android:layout_marginBottom="23dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginEnd="89dp"
+                    android:layout_marginBottom="25dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/registro"
+                    android:text="@string/registra_y_consulta"
                     android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
@@ -271,7 +271,7 @@
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
                     android:contentDescription="@string/state"
-                    android:src="@drawable/ic_numbered_list_2538271"
+                    android:src="@drawable/ic_baseline_app_registration_24"
                     tools:ignore="ImageContrastCheck">
 
                 </ImageView>

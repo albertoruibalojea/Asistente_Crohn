@@ -1,17 +1,21 @@
 
-?
-java:S1604°"(Make this anonymous inner class a lambda(‹—¬
-h
-java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(¡Œşø
+J
+java:S1874r"/Remove this use of "setDate"; it is deprecated.(çÓÎ„øÿÿÿÿ
+J
+java:S1874r"/Remove this use of "getDate"; it is deprecated.(çÓÎ„øÿÿÿÿ
 K
-java:S1874>"0Remove this use of "getColor"; it is deprecated.(ãçòÛüÿÿÿÿ
+java:S1874r"0Remove this use of "setHours"; it is deprecated.(çÓÎ„øÿÿÿÿ
+M
+java:S1874r"2Remove this use of "setMinutes"; it is deprecated.(çÓÎ„øÿÿÿÿ
+M
+java:S1874r"2Remove this use of "setSeconds"; it is deprecated.(çÓÎ„øÿÿÿÿ
 E
-java:S1874?"0Remove this use of "getColor"; it is deprecated.(ƒÇõl
+java:S1874s"/Remove this use of "setDate"; it is deprecated.(ÊÜ—ˆ
+E
+java:S1874s"/Remove this use of "getDate"; it is deprecated.(ÊÜ—ˆ
 F
-java:S1874g"0Remove this use of "getColor"; it is deprecated.(áÿğ²
-K
-java:S1874h"0Remove this use of "getColor"; it is deprecated.(„ ’Üøÿÿÿÿ
-G
-java:S1874"0Remove this use of "getColor"; it is deprecated.(ÿà‹
-L
-java:S1874"0Remove this use of "getColor"; it is deprecated.(„ ’Üøÿÿÿÿ
+java:S1874s"0Remove this use of "setHours"; it is deprecated.(ÊÜ—ˆ
+H
+java:S1874s"2Remove this use of "setMinutes"; it is deprecated.(ÊÜ—ˆ
+H
+java:S1874s"2Remove this use of "setSeconds"; it is deprecated.(ÊÜ—ˆ

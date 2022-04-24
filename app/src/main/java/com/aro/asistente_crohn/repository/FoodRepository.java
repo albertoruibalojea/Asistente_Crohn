@@ -34,12 +34,20 @@ public class FoodRepository {
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
+    public LiveData<Food> getById(Integer id){
+        return foodDao.getById(id);
+    }
+
     public LiveData<List<Food>> getAllFoods() {
         return allFoods;
     }
 
     public LiveData<List<Food>> getTodayFoods(){
         return todayFoods;
+    }
+
+    public LiveData<List<Food>> getSelectedDayFoods(Date before, Date after){
+        return foodDao.getTodayFoods(DateConverter.fromDate(before), DateConverter.fromDate(after));
     }
 
     public LiveData<List<Food>> getForbiddenFoods(){

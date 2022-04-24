@@ -1,5 +1,23 @@
 
 E
-java:S1604N"(Make this anonymous inner class a lambda(‹—¬8ÇíşÁƒ0
-P
-java:S1161'":Add the "@Override" annotation above this method signature(¡Œşø
+java:S3740T"/Provide the parametrized type for this generic.(¿¬€©
+E
+java:S3740u"/Provide the parametrized type for this generic.(¿¬€©
+C
+java:S1604J"(Make this anonymous inner class a lambda(Øãòêÿÿÿÿÿ
+h
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(¡Œşø
+J
+java:S1874k"/Remove this use of "setYear"; it is deprecated.(ß¡˜ıÿÿÿÿ
+K
+java:S2110l"0"12" is not a valid value for "setMonth" method.(Ê¼“Ãøÿÿÿÿ
+K
+java:S1874l"0Remove this use of "setMonth"; it is deprecated.(Ê¼“Ãøÿÿÿÿ
+D
+java:S1874m"/Remove this use of "setDate"; it is deprecated.(İ›”Z
+E
+java:S1874o"/Remove this use of "setYear"; it is deprecated.(Ûö—õ
+F
+java:S1874p"0Remove this use of "setMonth"; it is deprecated.(ö¿şæ
+J
+java:S1874q"/Remove this use of "setDate"; it is deprecated.(°’æŠÿÿÿÿÿ

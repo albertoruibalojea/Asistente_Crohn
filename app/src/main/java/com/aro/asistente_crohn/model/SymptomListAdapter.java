@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.ViewHolder>{
 
@@ -40,13 +38,9 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         if(listdata.isEmpty()){
             holder.symptoms.setText("No hay síntomas registrados");
         } else {
-            holder.symptoms.setText(listdata.get(position).getName());
-
-            SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
-            holder.date.setText(simpleDateFormat.format(listdata.get(position).getRegisteredDate()));
-
             Symptom symptom = listdata.get(position);
 
+            holder.symptoms.setText(symptom.getName());
             holder.deleteImg.setOnClickListener(view -> {
                 viewModel.deleteSymptom(symptom);
                 this.sendAlert("Eliminado", "Registro eliminado correctamente");
@@ -59,7 +53,7 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
 
         TextView t = dialogView.findViewById(R.id.title);
         t.setText(title);
@@ -69,12 +63,7 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(alert -> alertDialog.dismiss());
     }
 
     @Override
@@ -83,13 +72,11 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView date;
-        public TextView symptoms;
-        public ImageView deleteImg;
-        public ConstraintLayout relativeLayout;
+        private TextView symptoms;
+        private ImageView deleteImg;
+        private ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            date = itemView.findViewById(R.id.date);
             symptoms =  itemView.findViewById(R.id.symptoms);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);

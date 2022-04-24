@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHolder>{
 
@@ -42,9 +42,6 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         } else {
             holder.foods.setText(listdata.get(position).getName());
 
-            SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
-            holder.date.setText(simpleDateFormat.format(listdata.get(position).getEatenDate()));
-
             Food food = listdata.get(position);
 
             holder.deleteImg.setOnClickListener(view -> {
@@ -53,16 +50,27 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
                 notifyDataSetChanged();
             });
 
+            if(Boolean.TRUE.equals(food.getForbidden())){
+                //we update the icon
+                holder.forbiddenImg.setImageResource(R.drawable.ic_baseline_check_circle_outline_24);
+            }
+
             holder.forbiddenImg.setOnClickListener(view -> {
-                if(!food.getForbidden()){
+                if(Boolean.FALSE.equals(food.getForbidden())){
                     food.setForbidden(true);
+                    Date date = (Date) food.getEatenDate().clone();
+                    date.setYear(2200); date.setMonth(1); date.setDate(1);
+                    food.setLimitDate(date);
                     viewModel.updateFood(food);
-                    this.sendAlert("Añadido", "Nuevo alimento prohibido");
+                    this.sendAlert("Añadido", "Nuevo alimento desaconsejado");
                     notifyDataSetChanged();
                 } else {
                     food.setForbidden(false);
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(food.getEatenDate());
+                    calendar.add(Calendar.DAY_OF_YEAR, 90);
                     viewModel.updateFood(food);
-                    this.sendAlert("Eliminado", "Este alimento ya no está prohibido");
+                    this.sendAlert("Eliminado", "Este alimento ya no está desaconsejado");
                     notifyDataSetChanged();
                 }
             });
@@ -73,7 +81,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
 
         TextView t = dialogView.findViewById(R.id.title);
         t.setText(title);
@@ -83,12 +91,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(alert -> alertDialog.dismiss());
     }
 
     @Override
@@ -97,14 +100,12 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView date;
-        public TextView foods;
-        public ImageView deleteImg;
-        public ImageView forbiddenImg;
-        public ConstraintLayout relativeLayout;
+        private TextView foods;
+        private ImageView deleteImg;
+        private ImageView forbiddenImg;
+        private ConstraintLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            date = itemView.findViewById(R.id.date);
             foods =  itemView.findViewById(R.id.foods);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             forbiddenImg = itemView.findViewById(R.id.forbiddenImg);

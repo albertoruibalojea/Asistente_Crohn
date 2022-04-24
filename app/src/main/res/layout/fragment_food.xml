@@ -26,7 +26,7 @@
 
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textDate"
             android:layout_width="179dp"
             android:layout_height="24dp"
             android:layout_alignParentStart="true"
@@ -75,21 +75,58 @@
         android:layout_marginTop="0dp"
         android:layout_marginBottom="3dp">
 
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="0dp"
+            android:layout_height="325dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:dateTextAppearance="@style/CalendarViewDateCustomText"
+            android:theme="@style/CalendarViewCustom"
+            android:weekDayTextAppearance="@style/CalendarViewWeekCustomText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/dateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:fontFamily="@font/bold"
-            android:text="Mis alimentos de hoy"
+            android:text="@string/fecha_seleccionada"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
+            app:layout_constraintVertical_bias="0.00999999" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/bold"
+            android:text="Consulta tus alimentos"
+            android:textColor="?attr/itemTextColor"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_addRegistries" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_viewForbiddenFood"
@@ -98,13 +135,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/morado"
-            app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView1"
@@ -113,7 +147,7 @@
                 android:layout_gravity="start|center"
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
-                android:text="@string/mis_alimentos_prohibidos"
+                android:text="@string/mis_alimentos_desaconsejados"
                 android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
@@ -128,20 +162,16 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_viewRegistries"
+            android:id="@+id/card_addRegistries"
             android:layout_width="332dp"
             android:layout_height="43dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/morado"
-            app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_viewForbiddenFood"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/card_viewForbiddenFood">
 
             <TextView
                 android:id="@+id/textView11"
@@ -150,7 +180,7 @@
                 android:layout_gravity="start|center"
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
-                android:text="@string/ver_mis_registros"
+                android:text="@string/anadir_mi_alimentacion_de_hoy"
                 android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
@@ -164,58 +194,36 @@
                 app:srcCompat="@drawable/right_arrow" />
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="176dp"
-            android:fontFamily="@font/bold"
-            android:text="@string/registra_tu_alimentacion"
-            android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.26"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="326dp"
-            android:layout_height="61dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/morado"
-            android:drawableRight="@drawable/ic_baseline_search_24"
-            android:fontFamily="@font/bold"
-            android:hint="@string/escribe_aqui_un_alimento"
-            android:textColorHint="?attr/itemTextColor"
-            android:text=""
-            android:textColor="?attr/itemTextColor"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10"
-            app:layout_constraintVertical_bias="0.0" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="365dp"
+            android:layout_width="0dp"
+            android:layout_height="141dp"
             android:layout_below="@+id/textView"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="8dp"
-            android:scrollbars="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:paddingBottom="16dp"
+            android:scrollbars="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/addFoods"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

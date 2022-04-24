@@ -13,22 +13,41 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.FoodListAdapter;
+import com.aro.asistente_crohn.model.IgnoreAccentsArrayAdapter;
 import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 import com.aro.asistente_crohn.model.SymptomListAdapter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class FoodRegistryFragment extends Fragment {
 
+    List<String> foodNameList;
+    String paramDate;
+
     public FoodRegistryFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            paramDate = getArguments().getString("date");
+        }
     }
 
     @Override
@@ -42,46 +61,78 @@ public class FoodRegistryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm:ss zzz", new Locale("es", "ES"));
+        Date date = Calendar.getInstance().getTime();
+        Date before = Calendar.getInstance().getTime();
+        Date after = Calendar.getInstance().getTime();
+
+        if(!paramDate.isEmpty()){
+            try {
+                date = simpleDateFormat.parse(paramDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
+        simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
+        TextView textDate = view.findViewById(R.id.textDate);
+        textDate.setText(simpleDateFormat.format(date));
+
+        before.setDate(date.getDate());before.setHours(00); before.setMinutes(00); before.setSeconds(00);
+        after.setDate(date.getDate());after.setHours(23); after.setMinutes(59); after.setSeconds(59);
+
+
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+        foodNameList = new ArrayList<>();
 
         //Observer from Repository to lookup the LiveData
-        viewModel.getAllEatenFoods().observe(requireActivity(), symptomList -> {
-            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-            List<Food> cacheFoodList = new ArrayList<>();
-            if (!symptomList.isEmpty()) {
-                cacheFoodList.addAll(symptomList);
-            } else {
-                this.sendAlert(view, "¿Qué has comido?", "Añade lo que has comido para poder ver tus registros");
+        Date finalDate = date;
+        viewModel.getAllRepoFoods().observe(requireActivity(), foodsList -> {
+            if (foodsList != null) {
+                for(int i=0; i< foodsList.size(); i++){
+                    foodNameList.add(foodsList.get(i).getName());
+                }
             }
-            FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
-            recyclerView.setHasFixedSize(true);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            linearLayoutManager.setReverseLayout(true);
-            linearLayoutManager.setStackFromEnd(true);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            recyclerView.setAdapter(adapter);
+
+            //Creating the instance of ArrayAdapter containing list of language names
+            IgnoreAccentsArrayAdapter<String> adapter = new IgnoreAccentsArrayAdapter<>(requireActivity().getBaseContext(),android.R.layout.select_dialog_item,foodNameList);
+            //Getting the instance of AutoCompleteTextView
+            AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);
+            actv.setThreshold(1);//will start working from first character
+
+            actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+            actv.setOnItemClickListener((adapterView, view1, i, l) -> {
+                Food food = new Food(adapter.getItem(i));
+                food.setEatenDate(finalDate);
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(finalDate);
+                calendar.add(Calendar.DAY_OF_YEAR, 90);
+                food.setLimitDate(calendar.getTime());
+
+                //add Food to DAO
+                viewModel.insertFood(food);
+                adapter.notifyDataSetChanged();
+                actv.performCompletion();
+            });
         });
+
+        //Observer from Repository to lookup the LiveData
+        viewModel.getSelectedDayFoods(before, after).observe(requireActivity(), foodsList -> setSelectedDay(view, viewModel, foodsList));
     }
 
-    public void sendAlert(View view, String title, String description){
-        //Success alert dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+    private void setSelectedDay(View view, ItemViewModel viewModel, List<Food> foodsList){
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        List<Food> cacheFoodList = new ArrayList<>();
+        if (!foodsList.isEmpty()) {
+            cacheFoodList.addAll(foodsList);
+        }
 
-        TextView t = dialogView.findViewById(R.id.title);
-        t.setText(title);
-        t = dialogView.findViewById(R.id.description);
-        t.setText(description);
-
-        builder.setView(dialogView);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
+        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
     }
 }

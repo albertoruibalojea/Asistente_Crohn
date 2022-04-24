@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/rosa_variante_1</item>
         <item name="backgroundColor">@color/casiNegro</item>
         <item name="itemTextColor">@color/casiBlanco</item>
-        <item name="cardBackgroundColor">@color/grisOscuro</item>
+        <item name="cardBackgroundColor">@color/casiNegro</item>
         <item name="colorSurface">@color/casiBlanco</item>
         <!-- Secondary brand color.
         <item name="colorSecondary">@color/teal_200</item>

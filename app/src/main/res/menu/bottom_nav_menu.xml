@@ -9,10 +9,10 @@
         android:id="@+id/symptoms"
         android:title="@string/sintomas"
         android:fontFamily="@font/regular"
-        android:icon="@drawable/ic_numbered_list_2538271"/>
+        android:icon="@drawable/ic_baseline_app_registration_24"/>
     <item
         android:id="@+id/state"
-        android:title="@string/estado"
+        android:title="@string/salud"
         android:fontFamily="@font/regular"
-        android:icon="@drawable/ic_approve_1214354"/>
+        android:icon="@drawable/ic_baseline_person_outline_24"/>
 </menu>
