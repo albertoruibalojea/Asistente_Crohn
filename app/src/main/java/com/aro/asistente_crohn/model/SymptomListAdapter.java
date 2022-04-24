@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.ViewHolder>{
 
@@ -55,7 +53,7 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
 
         TextView t = dialogView.findViewById(R.id.title);
         t.setText(title);

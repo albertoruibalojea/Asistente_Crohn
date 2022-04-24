@@ -31,8 +31,6 @@ import com.aro.asistente_crohn.model.Symptom;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HomeFragment extends Fragment {
 
@@ -61,28 +59,9 @@ public class HomeFragment extends Fragment {
         displayName.setText(preferences.getString("username", null));
 
         this.generateClickeableLayouts();
-        //this.sendAlert(view, "@Alpha Testers", "Elimina todos los datos de la app desde los ajustes en Android. Se ha añadido el módulo de alimentación. Se necesitan sugerencias  de diseño y búsqueda de bugs.");
-
 
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
-        /*
-        * esto lo borras
-        *
-        * observer de síntomas de HOY
-        * cada vez que cambien los datos, se ejecuta el método
-        *
-        * MÉTODO
-        * se tiene que comprobar si, en base a los síntomas registrados, hay alimentos comunes
-        * PARA ELLO:
-        * - dentro del método como PARAM el list sintomas
-        * - observer de los alimentos de hoy
-        *
-        * - get dias en bd que tengan estos sintomas
-        * - para esos días, se buscan sus alimentos y se comparan con los de hoy
-        * - si son iguales, avisar
-        *
-        * */
         notifiedFood = new ArrayList<>();
         viewModel.getTodaySymptoms().observe(requireActivity(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
     }
@@ -140,8 +119,8 @@ public class HomeFragment extends Fragment {
                                         if(!f1.getEatenDate().equals(f2.getEatenDate()) && f1.getName().equalsIgnoreCase(f2.getName()) && Boolean.TRUE.equals(!f1.getForbidden())){
                                             //It means the same food was eaten and the same symptom was there!!
                                             String description = "Has tenido el síntoma " + s.getName() + " al comer " +
-                                                    f1.getName() + " durante más de una ocasión. Pincha aquí para añadilo a tu lista";
-                                            createNotification("Posible alimento desaconsejado detectado", description, f1);
+                                                    f1.getName() + " durante más de una ocasión. Considera añadirlo a tu lista.";
+                                            createNotification("Nuevo alimento desaconsejado", description, f1);
                                             notifiedFood.add(f1.getName());
                                         }
                                     }
@@ -192,22 +171,5 @@ public class HomeFragment extends Fragment {
 
         RelativeLayout cardFood = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_food);
         cardFood.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new FoodFragment()));
-    }
-
-    public void sendAlert(View view, String title, String description){
-        //Success alert dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
-
-        TextView t = dialogView.findViewById(R.id.title);
-        t.setText(title);
-        t = dialogView.findViewById(R.id.description);
-        t.setText(description);
-
-        builder.setView(dialogView);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-        alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
     }
 }

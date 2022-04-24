@@ -71,6 +71,7 @@ public class SymptomsFragment extends Fragment {
         //Listener when the user sets a date in Calendar
         CalendarView calendarView = view.findViewById(R.id.calendarView);
         calendarView.setDate(DateConverter.fromDate(date[0]));
+        calendarView.setMaxDate(System.currentTimeMillis());
         calendarView.setOnDateChangeListener((calendarView1, year, month, dayOfMonth) -> {
 
             //Set date

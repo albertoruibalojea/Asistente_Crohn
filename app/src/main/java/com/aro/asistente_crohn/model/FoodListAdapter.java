@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aro.asistente_crohn.R;
 
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHolder>{
 
@@ -50,14 +50,25 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
                 notifyDataSetChanged();
             });
 
+            if(Boolean.TRUE.equals(food.getForbidden())){
+                //we update the icon
+                holder.forbiddenImg.setImageResource(R.drawable.ic_baseline_check_circle_outline_24);
+            }
+
             holder.forbiddenImg.setOnClickListener(view -> {
                 if(Boolean.FALSE.equals(food.getForbidden())){
                     food.setForbidden(true);
+                    Date date = (Date) food.getEatenDate().clone();
+                    date.setYear(2200); date.setMonth(1); date.setDate(1);
+                    food.setLimitDate(date);
                     viewModel.updateFood(food);
                     this.sendAlert("Añadido", "Nuevo alimento desaconsejado");
                     notifyDataSetChanged();
                 } else {
                     food.setForbidden(false);
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(food.getEatenDate());
+                    calendar.add(Calendar.DAY_OF_YEAR, 90);
                     viewModel.updateFood(food);
                     this.sendAlert("Eliminado", "Este alimento ya no está desaconsejado");
                     notifyDataSetChanged();
@@ -70,7 +81,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
 
         TextView t = dialogView.findViewById(R.id.title);
         t.setText(title);

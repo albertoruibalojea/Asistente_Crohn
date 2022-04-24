@@ -17,7 +17,6 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
-import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 
@@ -173,7 +172,7 @@ public class SymptomsRegistryFragment extends Fragment {
         //Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.notification_dialog, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
