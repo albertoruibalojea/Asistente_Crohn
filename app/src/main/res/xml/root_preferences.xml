@@ -1,0 +1,46 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:title="@string/common_header"
+        android:layout="@layout/preferences_category">
+
+        <Preference
+            app:key="privacy"
+            app:title="@string/privacy_title"
+            app:summary="@string/privacy_summary"/>
+
+        <Preference
+            app:key="feedback"
+            app:title="@string/feedback_title"
+            app:summary="@string/feedback_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/fast_settings"
+        android:layout="@layout/preferences_category">
+
+        <EditTextPreference
+            app:key="username"
+            app:title="@string/username_title"
+            app:defaultValue="@string/tu_nombre"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/ic_baseline_alternate_email_24"/>
+
+        <SwitchPreferenceCompat
+            app:key="app_alerts"
+            app:summaryOff="@string/app_alerts_summary_off"
+            app:summaryOn="@string/app_alerts_summary_on"
+            app:title="@string/app_alerts_title"
+            app:icon="@drawable/ic_baseline_notifications_active_24"/>
+
+        <Preference
+            app:key="delete"
+            app:title="@string/delete_title"
+            app:summary="@string/delete_summary_on"
+            app:icon="@drawable/ic_baseline_delete_24"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -94,4 +94,21 @@
     <string name="salud">Salud</string>
     <string name="todo_bien">Todo bien</string>
     <string name="cancelar">Cancelar</string>
+    <!-- Preference Titles -->
+    <string name="common_header">General</string>
+    <string name="fast_settings">Configuraciones rápidas</string>
+
+    <!-- Messages Preferences -->
+    <string name="username_title">Tu nombre</string>
+
+    <!-- Sync Preferences -->
+    <string name="app_alerts_title">Avisos de la aplicación</string>
+    <string name="app_alerts_summary_on">Se avisará de cambios en tu salud y alertas varias.</string>
+    <string name="app_alerts_summary_off">No se avisará de cambios en tu salud y alertas varias.</string>
+    <string name="delete_title">Borrar todos mis datos</string>
+    <string name="delete_summary_on">Al tocar aquí, se borrarán todos tus datos.</string>
+    <string name="privacy_title">Portal de transparencia</string>
+    <string name="privacy_summary">Consulta qué hacemos con tus datos.</string>
+    <string name="feedback_title">Envío de sugerencias</string>
+    <string name="feedback_summary">Ayuda con tus comentarios a mejorar tu Asistente Crohn.</string>
 </resources>

@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -171,5 +172,8 @@ public class HomeFragment extends Fragment {
 
         RelativeLayout cardFood = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_food);
         cardFood.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new FoodFragment()));
+
+        ImageView settings = (ImageView) ((HomeActivity) requireActivity()).findViewById(R.id.settingsView);
+        settings.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new SettingsFragment()));
     }
 }
