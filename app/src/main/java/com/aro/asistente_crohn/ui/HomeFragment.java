@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         notifiedFood = new ArrayList<>();
-        viewModel.getTodaySymptoms().observe(requireActivity(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
+        viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
     }
 
     public void relateSymptomsFood(ItemViewModel viewModel, List<Symptom> todaysSymptomList){
@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
             cacheTodaySymptomList.addAll(todaysSymptomList);
         }
 
-        viewModel.getTodayFoods().observe(requireActivity(), todayFoodList -> {
+        viewModel.getTodayFoods().observe(getViewLifecycleOwner(), todayFoodList -> {
             List<Food> cacheTodaysFoodList = new ArrayList<>();
             if (!todayFoodList.isEmpty()) {
                 cacheTodaysFoodList.addAll(todayFoodList);
@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment {
 
             //For each symptom from today, we get the days when the user had each symptom
             for(Symptom s : cacheTodaySymptomList){
-                viewModel.getBySymptom(s.getName()).observe(requireActivity(), sameSymptomList -> {
+                viewModel.getBySymptom(s.getName()).observe(getViewLifecycleOwner(), sameSymptomList -> {
                     List<Symptom> cacheSameSymptomList = new ArrayList<>();
                     if (!sameSymptomList.isEmpty()) {
                         cacheSameSymptomList.addAll(sameSymptomList);
@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment {
                         after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
                         //For each day with the same symptoms, we look for a common food
-                        viewModel.getSelectedDayFoods(before, after).observe(requireActivity(), selectedDayFoodList -> {
+                        viewModel.getSelectedDayFoods(before, after).observe(getViewLifecycleOwner(), selectedDayFoodList -> {
                             List<Food> cacheSelectedFoodList = new ArrayList<>();
                             if (!selectedDayFoodList.isEmpty()) {
                                 cacheSelectedFoodList.addAll(selectedDayFoodList);

@@ -53,7 +53,7 @@ public class FoodForbiddenFragment extends Fragment {
         foodNameList = new ArrayList<>();
 
         //Observer from Repository to lookup the LiveData
-        viewModel.getForbiddenFoods().observe(requireActivity(), forbiddenList -> {
+        viewModel.getForbiddenFoods().observe(getViewLifecycleOwner(), forbiddenList -> {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
             List<Food> cacheFoodList = new ArrayList<>();
             if (!forbiddenList.isEmpty()) {

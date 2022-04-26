@@ -5,4 +5,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="ic_clear_margin">56dp</dimen>
+    <dimen name="privacy_cards_margin_sides">32dp</dimen>
 </resources>

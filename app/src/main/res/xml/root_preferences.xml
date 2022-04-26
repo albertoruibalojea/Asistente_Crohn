@@ -33,6 +33,7 @@
             app:summaryOff="@string/app_alerts_summary_off"
             app:summaryOn="@string/app_alerts_summary_on"
             app:title="@string/app_alerts_title"
+            app:defaultValue="true"
             app:icon="@drawable/ic_baseline_notifications_active_24"/>
 
         <Preference

@@ -87,7 +87,7 @@ public class FoodRegistryFragment extends Fragment {
 
         //Observer from Repository to lookup the LiveData
         Date finalDate = date;
-        viewModel.getAllRepoFoods().observe(requireActivity(), foodsList -> {
+        viewModel.getAllRepoFoods().observe(getViewLifecycleOwner(), foodsList -> {
             if (foodsList != null) {
                 for(int i=0; i< foodsList.size(); i++){
                     foodNameList.add(foodsList.get(i).getName());
@@ -117,7 +117,7 @@ public class FoodRegistryFragment extends Fragment {
         });
 
         //Observer from Repository to lookup the LiveData
-        viewModel.getSelectedDayFoods(before, after).observe(requireActivity(), foodsList -> setSelectedDay(view, viewModel, foodsList));
+        viewModel.getSelectedDayFoods(before, after).observe(getViewLifecycleOwner(), foodsList -> setSelectedDay(view, viewModel, foodsList));
     }
 
     private void setSelectedDay(View view, ItemViewModel viewModel, List<Food> foodsList){

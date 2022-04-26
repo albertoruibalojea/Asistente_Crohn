@@ -15,4 +15,9 @@
     <color name="gris">#CACACA</color>
     <color name="grisClaro">#F2F2F2</color>
     <color name="casiBlanco">#F6F6F6</color>
+
+
+    <color name="colorPrimary">@color/rosa</color>
+    <color name="colorPrimaryDark">@color/rosa_variante_1</color>
+    <color name="colorAccent">@color/rosa</color>
 </resources>
