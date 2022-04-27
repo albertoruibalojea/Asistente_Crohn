@@ -71,8 +71,6 @@ Bapp/src/main/java/com/aro/asistente_crohn/database/SymptomDAO.java,e\0\e005446
 Kapp/src/main/java/com/aro/asistente_crohn/repository/SymptomRepository.java,a\c\ac23acbe9aac14c08e727eb72494e7a894589e01
 z
 Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9\f9ca5d35082a74e25c021f2944c5539b8751e6be
-n
->app/src/main/java/com/aro/asistente_crohn/ui/HomeFragment.java,f\6\f67b3893a615a0ef4095c537482a6e46e8d42218
 p
 @app/src/main/java/com/aro/asistente_crohn/ui/HealthFragment.java,4\4\44e5b09c3df02316f54933d3a1cfe1e5af10911f
 v
@@ -85,7 +83,3 @@ n
 >app/src/main/java/com/aro/asistente_crohn/ui/AlertDetails.java,4\0\40ea7d68d319b648649922aabd5904c570e198da
 r
 Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
-r
-Bapp/src/main/java/com/aro/asistente_crohn/ui/SettingsFragment.java,b\3\b3010772f085b5e96d99019f05af62aa802e8828
-q
-Aapp/src/main/java/com/aro/asistente_crohn/ui/PrivacyFragment.java,5\3\53eafe79bb90e693b9136b0b4ac73efa20145416

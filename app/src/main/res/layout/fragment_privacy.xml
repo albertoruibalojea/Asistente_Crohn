@@ -45,6 +45,7 @@
             android:id="@+id/text_1"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
@@ -55,10 +56,12 @@
             android:text="Tus registros"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toEndOf="@+id/img1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/img1"
@@ -77,7 +80,7 @@
             android:id="@+id/text_12"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
@@ -86,15 +89,15 @@
             android:gravity="left"
             android:justificationMode="inter_word"
             android:paddingBottom="4dp"
+            android:paddingEnd="4dp"
             android:text="Tus registros se guardan para ser analizados por el sistema experto Drools"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img1"
-            app:layout_constraintTop_toBottomOf="@+id/text_1"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -117,6 +120,7 @@
             android:id="@+id/text_2"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
@@ -127,10 +131,12 @@
             android:text="Tu salud"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toEndOf="@+id/img2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/img2"
@@ -146,9 +152,10 @@
             app:srcCompat="@drawable/ic_baseline_person_outline_24" />
 
         <TextView
+            android:id="@+id/textView13"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
@@ -157,12 +164,13 @@
             android:gravity="left"
             android:justificationMode="inter_word"
             android:paddingBottom="4dp"
+            android:paddingEnd="4dp"
             android:text="Tus datos se pasarán a un motor de Drools para ser analizados en busca de un posible brote"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img2"
             app:layout_constraintTop_toBottomOf="@+id/text_2"
             app:layout_constraintVertical_bias="1.0" />
@@ -188,7 +196,8 @@
             android:id="@+id/text_3"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:contentDescription="Son tus datos"
@@ -198,10 +207,12 @@
             android:text="Son tus datos"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView16"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toEndOf="@+id/img3"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/img3"
@@ -217,9 +228,10 @@
             app:srcCompat="@drawable/ic_baseline_security_24" />
 
         <TextView
+            android:id="@+id/textView16"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
@@ -233,10 +245,10 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img3"
             app:layout_constraintTop_toBottomOf="@+id/text_3"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -259,6 +271,7 @@
             android:id="@+id/text_4"
             android:layout_width="194dp"
             android:layout_height="32dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
@@ -269,10 +282,12 @@
             android:text="Borrado de datos"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintHorizontal_bias="0.086"
             app:layout_constraintStart_toEndOf="@+id/img4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/img4"
@@ -288,23 +303,25 @@
             app:srcCompat="@drawable/ic_baseline_auto_delete_24" />
 
         <TextView
+            android:id="@+id/textView17"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:contentDescription="Tus datos se borran cada 90 días, pero puedes borrarlos ahora desde la ventana anterior"
+            android:contentDescription="Tus datos permanecen en tu dispositivo, pero puedes borrarlos ahora desde la ventana anterior"
             android:fontFamily="@font/regular"
             android:gravity="left"
             android:justificationMode="inter_word"
             android:paddingBottom="4dp"
-            android:text="Tus datos se borran cada 90 días, pero puedes borrarlos ahora desde la ventana anterior"
+            android:paddingEnd="4dp"
+            android:text="Tus datos permanecen en tu dispositivo, pero puedes borrarlos ahora desde la ventana anterior"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img4"
             app:layout_constraintTop_toBottomOf="@+id/text_4"
             app:layout_constraintVertical_bias="1.0" />
@@ -331,14 +348,14 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="344dp"
-        android:layout_height="wrap_content"
+        android:layout_width="329dp"
+        android:layout_height="55dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/bold"
         android:justificationMode="inter_word"
-        android:text="Cualquier duda sobre la aplicación puede ser dirigida a asistente_crohn@outlook.es o a través de redes sociales."
+        android:text="Cualquier duda sobre la aplicación puede ser dirigida a asistente_crohn@outlook.es o a través de redes sociales en @asistente_crohn."
         android:textColor="?attr/itemTextColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -346,32 +363,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageEmail"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/ic_baseline_email_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageTwitter"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/twitter_logo_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:layout_constraintVertical_bias="0.0" />
 
 
