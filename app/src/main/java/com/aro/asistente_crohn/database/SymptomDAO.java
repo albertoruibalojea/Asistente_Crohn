@@ -25,6 +25,9 @@ public interface SymptomDAO {
     @Delete
     public void deleteSymptom(Symptom symptom);
 
+    @Query("DELETE FROM Symptom")
+    public void deleteAll();
+
     @Query("SELECT * FROM Symptom")
     LiveData<List<Symptom>> getSymptoms();
 

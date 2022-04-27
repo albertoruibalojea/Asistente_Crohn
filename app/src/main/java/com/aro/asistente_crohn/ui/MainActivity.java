@@ -12,7 +12,7 @@ import com.aro.asistente_crohn.firsttime.FirstTime8NameActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String PREFS = "ASISTENTE_CROHN_PREFS";
+    private static final String PREFS = "com.aro.asistente_crohn_preferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

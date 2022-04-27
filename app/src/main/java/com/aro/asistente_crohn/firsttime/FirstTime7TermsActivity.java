@@ -19,7 +19,7 @@ public class FirstTime7TermsActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btn);
         btn.setOnClickListener(view -> {
 
-            SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE).edit();
             editor.putBoolean("termsAccepted", true);
             editor.apply();
 

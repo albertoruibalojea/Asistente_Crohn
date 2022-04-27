@@ -1,0 +1,15 @@
+
+_
+java:S1192."IDefine a constant instead of duplicating this literal "username" 4 times.(Û¦Áâ
+C
+java:S1604"(Make this anonymous inner class a lambda(ï ¢Àûÿÿÿÿ
+>
+java:S1604'"(Make this anonymous inner class a lambda(ÉºšÙ
+>
+java:S16040"(Make this anonymous inner class a lambda(ìë³ı
+C
+java:S1905"-Remove this unnecessary cast to "Preference".(ì„­»
+C
+java:S1905&"-Remove this unnecessary cast to "Preference".(ò¾™
+V
+java:S18587"A"getText" returns a string, there's no need to call "toString()".(‡Êı

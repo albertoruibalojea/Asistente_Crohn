@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
 
         //Get the username and show it on Home screen
         displayName = (TextView) ((HomeActivity) requireActivity()).findViewById(R.id.displayName);
-        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE);
+        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
         displayName.setText(preferences.getString("username", null));
 
         this.generateClickeableLayouts();
