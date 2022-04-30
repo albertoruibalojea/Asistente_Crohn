@@ -3,7 +3,9 @@ package com.aro.asistente_crohn.ui;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +17,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.EditTextPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreferenceCompat;
 
+import com.aro.asistente_crohn.BuildConfig;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.ItemViewModel;
 
@@ -31,6 +35,17 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         privacy.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
                 ((HomeActivity) requireActivity()).openFragment(new PrivacyFragment());
+                return true;
+            }
+        });
+
+        Preference feedback = (Preference) findPreference("feedback");
+        feedback.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            public boolean onPreferenceClick(Preference preference) {
+                Intent email= new Intent(Intent.ACTION_SENDTO);
+                email.setData(Uri.parse("mailto:asistente_crohn@outlook.es"));
+                email.putExtra(Intent.EXTRA_SUBJECT, "[FEEDBACK APP] app:android-"+ BuildConfig.VERSION_NAME);
+                startActivity(email);
                 return true;
             }
         });
@@ -59,6 +74,19 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
                 editor.apply();
             }
+        });
+
+        SwitchPreferenceCompat alerts = (SwitchPreferenceCompat) findPreference("app_alerts");
+        alerts.setOnPreferenceClickListener(preference -> {
+            SharedPreferences.Editor editor = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE).edit();
+            if(alerts.isChecked()){
+               editor.putBoolean("app_alerts", true);
+            } else {
+                editor.putBoolean("app_alerts", false);
+            }
+
+            editor.apply();
+            return true;
         });
     }
 

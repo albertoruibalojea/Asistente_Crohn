@@ -113,16 +113,23 @@ public class HomeFragment extends Fragment {
                                 }
                             }
 
+                            int count = 0;
                             if(ableToCompare){
                                 //And now we just compare the 2 Food arrays (today and other) looking for similarities
                                 for(Food f1 : cacheTodaysFoodList){
                                     for(Food f2 : cacheSelectedFoodList){
                                         if(!f1.getEatenDate().equals(f2.getEatenDate()) && f1.getName().equalsIgnoreCase(f2.getName()) && Boolean.TRUE.equals(!f1.getForbidden())){
-                                            //It means the same food was eaten and the same symptom was there!!
-                                            String description = "Has tenido el síntoma " + s.getName() + " al comer " +
-                                                    f1.getName() + " durante más de una ocasión. Considera añadirlo a tu lista.";
-                                            createNotification("Nuevo alimento desaconsejado", description, f1);
-                                            notifiedFood.add(f1.getName());
+                                            count++;
+                                            if(count==5){
+                                                //It means the same food was eaten and the same symptom was there!!
+                                                String description = "Has tenido el síntoma " + s.getName() + " al comer " +
+                                                        f1.getName() + " durante más de 5 ocasiones. Considera añadirlo a tu lista.";
+                                                SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
+                                                if(preferences.getBoolean("app_alerts", true)){
+                                                    createNotification("Nuevo alimento desaconsejado", description, f1);
+                                                    notifiedFood.add(f1.getName());
+                                                }
+                                            }
                                         }
                                     }
                                 }
