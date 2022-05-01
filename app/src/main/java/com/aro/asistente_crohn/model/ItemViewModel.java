@@ -132,4 +132,10 @@ public class ItemViewModel extends AndroidViewModel {
 
 
 
+    //WARNING THIS STATEMENT DELETES ALL DATA FROM DB
+    public void deleteAllDBData(){
+        foodRepository.deleteAll();
+        healthRepository.deleteAll();
+        symptomRepository.deleteAll();
+    }
 }

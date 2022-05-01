@@ -82,11 +82,11 @@ public class SymptomsFragment extends Fragment {
             setDates(view);
 
             //Observer from Repository to lookup the LiveData
-            viewModel.getSelectedDaySymptoms(before[0], after[0]).observe(requireActivity(), symptomList -> setSelectedDay(view, viewModel, symptomList));
+            viewModel.getSelectedDaySymptoms(before[0], after[0]).observe(getViewLifecycleOwner(), symptomList -> setSelectedDay(view, viewModel, symptomList));
         });
 
         //Default view is the actual Date
-        viewModel.getTodaySymptoms().observe(requireActivity(), symptomList -> {
+        viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), symptomList -> {
             date[0] = Calendar.getInstance().getTime();
             calendarView.setDate(DateConverter.fromDate(date[0]));
             setDates(view);

@@ -71,7 +71,7 @@ public class HealthFragment extends Fragment {
             before.setHours(00); before.setMinutes(00); before.setSeconds(00);
             after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
-            viewModel.getSelectedDayHealth(before, after).observe(requireActivity(), healthList -> {
+            viewModel.getSelectedDayHealth(before, after).observe(getViewLifecycleOwner(), healthList -> {
                 List<Health> cacheHealthList = new ArrayList<>();
                 GridLayout courageGrid = alertDialog.findViewById(R.id.courageGrid);
                 Health health = new Health();

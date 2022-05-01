@@ -26,7 +26,7 @@ public class FirstTime8NameActivity extends AppCompatActivity {
         btn.setOnClickListener(view -> {
 
             //saving the username
-            SharedPreferences.Editor editor = getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE).edit();
 
             if(username.getText().length() > 0){
                 editor.putString("username", username.getText().toString());

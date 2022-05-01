@@ -23,6 +23,9 @@ public interface FoodDAO {
     @Delete
     public void deleteFood(Food food);
 
+    @Query("DELETE FROM Food")
+    public void deleteAll();
+
     @Update
     public void updateFood(Food food);
 

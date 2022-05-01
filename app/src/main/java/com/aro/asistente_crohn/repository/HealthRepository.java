@@ -41,4 +41,8 @@ public class HealthRepository {
     public void update(Health health) {
         CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> healthDAO.update(health));
     }
+
+    public void deleteAll(){
+        CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> healthDAO.deleteAll());
+    }
 }

@@ -107,7 +107,7 @@ public class SymptomsRegistryFragment extends Fragment {
 
                     //check if the symptom is not already registered today
                     //Observer from Repository to lookup the LiveData
-                    viewModel.getSelectedDaySymptoms(before, after).observe(requireActivity(), symptomList -> {
+                    viewModel.getSelectedDaySymptoms(before, after).observe(getViewLifecycleOwner(), symptomList -> {
                         List<Symptom> cacheSymptomList = new ArrayList<>();
                         if (symptomList != null) {
                             cacheSymptomList.addAll(symptomList);

@@ -26,6 +26,9 @@ public interface HealthDAO {
     @Delete
     public void delete(Health health);
 
+    @Query("DELETE FROM Health")
+    public void deleteAll();
+
     @Query("SELECT * FROM Health WHERE detectionDate BETWEEN :before AND :after")
     LiveData<List<Health>> getTodayHealth(Long before, Long after);
 }

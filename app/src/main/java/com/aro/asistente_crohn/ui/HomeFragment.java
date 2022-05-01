@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -55,7 +56,7 @@ public class HomeFragment extends Fragment {
 
         //Get the username and show it on Home screen
         displayName = (TextView) ((HomeActivity) requireActivity()).findViewById(R.id.displayName);
-        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("ASISTENTE_CROHN_PREFS", MODE_PRIVATE);
+        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
         displayName.setText(preferences.getString("username", null));
 
         this.generateClickeableLayouts();
@@ -63,7 +64,7 @@ public class HomeFragment extends Fragment {
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         notifiedFood = new ArrayList<>();
-        viewModel.getTodaySymptoms().observe(requireActivity(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
+        viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
     }
 
     public void relateSymptomsFood(ItemViewModel viewModel, List<Symptom> todaysSymptomList){
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
             cacheTodaySymptomList.addAll(todaysSymptomList);
         }
 
-        viewModel.getTodayFoods().observe(requireActivity(), todayFoodList -> {
+        viewModel.getTodayFoods().observe(getViewLifecycleOwner(), todayFoodList -> {
             List<Food> cacheTodaysFoodList = new ArrayList<>();
             if (!todayFoodList.isEmpty()) {
                 cacheTodaysFoodList.addAll(todayFoodList);
@@ -80,7 +81,7 @@ public class HomeFragment extends Fragment {
 
             //For each symptom from today, we get the days when the user had each symptom
             for(Symptom s : cacheTodaySymptomList){
-                viewModel.getBySymptom(s.getName()).observe(requireActivity(), sameSymptomList -> {
+                viewModel.getBySymptom(s.getName()).observe(getViewLifecycleOwner(), sameSymptomList -> {
                     List<Symptom> cacheSameSymptomList = new ArrayList<>();
                     if (!sameSymptomList.isEmpty()) {
                         cacheSameSymptomList.addAll(sameSymptomList);
@@ -94,7 +95,7 @@ public class HomeFragment extends Fragment {
                         after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
                         //For each day with the same symptoms, we look for a common food
-                        viewModel.getSelectedDayFoods(before, after).observe(requireActivity(), selectedDayFoodList -> {
+                        viewModel.getSelectedDayFoods(before, after).observe(getViewLifecycleOwner(), selectedDayFoodList -> {
                             List<Food> cacheSelectedFoodList = new ArrayList<>();
                             if (!selectedDayFoodList.isEmpty()) {
                                 cacheSelectedFoodList.addAll(selectedDayFoodList);
@@ -112,16 +113,23 @@ public class HomeFragment extends Fragment {
                                 }
                             }
 
+                            int count = 0;
                             if(ableToCompare){
                                 //And now we just compare the 2 Food arrays (today and other) looking for similarities
                                 for(Food f1 : cacheTodaysFoodList){
                                     for(Food f2 : cacheSelectedFoodList){
                                         if(!f1.getEatenDate().equals(f2.getEatenDate()) && f1.getName().equalsIgnoreCase(f2.getName()) && Boolean.TRUE.equals(!f1.getForbidden())){
-                                            //It means the same food was eaten and the same symptom was there!!
-                                            String description = "Has tenido el síntoma " + s.getName() + " al comer " +
-                                                    f1.getName() + " durante más de una ocasión. Considera añadirlo a tu lista.";
-                                            createNotification("Nuevo alimento desaconsejado", description, f1);
-                                            notifiedFood.add(f1.getName());
+                                            count++;
+                                            if(count==5){
+                                                //It means the same food was eaten and the same symptom was there!!
+                                                String description = "Has tenido el síntoma " + s.getName() + " al comer " +
+                                                        f1.getName() + " durante más de 5 ocasiones. Considera añadirlo a tu lista.";
+                                                SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
+                                                if(preferences.getBoolean("app_alerts", true)){
+                                                    createNotification("Nuevo alimento desaconsejado", description, f1);
+                                                    notifiedFood.add(f1.getName());
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -171,5 +179,8 @@ public class HomeFragment extends Fragment {
 
         RelativeLayout cardFood = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_food);
         cardFood.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new FoodFragment()));
+
+        ImageView settings = (ImageView) ((HomeActivity) requireActivity()).findViewById(R.id.settingsView);
+        settings.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new SettingsFragment()));
     }
 }

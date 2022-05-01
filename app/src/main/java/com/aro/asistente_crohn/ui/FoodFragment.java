@@ -86,11 +86,11 @@ public class FoodFragment extends Fragment{
             setDates(view);
 
             //Observer from Repository to lookup the LiveData
-            viewModel.getSelectedDayFoods(before[0], after[0]).observe(requireActivity(), foodsList -> setSelectedDay(view, viewModel, foodsList));
+            viewModel.getSelectedDayFoods(before[0], after[0]).observe(getViewLifecycleOwner(), foodsList -> setSelectedDay(view, viewModel, foodsList));
         });
 
         //Default view is the actual Date
-        viewModel.getTodayFoods().observe(requireActivity(), foodsList -> {
+        viewModel.getTodayFoods().observe(getViewLifecycleOwner(), foodsList -> {
             date[0] = Calendar.getInstance().getTime();
             calendarView.setDate(DateConverter.fromDate(date[0]));
             setDates(view);

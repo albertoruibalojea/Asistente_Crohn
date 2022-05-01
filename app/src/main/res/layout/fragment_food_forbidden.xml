@@ -85,7 +85,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/bold"
-            android:text="Añade lo que te hace daño"
+            android:text="@string/anade_lo_que_te_hace_dano"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
