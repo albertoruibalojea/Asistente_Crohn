@@ -75,5 +75,5 @@ z
 Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9\f9ca5d35082a74e25c021f2944c5539b8751e6be
 w
 Gapp/src/main/java/com/aro/asistente_crohn/ui/FoodForbiddenFragment.java,9\c\9cbdca0edc7e3c2a9d6e5a4c16412b9f0a73cd2f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+r
+Bapp/src/main/java/com/aro/asistente_crohn/ui/SettingsFragment.java,b\3\b3010772f085b5e96d99019f05af62aa802e8828
