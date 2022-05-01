@@ -2,7 +2,6 @@ package com.aro.asistente_crohn.ui;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -32,11 +31,11 @@ import com.aro.asistente_crohn.model.Symptom;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HomeFragment extends Fragment {
 
     TextView displayName;
-    List<String> notifiedFood;
     public static final String FOOD_ALERT = "FOOD_ALERT";
 
     public HomeFragment() {
@@ -63,7 +62,6 @@ public class HomeFragment extends Fragment {
 
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
-        notifiedFood = new ArrayList<>();
         viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
     }
 
@@ -87,6 +85,8 @@ public class HomeFragment extends Fragment {
                         cacheSameSymptomList.addAll(sameSymptomList);
                     }
 
+                    AtomicInteger count = new AtomicInteger();
+
                     //We iterate the days when the user had this symptom
                     for(Symptom d : cacheSameSymptomList){
                         Date before = (Date) d.getRegisteredDate().clone();
@@ -101,33 +101,32 @@ public class HomeFragment extends Fragment {
                                 cacheSelectedFoodList.addAll(selectedDayFoodList);
                             }
 
-                            //Boolean to avois sending the same notification to the user until the food is set to forbidden true
-                            boolean ableToCompare = true;
-                            if(!notifiedFood.isEmpty()){
-                                for(String f : notifiedFood){
-                                    for(Food f2 : cacheSelectedFoodList){
-                                        if(f.equalsIgnoreCase(f2.getName())){
-                                            ableToCompare = false;
+
+                            for(Food f1 : cacheTodaysFoodList){
+                                //Boolean to avois sending the same notification to the user until the food is set to forbidden true
+                                boolean ableToCompare = true;
+                                if(!HomeActivity.notifiedFood.isEmpty()){
+                                    for(String f : HomeActivity.notifiedFood){
+                                        for(Food f1a : cacheTodaysFoodList){
+                                            if(f.equalsIgnoreCase(f1a.getName())){
+                                                ableToCompare = false;
+                                            }
                                         }
                                     }
                                 }
-                            }
 
-                            int count = 0;
-                            if(ableToCompare){
-                                //And now we just compare the 2 Food arrays (today and other) looking for similarities
-                                for(Food f1 : cacheTodaysFoodList){
+                                if(ableToCompare){
                                     for(Food f2 : cacheSelectedFoodList){
                                         if(!f1.getEatenDate().equals(f2.getEatenDate()) && f1.getName().equalsIgnoreCase(f2.getName()) && Boolean.TRUE.equals(!f1.getForbidden())){
-                                            count++;
-                                            if(count==5){
+                                            count.getAndIncrement();
+                                            if(count.get() == 5){
                                                 //It means the same food was eaten and the same symptom was there!!
                                                 String description = "Has tenido el síntoma " + s.getName() + " al comer " +
                                                         f1.getName() + " durante más de 5 ocasiones. Considera añadirlo a tu lista.";
                                                 SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
                                                 if(preferences.getBoolean("app_alerts", true)){
                                                     createNotification("Nuevo alimento desaconsejado", description, f1);
-                                                    notifiedFood.add(f1.getName());
+                                                    HomeActivity.notifiedFood.add(f1.getName());
                                                 }
                                             }
                                         }

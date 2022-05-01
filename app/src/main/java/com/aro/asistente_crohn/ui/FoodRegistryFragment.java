@@ -78,8 +78,8 @@ public class FoodRegistryFragment extends Fragment {
         TextView textDate = view.findViewById(R.id.textDate);
         textDate.setText(simpleDateFormat.format(date));
 
-        before.setDate(date.getDate());before.setHours(00); before.setMinutes(00); before.setSeconds(00);
-        after.setDate(date.getDate());after.setHours(23); after.setMinutes(59); after.setSeconds(59);
+        before.setDate(date.getDate());before.setMonth(date.getMonth()); before.setYear(date.getYear());before.setHours(00); before.setMinutes(00); before.setSeconds(00);
+        after.setDate(date.getDate());after.setMonth(date.getMonth()); after.setYear(date.getYear());after.setHours(23); after.setMinutes(59); after.setSeconds(59);
 
 
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);

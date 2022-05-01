@@ -14,18 +14,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
+import com.aro.asistente_crohn.model.Food;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity{
+
+    public static ArrayList<String> notifiedFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
+
+        notifiedFood = new ArrayList<>();
 
         //we cannot use openFragment to avoid the backstack null with a blank screen
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
