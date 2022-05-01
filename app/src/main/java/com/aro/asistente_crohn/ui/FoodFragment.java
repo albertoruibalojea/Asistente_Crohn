@@ -116,8 +116,8 @@ public class FoodFragment extends Fragment{
     }
 
     private void setDates(View view){
-        before[0].setDate(date[0].getDate());before[0].setHours(00); before[0].setMinutes(00); before[0].setSeconds(00);
-        after[0].setDate(date[0].getDate());after[0].setHours(23); after[0].setMinutes(59); after[0].setSeconds(59);
+        before[0].setDate(date[0].getDate());before[0].setMonth(date[0].getMonth()); before[0].setYear(date[0].getYear());before[0].setHours(00); before[0].setMinutes(00); before[0].setSeconds(00);
+        after[0].setDate(date[0].getDate());after[0].setMonth(date[0].getMonth()); after[0].setYear(date[0].getYear());after[0].setHours(23); after[0].setMinutes(59); after[0].setSeconds(59);
 
         TextView dateTextView = view.findViewById(R.id.dateTextView);
         SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));

@@ -1,0 +1,11 @@
+
+‚
+java:S1319"lThe type of "notifiedFood" should be an interface such as "List" rather than the implementation "ArrayList".(›Õà
+n
+java:S1104"XMake notifiedFood a static final constant or non-public and provide accessors if needed.(›Õà
+H
+java:S1444"2Make this "public static notifiedFood" field final(›Õà
+=
+java:S2386""'Make member "notifiedFood" "protected".(ù€ì®
+L
+java:S2696""6Make the enclosing method "static" or remove this set.(ù€ì®
