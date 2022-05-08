@@ -1,0 +1,8 @@
+package com.aro.asistente_crohn_model
+
+rule "hola"
+    when
+        Health(crohnActive == false)
+    then
+        Health(crohnActive == true)
+end

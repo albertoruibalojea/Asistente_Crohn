@@ -29,8 +29,6 @@ u
 Eapp/src/main/java/com/aro/asistente_crohn/database/DateConverter.java,f\3\f3ac2e0e3cb53df1ee4ff6107c518dba26b85ecc
 m
 =app/src/main/java/com/aro/asistente_crohn/model/FoodRepo.java,2\1\215f31aac81bb43212613f5702140071adbc8279
-k
-;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769
 ~
 Napp/src/main/java/com/aro/asistente_crohn/model/IgnoreAccentsArrayAdapter.java,9\e\9ece552110c95f40bf65791b6db01985cc68d303
 s
@@ -41,8 +39,6 @@ l
 Lapp/src/main/java/com/aro/asistente_crohn/repository/FoodRepoRepository.java,4\c\4cfc818ab5b8f110a930ce137cb901402aa4d634
 w
 Gapp/src/main/java/com/aro/asistente_crohn/model/SymptomListAdapter.java,8\3\8372c4c9a89dbc0d10114c523ebf490edeaf038d
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 p
 @app/src/main/java/com/aro/asistente_crohn/ui/HealthFragment.java,4\4\44e5b09c3df02316f54933d3a1cfe1e5af10911f
 q
@@ -55,14 +51,8 @@ o
 ?app/src/main/java/com/aro/asistente_crohn/database/FoodDAO.java,2\7\27f2f2f1a64c164cdc41677ea1b7a12c74004b97
 q
 Aapp/src/main/java/com/aro/asistente_crohn/database/HealthDAO.java,5\6\56230b3184f3ffbdb9b2070f30dada098ab5a121
-x
-Happ/src/main/java/com/aro/asistente_crohn/repository/FoodRepository.java,2\8\28e2f28957de02f94244e4f04db76fa08e4b4b8e
-z
-Japp/src/main/java/com/aro/asistente_crohn/repository/HealthRepository.java,6\7\6718e5b79e394677788dcfb82cb9a8f158f132c8
 {
 Kapp/src/main/java/com/aro/asistente_crohn/repository/SymptomRepository.java,a\c\ac23acbe9aac14c08e727eb72494e7a894589e01
-r
-Bapp/src/main/java/com/aro/asistente_crohn/model/ItemViewModel.java,8\f\8fba1aa6b3267cb4530b7c0ced18af328e018c7b
 r
 Bapp/src/main/java/com/aro/asistente_crohn/database/SymptomDAO.java,e\0\e0054462936f5dfb585b6e8adf8617e272ac555e
 z
@@ -75,8 +65,6 @@ n
 >app/src/main/java/com/aro/asistente_crohn/ui/AlertDetails.java,4\0\40ea7d68d319b648649922aabd5904c570e198da
 t
 Dapp/src/main/java/com/aro/asistente_crohn/model/FoodListAdapter.java,5\0\509aebff9dc178a4f29914e1a2aff2978ddc9b83
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 r
 Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
 v
@@ -87,5 +75,11 @@ n
 >app/src/main/java/com/aro/asistente_crohn/ui/HomeActivity.java,f\e\fe3261d489fc273ddb54cf2caebb88a6beb0265f
 n
 >app/src/main/java/com/aro/asistente_crohn/ui/MainActivity.java,5\6\56803f91c1f16823815c3e8451db2cd233e8781f
-n
->app/src/main/java/com/aro/asistente_crohn/ui/HomeFragment.java,f\6\f67b3893a615a0ef4095c537482a6e46e8d42218
+k
+;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769
+x
+Happ/src/main/java/com/aro/asistente_crohn/repository/FoodRepository.java,2\8\28e2f28957de02f94244e4f04db76fa08e4b4b8e
+z
+Japp/src/main/java/com/aro/asistente_crohn/repository/HealthRepository.java,6\7\6718e5b79e394677788dcfb82cb9a8f158f132c8
+r
+Bapp/src/main/java/com/aro/asistente_crohn/model/ItemViewModel.java,8\f\8fba1aa6b3267cb4530b7c0ced18af328e018c7b

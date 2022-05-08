@@ -24,7 +24,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
+import com.aro.asistente_crohn.model.DroolsUtil;
 import com.aro.asistente_crohn.model.Food;
+import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 
@@ -63,6 +65,20 @@ public class HomeFragment extends Fragment {
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
+
+        viewModel.getTodayHealth().observe(getViewLifecycleOwner(), todayHealth -> {
+            Health health = new Health();
+            if(!todayHealth.isEmpty()){
+                health = todayHealth.get(0);
+            }
+
+            System.out.println(health);
+            System.out.println(health.getCourage());
+            System.out.println(health.getCrohnActive());
+            System.out.println("y ahora con drools");
+            DroolsUtil.validateHealth(health);
+            System.out.println(health.getCrohnActive());
+        });
     }
 
     public void relateSymptomsFood(ItemViewModel viewModel, List<Symptom> todaysSymptomList){
