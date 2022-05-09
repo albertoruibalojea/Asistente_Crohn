@@ -16,7 +16,7 @@ public class DroolsUtil {
 
     static {
         KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-        kieFileSystem.write(ResourceFactory.newClassPathResource("../java/com/aro/asistente_crohn/model/health_rules.drl"));
+        kieFileSystem.write(ResourceFactory.newClassPathResource("com/aro/asistente_crohn/model/health_rules.drl"));
         KieBuilder kb = kieServices.newKieBuilder(kieFileSystem);
         kb.buildAll();
         KieModule kieModule = kb.getKieModule();

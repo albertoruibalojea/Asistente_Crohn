@@ -1,4 +1,4 @@
-package com.aro.asistente_crohn_model
+package com.aro.asistente_crohn.model
 
 rule "hola"
     when

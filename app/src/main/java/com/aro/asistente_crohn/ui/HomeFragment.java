@@ -28,7 +28,12 @@ import com.aro.asistente_crohn.model.DroolsUtil;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
+import com.aro.asistente_crohn.model.RuleRunner;
 import com.aro.asistente_crohn.model.Symptom;
+
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.StatelessKieSession;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,17 +72,18 @@ public class HomeFragment extends Fragment {
         viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
 
         viewModel.getTodayHealth().observe(getViewLifecycleOwner(), todayHealth -> {
-            Health health = new Health();
+            Health[] health = { new Health() };
             if(!todayHealth.isEmpty()){
-                health = todayHealth.get(0);
+                health[0] = todayHealth.get(0);
             }
 
             System.out.println(health);
-            System.out.println(health.getCourage());
-            System.out.println(health.getCrohnActive());
+            System.out.println(health[0].getCourage());
+            System.out.println(health[0].getCrohnActive());
             System.out.println("y ahora con drools");
-            DroolsUtil.validateHealth(health);
-            System.out.println(health.getCrohnActive());
+            //DroolsUtil.validateHealth(health);
+            new RuleRunner().runRules( new String[] { "health_rules.drl" }, health );
+            System.out.println(health[0].getCrohnActive());
         });
     }
 

@@ -48,6 +48,7 @@ dependencies {
 
     //Drools and KIE components
     implementation "org.kie:kie-api:${droolsVersion}"
+    implementation "org.kie:kie-spring:${droolsVersion}"
     implementation "org.drools:drools-compiler:${droolsVersion}"
     implementation "org.drools:drools-core:${droolsVersion}"
     implementation "org.slf4j:slf4j-api:1.7.30"
