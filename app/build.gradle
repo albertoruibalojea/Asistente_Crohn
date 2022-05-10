@@ -41,6 +41,7 @@ android {
             excludes += ['META-INF/*']
         }
     }
+    namespace 'com.aro.asistente_crohn'
 
 }
 
