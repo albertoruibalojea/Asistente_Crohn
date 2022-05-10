@@ -83,3 +83,5 @@ o
 ?app/src/main/java/com/aro/asistente_crohn/model/DroolsUtil.java,e\5\e5ef8f1328526107875389b73ea34888a9195773
 o
 ?app/src/main/java/com/aro/asistente_crohn/model/RuleRunner.java,1\8\18d1e0950a40d3b85c788466da2a42ea90bd536e
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
