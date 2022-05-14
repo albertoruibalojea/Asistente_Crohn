@@ -17,8 +17,6 @@ x
 Happ/src/main/java/com/aro/asistente_crohn/firsttime/Activity1stTime.java,a\5\a577efe414b17eff348f4f5b49e1d9a5f819853b
 y
 Iapp/src/main/java/com/aro/asistente_crohn/database/RecommendationDAO.java,8\0\809d25720c715a8f4db6ef2692e99e05feb0be11
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 s
 Capp/src/main/java/com/aro/asistente_crohn/database/FoodRepoDAO.java,a\9\a9ffab08e8404e06c4050f97afcf47cff68418eb
 |
