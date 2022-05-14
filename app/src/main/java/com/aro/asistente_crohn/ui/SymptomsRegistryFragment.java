@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
@@ -57,6 +58,14 @@ public class SymptomsRegistryFragment extends Fragment {
 
         SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm:ss zzz", new Locale("es", "ES"));
         Date date = Calendar.getInstance().getTime();
+
+        ImageView infoBtn = view.findViewById(R.id.infoBtn);
+        infoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openInfo(view);
+            }
+        });
 
         if(!paramDate.isEmpty()){
             try {
@@ -177,5 +186,17 @@ public class SymptomsRegistryFragment extends Fragment {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
         alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());
+    }
+
+    public void openInfo(View view){
+        //Success alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        ViewGroup viewGroup = view.findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.fragment_symptoms_registry_meaning, viewGroup, false);
+
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        alertDialog.findViewById(R.id.dismiss).setOnClickListener(view1 -> alertDialog.dismiss());
     }
 }

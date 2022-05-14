@@ -27,16 +27,16 @@
 
         <TextView
             android:id="@+id/textDate"
-            android:layout_width="179dp"
-            android:layout_height="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="109dp"
-            android:layout_marginEnd="124dp"
-            android:layout_marginBottom="31dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="107dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="26dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/consulta_registro_sintomas"
@@ -50,14 +50,14 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="198dp"
+            android:layout_width="239dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="116dp"
+            android:layout_marginStart="69dp"
             android:layout_marginTop="79dp"
-            android:layout_marginEnd="114dp"
+            android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/tu_alimentacion"
@@ -115,8 +115,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_viewForbiddenFood"
-            android:layout_width="332dp"
-            android:layout_height="43dp"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
@@ -148,8 +148,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_addRegistries"
-            android:layout_width="332dp"
-            android:layout_height="43dp"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
