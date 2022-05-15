@@ -144,7 +144,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/diarrea"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_diaree"
@@ -179,7 +179,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/nauseas"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_vomit"
@@ -214,7 +214,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/menos_apetito"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_hungry"
@@ -249,7 +249,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/dolorbarriga"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_abdompain"
@@ -285,7 +285,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/dolor_articular"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_articularpain"
@@ -321,7 +321,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/dolor_anal"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_analpain"
@@ -356,7 +356,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/dolor_cabeza"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_headache"
@@ -393,7 +393,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/fiebre"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_fever"
@@ -428,7 +428,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/cansancio"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -465,7 +465,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/ir_mas_al_bano"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -502,7 +502,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/perdi_peso"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -539,7 +539,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/sangrado"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_blood"
@@ -575,7 +575,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/aphthas"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -611,7 +611,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/herida_perianal"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -647,7 +647,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/skin"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView

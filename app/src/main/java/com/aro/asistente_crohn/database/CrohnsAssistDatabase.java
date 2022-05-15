@@ -3,6 +3,7 @@ package com.aro.asistente_crohn.database;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.room.AutoMigration;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -19,7 +20,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 // bump version number if the schema changes
-@Database(entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class}, version=4)
+@Database(
+            entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class},
+            version=5,
+            autoMigrations = { @AutoMigration(from = 4, to = 5)
+})
 @TypeConverters({DateConverter.class})
 public abstract class CrohnsAssistDatabase extends RoomDatabase {
 
