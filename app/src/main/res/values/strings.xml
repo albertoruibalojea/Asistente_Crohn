@@ -46,7 +46,7 @@
     <string name="ver_mis_registros">Ver mis registros</string>
     <string name="todo">TODO</string>
     <string name="diarrea">Diarrea</string>
-    <string name="dolor">Dolor</string>
+    <string name="dolorbarriga">Dolor barriga</string>
     <string name="fiebre">Fiebre</string>
     <string name="cansancio">Cansancio</string>
     <string name="perdi_peso">Perdí peso</string>
@@ -125,6 +125,18 @@
     <string name="tus_datos_permanecen_en_tu_dispositivo_pero_puedes_borrarlos_ahora_desde_la_ventana_anterior">Tus datos permanecen en tu dispositivo, pero puedes borrarlos ahora desde la ventana anterior</string>
     <string name="mas_informacion">Más información</string>
     <string name="cualquier_duda_sobre_la_aplicaci_n_puede_ser_dirigida_a_asistente_crohn_outlook_es_o_a_trav_s_de_redes_sociales_en_asistente_crohn">Cualquier duda sobre la aplicación puede ser dirigida a asistente_crohn@outlook.es o a través de redes sociales en @asistente_crohn.</string>
+    <string name="registrar_mi_animo_de_hoy">Registrar mi ánimo de hoy</string>
+    <string name="ver_mis_registros_anteriores">Ver mis registros anteriores</string>
+    <string name="nauseas">Náuseas</string>
+    <string name="menos_apetito">Menos apetito</string>
+    <string name="dolor_articular">Dolor articular</string>
+    <string name="dolor_cabeza">Dolor cabeza</string>
+    <string name="ir_mas_al_bano">Ir más al baño</string>
+    <string name="aphthas">Aftas</string>
+    <string name="herida_perianal">Herida perianal</string>
+    <string name="skin">Piel</string>
+    <string name="significado_de_cada_sintoma">Información</string>
+    <string name="symptoms_meaning">Diarrea: Marca el síntoma si has tenido diarrea.\n\nNáuseas: Marca el síntoma si has tenido náuseas o vómitos.\n\nMenos apetito: Marca el síntoma si has tenido menos apetito de lo normal.\n\nDolor de barriga: Marca el síntoma si has tenido algún retortijón.\n\nDolor articular: Marca el síntoma si te han dolido las rodillas, tobillos, codos, muñecas, dedos, el lumbago o si sientes rigidez.\n\nDolor anal: Marca el síntoma si tienes dolor hacia el ano.\n\nDolor de cabeza: Marca el síntoma si te duele la cabeza o tienes estrés, ansiedad, te sientes deprimida/o; si este es el caso acuérdate de indicar tu estado de ánimo también.\n\nFiebre: Marca el síntoma si tienes fiebre.\n\nCansancio: Marca el síntoma si te encuentras cansada/o o con poca energía.\n\nIr más al baño: Marca el síntoma si ha aumentado tu frecuencia de deposiciones diaria.\n\nPerdí peso: Marca el síntoma si has perdido peso.\n\nSangrado: Marca el síntoma si tienes sangrado en heces.\n\nAftas: Marca el síntoma si tienes aftas bucales o úlceras.\n\nHerida perianal: Marca el síntoma si tienes fisuras anales, pleigues cutáneos, úlceras anales, fístulas, abscesos u otro tipo de lesiones anales.\n\nPiel: Marca el síntoma si tienes eritemas nudosos, piodermas gangrenosos, psoriasis o cualquier afección de la piel que creas sospechosa.\n\n</string>
 
     <!-- Privacy Fragment-->
 

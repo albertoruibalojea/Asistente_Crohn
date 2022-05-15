@@ -35,9 +35,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="111dp"
-            android:layout_marginTop="109dp"
-            android:layout_marginEnd="110dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="107dp"
+            android:layout_marginEnd="65dp"
             android:layout_marginBottom="31dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
@@ -57,9 +57,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="134dp"
-            android:layout_marginTop="78dp"
-            android:layout_marginEnd="134dp"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/tus_sintomas"
@@ -71,10 +71,10 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="763dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/elipse"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="3dp"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -93,6 +93,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/bold"
                 android:text="@string/registra_tus_s_ntomas"
@@ -100,31 +101,31 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.22"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
             <GridLayout
                 android:id="@+id/symptomGrid"
-                android:layout_width="349dp"
-                android:layout_height="367dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_width="360dp"
+                android:layout_height="611dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:columnCount="3"
                 android:gravity="center"
                 android:rowCount="3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.094">
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintVertical_bias="0.0">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_diaree"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
                     android:layout_margin="@dimen/table_symptoms_margin"
                     app:cardBackgroundColor="@color/negroGris"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -143,12 +144,12 @@
                         android:paddingBottom="4dp"
                         android:text="@string/diarrea"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_diaree"
-                        android:layout_width="wrap_content"
-                        android:layout_height="69dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/diarrea"
                         android:paddingTop="8dp"
@@ -157,9 +158,79 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_vomit"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_vomit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/nauseas"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/nauseas"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_vomit"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/nauseas"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_vomit" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_hungry"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_hungry"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/menos_apetito"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/menos_apetito"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_hungry"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/menos_apetito"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_hungry" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/card_abdompain"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
                     android:layout_margin="@dimen/table_symptoms_margin"
                     app:cardBackgroundColor="@color/negroGris"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,30 +243,136 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/dolor"
+                        android:contentDescription="@string/dolorbarriga"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/dolor"
+                        android:text="@string/dolorbarriga"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_abdompain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:layout_margin="8dp"
-                        android:contentDescription="@string/dolor"
+                        android:contentDescription="@string/dolorbarriga"
+                        android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_abdompain"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card_articularpain"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_articularpain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/dolor_articular"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/dolor_articular"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_articularpain"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:paddingTop="8dp"
+                        android:contentDescription="@string/dolor_articular"
+                        app:srcCompat="@drawable/ic_sympt_articularpain"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_analpain"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_analpain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/dolor_anal"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/dolor_anal"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_analpain"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/dolor_anal"
+                        android:paddingTop="12dp"
+                        app:srcCompat="@drawable/ic_sympt_analpain" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_headache"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_headache"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/dolor_cabeza"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/dolor_cabeza"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_headache"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/dolor_cabeza"
+                        android:paddingTop="4dp"
+                        app:srcCompat="@drawable/ic_sympt_headache" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/card_fever"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
                     android:layout_margin="@dimen/table_symptoms_margin"
                     app:cardBackgroundColor="@color/negroGris"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -216,12 +393,12 @@
                         android:paddingBottom="4dp"
                         android:text="@string/fiebre"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/image_fever"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/fiebre"
                         android:paddingTop="8dp"
@@ -230,153 +407,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_lessweight"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    app:cardBackgroundColor="@color/negroGris"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="185dp">
-
-                    <TextView
-                        android:id="@+id/text_lessweight"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/perdi_peso"
-                        android:fontFamily="@font/regular"
-                        android:gravity="bottom|center"
-                        android:paddingBottom="4dp"
-                        android:text="@string/perdi_peso"
-                        android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
-                        tools:ignore="TextContrastCheck" />
-
-                    <ImageView
-                        android:id="@+id/image_lessweight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:contentDescription="@string/perdi_peso"
-                        android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_lessweight"
-                        tools:ignore="ImageContrastCheck" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_analpain"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    app:cardBackgroundColor="@color/negroGris"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="185dp">
-
-                    <TextView
-                        android:id="@+id/text_analpain"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/dolor_anal"
-                        android:fontFamily="@font/regular"
-                        android:gravity="bottom|center"
-                        android:paddingBottom="4dp"
-                        android:text="@string/dolor_anal"
-                        android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/image_analpain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:contentDescription="@string/dolor_anal"
-                        android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_sympt_analpain" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_injures"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    app:cardBackgroundColor="@color/negroGris"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="185dp">
-
-                    <TextView
-                        android:id="@+id/text_injures"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/heridas"
-                        android:fontFamily="@font/regular"
-                        android:gravity="bottom|center"
-                        android:paddingBottom="4dp"
-                        android:text="@string/heridas"
-                        android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
-                        tools:ignore="TextContrastCheck" />
-
-                    <ImageView
-                        android:id="@+id/image_injures"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:contentDescription="@string/heridas"
-                        android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_sympt_injures" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_blood"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    app:cardBackgroundColor="@color/negroGris"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="185dp">
-
-                    <TextView
-                        android:id="@+id/text_blood"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/sangrado"
-                        android:fontFamily="@font/regular"
-                        android:gravity="bottom|center"
-                        android:paddingBottom="4dp"
-                        android:text="@string/sangrado"
-                        android:textColor="?attr/colorSurface"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/image_blood"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:contentDescription="@string/sangrado"
-                        android:paddingTop="16dp"
-                        app:srcCompat="@drawable/ic_sympt_blood"
-                        tools:ignore="ImageContrastCheck" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
                     android:id="@+id/card_tired"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
                     android:layout_margin="@dimen/table_symptoms_margin"
                     app:cardBackgroundColor="@color/negroGris"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -395,18 +428,236 @@
                         android:paddingBottom="4dp"
                         android:text="@string/cansancio"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
                         android:id="@+id/image_tired"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/cansancio"
+                        android:paddingTop="4dp"
+                        app:srcCompat="@drawable/ic_sympt_tired"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_bathroom_urge"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_bathroom_urge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/ir_mas_al_bano"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/ir_mas_al_bano"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_bathroom_urge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/cansancio"
+                        android:contentDescription="@string/ir_mas_al_bano"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_tired"
+                        app:srcCompat="@drawable/ic_sympt_bathroom_urge"
                         tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_lessweight"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_lessweight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/perdi_peso"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/perdi_peso"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_lessweight"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/perdi_peso"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_lessweight"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_blood"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_blood"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/sangrado"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/sangrado"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_blood"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/sangrado"
+                        android:paddingTop="16dp"
+                        app:srcCompat="@drawable/ic_sympt_blood"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_aphthas"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_aphthas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/aphthas"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/aphthas"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_aphthas"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/aphthas"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_aftas" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_perianal"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_perianal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/herida_perianal"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/herida_perianal"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_perianal"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/herida_perianal"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_perianal" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_skin"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_skin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/skin"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/skin"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_skin"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/skin"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_skin" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -417,6 +668,7 @@
                 android:layout_width="332dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="64dp"
                 android:width="609sp"
@@ -430,9 +682,23 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptomGrid" />
+
+            <ImageView
+                android:id="@+id/infoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_baseline_info_24"
+                app:layout_constraintBottom_toTopOf="@+id/symptomGrid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
