@@ -100,6 +100,7 @@
 
     <!-- Messages Preferences -->
     <string name="username_title">Tu nombre</string>
+    <string name="daysAnalyze_title">Días a analizar hacia atrás</string>
 
     <!-- Sync Preferences -->
     <string name="app_alerts_title">Avisos de la aplicación</string>
@@ -111,9 +112,11 @@
     <string name="privacy_summary">Consulta qué hacemos con tus datos.</string>
     <string name="feedback_title">Envío de sugerencias</string>
     <string name="feedback_summary">Ayuda con tus comentarios a mejorar tu Asistente Crohn.</string>
-    <string name="anade_lo_que_te_hace_dano">Añade lo que te hace daño</string>
     <string name="atencion">Atención</string>
     <string name="vas_a_borrar_todos_tus_datos">Vas a borrar todos tus datos</string>
+
+
+    <string name="anade_lo_que_te_hace_dano">Añade lo que te hace daño</string>
     <string name="que_hacemos_con_tus_datos">¿Qué hacemos con tus datos?</string>
     <string name="tus_registros">Tus registros</string>
     <string name="tus_registros_se_guardan_para_ser_analizados_por_el_sistema_experto_drools">Tus registros se guardan para ser analizados por el sistema experto Drools</string>
@@ -136,7 +139,7 @@
     <string name="herida_perianal">Herida perianal</string>
     <string name="skin">Piel</string>
     <string name="significado_de_cada_sintoma">Información</string>
-    <string name="symptoms_meaning">Diarrea: Marca el síntoma si has tenido diarrea.\n\nNáuseas: Marca el síntoma si has tenido náuseas o vómitos.\n\nMenos apetito: Marca el síntoma si has tenido menos apetito de lo normal.\n\nDolor de barriga: Marca el síntoma si has tenido algún retortijón.\n\nDolor articular: Marca el síntoma si te han dolido las rodillas, tobillos, codos, muñecas, dedos, el lumbago o si sientes rigidez.\n\nDolor anal: Marca el síntoma si tienes dolor hacia el ano.\n\nDolor de cabeza: Marca el síntoma si te duele la cabeza o tienes estrés, ansiedad, te sientes deprimida/o; si este es el caso acuérdate de indicar tu estado de ánimo también.\n\nFiebre: Marca el síntoma si tienes fiebre.\n\nCansancio: Marca el síntoma si te encuentras cansada/o o con poca energía.\n\nIr más al baño: Marca el síntoma si ha aumentado tu frecuencia de deposiciones diaria.\n\nPerdí peso: Marca el síntoma si has perdido peso.\n\nSangrado: Marca el síntoma si tienes sangrado en heces.\n\nAftas: Marca el síntoma si tienes aftas bucales o úlceras.\n\nHerida perianal: Marca el síntoma si tienes fisuras anales, pleigues cutáneos, úlceras anales, fístulas, abscesos u otro tipo de lesiones anales.\n\nPiel: Marca el síntoma si tienes eritemas nudosos, piodermas gangrenosos, psoriasis o cualquier afección de la piel que creas sospechosa.\n\n</string>
+    <string name="symptoms_meaning">Diarrea: Marca el síntoma si has tenido diarrea.\n\nNáuseas: Marca el síntoma si has tenido náuseas o vómitos.\n\nMenos apetito: Marca el síntoma si has tenido menos apetito de lo normal.\n\nDolor de barriga: Marca el síntoma si has tenido algún retortijón.\n\nDolor articular: Marca el síntoma si te han dolido las rodillas, tobillos, codos, muñecas, dedos, el lumbago o si sientes rigidez.\n\nDolor anal: Marca el síntoma si tienes dolor hacia el ano.\n\nDolor de cabeza: Marca el síntoma si te duele la cabeza o tienes estrés, ansiedad, te sientes deprimida/o; si este es el caso acuérdate de indicar tu estado de ánimo también.\n\nFiebre: Marca el síntoma si tienes fiebre.\n\nCansancio: Marca el síntoma si te encuentras cansada/o o con poca energía.\n\nIr más al baño: Marca el síntoma si ha aumentado tu frecuencia de deposiciones diaria.\n\nPerdí peso: Marca el síntoma si has perdido peso (en torno a un 10% menos).\n\nSangrado: Marca el síntoma si tienes sangrado en heces.\n\nAftas: Marca el síntoma si tienes aftas bucales o úlceras.\n\nHerida perianal: Marca el síntoma si tienes fisuras anales, pleigues cutáneos, úlceras anales, fístulas, abscesos u otro tipo de lesiones anales.\n\nPiel: Marca el síntoma si tienes eritemas nudosos, piodermas gangrenosos, psoriasis o cualquier afección de la piel que creas sospechosa.\n\n</string>
 
     <!-- Privacy Fragment-->
 

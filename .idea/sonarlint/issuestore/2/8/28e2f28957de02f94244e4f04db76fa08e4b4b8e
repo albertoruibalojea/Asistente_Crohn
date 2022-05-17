@@ -11,3 +11,5 @@ H
 java:S1874"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
 H
 java:S1874"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+\
+java:S1612H"?Replace this lambda with method reference 'foodDao::deleteAll'.(´ŠáÜ8·ä±ïŒ0

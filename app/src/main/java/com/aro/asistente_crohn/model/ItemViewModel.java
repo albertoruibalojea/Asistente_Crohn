@@ -29,6 +29,8 @@ public class ItemViewModel extends AndroidViewModel {
     private LiveData<List<Food>> forbiddenFoods;
     private LiveData<List<FoodRepo>> allFoods;
 
+    private LiveData<List<Health>> todayHealth;
+
 
     public ItemViewModel(Application application) {
         super(application);
@@ -44,6 +46,7 @@ public class ItemViewModel extends AndroidViewModel {
         forbiddenFoods = foodRepository.getForbiddenFoods();
 
         healthRepository = new HealthRepository(application);
+        todayHealth = healthRepository.getTodayHealth();
     }
 
     public LiveData<List<Symptom>> getAllSymptoms() {
@@ -120,8 +123,16 @@ public class ItemViewModel extends AndroidViewModel {
     public void updateFood(Food food) { foodRepository.update(food);}
 
 
+
     public LiveData<List<Health>> getSelectedDayHealth(Date before, Date after){
         return healthRepository.getSelectedDayHealth(before, after);
+    }
+
+    public LiveData<List<Health>> getTodayHealth(){
+        if (todayHealth == null) {
+            todayHealth = healthRepository.getTodayHealth();
+        }
+        return todayHealth;
     }
 
 

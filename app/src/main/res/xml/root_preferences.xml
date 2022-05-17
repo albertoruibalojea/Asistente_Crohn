@@ -28,6 +28,14 @@
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/ic_baseline_alternate_email_24"/>
 
+        <EditTextPreference
+            app:key="daysToAnalyze"
+            app:title="@string/daysAnalyze_title"
+            app:defaultValue="3"
+            app:useSimpleSummaryProvider="true"
+            app:dialogMessage="El mínimo de días son 2, el máximo recomendado son 7."
+            app:icon="@drawable/ic_baseline_today_24"/>
+
         <SwitchPreferenceCompat
             app:key="app_alerts"
             app:summaryOff="@string/app_alerts_summary_off"

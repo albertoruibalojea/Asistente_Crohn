@@ -1,0 +1,15 @@
+
+K
+java:S1874"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+F
+java:S1874"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+H
+java:S1874"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+H
+java:S1874"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+W
+java:S1612;"AReplace this lambda with method reference 'healthDAO::deleteAll'.(¾òò‰

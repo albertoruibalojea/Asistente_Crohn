@@ -1,0 +1,42 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(ü‰»üÿÿÿÿ8ªÖ¸”0
+h
+java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(ÍéÆœ
+L
+java:S1874¢"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874¢"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874¢"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+G
+java:S1874¤"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+I
+java:S1874¤"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+I
+java:S1874¤"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+L
+java:S1874Â"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874Â"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874Â"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+G
+java:S1874Ä"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+I
+java:S1874Ä"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+I
+java:S1874Ä"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+L
+java:S1874â"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874â"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+N
+java:S1874â"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+G
+java:S1874ä"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+I
+java:S1874ä"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+I
+java:S1874ä"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
+i
+java:S3776ˆ"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÔšºÈ
