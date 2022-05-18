@@ -1,6 +1,9 @@
 package com.aro.asistente_crohn.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +19,8 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
+import com.aro.asistente_crohn.expert.CrohnAnalyzer;
+import com.aro.asistente_crohn.expert.SymptomConstants;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
 
@@ -46,12 +51,41 @@ public class HealthFragment extends Fragment {
 
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
 
+        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
+
         SimpleDateFormat simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
         TextView textDate = view.findViewById(R.id.textDate);
         textDate.setText(simpleDateFormat.format(Calendar.getInstance().getTime()));
 
-        //CardView cardViewRegistries = view.findViewById(R.id.card_viewRegistries);
-        //cardViewRegistries.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new HealthRegistryFragment(), Calendar.getInstance().getTime()));
+        CardView cardViewRegistries = view.findViewById(R.id.card_viewRegistries);
+        cardViewRegistries.setOnClickListener(view1 -> ((HomeActivity) requireActivity()).openFragment(new HealthFragmentConsult(), Calendar.getInstance().getTime()));
+
+        viewModel.getTodayHealth().observe(getViewLifecycleOwner(), healthList -> {
+            List<Health> cacheTodayHealthList = new ArrayList<>();
+            Health health = new Health();
+            if (!healthList.isEmpty()) {
+                cacheTodayHealthList = healthList;
+                health = cacheTodayHealthList.get(0);
+            }
+
+            TextView courageValue = view.findViewById(R.id.valueCourage);
+            String emoji = "😁";
+            if(health.getCourage()==0) emoji="😭";
+            else if(health.getCourage()==1) emoji="😔";
+            else if(health.getCourage()==2) emoji="😑";
+            else if(health.getCourage()==3) emoji="😊";
+            courageValue.setText(emoji);
+
+            TextView patternValue = view.findViewById(R.id.infoPattern);
+            patternValue.setText(getActualPattern(health.getRelatedSymptoms()));
+
+            TextView positivityValue = view.findViewById(R.id.infoPositivity);
+            positivityValue.setText(health.getCrohnActive().toString());
+
+            //Calling expert
+            CrohnAnalyzer analyzer = new CrohnAnalyzer(viewModel, getViewLifecycleOwner(), preferences);
+            analyzer.analyze();
+        });
 
         CardView cardAddCourage = view.findViewById(R.id.card_addCourage);
         cardAddCourage.setOnClickListener(view12 -> {
@@ -112,7 +146,21 @@ public class HealthFragment extends Fragment {
                 }
             });
         });
+    }
 
-
+    private String getActualPattern(String pattern){
+        if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            return "Enfermedad de Crohn -> Genérico";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)){
+            return "Enfermedad de Crohn -> Intestino delgado";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON)){
+            return "Enfermedad de Crohn -> Colon";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
+            return "Enfermedad de Crohn ->Estómago y superior";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
+            return "Enfermedad de Crohn -> Perianal";
+        } else {
+            return "Enfermedad de Crohn -> No identificado";
+        }
     }
 }

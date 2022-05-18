@@ -60,7 +60,7 @@ public class CrohnAnalyzer {
         viewModel.getTodayHealth().observe(this.lifecycleOwner, healthList -> {
             List<Health> cacheTodayHealthList = new ArrayList<>();
             Health health = new Health();
-            if (healthList != null) {
+            if (!healthList.isEmpty()) {
                 cacheTodayHealthList = healthList;
                 health = cacheTodayHealthList.get(0);
             }
@@ -70,7 +70,7 @@ public class CrohnAnalyzer {
                 Health finalHealth = health;
                 this.viewModel.getTodaySymptoms().observe(this.lifecycleOwner, symptomList -> {
                     List<Symptom> cacheTodaySymptomList = new ArrayList<>();
-                    if (symptomList != null) {
+                    if (!symptomList.isEmpty()) {
                         cacheTodaySymptomList.addAll(symptomList);
                     }
 
@@ -150,7 +150,7 @@ public class CrohnAnalyzer {
 
     }
 
-    public void setActivePrevDays(String pattern){
+    private void setActivePrevDays(String pattern){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
 
         //For the previous days, we set Health.active=true and Health.relatedSymptoms=pattern
@@ -181,7 +181,7 @@ public class CrohnAnalyzer {
         }
     }
 
-    public boolean isActivePrevDays(){
+    private boolean isActivePrevDays(){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
         List<Boolean> positivity = new ArrayList<>();
 
@@ -198,7 +198,7 @@ public class CrohnAnalyzer {
             this.viewModel.getSelectedDayHealth(before, after).observe(this.lifecycleOwner, healthList -> {
                 List<Health> cacheTodayHealthList = new ArrayList<>();
                 Health health = new Health();
-                if (healthList != null) {
+                if (!healthList.isEmpty()) {
                     cacheTodayHealthList = healthList;
                     health = cacheTodayHealthList.get(0);
 
@@ -213,7 +213,7 @@ public class CrohnAnalyzer {
         return occurrences >= prevDays;
     }
 
-    public boolean isSamePattern(String pattern){
+    private boolean isSamePattern(String pattern){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
         AtomicInteger occurrences = new AtomicInteger();
 
@@ -230,7 +230,7 @@ public class CrohnAnalyzer {
             this.viewModel.getSelectedDayHealth(before, after).observe(this.lifecycleOwner, healthList -> {
                 List<Health> cacheTodayHealthList = new ArrayList<>();
                 Health health = new Health();
-                if (healthList != null) {
+                if (!healthList.isEmpty()) {
                     cacheTodayHealthList = healthList;
                     health = cacheTodayHealthList.get(0);
 
@@ -245,7 +245,7 @@ public class CrohnAnalyzer {
         return occurrences.get() >= prevDays;
     }
 
-    public String getActualPattern(){
+    private String getActualPattern(){
         if(this.isSamePattern(SymptomConstants.PATTERN_GENERIC)){
             return SymptomConstants.PATTERN_GENERIC;
         } else if(this.isSamePattern(SymptomConstants.PATTERN_SMALL_BOWEL)){
@@ -261,7 +261,7 @@ public class CrohnAnalyzer {
         return null;
     }
 
-    public boolean isPatternGeneric(List<Symptom> symptoms){
+    private boolean isPatternGeneric(List<Symptom> symptoms){
         int positivity = 0;
 
         for(Symptom s : symptoms){
@@ -299,7 +299,7 @@ public class CrohnAnalyzer {
         return positivity >= SymptomConstants.VALUE_PATTERN_GENERIC;
     }
 
-    public boolean isPatternSmallBowel(List<Symptom> symptoms){
+    private boolean isPatternSmallBowel(List<Symptom> symptoms){
         int positivity = 0;
 
         for(Symptom s : symptoms){
@@ -331,7 +331,7 @@ public class CrohnAnalyzer {
         return positivity >= SymptomConstants.VALUE_PATTERN_SMALL_BOWEL;
     }
 
-    public boolean isPatternColon(List<Symptom> symptoms){
+    private boolean isPatternColon(List<Symptom> symptoms){
         int positivity = 0;
 
         for(Symptom s : symptoms){
@@ -363,7 +363,7 @@ public class CrohnAnalyzer {
         return positivity >= SymptomConstants.VALUE_PATTERN_COLON;
     }
 
-    public boolean isPatternUpperTract(List<Symptom> symptoms){
+    private boolean isPatternUpperTract(List<Symptom> symptoms){
         int positivity = 0;
 
         for(Symptom s : symptoms){
@@ -392,7 +392,7 @@ public class CrohnAnalyzer {
         return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT;
     }
 
-    public boolean isPatternPerianal(List<Symptom> symptoms){
+    private boolean isPatternPerianal(List<Symptom> symptoms){
         int positivity = 0;
 
         for(Symptom s : symptoms){

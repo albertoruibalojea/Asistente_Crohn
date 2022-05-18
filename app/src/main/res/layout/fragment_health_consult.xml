@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.HealthFragment">
+    tools:context=".ui.HealthFragmentConsult">
 
     <RelativeLayout
         android:id="@+id/elipse"
@@ -39,7 +39,7 @@
             android:layout_marginBottom="31dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/fecha_seleccionada"
+            android:text="@string/consulta_tu_salud"
             android:textColor="?attr/colorSurface"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,118 +71,25 @@
         android:layout_height="765dp"
         android:layout_below="@+id/elipse"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="-2dp"
+        android:layout_marginEnd="0dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_addCourage"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="32dp"
-            app:cardBackgroundColor="@color/azul"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|center"
-                android:fontFamily="@font/bold"
-                android:paddingStart="16dp"
-                android:text="@string/registrar_mi_animo_de_hoy"
-                android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
-                android:contentDescription="@string/todo"
-                android:paddingEnd="16dp"
-                app:srcCompat="@drawable/right_arrow" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_viewRegistries"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            app:cardBackgroundColor="@color/azul"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_addCourage"
-            app:layout_constraintVertical_bias="0.0">
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|center"
-                android:fontFamily="@font/bold"
-                android:paddingStart="16dp"
-                android:text="@string/ver_mis_registros_anteriores"
-                android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
-                android:contentDescription="@string/todo"
-                android:paddingEnd="16dp"
-                app:srcCompat="@drawable/right_arrow" />
-        </androidx.cardview.widget.CardView>
-
-
-        <TextView
-            android:id="@+id/textState"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="500dp"
-            android:fontFamily="@font/bold"
-            android:text="@string/todo_bien"
-            android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_viewRegistries"
-            app:layout_constraintVertical_bias="0.0" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="530dp"
+            android:layout_width="349dp"
+            android:layout_height="353dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textState"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView"
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
@@ -301,6 +208,43 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="0dp"
+            android:layout_height="325dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:dateTextAppearance="@style/CalendarViewDateCustomText"
+            android:theme="@style/CalendarViewCustom"
+            android:weekDayTextAppearance="@style/CalendarViewWeekCustomText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/bold"
+            android:text="@string/fecha_seleccionada"
+            android:textColor="?attr/itemTextColor"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

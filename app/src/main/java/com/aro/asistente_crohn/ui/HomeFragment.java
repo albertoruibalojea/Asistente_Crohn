@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Food;
+import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.ItemViewModel;
 import com.aro.asistente_crohn.model.Symptom;
 
@@ -57,6 +58,11 @@ public class HomeFragment extends Fragment {
         displayName = (TextView) ((HomeActivity) requireActivity()).findViewById(R.id.displayName);
         SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
         displayName.setText(preferences.getString("username", null));
+        if(preferences.getString("daysToAnalyze", null) == null){
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("daysToAnalyze", "3");
+            editor.apply();
+        }
 
         this.generateClickeableLayouts();
 
@@ -70,6 +76,15 @@ public class HomeFragment extends Fragment {
         if (!todaysSymptomList.isEmpty()) {
             cacheTodaySymptomList.addAll(todaysSymptomList);
         }
+
+        viewModel.getTodayHealth().observe(getViewLifecycleOwner(), todayHealth -> {
+            if (todayHealth.isEmpty()) {
+                //it means it does not exist, and we must create it
+                Health health = new Health();
+                health.setCourage(health.getCourage());
+                viewModel.insertHealth(health);
+            }
+        });
 
         viewModel.getTodayFoods().observe(getViewLifecycleOwner(), todayFoodList -> {
             List<Food> cacheTodaysFoodList = new ArrayList<>();
