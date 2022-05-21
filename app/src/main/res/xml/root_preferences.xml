@@ -21,6 +21,12 @@
         app:title="@string/fast_settings"
         android:layout="@layout/preferences_category">
 
+        <Preference
+            app:key="pattern"
+            app:title="Tu patrón de la enfermedad"
+            app:summary="Selecciona tu patrón actual"
+            app:icon="@drawable/ic_baseline_insights_24"/>
+
         <EditTextPreference
             app:key="username"
             app:title="@string/username_title"

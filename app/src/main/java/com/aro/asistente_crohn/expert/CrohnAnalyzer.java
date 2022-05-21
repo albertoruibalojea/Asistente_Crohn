@@ -27,7 +27,7 @@ public class CrohnAnalyzer {
     *
     * Para cada día D CON REGISTROS de síntomas
     * - Se analizan sus síntomas si Health.active==false && Health.relatedSymptoms==null && PREV_DAYs_Health.active==false
-    *   - Se comprueban los síntomas de D según los patrones en cuestión (1 met por patron)
+    *   - Se comprueban los síntomas de D según el patrón en cuestión
     *   - Si resulta que hay positivo en D:
     *     - Se notifica que para el día D hay un positivo en la App
     *     - Se pone EL PATRÓN del positivo en el array de Health.relatedSymptoms para el día D

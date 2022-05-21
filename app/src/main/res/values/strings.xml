@@ -5,7 +5,7 @@
     <string name="siguiente">Siguiente</string>
     <string name="conozc_monos">Conozcámonos</string>
     <string name="listo">Listo</string>
-    <string name="nicamente_necesito_un_nombre_para_dirigirme_a_ti">Únicamente necesito un nombre para dirigirme a ti 😉</string>
+    <string name="nicamente_necesito_un_nombre_para_dirigirme_a_ti">Únicamente necesito un nombre para dirigirme a ti y saber tu tipo de Crohn 😉</string>
     <string name="tu_nombre">Tu nombre</string>
     <string name="t_rminos_y_condiciones_de_uso">Términos y condiciones de uso</string>
     <string name="es_necesario_que_leas_y_aceptes_estos_t_rminos">Es necesario que leas y aceptes estos términos</string>
@@ -94,6 +94,19 @@
     <string name="salud">Salud</string>
     <string name="todo_bien">Todo bien</string>
     <string name="cancelar">Cancelar</string>
+
+    <string name="spinner">Seleccionar</string>
+    <string-array name="spinner_values">
+        <item>Genérico</item>
+        <item>Intestino delgado</item>
+        <item>Colon</item>
+        <item>Estómago y tracto superior</item>
+        <item>Perianal</item>
+    </string-array>
+
+
+
+
     <!-- Preference Titles -->
     <string name="common_header">General</string>
     <string name="fast_settings">Configuraciones rápidas</string>
