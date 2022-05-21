@@ -77,5 +77,3 @@ Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9
 Papp/src/main/java/com/aro/asistente_crohn/firsttime/FirstTime7TermsActivity.java,e\1\e1af5ad71d0b2ba6a6bc66cfbf365db4e2b4ed93
 r
 Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
-k
-;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769

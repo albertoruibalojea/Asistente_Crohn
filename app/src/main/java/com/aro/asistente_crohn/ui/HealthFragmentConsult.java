@@ -1,5 +1,8 @@
 package com.aro.asistente_crohn.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,6 +77,9 @@ public class HealthFragmentConsult  extends Fragment {
     }
 
     private void setData(ItemViewModel viewModel, View view){
+
+        SharedPreferences preferences = ((HomeActivity) requireActivity()).getSharedPreferences("com.aro.asistente_crohn_preferences", MODE_PRIVATE);
+
         //Observer from Repository to lookup the LiveData
         viewModel.getSelectedDayHealth(before[0], after[0]).observe(getViewLifecycleOwner(), healthList -> {
             List<Health> cacheTodayHealthList = new ArrayList<>();
@@ -92,10 +98,17 @@ public class HealthFragmentConsult  extends Fragment {
             courageValue.setText(emoji);
 
             TextView patternValue = view.findViewById(R.id.infoPattern);
-            patternValue.setText(getActualPattern(health.getRelatedSymptoms()));
+            patternValue.setText(this.getActualPattern(preferences.getString("pattern", null)));
+
+            TextView patternPositivityValue = view.findViewById(R.id.infoPatternPositivity);
+            if(health.getRelatedSymptoms().equalsIgnoreCase(preferences.getString("pattern", null))){
+                patternPositivityValue.setText(R.string.positive);
+            } else patternPositivityValue.setText(R.string.negative);
 
             TextView positivityValue = view.findViewById(R.id.infoPositivity);
-            positivityValue.setText(health.getCrohnActive().toString());
+            if(health.getCrohnActive()) {
+                positivityValue.setText(R.string.positive);
+            } else positivityValue.setText(R.string.negative);
         });
     }
 

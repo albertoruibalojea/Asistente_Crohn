@@ -264,7 +264,7 @@ public class CrohnAnalyzer {
 
     private boolean isPatternGeneric(List<Symptom> symptoms, SharedPreferences preferences){
 
-        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -299,13 +299,13 @@ public class CrohnAnalyzer {
             }
 
             //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_GENERIC;
+            return positivity >= SymptomConstants.VALUE_PATTERN_GENERIC/2;
         } else return false;
     }
 
     private boolean isPatternSmallBowel(List<Symptom> symptoms, SharedPreferences preferences){
 
-        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -334,13 +334,13 @@ public class CrohnAnalyzer {
             }
 
             //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_SMALL_BOWEL;
+            return positivity >= SymptomConstants.VALUE_PATTERN_SMALL_BOWEL/2;
         } else return false;
     }
 
     private boolean isPatternColon(List<Symptom> symptoms, SharedPreferences preferences){
 
-        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_COLON)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -369,13 +369,13 @@ public class CrohnAnalyzer {
             }
 
             //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_COLON;
+            return positivity >= SymptomConstants.VALUE_PATTERN_COLON/2;
         } else return false;
     }
 
     private boolean isPatternUpperTract(List<Symptom> symptoms, SharedPreferences preferences){
 
-        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -401,13 +401,13 @@ public class CrohnAnalyzer {
             }
 
             //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT;
+            return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT/2;
         } else return false;
     }
 
     private boolean isPatternPerianal(List<Symptom> symptoms, SharedPreferences preferences){
 
-        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -430,7 +430,7 @@ public class CrohnAnalyzer {
             }
 
             //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_PERIANAL;
+            return positivity >= SymptomConstants.VALUE_PATTERN_PERIANAL/2;
         } else return false;
     }
 }

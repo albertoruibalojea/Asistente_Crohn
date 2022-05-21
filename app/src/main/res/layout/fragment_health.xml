@@ -266,6 +266,37 @@
                 app:layout_constraintTop_toBottomOf="@+id/titlePattern"
                 app:layout_constraintVertical_bias="0.0" />
 
+            <TextView
+                android:id="@+id/titlePatternPositivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/titlePatternPositivity"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infoPattern"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/infoPatternPositivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/regular"
+                android:text="@string/negative"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titlePatternPositivity"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/titlePositivity"
@@ -280,7 +311,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/infoPattern"
+                app:layout_constraintTop_toBottomOf="@+id/infoPatternPositivity"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -289,7 +320,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/regular"
-                android:text="@string/infoPositivity"
+                android:text="@string/negative"
                 android:textColor="?attr/itemTextColor"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"

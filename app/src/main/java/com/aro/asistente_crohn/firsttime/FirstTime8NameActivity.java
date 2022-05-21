@@ -40,13 +40,13 @@ public class FirstTime8NameActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String name = SymptomConstants.PATTERN_GENERIC;
-                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)) {
+                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Intestino delgado")) {
                     name = SymptomConstants.PATTERN_SMALL_BOWEL;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_COLON)) {
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colon")) {
                     name = SymptomConstants.PATTERN_COLON;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)) {
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Estómago y tracto superior")) {
                     name = SymptomConstants.PATTERN_UPPER_TRACT;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)) {
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
                     name = SymptomConstants.PATTERN_PERIANAL;
                 }
 

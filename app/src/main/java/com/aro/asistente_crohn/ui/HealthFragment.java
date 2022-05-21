@@ -77,10 +77,17 @@ public class HealthFragment extends Fragment {
             courageValue.setText(emoji);
 
             TextView patternValue = view.findViewById(R.id.infoPattern);
-            patternValue.setText(getActualPattern(health.getRelatedSymptoms()));
+            patternValue.setText(this.getActualPattern(preferences.getString("pattern", null)));
+
+            TextView patternPositivityValue = view.findViewById(R.id.infoPatternPositivity);
+            if(health.getRelatedSymptoms().equalsIgnoreCase(preferences.getString("pattern", null))){
+                patternPositivityValue.setText(R.string.positive);
+            } else patternPositivityValue.setText(R.string.negative);
 
             TextView positivityValue = view.findViewById(R.id.infoPositivity);
-            positivityValue.setText(health.getCrohnActive().toString());
+            if(health.getCrohnActive()) {
+                positivityValue.setText(R.string.positive);
+            } else positivityValue.setText(R.string.negative);
 
             //Calling expert
             CrohnAnalyzer analyzer = new CrohnAnalyzer(viewModel, getViewLifecycleOwner(), preferences);
@@ -156,7 +163,7 @@ public class HealthFragment extends Fragment {
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON)){
             return "Enfermedad de Crohn -> Colon";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
-            return "Enfermedad de Crohn ->Estómago y superior";
+            return "Enfermedad de Crohn -> Estómago y superior";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
             return "Enfermedad de Crohn -> Perianal";
         } else {
