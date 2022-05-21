@@ -5,6 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="332dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:width="609sp"
+        android:height="41sp"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="@font/bold"
+        android:text="@string/listo"
+        android:textColor="?attr/colorSurface"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/description2"
         android:layout_width="343dp"

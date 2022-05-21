@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -155,21 +156,30 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         //set the default according to value
         spinner.setSelection(spinnerPosition);
         spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener((adapterView, view1, i, l) -> {
-            String name = SymptomConstants.PATTERN_GENERIC;
-            if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)) {
-                name = SymptomConstants.PATTERN_SMALL_BOWEL;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_COLON)) {
-                name = SymptomConstants.PATTERN_COLON;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)) {
-                name = SymptomConstants.PATTERN_UPPER_TRACT;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)) {
-                name = SymptomConstants.PATTERN_PERIANAL;
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String name = SymptomConstants.PATTERN_GENERIC;
+                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Intestino delgado")) {
+                    name = SymptomConstants.PATTERN_SMALL_BOWEL;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colon")) {
+                    name = SymptomConstants.PATTERN_COLON;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Estómago y tracto superior")) {
+                    name = SymptomConstants.PATTERN_UPPER_TRACT;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
+                    name = SymptomConstants.PATTERN_PERIANAL;
+                }
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("pattern", name);
+                editor.apply();
             }
 
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("pattern", name);
-            editor.apply();
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
 
         alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());

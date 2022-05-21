@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -207,21 +208,32 @@ public class HomeFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.spinner_values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener((adapterView, view1, i, l) -> {
-            String name = SymptomConstants.PATTERN_GENERIC;
-            if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)) {
-                name = SymptomConstants.PATTERN_SMALL_BOWEL;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_COLON)) {
-                name = SymptomConstants.PATTERN_COLON;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)) {
-                name = SymptomConstants.PATTERN_UPPER_TRACT;
-            } else if (adapter.getItem(i).toString().equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)) {
-                name = SymptomConstants.PATTERN_PERIANAL;
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String name = SymptomConstants.PATTERN_GENERIC;
+                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)) {
+                    name = SymptomConstants.PATTERN_SMALL_BOWEL;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_COLON)) {
+                    name = SymptomConstants.PATTERN_COLON;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)) {
+                    name = SymptomConstants.PATTERN_UPPER_TRACT;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)) {
+                    name = SymptomConstants.PATTERN_PERIANAL;
+                }
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("pattern", name);
+                editor.apply();
             }
 
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("pattern", name);
-            editor.apply();
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("pattern", SymptomConstants.PATTERN_GENERIC);
+                editor.apply();
+            }
         });
 
         alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> alertDialog.dismiss());

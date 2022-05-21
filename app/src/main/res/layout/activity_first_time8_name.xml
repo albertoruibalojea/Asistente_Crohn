@@ -12,7 +12,7 @@
         android:id="@+id/description2"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="404dp"
         android:fontFamily="@font/regular"
         android:text="Para poder ayudarte, necesito saber qué tipo de Enfermedad de Crohn tienes."

@@ -17,32 +17,32 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CrohnAnalyzer {
     /*
-    * Se crean los patrones de brotes
-    * - ArrayList con sus nombres como const
-    *   - (generic)     diarrea, dolor abdominal, cansancio, menos peso, sangre, menos apetito, dolor articular, dolor cabeza, piel
-    *   - (int delgado) diarrea, dolor abdominal, cansancio, fiebre, menos peso, aftas, piel
-    *   - (colon)       diarrea, dolor abdominal, fiebre, sangre, ir más al baño, aftas, piel
-    *   - (estomac/sup) dolor abdominal, fiebre, nauseas, menos apetito, menos peso, aftas, piel
-    *   - (perianal)    diarrea, dolor anal, sangrado, herida perianal, piel
-    *
-    * Para cada día D CON REGISTROS de síntomas
-    * - Se analizan sus síntomas si Health.active==false && Health.relatedSymptoms==null && PREV_DAYs_Health.active==false
-    *   - Se comprueban los síntomas de D según el patrón en cuestión
-    *   - Si resulta que hay positivo en D:
-    *     - Se notifica que para el día D hay un positivo en la App
-    *     - Se pone EL PATRÓN del positivo en el array de Health.relatedSymptoms para el día D
-    *     - Ahora es necesario ver los días anteriores
-    *       - DIAS_A_REVISAR_HACIA_ATRAS = Variable en Ajustes, default=3
-    *       - Si se repite dicho patrón (ver Health.relatedSymptoms) en más de DIAS_A_REVISAR_HACIA_ATRAS días => BROTE
-    *         - Se actualiza D y PREV_DAYs a Health.active=true
-    *         - Notificar al usuario vía notificación y en App
-    * - Si es Health.active==false && PREV_DAYs_Health.active==TRUE
-    *   - Se analizan los síntomas del PATRÓN de los PREV_DAYs
-    *   - Si resulta que todavía hay positivo en D:
-    *     - Se pone EL PATRÓN en el array de Health.relatedSymptoms para el día D
-    *     - Se actualiza D a Health.active=true
-    *     - Notificar al usuario vía App
-    * */
+     * Se crean los patrones de brotes
+     * - ArrayList con sus nombres como const
+     *   - (generic)     diarrea, dolor abdominal, cansancio, menos peso, sangre, menos apetito, dolor articular, dolor cabeza, piel
+     *   - (int delgado) diarrea, dolor abdominal, cansancio, fiebre, menos peso, aftas, piel
+     *   - (colon)       diarrea, dolor abdominal, fiebre, sangre, ir más al baño, aftas, piel
+     *   - (estomac/sup) dolor abdominal, fiebre, nauseas, menos apetito, menos peso, aftas, piel
+     *   - (perianal)    diarrea, dolor anal, sangrado, herida perianal, piel
+     *
+     * Para cada día D CON REGISTROS de síntomas
+     * - Se analizan sus síntomas si Health.active==false && Health.relatedSymptoms==null && PREV_DAYs_Health.active==false
+     *   - Se comprueban los síntomas de D según el patrón en cuestión
+     *   - Si resulta que hay positivo en D:
+     *     - Se notifica que para el día D hay un positivo en la App
+     *     - Se pone EL PATRÓN del positivo en el array de Health.relatedSymptoms para el día D
+     *     - Ahora es necesario ver los días anteriores
+     *       - DIAS_A_REVISAR_HACIA_ATRAS = Variable en Ajustes, default=3
+     *       - Si se repite dicho patrón (ver Health.relatedSymptoms) en más de DIAS_A_REVISAR_HACIA_ATRAS días => BROTE
+     *         - Se actualiza D y PREV_DAYs a Health.active=true
+     *         - Notificar al usuario vía notificación y en App
+     * - Si es Health.active==false && PREV_DAYs_Health.active==TRUE
+     *   - Se analizan los síntomas del PATRÓN de los PREV_DAYs
+     *   - Si resulta que todavía hay positivo en D:
+     *     - Se pone EL PATRÓN en el array de Health.relatedSymptoms para el día D
+     *     - Se actualiza D a Health.active=true
+     *     - Notificar al usuario vía App
+     * */
 
     private final ItemViewModel viewModel;
     private final LifecycleOwner lifecycleOwner;
@@ -74,46 +74,46 @@ public class CrohnAnalyzer {
                         cacheTodaySymptomList.addAll(symptomList);
                     }
 
-                    //We check today´s symptoms looking for occurrences in any pattern
+                    //We check today´s symptoms looking for occurrences in the user pattern
                     //If coincidence, the Observer in the Health fragment will notify the user via interface
                     //If the pattern is repeated a few days before, it means a critical state (ACTIVE) and must notify via push too
-                    if(this.isPatternGeneric(cacheTodaySymptomList)){
+                    if(this.isPatternGeneric(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_GENERIC);
                         viewModel.updateHealth(finalHealth);
-                        if(this.isSamePattern(SymptomConstants.PATTERN_GENERIC)){
+                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_GENERIC)){
                             this.setActivePrevDays(SymptomConstants.PATTERN_GENERIC);
                         }
-                    } else if(this.isPatternSmallBowel(cacheTodaySymptomList)){
+                    } else if(this.isPatternSmallBowel(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_SMALL_BOWEL);
                         viewModel.updateHealth(finalHealth);
-                        if(this.isSamePattern(SymptomConstants.PATTERN_SMALL_BOWEL)){
+                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_SMALL_BOWEL)){
                             this.setActivePrevDays(SymptomConstants.PATTERN_SMALL_BOWEL);
                         }
-                    } else if(this.isPatternColon(cacheTodaySymptomList)){
+                    } else if(this.isPatternColon(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_COLON);
                         viewModel.updateHealth(finalHealth);
-                        if(this.isSamePattern(SymptomConstants.PATTERN_COLON)){
+                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_COLON)){
                             this.setActivePrevDays(SymptomConstants.PATTERN_COLON);
                         }
-                    } else if(this.isPatternUpperTract(cacheTodaySymptomList)){
+                    } else if(this.isPatternUpperTract(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_UPPER_TRACT);
                         viewModel.updateHealth(finalHealth);
-                        if(this.isSamePattern(SymptomConstants.PATTERN_UPPER_TRACT)){
+                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_UPPER_TRACT)){
                             this.setActivePrevDays(SymptomConstants.PATTERN_UPPER_TRACT);
                         }
-                    } else if(this.isPatternPerianal(cacheTodaySymptomList)){
+                    } else if(this.isPatternPerianal(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_PERIANAL);
                         viewModel.updateHealth(finalHealth);
-                        if(this.isSamePattern(SymptomConstants.PATTERN_PERIANAL)){
+                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_PERIANAL)){
                             this.setActivePrevDays(SymptomConstants.PATTERN_PERIANAL);
                         }
                     }
 
                 });
             } else if(!health.getCrohnActive() && this.isActivePrevDays()){
-                //In this case, the disease is showing a pattern in the last days
+                //In this case, the disease is showing the user pattern in the last days
                 //So we just check that pattern
-                String actualPattern = this.getActualPattern();
+                String actualPattern = this.preferences.getString("pattern", null);
                 Health finalHealth = health;
                 this.viewModel.getTodaySymptoms().observe(this.lifecycleOwner, symptomList -> {
                     List<Symptom> cacheTodaySymptomList = new ArrayList<>();
@@ -122,23 +122,23 @@ public class CrohnAnalyzer {
                     }
 
                     //If the pattern is repeated, it means user is still having a critical state (ACTIVE) and must notify via app only
-                    if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC) && this.isPatternGeneric(cacheTodaySymptomList)){
+                    if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC) && this.isPatternGeneric(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_GENERIC);
                         this.setActivePrevDays(SymptomConstants.PATTERN_GENERIC);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL) && this.isPatternSmallBowel(cacheTodaySymptomList)){
+                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL) && this.isPatternSmallBowel(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_SMALL_BOWEL);
                         this.setActivePrevDays(SymptomConstants.PATTERN_SMALL_BOWEL);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON) && this.isPatternColon(cacheTodaySymptomList)){
+                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON) && this.isPatternColon(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_COLON);
                         this.setActivePrevDays(SymptomConstants.PATTERN_COLON);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT) && this.isPatternUpperTract(cacheTodaySymptomList)){
+                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT) && this.isPatternUpperTract(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_UPPER_TRACT);
                         this.setActivePrevDays(SymptomConstants.PATTERN_UPPER_TRACT);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL) && this.isPatternPerianal(cacheTodaySymptomList)){
+                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL) && this.isPatternPerianal(cacheTodaySymptomList, preferences)){
                         finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_PERIANAL);
                         this.setActivePrevDays(SymptomConstants.PATTERN_PERIANAL);
                         viewModel.updateHealth(finalHealth);
@@ -146,10 +146,9 @@ public class CrohnAnalyzer {
                 });
             }
         });
-
-
     }
 
+    //Method to update ths Crohn State to TRUE and set the use pattern to the positive days
     private void setActivePrevDays(String pattern){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
 
@@ -181,6 +180,7 @@ public class CrohnAnalyzer {
         }
     }
 
+    //Method to check is Crohn is TRUE in the past DAYS_TO_ANALYZE days
     private boolean isActivePrevDays(){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
         List<Boolean> positivity = new ArrayList<>();
@@ -213,7 +213,8 @@ public class CrohnAnalyzer {
         return occurrences >= prevDays;
     }
 
-    private boolean isSamePattern(String pattern){
+    //Method to check if the user pattern is repeating in the past DAYS_TO_ANALYZE days
+    private boolean doesThePatternRepeat(String pattern){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
         AtomicInteger occurrences = new AtomicInteger();
 
@@ -245,176 +246,191 @@ public class CrohnAnalyzer {
         return occurrences.get() >= prevDays;
     }
 
-    private String getActualPattern(){
-        if(this.isSamePattern(SymptomConstants.PATTERN_GENERIC)){
+    /*private String getActualPattern(){
+        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_GENERIC)){
             return SymptomConstants.PATTERN_GENERIC;
-        } else if(this.isSamePattern(SymptomConstants.PATTERN_SMALL_BOWEL)){
+        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_SMALL_BOWEL)){
             return SymptomConstants.PATTERN_SMALL_BOWEL;
-        } else if(this.isSamePattern(SymptomConstants.PATTERN_COLON)){
+        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_COLON)){
             return SymptomConstants.PATTERN_COLON;
-        } else if(this.isSamePattern(SymptomConstants.PATTERN_UPPER_TRACT)){
+        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_UPPER_TRACT)){
             return SymptomConstants.PATTERN_UPPER_TRACT;
-        } else if(this.isSamePattern(SymptomConstants.PATTERN_PERIANAL)){
+        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_PERIANAL)){
             return SymptomConstants.PATTERN_PERIANAL;
         }
 
         return null;
+    }*/
+
+    private boolean isPatternGeneric(List<Symptom> symptoms, SharedPreferences preferences){
+
+        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            int positivity = 0;
+
+            for(Symptom s : symptoms){
+                //We iterate
+                if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
+                    positivity += SymptomConstants.VALUE_DIAREE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
+                    positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.TIRED)){
+                    positivity += SymptomConstants.VALUE_TIRED;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
+                    positivity += SymptomConstants.VALUE_LESS_WEIGHT;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
+                    positivity += SymptomConstants.VALUE_BLOOD;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.NOT_HUNGRY)){
+                    positivity += SymptomConstants.VALUE_NOT_HUNGRY;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.ARTICULAR_PAIN)){
+                    positivity += SymptomConstants.VALUE_ARTICULAR_PAIN;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.HEADACHE)){
+                    positivity += SymptomConstants.VALUE_HEADACHE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
+                    positivity += SymptomConstants.VALUE_SKIN_ISSUE;
+                }
+            }
+
+            //If the positivity is higher than 50% points of the pattern, we must notify
+            return positivity >= SymptomConstants.VALUE_PATTERN_GENERIC;
+        } else return false;
     }
 
-    private boolean isPatternGeneric(List<Symptom> symptoms){
-        int positivity = 0;
+    private boolean isPatternSmallBowel(List<Symptom> symptoms, SharedPreferences preferences){
 
-        for(Symptom s : symptoms){
-            //We iterate
-            if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
-                positivity += SymptomConstants.VALUE_DIAREE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
-                positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.TIRED)){
-                positivity += SymptomConstants.VALUE_TIRED;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
-                positivity += SymptomConstants.VALUE_LESS_WEIGHT;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
-                positivity += SymptomConstants.VALUE_BLOOD;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.NOT_HUNGRY)){
-                positivity += SymptomConstants.VALUE_NOT_HUNGRY;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.ARTICULAR_PAIN)){
-                positivity += SymptomConstants.VALUE_ARTICULAR_PAIN;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.HEADACHE)){
-                positivity += SymptomConstants.VALUE_HEADACHE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
-                positivity += SymptomConstants.VALUE_SKIN_ISSUE;
-            }
-        }
+        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            int positivity = 0;
 
-        //If the positivity is higher than 50% points of the pattern, we must notify
-        return positivity >= SymptomConstants.VALUE_PATTERN_GENERIC;
+            for(Symptom s : symptoms){
+                //We iterate
+                if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
+                    positivity += SymptomConstants.VALUE_DIAREE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
+                    positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.TIRED)){
+                    positivity += SymptomConstants.VALUE_TIRED;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
+                    positivity += SymptomConstants.VALUE_FEVER;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
+                    positivity += SymptomConstants.VALUE_LESS_WEIGHT;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
+                    positivity += SymptomConstants.VALUE_APHTHAS;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
+                    positivity += SymptomConstants.VALUE_SKIN_ISSUE;
+                }
+            }
+
+            //If the positivity is higher than 50% points of the pattern, we must notify
+            return positivity >= SymptomConstants.VALUE_PATTERN_SMALL_BOWEL;
+        } else return false;
     }
 
-    private boolean isPatternSmallBowel(List<Symptom> symptoms){
-        int positivity = 0;
+    private boolean isPatternColon(List<Symptom> symptoms, SharedPreferences preferences){
 
-        for(Symptom s : symptoms){
-            //We iterate
-            if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
-                positivity += SymptomConstants.VALUE_DIAREE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
-                positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.TIRED)){
-                positivity += SymptomConstants.VALUE_TIRED;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
-                positivity += SymptomConstants.VALUE_FEVER;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
-                positivity += SymptomConstants.VALUE_LESS_WEIGHT;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
-                positivity += SymptomConstants.VALUE_APHTHAS;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
-                positivity += SymptomConstants.VALUE_SKIN_ISSUE;
-            }
-        }
+        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            int positivity = 0;
 
-        //If the positivity is higher than 50% points of the pattern, we must notify
-        return positivity >= SymptomConstants.VALUE_PATTERN_SMALL_BOWEL;
+            for(Symptom s : symptoms){
+                //We iterate
+                if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
+                    positivity += SymptomConstants.VALUE_DIAREE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
+                    positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
+                    positivity += SymptomConstants.VALUE_FEVER;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
+                    positivity += SymptomConstants.VALUE_BLOOD;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.BATHROOM_URGE)){
+                    positivity += SymptomConstants.VALUE_BATHROOM_URGE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
+                    positivity += SymptomConstants.VALUE_APHTHAS;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
+                    positivity += SymptomConstants.VALUE_SKIN_ISSUE;
+                }
+            }
+
+            //If the positivity is higher than 50% points of the pattern, we must notify
+            return positivity >= SymptomConstants.VALUE_PATTERN_COLON;
+        } else return false;
     }
 
-    private boolean isPatternColon(List<Symptom> symptoms){
-        int positivity = 0;
+    private boolean isPatternUpperTract(List<Symptom> symptoms, SharedPreferences preferences){
 
-        for(Symptom s : symptoms){
-            //We iterate
-            if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
-                positivity += SymptomConstants.VALUE_DIAREE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.ABDOMINAL_PAIN)){
-                positivity += SymptomConstants.VALUE_ABDOMINAL_PAIN;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
-                positivity += SymptomConstants.VALUE_FEVER;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
-                positivity += SymptomConstants.VALUE_BLOOD;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.BATHROOM_URGE)){
-                positivity += SymptomConstants.VALUE_BATHROOM_URGE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
-                positivity += SymptomConstants.VALUE_APHTHAS;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
-                positivity += SymptomConstants.VALUE_SKIN_ISSUE;
-            }
-        }
+        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            int positivity = 0;
 
-        //If the positivity is higher than 50% points of the pattern, we must notify
-        return positivity >= SymptomConstants.VALUE_PATTERN_COLON;
+            for(Symptom s : symptoms){
+                //We iterate
+                if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
+                    positivity += SymptomConstants.VALUE_FEVER;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.NAUSEAS)){
+                    positivity += SymptomConstants.VALUE_NAUSEAS;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.NOT_HUNGRY)){
+                    positivity += SymptomConstants.VALUE_NOT_HUNGRY;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
+                    positivity += SymptomConstants.VALUE_LESS_WEIGHT;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
+                    positivity += SymptomConstants.VALUE_APHTHAS;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
+                    positivity += SymptomConstants.VALUE_SKIN_ISSUE;
+                }
+            }
+
+            //If the positivity is higher than 50% points of the pattern, we must notify
+            return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT;
+        } else return false;
     }
 
-    private boolean isPatternUpperTract(List<Symptom> symptoms){
-        int positivity = 0;
+    private boolean isPatternPerianal(List<Symptom> symptoms, SharedPreferences preferences){
 
-        for(Symptom s : symptoms){
-            //We iterate
-            if(s.getName().equalsIgnoreCase(SymptomConstants.FEVER)){
-                positivity += SymptomConstants.VALUE_FEVER;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.NAUSEAS)){
-                positivity += SymptomConstants.VALUE_NAUSEAS;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.NOT_HUNGRY)){
-                positivity += SymptomConstants.VALUE_NOT_HUNGRY;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.LESS_WEIGHT)){
-                positivity += SymptomConstants.VALUE_LESS_WEIGHT;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.APHTHAS)){
-                positivity += SymptomConstants.VALUE_APHTHAS;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
-                positivity += SymptomConstants.VALUE_SKIN_ISSUE;
-            }
-        }
+        if(this.preferences.getString(DAYS_TO_ANALYZE, null).equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
+            int positivity = 0;
 
-        //If the positivity is higher than 50% points of the pattern, we must notify
-        return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT;
-    }
+            for(Symptom s : symptoms){
+                //We iterate
+                if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
+                    positivity += SymptomConstants.VALUE_DIAREE;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.ANAL_PAIN)){
+                    positivity += SymptomConstants.VALUE_ANAL_PAIN;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
+                    positivity += SymptomConstants.VALUE_BLOOD;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.PERIANAL)){
+                    positivity += SymptomConstants.VALUE_PERIANAL;
+                }
+                if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
+                    positivity += SymptomConstants.VALUE_SKIN_ISSUE;
+                }
+            }
 
-    private boolean isPatternPerianal(List<Symptom> symptoms){
-        int positivity = 0;
-
-        for(Symptom s : symptoms){
-            //We iterate
-            if(s.getName().equalsIgnoreCase(SymptomConstants.DIAREE)){
-                positivity += SymptomConstants.VALUE_DIAREE;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.ANAL_PAIN)){
-                positivity += SymptomConstants.VALUE_ANAL_PAIN;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.BLOOD)){
-                positivity += SymptomConstants.VALUE_BLOOD;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.PERIANAL)){
-                positivity += SymptomConstants.VALUE_PERIANAL;
-            }
-            if(s.getName().equalsIgnoreCase(SymptomConstants.SKIN_ISSUE)){
-                positivity += SymptomConstants.VALUE_SKIN_ISSUE;
-            }
-        }
-
-        //If the positivity is higher than 50% points of the pattern, we must notify
-        return positivity >= SymptomConstants.VALUE_PATTERN_PERIANAL;
+            //If the positivity is higher than 50% points of the pattern, we must notify
+            return positivity >= SymptomConstants.VALUE_PATTERN_PERIANAL;
+        } else return false;
     }
 }

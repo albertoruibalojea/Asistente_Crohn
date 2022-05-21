@@ -132,9 +132,9 @@
     <string name="anade_lo_que_te_hace_dano">Añade lo que te hace daño</string>
     <string name="que_hacemos_con_tus_datos">¿Qué hacemos con tus datos?</string>
     <string name="tus_registros">Tus registros</string>
-    <string name="tus_registros_se_guardan_para_ser_analizados_por_el_sistema_experto_drools">Tus registros se guardan para ser analizados por el sistema experto Drools</string>
+    <string name="tus_registros_se_guardan_para_ser_analizados_por_el_sistema_experto">Tus registros se guardan para ser analizados por la aplicación</string>
     <string name="tu_salud">Tu salud</string>
-    <string name="tus_datos_se_pasaran_a_un_motor_de_drools_para_ser_analizados_en_busca_de_un_posible_brote">Tus datos se pasarán a un motor de Drools para ser analizados en busca de un posible brote</string>
+    <string name="tus_datos_se_pasaran_a_un_motor_para_ser_analizados_en_busca_de_un_posible_brote">Tus datos se pasarán a un motor de la aplicación para ser analizados en busca de un posible brote</string>
     <string name="son_tus_datos">Son tus datos</string>
     <string name="sabemos_que_tus_datos_medicos_son_informaci_n_muy_sensible_no_saldran_de_tu_dispositivo">Sabemos que tus datos médicos son información muy sensible; no saldrán de tu dispositivo</string>
     <string name="borrado_de_datos">Borrado de datos</string>
