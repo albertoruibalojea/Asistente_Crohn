@@ -129,11 +129,11 @@ public class HealthFragmentConsult  extends Fragment {
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON)){
             return "Enfermedad de Crohn -> Colon";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
-            return "Enfermedad de Crohn ->Estómago y superior";
+            return "Enfermedad de Crohn -> Estómago y superior";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
             return "Enfermedad de Crohn -> Perianal";
         } else {
-            return "Enfermedad de Crohn -> No identificado";
+            return "Enfermedad de Crohn -> Actualiza más tarde";
         }
     }
 }

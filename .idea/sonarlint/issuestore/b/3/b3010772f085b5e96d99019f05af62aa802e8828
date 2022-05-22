@@ -1,0 +1,31 @@
+
+d
+java:S1192Z"NDefine a constant instead of duplicating this literal "daysToAnalyze" 3 times.(™›¾‰
+c
+java:S1192l"HDefine a constant instead of duplicating this literal "pattern" 7 times.(êÛ…Ÿúÿÿÿÿ
+
+java:S1192'"dDefine a constant instead of duplicating this literal "com.aro.asistente_crohn_preferences" 4 times.(‰÷¡×şÿÿÿÿ
+_
+java:S1192G"IDefine a constant instead of duplicating this literal "username" 4 times.(Û¦Áâ
+C
+java:S1604+"(Make this anonymous inner class a lambda(ï ¢Àûÿÿÿÿ
+C
+java:S16044"(Make this anonymous inner class a lambda(ÎË«‚üÿÿÿÿ
+>
+java:S1604@"(Make this anonymous inner class a lambda(ÉºšÙ
+>
+java:S1604J"(Make this anonymous inner class a lambda(ìë³ı
+C
+java:S1604]"(Make this anonymous inner class a lambda(ê¤Ôãúÿÿÿÿ
+C
+java:S1604n"(Make this anonymous inner class a lambda(»æ²”ÿÿÿÿÿ
+C
+java:S1905)"-Remove this unnecessary cast to "Preference".(ì„­»
+C
+java:S19052"-Remove this unnecessary cast to "Preference".(åúğ
+C
+java:S1905>"-Remove this unnecessary cast to "Preference".(ò¾™
+H
+java:S1905l"-Remove this unnecessary cast to "Preference".(êÛ…Ÿúÿÿÿÿ
+¤
+java:S1186´"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8ÎÕ’·0
