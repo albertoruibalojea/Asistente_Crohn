@@ -45,8 +45,6 @@ t
 Dapp/src/main/java/com/aro/asistente_crohn/model/FoodListAdapter.java,5\0\509aebff9dc178a4f29914e1a2aff2978ddc9b83
 n
 >app/src/main/java/com/aro/asistente_crohn/ui/HomeActivity.java,f\e\fe3261d489fc273ddb54cf2caebb88a6beb0265f
-n
->app/src/main/java/com/aro/asistente_crohn/ui/MainActivity.java,5\6\56803f91c1f16823815c3e8451db2cd233e8781f
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 ?
@@ -77,3 +75,5 @@ Japp/src/main/java/com/aro/asistente_crohn/ui/SymptomsRegistryFragment.java,f\9
 Papp/src/main/java/com/aro/asistente_crohn/firsttime/FirstTime7TermsActivity.java,e\1\e1af5ad71d0b2ba6a6bc66cfbf365db4e2b4ed93
 r
 Bapp/src/main/java/com/aro/asistente_crohn/ui/SymptomsFragment.java,d\e\de0c9231956a88c46cdc04c01eae159c2bd6e6bd
+v
+Fapp/src/main/java/com/aro/asistente_crohn/ui/FoodRegistryFragment.java,c\f\cfa15ef9f24a12dd2836ce67b6063c48b37b5cae

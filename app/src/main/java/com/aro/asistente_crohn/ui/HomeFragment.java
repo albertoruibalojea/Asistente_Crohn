@@ -212,12 +212,12 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String name = SymptomConstants.PATTERN_GENERIC;
-                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Intestino delgado")) {
-                    name = SymptomConstants.PATTERN_SMALL_BOWEL;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colon")) {
-                    name = SymptomConstants.PATTERN_COLON;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Estómago y tracto superior")) {
+                String name = SymptomConstants.PATTERN_ILEOCOLITIS;
+                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Ileitis")) {
+                    name = SymptomConstants.PATTERN_ILEITIS;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colitis")) {
+                    name = SymptomConstants.PATTERN_COLITIS;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Gastrointestinal alta")) {
                     name = SymptomConstants.PATTERN_UPPER_TRACT;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
                     name = SymptomConstants.PATTERN_PERIANAL;
@@ -231,7 +231,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("pattern", SymptomConstants.PATTERN_GENERIC);
+                editor.putString("pattern", SymptomConstants.PATTERN_ILEOCOLITIS);
                 editor.apply();
             }
         });

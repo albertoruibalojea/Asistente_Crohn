@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //handler to create the splash screen
-        int splashTimeOut = 4000;
+        int splashTimeOut = 3000;
         new Handler().postDelayed(() -> {
 
             if(!areTermsAccepted()){

@@ -122,14 +122,14 @@ public class HealthFragmentConsult  extends Fragment {
     }
 
     private String getActualPattern(String pattern){
-        if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_GENERIC)){
-            return "Enfermedad de Crohn -> Genérico";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_SMALL_BOWEL)){
-            return "Enfermedad de Crohn -> Intestino delgado";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLON)){
-            return "Enfermedad de Crohn -> Colon";
+        if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEOCOLITIS)){
+            return "Enfermedad de Crohn -> Ileocolitis";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEITIS)){
+            return "Enfermedad de Crohn -> Ileitis";
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLITIS)){
+            return "Enfermedad de Crohn -> Colitis";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
-            return "Enfermedad de Crohn ->Estómago y superior";
+            return "Enfermedad de Crohn -> Gastrointestinal alta";
         } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
             return "Enfermedad de Crohn -> Perianal";
         } else {

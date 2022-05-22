@@ -160,12 +160,12 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String name = SymptomConstants.PATTERN_GENERIC;
-                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Intestino delgado")) {
-                    name = SymptomConstants.PATTERN_SMALL_BOWEL;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colon")) {
-                    name = SymptomConstants.PATTERN_COLON;
-                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Estómago y tracto superior")) {
+                String name = SymptomConstants.PATTERN_ILEOCOLITIS;
+                if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Ileitis")) {
+                    name = SymptomConstants.PATTERN_ILEITIS;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colitis")) {
+                    name = SymptomConstants.PATTERN_COLITIS;
+                } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Gastrointestinal alta")) {
                     name = SymptomConstants.PATTERN_UPPER_TRACT;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
                     name = SymptomConstants.PATTERN_PERIANAL;
@@ -186,13 +186,13 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public String getActualPattern(SharedPreferences preferences){
-        if(preferences.getString("pattern", null).equalsIgnoreCase("Genérico")){
-            return SymptomConstants.PATTERN_GENERIC;
-        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Intestino delgado")){
-            return SymptomConstants.PATTERN_SMALL_BOWEL;
-        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Colon")){
-            return SymptomConstants.PATTERN_COLON;
-        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Estómago y tracto superior")){
+        if(preferences.getString("pattern", null).equalsIgnoreCase("Ileocolitis")){
+            return SymptomConstants.PATTERN_ILEOCOLITIS;
+        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Ileitis")){
+            return SymptomConstants.PATTERN_ILEITIS;
+        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Colitis")){
+            return SymptomConstants.PATTERN_COLITIS;
+        } else if(preferences.getString("pattern", null).equalsIgnoreCase("Gastrointestinal alta")){
             return SymptomConstants.PATTERN_UPPER_TRACT;
         } else if(preferences.getString("pattern", null).equalsIgnoreCase("Perianal")){
             return SymptomConstants.PATTERN_PERIANAL;
