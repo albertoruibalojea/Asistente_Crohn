@@ -97,10 +97,10 @@
 
     <string name="spinner">Seleccionar</string>
     <string-array name="spinner_values">
-        <item>Genérico</item>
-        <item>Intestino delgado</item>
-        <item>Colon</item>
-        <item>Estómago y tracto superior</item>
+        <item>Ileocolitis</item>
+        <item>Ileitis</item>
+        <item>Colitis</item>
+        <item>Gastrointestinal alta</item>
         <item>Perianal</item>
     </string-array>
 
@@ -162,6 +162,8 @@
     <string name="titlePositivity">Positividad</string>
     <string name="positive">Positiva</string>
     <string name="negative">Negativa</string>
+    <string name="select_pattern_title">Patrón de tu enfermedad</string>
+    <string name="select_pattern_description">Para poder ayudarte, necesito saber qué tipo de Enfermedad de Crohn tienes. Si no estás segura/o, el 65% de los pacientes tienen Ileocolitis</string>
 
     <!-- Privacy Fragment-->
 
