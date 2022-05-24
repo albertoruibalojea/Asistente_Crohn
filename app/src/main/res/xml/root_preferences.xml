@@ -21,12 +21,26 @@
         app:title="@string/fast_settings"
         android:layout="@layout/preferences_category">
 
+        <Preference
+            app:key="pattern"
+            app:title="Tu patrón de la enfermedad"
+            app:summary="Selecciona tu patrón actual"
+            app:icon="@drawable/ic_baseline_insights_24"/>
+
         <EditTextPreference
             app:key="username"
             app:title="@string/username_title"
             app:defaultValue="@string/tu_nombre"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/ic_baseline_alternate_email_24"/>
+
+        <EditTextPreference
+            app:key="daysToAnalyze"
+            app:title="@string/daysAnalyze_title"
+            app:defaultValue="3"
+            app:useSimpleSummaryProvider="true"
+            app:dialogMessage="El mínimo de días son 2, el máximo recomendado son 7."
+            app:icon="@drawable/ic_baseline_today_24"/>
 
         <SwitchPreferenceCompat
             app:key="app_alerts"

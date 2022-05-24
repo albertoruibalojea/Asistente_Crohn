@@ -11,26 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Asistente_Crohn">
         <activity
-            android:name=".ui.AlertDetails"
+            android:name=".view.ui.AlertDetails"
             android:launchMode="singleTask"
             android:taskAffinity=""
             android:excludeFromRecents="true"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".view.ui.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.FirstTime8NameActivity"
+            android:name=".view.ui.firsttime.FirstTime8NameActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.FirstTime7TermsActivity"
+            android:name=".view.ui.firsttime.FirstTime7TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".firsttime.Activity1stTime"
+            android:name=".view.ui.firsttime.Activity1stTime"
             android:exported="false"
-            android:parentActivityName=".firsttime.Activity1stTime" />
+            android:parentActivityName=".view.ui.firsttime.Activity1stTime" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".view.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.SymptomsRegistryFragment">
+    tools:context=".view.ui.SymptomsRegistryFragment">
 
     <RelativeLayout
         android:id="@+id/elipse"

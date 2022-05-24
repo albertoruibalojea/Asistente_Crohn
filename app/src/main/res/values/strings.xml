@@ -5,7 +5,7 @@
     <string name="siguiente">Siguiente</string>
     <string name="conozc_monos">Conozcámonos</string>
     <string name="listo">Listo</string>
-    <string name="nicamente_necesito_un_nombre_para_dirigirme_a_ti">Únicamente necesito un nombre para dirigirme a ti 😉</string>
+    <string name="nicamente_necesito_un_nombre_para_dirigirme_a_ti">Únicamente necesito un nombre para dirigirme a ti y saber tu tipo de Crohn 😉</string>
     <string name="tu_nombre">Tu nombre</string>
     <string name="t_rminos_y_condiciones_de_uso">Términos y condiciones de uso</string>
     <string name="es_necesario_que_leas_y_aceptes_estos_t_rminos">Es necesario que leas y aceptes estos términos</string>
@@ -81,7 +81,7 @@
     <string name="mis_alimentos_desaconsejados">Alimentos desaconsejados</string>
     <string name="search_hint">Escribe aquí</string>
     <string name="escribe_aqui_un_alimento">Escribe aquí un alimento...</string>
-    <string name="se_ha_anadido_a_tus_registros">Se ha añadido a tus registros</string>
+    <string name="se_ha_anadido_a_tus_registros">Se han modificado tus registros</string>
     <string name="registrado">Registrado</string>
     <string name="food_item_name">food</string>
     <string name="string_food_item_date">date</string>
@@ -94,12 +94,26 @@
     <string name="salud">Salud</string>
     <string name="todo_bien">Todo bien</string>
     <string name="cancelar">Cancelar</string>
+
+    <string name="spinner">Seleccionar</string>
+    <string-array name="spinner_values">
+        <item>Ileocolitis</item>
+        <item>Ileitis</item>
+        <item>Colitis</item>
+        <item>Gastrointestinal alta</item>
+        <item>Perianal</item>
+    </string-array>
+
+
+
+
     <!-- Preference Titles -->
     <string name="common_header">General</string>
     <string name="fast_settings">Configuraciones rápidas</string>
 
     <!-- Messages Preferences -->
     <string name="username_title">Tu nombre</string>
+    <string name="daysAnalyze_title">Días a analizar hacia atrás</string>
 
     <!-- Sync Preferences -->
     <string name="app_alerts_title">Avisos de la aplicación</string>
@@ -111,14 +125,16 @@
     <string name="privacy_summary">Consulta qué hacemos con tus datos.</string>
     <string name="feedback_title">Envío de sugerencias</string>
     <string name="feedback_summary">Ayuda con tus comentarios a mejorar tu Asistente Crohn.</string>
-    <string name="anade_lo_que_te_hace_dano">Añade lo que te hace daño</string>
     <string name="atencion">Atención</string>
     <string name="vas_a_borrar_todos_tus_datos">Vas a borrar todos tus datos</string>
+
+
+    <string name="anade_lo_que_te_hace_dano">Añade lo que te hace daño</string>
     <string name="que_hacemos_con_tus_datos">¿Qué hacemos con tus datos?</string>
     <string name="tus_registros">Tus registros</string>
-    <string name="tus_registros_se_guardan_para_ser_analizados_por_el_sistema_experto_drools">Tus registros se guardan para ser analizados por el sistema experto Drools</string>
+    <string name="tus_registros_se_guardan_para_ser_analizados_por_el_sistema_experto">Tus registros se guardan para ser analizados por la aplicación</string>
     <string name="tu_salud">Tu salud</string>
-    <string name="tus_datos_se_pasaran_a_un_motor_de_drools_para_ser_analizados_en_busca_de_un_posible_brote">Tus datos se pasarán a un motor de Drools para ser analizados en busca de un posible brote</string>
+    <string name="tus_datos_se_pasaran_a_un_motor_para_ser_analizados_en_busca_de_un_posible_brote">Tus datos se pasarán a un motor de la aplicación para ser analizados en busca de un posible brote</string>
     <string name="son_tus_datos">Son tus datos</string>
     <string name="sabemos_que_tus_datos_medicos_son_informaci_n_muy_sensible_no_saldran_de_tu_dispositivo">Sabemos que tus datos médicos son información muy sensible; no saldrán de tu dispositivo</string>
     <string name="borrado_de_datos">Borrado de datos</string>
@@ -136,7 +152,18 @@
     <string name="herida_perianal">Herida perianal</string>
     <string name="skin">Piel</string>
     <string name="significado_de_cada_sintoma">Información</string>
-    <string name="symptoms_meaning">Diarrea: Marca el síntoma si has tenido diarrea.\n\nNáuseas: Marca el síntoma si has tenido náuseas o vómitos.\n\nMenos apetito: Marca el síntoma si has tenido menos apetito de lo normal.\n\nDolor de barriga: Marca el síntoma si has tenido algún retortijón.\n\nDolor articular: Marca el síntoma si te han dolido las rodillas, tobillos, codos, muñecas, dedos, el lumbago o si sientes rigidez.\n\nDolor anal: Marca el síntoma si tienes dolor hacia el ano.\n\nDolor de cabeza: Marca el síntoma si te duele la cabeza o tienes estrés, ansiedad, te sientes deprimida/o; si este es el caso acuérdate de indicar tu estado de ánimo también.\n\nFiebre: Marca el síntoma si tienes fiebre.\n\nCansancio: Marca el síntoma si te encuentras cansada/o o con poca energía.\n\nIr más al baño: Marca el síntoma si ha aumentado tu frecuencia de deposiciones diaria.\n\nPerdí peso: Marca el síntoma si has perdido peso.\n\nSangrado: Marca el síntoma si tienes sangrado en heces.\n\nAftas: Marca el síntoma si tienes aftas bucales o úlceras.\n\nHerida perianal: Marca el síntoma si tienes fisuras anales, pleigues cutáneos, úlceras anales, fístulas, abscesos u otro tipo de lesiones anales.\n\nPiel: Marca el síntoma si tienes eritemas nudosos, piodermas gangrenosos, psoriasis o cualquier afección de la piel que creas sospechosa.\n\n</string>
+    <string name="symptoms_meaning">Diarrea: Marca el síntoma si has tenido diarrea.\n\nNáuseas: Marca el síntoma si has tenido náuseas o vómitos.\n\nMenos apetito: Marca el síntoma si has tenido menos apetito de lo normal.\n\nDolor de barriga: Marca el síntoma si has tenido algún retortijón.\n\nDolor articular: Marca el síntoma si te han dolido las rodillas, tobillos, codos, muñecas, dedos, el lumbago o si sientes rigidez.\n\nDolor anal: Marca el síntoma si tienes dolor hacia el ano.\n\nDolor de cabeza: Marca el síntoma si te duele la cabeza o tienes estrés, ansiedad, te sientes deprimida/o; si este es el caso acuérdate de indicar tu estado de ánimo también.\n\nFiebre: Marca el síntoma si tienes fiebre.\n\nCansancio: Marca el síntoma si te encuentras cansada/o o con poca energía.\n\nIr más al baño: Marca el síntoma si ha aumentado tu frecuencia de deposiciones diaria.\n\nPerdí peso: Marca el síntoma si has perdido peso (en torno a un 10% menos).\n\nSangrado: Marca el síntoma si tienes sangrado en heces.\n\nAftas: Marca el síntoma si tienes aftas bucales o úlceras.\n\nHerida perianal: Marca el síntoma si tienes fisuras anales, pleigues cutáneos, úlceras anales, fístulas, abscesos u otro tipo de lesiones anales.\n\nPiel: Marca el síntoma si tienes eritemas nudosos, piodermas gangrenosos, psoriasis o cualquier afección de la piel que creas sospechosa.\n\n</string>
+    <string name="consulta_tu_salud">Consulta tu salud</string>
+    <string name="titleCourage">Estado de ánimo</string>
+    <string name="infoCourage">Muy influyente en tu gestión psicológica</string>
+    <string name="titlePattern">Patrón actual</string>
+    <string name="infoPattern">Enfermedad de Crohn -> Actualiza más tarde</string>
+    <string name="titlePatternPositivity">Sintomatología compatible con los síntomas</string>
+    <string name="titlePositivity">Positividad</string>
+    <string name="positive">Positiva</string>
+    <string name="negative">Negativa</string>
+    <string name="select_pattern_title">Patrón de tu enfermedad</string>
+    <string name="select_pattern_description">Para poder ayudarte, necesito saber qué tipo de Enfermedad de Crohn tienes. Si no estás segura/o, el 65% de los pacientes tienen Ileocolitis</string>
 
     <!-- Privacy Fragment-->
 

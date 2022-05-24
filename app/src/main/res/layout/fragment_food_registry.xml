@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.FoodRegistryFragment">
+    tools:context=".view.ui.FoodRegistryFragment">
 
     <RelativeLayout
         android:id="@+id/elipse"
