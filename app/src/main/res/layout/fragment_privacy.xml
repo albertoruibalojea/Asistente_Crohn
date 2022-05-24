@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.PrivacyFragment">
+    tools:context=".view.ui.PrivacyFragment">
 
     <TextView
         android:id="@+id/textView"

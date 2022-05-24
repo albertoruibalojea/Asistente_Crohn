@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.HealthFragmentConsult">
+    tools:context=".view.ui.HealthFragmentConsult">
 
     <RelativeLayout
         android:id="@+id/elipse"
