@@ -15,8 +15,6 @@ A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 r
 Bapp/src/main/java/com/aro/asistente_crohn/DatabaseApplication.java,6\2\625ccae915f2c33829ea575d0165732492b84a92
 l
@@ -27,3 +25,31 @@ k
 ;app/src/main/java/com/aro/asistente_crohn/model/Health.java,e\2\e27fa424577bcabee66f62b42ab3aea9a38df769
 ‡
 Wapp/src/main/java/com/aro/asistente_crohn/view/viewmodel/IgnoreAccentsArrayAdapter.java,b\3\b3b9db6c168942153fe3bb9bb823e4f44054b0cf
+~
+Napp/src/main/java/com/aro/asistente_crohn/service/expert/SymptomConstants.java,e\5\e539297ce98ccab407d6dde27febcb639f1e4803
+{
+Kapp/src/main/java/com/aro/asistente_crohn/service/expert/CrohnAnalyzer.java,6\1\613872400fe58f01cfd6934d6359f9c4e6ede5f2
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+s
+Capp/src/main/java/com/aro/asistente_crohn/view/ui/HomeFragment.java,0\8\0811da84a0dfaadb130b10eb7d02f51b92864cf3
+~
+Napp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsFragment.java,5\6\56a894d7bc2f683d870eda7d5b01799806ef6b09
+|
+Lapp/src/main/java/com/aro/asistente_crohn/database/CrohnsAssistDatabase.java,0\c\0c5469c751cf645c3de1f78adc1d15e07f73a967
+
+Oapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsRegistryFragment.java,e\8\e88b98ece8e266e2ac1f437d237e8c07b46051e0
+‡
+Wapp/src/main/java/com/aro/asistente_crohn/view/ui/firsttime/FirstTime8NameActivity.java,d\4\d447472f39c632b4520c7e1b19fcd435b76155cf
+ˆ
+Xapp/src/main/java/com/aro/asistente_crohn/view/ui/firsttime/FirstTime7TermsActivity.java,8\c\8c6e0174eaf37fbafbcd62076f442fcfd15f4a11
+†
+Vapp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsSubLevelFragment.java,f\7\f7aaa50f0d8442c10484d5938628a24270c9edcc
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+‡
+Wapp/src/main/java/com/aro/asistente_crohn/view/viewmodel/RecommendationListAdapter.java,6\7\679407922d81bf691cbed7952b43a32e5b7efdd8

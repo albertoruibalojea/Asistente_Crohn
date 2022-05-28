@@ -87,7 +87,7 @@ public class RecommendationsSubLevelFragment extends Fragment {
 
     public void getMyType(ItemViewModel viewModel, View view, List<Recommendation> cacheList, String type){
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.recommendationsRecycler);
         List<Recommendation> sameTypeRecommendationsList = cacheList.stream()
                 // Filter by any condition
                 .filter(field -> field.getTitle().startsWith(type))

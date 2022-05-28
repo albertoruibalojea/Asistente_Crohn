@@ -69,12 +69,10 @@ public class RecommendationListAdapter extends RecyclerView.Adapter<Recommendati
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         private CardView card;
-        private ConstraintLayout layout;
         public ViewHolder(View itemView) {
             super(itemView);
             title =  itemView.findViewById(R.id.title);
             card = itemView.findViewById(R.id.card_recommendation_item);
-            layout = itemView.findViewById(R.id.layout);
         }
     }
 }
