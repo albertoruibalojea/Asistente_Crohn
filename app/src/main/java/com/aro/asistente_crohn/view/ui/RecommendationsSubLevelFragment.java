@@ -61,22 +61,21 @@ public class RecommendationsSubLevelFragment extends Fragment {
                 }
 
                 TextView textType = view.findViewById(R.id.textType);
-                List<Recommendation> sameTypeRecommendationsList = new ArrayList<>();
 
                 if(!cacheRecommendationsList.isEmpty()){
-                    if(textType.getText().toString().equalsIgnoreCase("INF")){
+                    if(type.equalsIgnoreCase("INF")){
                         textType.setText(R.string.recommendations_titleINF);
                         this.getMyType(viewModel, view, cacheRecommendationsList, "INF/");
 
-                    } else if(textType.getText().toString().equalsIgnoreCase("NUT")){
+                    } else if(type.equalsIgnoreCase("NUT")){
                         textType.setText(R.string.recommendations_titleNUT);
                         this.getMyType(viewModel, view, cacheRecommendationsList, "NUT/");
 
-                    } else if(textType.getText().toString().equalsIgnoreCase("GRA")){
+                    } else if(type.equalsIgnoreCase("GRA")){
                         textType.setText(R.string.recommendations_titleGRA);
                         this.getMyType(viewModel, view, cacheRecommendationsList, "GRA/");
 
-                    } else if(textType.getText().toString().equalsIgnoreCase("BOT")){
+                    } else if(type.equalsIgnoreCase("BOT")){
                         textType.setText(R.string.recommendations_titleBOT);
                         this.getMyType(viewModel, view, cacheRecommendationsList, "BOT/");
 
@@ -91,7 +90,7 @@ public class RecommendationsSubLevelFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         List<Recommendation> sameTypeRecommendationsList = cacheList.stream()
                 // Filter by any condition
-                .filter(field -> !field.getTitle().startsWith(type))
+                .filter(field -> field.getTitle().startsWith(type))
                 // Collect your filtered fields
                 .collect(Collectors.toList());
 
