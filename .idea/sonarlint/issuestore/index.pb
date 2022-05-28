@@ -1,8 +1,4 @@
 
-y
-Iapp/src/main/java/com/aro/asistente_crohn/database/RecommendationDAO.java,8\0\809d25720c715a8f4db6ef2692e99e05feb0be11
-s
-Capp/src/main/java/com/aro/asistente_crohn/database/FoodRepoDAO.java,a\9\a9ffab08e8404e06c4050f97afcf47cff68418eb
 i
 9app/src/main/java/com/aro/asistente_crohn/model/Food.java,4\c\4c970efb88ff683655dc0cbe62755b3f6a0d2810
 u
@@ -21,8 +17,6 @@ A
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-|
-Lapp/src/main/java/com/aro/asistente_crohn/database/CrohnsAssistDatabase.java,0\c\0c5469c751cf645c3de1f78adc1d15e07f73a967
 r
 Bapp/src/main/java/com/aro/asistente_crohn/DatabaseApplication.java,6\2\625ccae915f2c33829ea575d0165732492b84a92
 l

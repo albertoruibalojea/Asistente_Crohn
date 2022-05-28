@@ -105,8 +105,6 @@
     </string-array>
 
 
-
-
     <!-- Preference Titles -->
     <string name="common_header">General</string>
     <string name="fast_settings">Configuraciones rápidas</string>
@@ -164,6 +162,14 @@
     <string name="negative">Negativa</string>
     <string name="select_pattern_title">Patrón de tu enfermedad</string>
     <string name="select_pattern_description">Para poder ayudarte, necesito saber qué tipo de Enfermedad de Crohn tienes. Si no estás segura/o, el 65% de los pacientes tienen Ileocolitis</string>
+    <string name="geducainflamatoria_short">Plataforma G-EducaInflamatoria</string>
+    <string name="conoce_tu_enfermedad">Conoce tu enfermedad</string>
+    <string name="geducainflamatoria_large">Accede a una infinidad de recursos médicos de la mano de la Plataforma G-EducaInflamatoria de GETECCU.</string>
+    <string name="recommendations_titleINF">Consulta y aprende</string>
+    <string name="recommendations_titleNUT">Pautas nutricionales</string>
+    <string name="recommendations_titleGRA">Infografías</string>
+    <string name="recommendations_titleBOT">Cuestionarios</string>
+    <string name="webview_hint">Acceso a Recomendaciones de referencia</string>
 
     <!-- Privacy Fragment-->
 

@@ -8,10 +8,12 @@ import androidx.lifecycle.LiveData;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.FoodRepo;
 import com.aro.asistente_crohn.model.Health;
+import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.model.Symptom;
 import com.aro.asistente_crohn.service.repository.FoodRepoRepository;
 import com.aro.asistente_crohn.service.repository.FoodRepository;
 import com.aro.asistente_crohn.service.repository.HealthRepository;
+import com.aro.asistente_crohn.service.repository.RecommendationRepository;
 import com.aro.asistente_crohn.service.repository.SymptomRepository;
 
 import java.util.Date;
@@ -22,6 +24,7 @@ public class ItemViewModel extends AndroidViewModel {
     private HealthRepository healthRepository;
     private FoodRepoRepository foodRepoRepository;
     private FoodRepository foodRepository;
+    private RecommendationRepository recommendationRepository;
     // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
@@ -35,6 +38,7 @@ public class ItemViewModel extends AndroidViewModel {
 
     private LiveData<List<Health>> todayHealth;
 
+    private LiveData<List<Recommendation>> allRecommendations;
 
     public ItemViewModel(Application application) {
         super(application);
@@ -51,6 +55,9 @@ public class ItemViewModel extends AndroidViewModel {
 
         healthRepository = new HealthRepository(application);
         todayHealth = healthRepository.getTodayHealth();
+
+        recommendationRepository = new RecommendationRepository(application);
+        allRecommendations = recommendationRepository.getAllRecommendations();
     }
 
     public LiveData<List<Symptom>> getAllSymptoms() {
@@ -145,6 +152,13 @@ public class ItemViewModel extends AndroidViewModel {
     }
     public void updateHealth(Health health) { healthRepository.update(health);}
 
+
+    public LiveData<List<Recommendation>> getAllRecommendations() {
+        if (allRecommendations == null) {
+            allRecommendations = recommendationRepository.getAllRecommendations();
+        }
+        return allRecommendations;
+    }
 
 
     //WARNING THIS STATEMENT DELETES ALL DATA FROM DB
