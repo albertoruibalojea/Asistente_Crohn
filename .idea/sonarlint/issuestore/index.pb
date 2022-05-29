@@ -5,8 +5,6 @@ u
 Eapp/src/main/java/com/aro/asistente_crohn/database/DateConverter.java,f\3\f3ac2e0e3cb53df1ee4ff6107c518dba26b85ecc
 m
 =app/src/main/java/com/aro/asistente_crohn/model/FoodRepo.java,2\1\215f31aac81bb43212613f5702140071adbc8279
-s
-Capp/src/main/java/com/aro/asistente_crohn/model/Recommendation.java,f\c\fc48a8c62a368f58e5681f8293402a8c15e0d666
 o
 ?app/src/main/java/com/aro/asistente_crohn/database/FoodDAO.java,2\7\27f2f2f1a64c164cdc41677ea1b7a12c74004b97
 r

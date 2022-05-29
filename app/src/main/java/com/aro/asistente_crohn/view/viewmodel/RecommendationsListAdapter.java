@@ -1,10 +1,14 @@
 package com.aro.asistente_crohn.view.viewmodel;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,13 +22,16 @@ import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.view.ui.WebFragment;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-public class RecommendationsListAdapter extends RecyclerView.Adapter<RecommendationsListAdapter.ViewHolder>{
+public class RecommendationsListAdapter extends RecyclerView.Adapter<RecommendationsListAdapter.ViewHolder> implements Filterable {
 
     private List<Recommendation> listdata;
+    private List<Recommendation> listFilter;
     private ItemViewModel viewModel;
     private View view;
 
@@ -32,6 +39,7 @@ public class RecommendationsListAdapter extends RecyclerView.Adapter<Recommendat
         this.listdata = listdata;
         this.viewModel = viewModel;
         this.view = view;
+        this.listFilter = listdata;
     }
 
     @Override
@@ -43,25 +51,70 @@ public class RecommendationsListAdapter extends RecyclerView.Adapter<Recommendat
 
     @Override
     public void onBindViewHolder(RecommendationsListAdapter.ViewHolder holder, int position) {
-        if(listdata.isEmpty()){
+        if(listFilter.isEmpty()){
             holder.title.setText("No hay recomendaciones disponibles");
         } else {
-            holder.title.setText(listdata.get(position).getTitle().substring(4));
-            
+            holder.title.setText(listFilter.get(position).getTitle().substring(4));
+
             holder.relativeLayout.setOnClickListener(view -> {
+                String title = listFilter.get(position).getTitle();
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                Fragment myFragment = new WebFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("url", listdata.get(position).getDescription());
-                myFragment.setArguments(bundle);
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentView, myFragment).addToBackStack(null).commit();
+                if(title.startsWith("GRA/") || title.startsWith("NUT/")){
+                    activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(listFilter.get(position).getDescription())));
+                } else {
+                    Fragment myFragment = new WebFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", listFilter.get(position).getDescription());
+                    myFragment.setArguments(bundle);
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentView, myFragment).addToBackStack(null).commit();
+                }
             });
         }
     }
 
     @Override
     public int getItemCount() {
-        return listdata.size();
+        return listFilter.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                FilterResults filterResults = new FilterResults();
+                if(constraint == null || constraint.length() == 0){
+                    filterResults.count = listdata.size();
+                    filterResults.values = listdata;
+
+                }else{
+                    List<Recommendation> resultsModel = new ArrayList<>();
+                    String searchStr = constraint.toString().toLowerCase();
+
+                    for(Recommendation itemsModel:listdata){
+                        if(itemsModel.getTitle().toLowerCase(Locale.ROOT).contains(searchStr) || itemsModel.getTitle().substring(4).toLowerCase(Locale.ROOT).startsWith(searchStr)){
+                            resultsModel.add(itemsModel);
+
+                        }
+                        filterResults.count = resultsModel.size();
+                        filterResults.values = resultsModel;
+                    }
+
+
+                }
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                listFilter = (List<Recommendation>) results.values;
+                notifyDataSetChanged();
+
+            }
+        };
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -9,9 +9,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
@@ -93,6 +96,25 @@ public class RecommendationsSubLevelFragment extends Fragment {
                     sameTypeRecommendationsList.sort(Comparator.comparing(Recommendation::getTitle).reversed());
                     RecommendationsListAdapter adapter = new RecommendationsListAdapter(sameTypeRecommendationsList, viewModel, view);
                     recyclerView.setAdapter(adapter);
+
+                    AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);
+                    actv.setThreshold(1);//will start working from first character
+                    actv.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            //empty
+                        }
+
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            adapter.getFilter().filter(charSequence);
+                        }
+
+                        @Override
+                        public void afterTextChanged(Editable editable) {
+                            //empty
+                        }
+                    });
                 }
             });
         }

@@ -170,6 +170,7 @@
     <string name="recommendations_titleGRA">Infografías</string>
     <string name="recommendations_titleBOT">Cuestionarios</string>
     <string name="webview_hint">Acceso a Recomendaciones de referencia</string>
+    <string name="que_quieres_saber">¿Qué quieres saber?</string>
 
     <!-- Privacy Fragment-->
 
