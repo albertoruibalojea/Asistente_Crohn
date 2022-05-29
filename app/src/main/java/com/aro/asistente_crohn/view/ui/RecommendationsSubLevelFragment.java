@@ -17,10 +17,11 @@ import android.widget.TextView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.view.viewmodel.ItemViewModel;
-import com.aro.asistente_crohn.view.viewmodel.RecommendationListAdapter;
-import com.aro.asistente_crohn.view.viewmodel.SymptomListAdapter;
+import com.aro.asistente_crohn.view.viewmodel.RecommendationsListAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,51 +56,53 @@ public class RecommendationsSubLevelFragment extends Fragment {
             ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
 
             viewModel.getAllRecommendations().observe(getViewLifecycleOwner(), recommendationsList -> {
+                RecyclerView recyclerView = view.findViewById(R.id.recommendationsRecycler);
+                recyclerView.setHasFixedSize(true);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                linearLayoutManager.setReverseLayout(true);
+                linearLayoutManager.setStackFromEnd(true);
+                recyclerView.setLayoutManager(linearLayoutManager);
+
                 List<Recommendation> cacheRecommendationsList = new ArrayList<>();
                 if (recommendationsList != null) {
                     cacheRecommendationsList.addAll(recommendationsList);
                 }
 
                 TextView textType = view.findViewById(R.id.textType);
+                List<Recommendation> sameTypeRecommendationsList = new ArrayList<>();
 
                 if(!cacheRecommendationsList.isEmpty()){
                     if(type.equalsIgnoreCase("INF")){
                         textType.setText(R.string.recommendations_titleINF);
-                        this.getMyType(viewModel, view, cacheRecommendationsList, "INF/");
+                        sameTypeRecommendationsList = this.getMyType(cacheRecommendationsList, "INF/");
 
                     } else if(type.equalsIgnoreCase("NUT")){
                         textType.setText(R.string.recommendations_titleNUT);
-                        this.getMyType(viewModel, view, cacheRecommendationsList, "NUT/");
+                        sameTypeRecommendationsList = this.getMyType(cacheRecommendationsList, "NUT/");
 
                     } else if(type.equalsIgnoreCase("GRA")){
                         textType.setText(R.string.recommendations_titleGRA);
-                        this.getMyType(viewModel, view, cacheRecommendationsList, "GRA/");
+                        sameTypeRecommendationsList = this.getMyType(cacheRecommendationsList, "GRA/");
 
                     } else if(type.equalsIgnoreCase("BOT")){
                         textType.setText(R.string.recommendations_titleBOT);
-                        this.getMyType(viewModel, view, cacheRecommendationsList, "BOT/");
+                        sameTypeRecommendationsList = this.getMyType(cacheRecommendationsList, "BOT/");
 
                     }
+
+                    sameTypeRecommendationsList.sort(Comparator.comparing(Recommendation::getTitle).reversed());
+                    RecommendationsListAdapter adapter = new RecommendationsListAdapter(sameTypeRecommendationsList, viewModel, view);
+                    recyclerView.setAdapter(adapter);
                 }
             });
         }
     }
 
-    public void getMyType(ItemViewModel viewModel, View view, List<Recommendation> cacheList, String type){
-
-        RecyclerView recyclerView = view.findViewById(R.id.recommendationsRecycler);
-        List<Recommendation> sameTypeRecommendationsList = cacheList.stream()
+    public List<Recommendation> getMyType(List<Recommendation> cacheList, String type){
+        return cacheList.stream()
                 // Filter by any condition
                 .filter(field -> field.getTitle().startsWith(type))
                 // Collect your filtered fields
                 .collect(Collectors.toList());
-
-        RecommendationListAdapter adapter = new RecommendationListAdapter(sameTypeRecommendationsList, viewModel, view);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(adapter);
     }
 }

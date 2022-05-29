@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.view.ui;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,7 +10,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.aro.asistente_crohn.R;
 
@@ -42,6 +46,7 @@ public class WebFragment extends Fragment {
 
         //Get a reference to your WebView//
         WebView webView = (WebView) view.findViewById(R.id.webview);
+        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
 
         if(!url.isEmpty()){
             //Specify the URL you want to display//

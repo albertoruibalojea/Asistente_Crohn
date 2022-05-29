@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    android:layout_height="48dp"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_recommendation_item"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
     android:layout_alignParentEnd="true"
     android:layout_marginStart="32dp"
     android:layout_marginEnd="32dp"
-    app:cardBackgroundColor="@color/verde"
+    android:layout_marginBottom="16dp"
+    android:background="@color/verde"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
@@ -19,27 +20,41 @@
     app:layout_constraintVertical_bias="0.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
-            android:fontFamily="@font/bold"
-            android:paddingStart="16dp"
-            android:paddingEnd="0dp"
-            android:text="@string/recommendations_titleINF"
-            android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
-            tools:ignore="TextContrastCheck" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bold"
+        android:maxWidth="250dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:text="@string/recommendations_titleINF"
+        android:textColor="?attr/colorSurface"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:contentDescription="@string/todo"
-            android:paddingStart="0dp"
-            android:paddingEnd="16dp"
-            app:srcCompat="@drawable/right_arrow"
-            tools:ignore="ImageContrastCheck" />
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center"
+        android:contentDescription="@string/todo"
+        android:paddingStart="0dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right_arrow"
+        tools:ignore="ImageContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

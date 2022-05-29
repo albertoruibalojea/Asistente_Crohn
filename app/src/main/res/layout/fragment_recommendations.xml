@@ -110,16 +110,16 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:fontFamily="@font/regular"
             android:text="@string/geducainflamatoria_large"
             android:textColor="?attr/itemTextColor"
             android:textSize="16sp"
-            android:fontFamily="@font/regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletext"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.003" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_openINF"

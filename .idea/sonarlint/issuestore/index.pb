@@ -41,15 +41,9 @@ Capp/src/main/java/com/aro/asistente_crohn/view/ui/HomeFragment.java,0\8\0811da
 Napp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsFragment.java,5\6\56a894d7bc2f683d870eda7d5b01799806ef6b09
 |
 Lapp/src/main/java/com/aro/asistente_crohn/database/CrohnsAssistDatabase.java,0\c\0c5469c751cf645c3de1f78adc1d15e07f73a967
-
-Oapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsRegistryFragment.java,e\8\e88b98ece8e266e2ac1f437d237e8c07b46051e0
 ‡
 Wapp/src/main/java/com/aro/asistente_crohn/view/ui/firsttime/FirstTime8NameActivity.java,d\4\d447472f39c632b4520c7e1b19fcd435b76155cf
 ˆ
 Xapp/src/main/java/com/aro/asistente_crohn/view/ui/firsttime/FirstTime7TermsActivity.java,8\c\8c6e0174eaf37fbafbcd62076f442fcfd15f4a11
-†
-Vapp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsSubLevelFragment.java,f\7\f7aaa50f0d8442c10484d5938628a24270c9edcc
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-‡
-Wapp/src/main/java/com/aro/asistente_crohn/view/viewmodel/RecommendationListAdapter.java,6\7\679407922d81bf691cbed7952b43a32e5b7efdd8
