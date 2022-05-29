@@ -14,23 +14,23 @@
 
     <!-- GUIDE -->
     <string name="sc1_title">¡Hola!</string>
-    <string name="sc1_descr">¿Quieres ver en qué te puedo ayudar?</string>
+    <string name="sc1_descr">Bienvenida/o a Asistente Crohn. ¿Quieres ver en qué te puedo ayudar?</string>
     <string name="firstTime_symptoms_title">Registro de síntomas</string>
-    <string name="firstTime_symptoms_descr">Añade tus síntomas para ayudarme a detectar un posible brote... y tener un historial para enseñárselo a tu especialista ;)</string>
+    <string name="firstTime_symptoms_descr">Añade tus síntomas para ayudarme a detectar un posible cambio en la enfermedad... e incluso tener un historial para enseñárselo a tu especialista ;)</string>
     <string name="firstTime_foods_title">Tu alimentación</string>
-    <string name="firstTime_food_descr">Añade lo que has comido para poder detectar si algún alimento te hace daño, añadiéndolo así a tus \"Alimentos Desaconsejados\"</string>
+    <string name="firstTime_food_descr">Añade tu alimentación para poder detectar si algún alimento te hace daño basado en los síntomas relacionados, y añádelo a tus \"Alimentos Desaconsejados\"</string>
     <string name="firstTime_recs_title">Recomendaciones</string>
-    <string name="firstTime_recs_descr">Encuentra recomendaciones y consejos para mejorar tu calidad de vida</string>
+    <string name="firstTime_recs_descr">Accede a una infinidad de recursos médicos de la mano de la Plataforma G-EducaInflamatoria de GETECCU para mejorar tu calidad de vida</string>
     <string name="firstTime_health_title">Detección de brotes</string>
-    <string name="firstTime_health_descr">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado. ¡OJO! esto no sustituye a tu especialista</string>
+    <string name="firstTime_health_descr">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado de salud. ¡OJO! esto no sustituye a tu especialista, ante cualquier duda no dudes en recurrir a tu Unidad EII</string>
     <string name="firstTime_data_title">Tus datos</string>
-    <string name="firstTime_data_descr">Son tus datos, por lo que nada va a salir de tu dispositivo</string>
+    <string name="firstTime_data_descr">Son tus datos, por lo que nada va a salir de tu dispositivo. Solo accederé a Internet para mostrarte recursos médicos, por lo demás todo se mantendrá protegido aquí</string>
     <string name="firstTime_terms_title">Términos y condiciones de uso</string>
     <string name="firstTime_terms_descr">Es necesario que leas y aceptes estos términos</string>
     <string name="firstTime_terms_terms">1. Estos Términos y Condiciones de Uso regulan las reglas a que se sujeta la utilización de la APP ASISTENTE CROHN (en adelante, la APP) para la ayuda en la gestión de la Enfermedad de Crohn (en adelante, la enfermedad), que puede descargarse desde la tienda de aplicaciones PLAY STORE de Google. La descarga o utilización de la APP atribuye la condición de Usuario a quien lo haga e implica la aceptación de todas las condiciones incluidas en este documento y en la Política de Privacidad de dicha APP. El Usuario debería leer estas condiciones cada vez que utilice la APP, ya que podrían ser modificadas en lo sucesivo. \n\n2. La descarga y uso de la APP serán de acceso gratuito en la tienda de aplicaciones especificada en el punto anterior. \n\n3. Cargos: eres responsable del pago de todos los costes o gastos en los que incurras como resultado de descargar y usar la Aplicación de ASISTENTE CROHN, incluido cualquier cargo de red de operador o itinerancia. Consulta con tu proveedor de servicios los detalles al respecto. \n\n4. Protección de tu información personal: queremos ayudarte a llevar a cabo todos los pasos necesarios para proteger tu privacidad e información. Consulta la Política de Privacidad de ASISTENTE CROHN y los avisos sobre privacidad de la Aplicación para tu tranquilidad. NINGÚN DATO que introduzcas va a salir de tu dispositivo. \n\n5. Tratamiento de tu información personal. Tu información podría ser utilizada por un Sistema Experto para el análisis de los datos introducidos en concepto de que la aplicación realice una de sus funcionalidades clave, avisos sobre el estado de la enfermedad. \n\n6. Queda prohibido alterar o modificar ninguna parte de la APP a de los contenidas de la misma, eludir, desactivar o manipular de cualquier otra forma (o tratar de eludir, desactivar o manipular) las funciones de seguridad u otras funciones del programa y utilizar la APP o sus contenidos para un fin comercial o publicitario. Queda prohibido el uso de la APP con la finalidad de lesionar bienes, derechos o intereses de ASISTENTE CROHN o de terceros. Queda igualmente prohibido realizar cualquier otro uso que altere, dañe o inutilice las redes, servidores, equipos, productos y programas informáticos de ASISTENTE CROHN o de terceros. \n\n7. La APP y sus contenidos (textos, fotografías, gráficos, imágenes, tecnología, software, links, contenidos, diseño gráfico, código fuente, etc.), así como las marcas y demás signos distintivos son propiedad de ASISTENTE CROHN o de terceros, no adquiriendo el Usuario ningún derecho sobre ellos por el mero uso de la APP. El Usuario, deberá abstenerse de: a) Reproducir, copiar, distribuir, poner a disposición de terceros, comunicar públicamente, transformar o modificar la APP o sus contenidos, salvo en los casos contemplados en la ley o expresamente autorizados por ASISTENTE CROHN o por el titular de dichos derechos. b) Reproducir o copiar para uso privado la APP o sus contenidos, así como comunicarlos públicamente o ponerlos a disposición de terceros cuando ello conlleve su reproducción. c) Extraer o reutilizar todo o parte sustancial de los contenidos integrantes de la APP. \n\n8. Con sujeción a las condiciones establecidas en el apartado anterior, ASISTENTE CROHN concede al Usuario una licencia de uso de la APP, no exclusiva, gratuita, para uso personal y con carácter indefinido. Dicha licencia se concede también en los mismos términos con respecto a las actualizaciones y mejoras que se realizasen en la aplicación. Dichas licencias de uso podrán ser revocadas por ASISTENTE CROHN unilateralmente en cualquier momento, mediante la mera notificación al Usuario. \n\n9. Corresponde al Usuario, en todo caso, disponer de herramientas adecuadas para la detección y desinfección de programas maliciosos o cualquier otro elemento informático dañino. ASISTENTE CROHN no se responsabiliza de los daños producidos a equipos informáticos durante el uso de la APP. Igualmente, ASISTENTE CROHN no será responsable de los daños producidos a los Usuarios cuando dichos daños tengan su origen en fallos o desconexiones en las redes de telecomunicaciones que interrumpan el servicio. \n\n10. IMPORTANTE: Podemos, sin que esto suponga ninguna obligación contigo, modificar estas Condiciones de uso sin avisar en cualquier momento. Si continúas utilizando la aplicación una vez realizada cualquier modificación en estas Condiciones de uso, esa utilización continuada constituirá la aceptación por tu parte de tales modificaciones. Si no aceptas estas condiciones de uso ni aceptas quedar sujeto a ellas, no debes utilizar la aplicación ni descargar o utilizar cualquier software relacionado. El uso que hagas de la aplicación queda bajo tu única responsabilidad. No tenemos responsabilidad alguna por la eliminación o la incapacidad de almacenar o trasmitir cualquier contenido u otra información mantenida o trasmitida por la aplicación. No somos responsables de la precisión o la fiabilidad de cualquier información o consejo trasmitidos a través de la aplicación. Podemos, en cualquier momento, limitar o interrumpir tu uso a nuestra única discreción. Hasta el máximo que permite la ley, en ningún caso seremos responsables por cualquier pérdida o daño relacionados. \n\n11. El Usuario se compromete a hacer un uso correcto de la APP, de conformidad con la legislación española, con los presentes Términos y Condiciones de Uso y con las demás reglamentos e instrucciones que, en su caso, pudieran ser de aplicación El Usuario responderá frente a ASISTENTE CROHN y frente a terceros de cualesquiera daños o perjuicios que pudieran causarse por incumplimiento de estas obligaciones. \n\n12. Estos Términos y Condiciones de Uso se rigen íntegramente por la legislación española. Para la resolución de cualquier conflicto relativo a su interpretación o aplicación, el Usuario se somete expresamente a la jurisdicción de los tribunales de España.</string>
     <string name="firstTime_personalize_title">Conozcámonos</string>
     <string name="firstTime_personalize_name">Tu nombre</string>
-    <string name="firstTime_personalize_descr">Únicamente necesito un nombre para dirigirme a ti y saber tu tipo de Crohn 😉</string>
+    <string name="firstTime_personalize_descr">Para poder continuar, necesito saber tu tipo de Crohn y, si quieres, tu nombre. En caso de no escribirlo se pondrá uno por defecto.</string>
 
     <string name="guia_inicio_70_completado">Guía de Inicio    -   70% completado</string>
     <string name="guia_inicio_55_completado">Guía de Inicio    -   55% completado</string>
@@ -103,7 +103,7 @@
     <string name="health_positivityTitle">Positividad</string>
     <string name="positive">Positiva</string>
     <string name="negative">Negativa</string>
-    <string name="health_select_type_title">Tipo de tu enfermedad</string>
+    <string name="health_select_type_title">¿Qué tipo de Crohn tienes?</string>
     <string name="health_select_type_descr">Para poder ayudarte, necesito saber qué tipo de Enfermedad de Crohn tienes. Si no estás segura/o, el 65% de los pacientes tienen Ileocolitis</string>
     <string name="spinner">Seleccionar</string>
     <string-array name="spinner_values">
@@ -115,10 +115,10 @@
     </string-array>
 
     <!-- Food -->
-    <string name="registra_lo_que_comes">Registra lo que comes</string>
+    <string name="registra_lo_que_comes">Registra tu alimentación</string>
     <string name="foods">Alimentación</string>
     <string name="your_foods">Tu alimentación</string>
-    <string name="foods_register">Registra tu alimentación</string>
+    <string name="foods_register">Búsqueda y registro</string>
     <string name="foods_forbidden">Alimentos desaconsejados</string>
     <string name="foods_search_hint">Escribe aquí un alimento...</string>
     <string name="foods_consult_registry">Consulta qué has comido</string>
@@ -173,6 +173,7 @@
     <string name="privacy_deletion_title">Borrado de datos</string>
     <string name="privacy_deletion_descr">Tus datos permanecen en tu dispositivo, pero puedes borrarlos ahora desde la ventana anterior</string>
     <string name="privacy_moreInfo_title">Más información</string>
-    <string name="privacy_moreInfo_descr">Cualquier duda sobre la aplicación puede ser dirigida a asistente_crohn@outlook.es o a través de redes sociales en @asistente_crohn.</string>
+    <string name="privacy_moreInfo_descr">Tienes disponible la Política de Privacidad en la ficha de la App en Tienda de Aplicaciones. Cualquier duda sobre la aplicación puede ser dirigida al correo asistente_crohn@outlook.es o a través de redes sociales en @asistente_crohn.</string>
+    <string name="foods_alert_new_forbidden">Nuevo alimento desaconsejado</string>
 
 </resources>

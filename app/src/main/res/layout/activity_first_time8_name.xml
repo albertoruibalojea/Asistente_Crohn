@@ -62,7 +62,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="328dp"
-        android:layout_height="51dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
         android:text="@string/firstTime_personalize_descr"
         android:textAlignment="center"
