@@ -139,7 +139,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
         Spinner spinner = alertDialog.findViewById(R.id.spinner2);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.spinner_values, R.layout.spinner_item_layout);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.spinner_values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
 

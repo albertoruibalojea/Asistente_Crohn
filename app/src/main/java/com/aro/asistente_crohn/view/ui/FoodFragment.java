@@ -99,7 +99,7 @@ public class FoodFragment extends Fragment{
             cacheFoodList.addAll(foodsList);
         }
 
-        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
+        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view, false);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);

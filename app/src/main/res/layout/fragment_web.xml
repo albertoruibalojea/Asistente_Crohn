@@ -21,25 +21,26 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_width="155dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/logo"
         android:src="@drawable/logo_banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="@string/logo" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:textColor="?attr/itemTextColor"
-        android:textSize="15sp"
+        android:layout_height="0dp"
         android:fontFamily="@font/bold"
         android:text="@string/recommendations_webview_hint"
+        android:textColor="?attr/itemTextColor"
+        android:textSize="15sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/webview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

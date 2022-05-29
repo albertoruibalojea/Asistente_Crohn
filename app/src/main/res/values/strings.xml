@@ -126,7 +126,7 @@
     <string name="foods_add_today">Añadir mi alimentación de hoy</string>
     <string name="foods_add_forbidden">Añade lo que te hace daño</string>
     <string name="foods_forbidden_alert_title">¿Qué te hace daño?</string>
-    <string name="foods_forbidden_alert_descr">Añade lo que te hace daño sobre el icono X en un alimento registrado</string>
+    <string name="foods_forbidden_alert_descr">Añade lo que te hace daño sobre el icono 🚫 en un alimento registrado</string>
 
     <!-- Recommendations -->
     <string name="recommendations_subtitle">Accede a recursos médicos</string>
@@ -137,7 +137,7 @@
     <string name="recommendations_titleNUT">Pautas nutricionales</string>
     <string name="recommendations_titleGRA">Infografías</string>
     <string name="recommendations_titleBOT">Cuestionarios</string>
-    <string name="recommendations_webview_hint">Acceso a Recomendaciones de referencia</string>
+    <string name="recommendations_webview_hint">Acceso a Recomendaciones</string>
     <string name="recommendations_search_hint">¿Qué quieres saber?</string>
 
     <!-- Preference Titles -->

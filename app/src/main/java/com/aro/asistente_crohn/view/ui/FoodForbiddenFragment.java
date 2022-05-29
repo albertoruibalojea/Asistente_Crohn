@@ -62,7 +62,7 @@ public class FoodForbiddenFragment extends Fragment {
                 this.sendAlert(view, getString(R.string.foods_forbidden_alert_title), getString(R.string.foods_forbidden_alert_descr));
             }
 
-            FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
+            FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view, true);
             recyclerView.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setReverseLayout(true);
