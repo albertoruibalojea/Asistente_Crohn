@@ -93,12 +93,7 @@ public class SymptomsRegistryFragment extends Fragment {
         });
 
         ImageView infoBtn = view.findViewById(R.id.infoBtn);
-        infoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openInfo(view);
-            }
-        });
+        infoBtn.setOnClickListener(this::openInfo);
 
         simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
         TextView textDate = view.findViewById(R.id.textDate);

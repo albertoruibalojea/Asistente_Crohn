@@ -59,7 +59,7 @@ public class FoodForbiddenFragment extends Fragment {
             if (!forbiddenList.isEmpty()) {
                 cacheFoodList.addAll(forbiddenList);
             } else {
-                this.sendAlert(view, "¿Qué te hace daño?", "Añade lo que te hace daño sobre el icono X en un alimento registrado");
+                this.sendAlert(view, getString(R.string.foods_forbidden_alert_title), getString(R.string.foods_forbidden_alert_descr));
             }
 
             FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);

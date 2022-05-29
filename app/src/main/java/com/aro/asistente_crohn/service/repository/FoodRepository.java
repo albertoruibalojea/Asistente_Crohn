@@ -69,6 +69,6 @@ public class FoodRepository {
     }
 
     public void deleteAll(){
-        CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> foodDao.deleteAll());
+        CrohnsAssistDatabase.databaseWriteExecutor.execute(foodDao::deleteAll);
     }
 }

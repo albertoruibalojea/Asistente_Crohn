@@ -60,6 +60,6 @@ public class SymptomRepository {
     }
 
     public void deleteAll(){
-        CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> symptomDao.deleteAll());
+        CrohnsAssistDatabase.databaseWriteExecutor.execute(symptomDao::deleteAll);
     }
 }

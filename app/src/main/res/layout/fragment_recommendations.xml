@@ -62,7 +62,7 @@
             android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/recomendaciones"
+            android:text="@string/firstTime_recs_title"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
             tools:ignore="TextContrastCheck" />
@@ -93,7 +93,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/bold"
-            android:text="@string/conoce_tu_enfermedad"
+            android:text="@string/recommendations_title"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"

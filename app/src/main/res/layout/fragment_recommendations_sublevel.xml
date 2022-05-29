@@ -62,7 +62,7 @@
             android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/recomendaciones"
+            android:text="@string/firstTime_recs_title"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp"
             tools:ignore="TextContrastCheck" />
@@ -90,7 +90,7 @@
             android:backgroundTint="@color/verde"
             android:drawableRight="@drawable/ic_baseline_search_24"
             android:fontFamily="@font/bold"
-            android:hint="@string/que_quieres_saber"
+            android:hint="@string/recommendations_search_hint"
             android:text=""
             android:textColor="?attr/itemTextColor"
             android:textColorHint="?attr/itemTextColor"

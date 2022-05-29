@@ -30,7 +30,7 @@
         <EditTextPreference
             app:key="username"
             app:title="@string/username_title"
-            app:defaultValue="@string/tu_nombre"
+            app:defaultValue="@string/firstTime_personalize_name"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/ic_baseline_alternate_email_24"/>
 

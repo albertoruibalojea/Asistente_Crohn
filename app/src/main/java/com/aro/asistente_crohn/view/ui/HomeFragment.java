@@ -212,15 +212,15 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String name = SymptomConstants.PATTERN_ILEOCOLITIS;
+                String name = SymptomConstants.TYPE_ILEOCOLITIS;
                 if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Ileitis")) {
-                    name = SymptomConstants.PATTERN_ILEITIS;
+                    name = SymptomConstants.TYPE_ILEITIS;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colitis")) {
-                    name = SymptomConstants.PATTERN_COLITIS;
+                    name = SymptomConstants.TYPE_COLITIS;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Gastrointestinal alta")) {
-                    name = SymptomConstants.PATTERN_UPPER_TRACT;
+                    name = SymptomConstants.TYPE_UPPER_TRACT;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
-                    name = SymptomConstants.PATTERN_PERIANAL;
+                    name = SymptomConstants.TYPE_PERIANAL;
                 }
 
                 SharedPreferences.Editor editor = preferences.edit();
@@ -231,7 +231,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("pattern", SymptomConstants.PATTERN_ILEOCOLITIS);
+                editor.putString("pattern", SymptomConstants.TYPE_ILEOCOLITIS);
                 editor.apply();
             }
         });

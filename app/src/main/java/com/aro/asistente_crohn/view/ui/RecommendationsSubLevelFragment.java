@@ -94,7 +94,7 @@ public class RecommendationsSubLevelFragment extends Fragment {
                     }
 
                     sameTypeRecommendationsList.sort(Comparator.comparing(Recommendation::getTitle).reversed());
-                    RecommendationsListAdapter adapter = new RecommendationsListAdapter(sameTypeRecommendationsList, viewModel, view);
+                    RecommendationsListAdapter adapter = new RecommendationsListAdapter(sameTypeRecommendationsList, view);
                     recyclerView.setAdapter(adapter);
 
                     AutoCompleteTextView actv =  (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView);

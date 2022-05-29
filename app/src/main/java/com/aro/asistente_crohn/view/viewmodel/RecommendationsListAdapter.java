@@ -32,12 +32,10 @@ public class RecommendationsListAdapter extends RecyclerView.Adapter<Recommendat
 
     private List<Recommendation> listdata;
     private List<Recommendation> listFilter;
-    private ItemViewModel viewModel;
     private View view;
 
-    public RecommendationsListAdapter(List<Recommendation> listdata, ItemViewModel viewModel, View view) {
+    public RecommendationsListAdapter(List<Recommendation> listdata, View view) {
         this.listdata = listdata;
-        this.viewModel = viewModel;
         this.view = view;
         this.listFilter = listdata;
     }

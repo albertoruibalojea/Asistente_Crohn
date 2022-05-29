@@ -48,6 +48,7 @@ public class CrohnAnalyzer {
     private final LifecycleOwner lifecycleOwner;
     private final SharedPreferences preferences;
     private static final String DAYS_TO_ANALYZE = "daysToAnalyze";
+    private static final String TYPE = "pattern";
 
     public CrohnAnalyzer(ItemViewModel viewModel, LifecycleOwner lifecycleOwner, SharedPreferences preferences){
         this.viewModel = viewModel;
@@ -74,46 +75,46 @@ public class CrohnAnalyzer {
                         cacheTodaySymptomList.addAll(symptomList);
                     }
 
-                    //We check today´s symptoms looking for occurrences in the user pattern
+                    //We check today´s symptoms looking for occurrences in the user type
                     //If coincidence, the Observer in the Health fragment will notify the user via interface
-                    //If the pattern is repeated a few days before, it means a critical state (ACTIVE) and must notify via push too
-                    if(this.isPatternGeneric(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_ILEOCOLITIS);
+                    //If the type is repeated a few days before, it means a critical state (ACTIVE) and must notify via push too
+                    if(this.isTypeGeneric(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
                         viewModel.updateHealth(finalHealth);
-                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_ILEOCOLITIS)){
-                            this.setActivePrevDays(SymptomConstants.PATTERN_ILEOCOLITIS);
+                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEOCOLITIS)){
+                            this.setActivePrevDays(SymptomConstants.TYPE_ILEOCOLITIS);
                         }
-                    } else if(this.isPatternSmallBowel(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_ILEITIS);
+                    } else if(this.isTypeSmallBowel(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
                         viewModel.updateHealth(finalHealth);
-                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_ILEITIS)){
-                            this.setActivePrevDays(SymptomConstants.PATTERN_ILEITIS);
+                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEITIS)){
+                            this.setActivePrevDays(SymptomConstants.TYPE_ILEITIS);
                         }
-                    } else if(this.isPatternColon(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_COLITIS);
+                    } else if(this.isTypeColon(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
                         viewModel.updateHealth(finalHealth);
-                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_COLITIS)){
-                            this.setActivePrevDays(SymptomConstants.PATTERN_COLITIS);
+                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_COLITIS)){
+                            this.setActivePrevDays(SymptomConstants.TYPE_COLITIS);
                         }
-                    } else if(this.isPatternUpperTract(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_UPPER_TRACT);
+                    } else if(this.isTypeUpperTract(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
                         viewModel.updateHealth(finalHealth);
-                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_UPPER_TRACT)){
-                            this.setActivePrevDays(SymptomConstants.PATTERN_UPPER_TRACT);
+                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_UPPER_TRACT)){
+                            this.setActivePrevDays(SymptomConstants.TYPE_UPPER_TRACT);
                         }
-                    } else if(this.isPatternPerianal(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_PERIANAL);
+                    } else if(this.isTypePerianal(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
                         viewModel.updateHealth(finalHealth);
-                        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_PERIANAL)){
-                            this.setActivePrevDays(SymptomConstants.PATTERN_PERIANAL);
+                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_PERIANAL)){
+                            this.setActivePrevDays(SymptomConstants.TYPE_PERIANAL);
                         }
                     }
 
                 });
             } else if(!health.getCrohnActive() && this.isActivePrevDays()){
-                //In this case, the disease is showing the user pattern in the last days
-                //So we just check that pattern
-                String actualPattern = this.preferences.getString("pattern", null);
+                //In this case, the disease is showing the user type in the last days
+                //So we just check that type
+                String actualType = this.preferences.getString(TYPE, null);
                 Health finalHealth = health;
                 this.viewModel.getTodaySymptoms().observe(this.lifecycleOwner, symptomList -> {
                     List<Symptom> cacheTodaySymptomList = new ArrayList<>();
@@ -121,26 +122,26 @@ public class CrohnAnalyzer {
                         cacheTodaySymptomList.addAll(symptomList);
                     }
 
-                    //If the pattern is repeated, it means user is still having a critical state (ACTIVE) and must notify via app only
-                    if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEOCOLITIS) && this.isPatternGeneric(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_ILEOCOLITIS);
-                        this.setActivePrevDays(SymptomConstants.PATTERN_ILEOCOLITIS);
+                    //If the type is repeated, it means user is still having a critical state (ACTIVE) and must notify via app only
+                    if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEOCOLITIS) && this.isTypeGeneric(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
+                        this.setActivePrevDays(SymptomConstants.TYPE_ILEOCOLITIS);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEITIS) && this.isPatternSmallBowel(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_ILEITIS);
-                        this.setActivePrevDays(SymptomConstants.PATTERN_ILEITIS);
+                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEITIS) && this.isTypeSmallBowel(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
+                        this.setActivePrevDays(SymptomConstants.TYPE_ILEITIS);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLITIS) && this.isPatternColon(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_COLITIS);
-                        this.setActivePrevDays(SymptomConstants.PATTERN_COLITIS);
+                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_COLITIS) && this.isTypeColon(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
+                        this.setActivePrevDays(SymptomConstants.TYPE_COLITIS);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT) && this.isPatternUpperTract(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_UPPER_TRACT);
-                        this.setActivePrevDays(SymptomConstants.PATTERN_UPPER_TRACT);
+                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_UPPER_TRACT) && this.isTypeUpperTract(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
+                        this.setActivePrevDays(SymptomConstants.TYPE_UPPER_TRACT);
                         viewModel.updateHealth(finalHealth);
-                    } else if(actualPattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL) && this.isPatternPerianal(cacheTodaySymptomList, preferences)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.PATTERN_PERIANAL);
-                        this.setActivePrevDays(SymptomConstants.PATTERN_PERIANAL);
+                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_PERIANAL) && this.isTypePerianal(cacheTodaySymptomList)){
+                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
+                        this.setActivePrevDays(SymptomConstants.TYPE_PERIANAL);
                         viewModel.updateHealth(finalHealth);
                     }
                 });
@@ -148,11 +149,11 @@ public class CrohnAnalyzer {
         });
     }
 
-    //Method to update ths Crohn State to TRUE and set the use pattern to the positive days
-    private void setActivePrevDays(String pattern){
+    //Method to update ths Crohn State to TRUE and set the use type to the positive days
+    private void setActivePrevDays(String type){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
 
-        //For the previous days, we set Health.active=true and Health.relatedSymptoms=pattern
+        //For the previous days, we set Health.active=true and Health.relatedSymptoms=type
         for(int i=1; i<=prevDays; i++){
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.DAY_OF_YEAR, -i);
@@ -171,8 +172,8 @@ public class CrohnAnalyzer {
 
                     //Health.active=true
                     health.setCrohnActive(true);
-                    //Health.relatedSymptoms=pattern
-                    health.setRelatedSymptoms(pattern);
+                    //Health.relatedSymptoms=type
+                    health.setRelatedSymptoms(type);
 
                     viewModel.updateHealth(health);
                 }
@@ -213,8 +214,8 @@ public class CrohnAnalyzer {
         return occurrences >= prevDays;
     }
 
-    //Method to check if the user pattern is repeating in the past DAYS_TO_ANALYZE days
-    private boolean doesThePatternRepeat(String pattern){
+    //Method to check if the user type is repeating in the past DAYS_TO_ANALYZE days
+    private boolean doesTheTypeRepeat(String type){
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
         AtomicInteger occurrences = new AtomicInteger();
 
@@ -235,8 +236,8 @@ public class CrohnAnalyzer {
                     cacheTodayHealthList = healthList;
                     health = cacheTodayHealthList.get(0);
 
-                    //we compare the pattern
-                    if(health.getRelatedSymptoms().equalsIgnoreCase(pattern)){
+                    //we compare the type
+                    if(health.getRelatedSymptoms().equalsIgnoreCase(type)){
                         occurrences.addAndGet(1);
                     }
                 }
@@ -246,25 +247,9 @@ public class CrohnAnalyzer {
         return occurrences.get() >= prevDays;
     }
 
-    /*private String getActualPattern(){
-        if(this.doesThePatternRepeat(SymptomConstants.PATTERN_ILEOCOLITIS)){
-            return SymptomConstants.PATTERN_ILEOCOLITIS;
-        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_ILEITIS)){
-            return SymptomConstants.PATTERN_ILEITIS;
-        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_COLITIS)){
-            return SymptomConstants.PATTERN_COLITIS;
-        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_UPPER_TRACT)){
-            return SymptomConstants.PATTERN_UPPER_TRACT;
-        } else if(this.doesThePatternRepeat(SymptomConstants.PATTERN_PERIANAL)){
-            return SymptomConstants.PATTERN_PERIANAL;
-        }
+    private boolean isTypeGeneric(List<Symptom> symptoms){
 
-        return null;
-    }*/
-
-    private boolean isPatternGeneric(List<Symptom> symptoms, SharedPreferences preferences){
-
-        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_ILEOCOLITIS)){
+        if(this.preferences.getString(TYPE, null).equalsIgnoreCase(SymptomConstants.TYPE_ILEOCOLITIS)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -298,14 +283,14 @@ public class CrohnAnalyzer {
                 }
             }
 
-            //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_ILEOCOLITIS /2;
+            //If the positivity is higher than 50% points of the type, we must notify
+            return positivity >= SymptomConstants.VALUE_TYPE_ILEOCOLITIS /2;
         } else return false;
     }
 
-    private boolean isPatternSmallBowel(List<Symptom> symptoms, SharedPreferences preferences){
+    private boolean isTypeSmallBowel(List<Symptom> symptoms){
 
-        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_ILEITIS)){
+        if(this.preferences.getString(TYPE, null).equalsIgnoreCase(SymptomConstants.TYPE_ILEITIS)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -333,14 +318,14 @@ public class CrohnAnalyzer {
                 }
             }
 
-            //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_ILEITIS /2;
+            //If the positivity is higher than 50% points of the type, we must notify
+            return positivity >= SymptomConstants.VALUE_TYPE_ILEITIS /2;
         } else return false;
     }
 
-    private boolean isPatternColon(List<Symptom> symptoms, SharedPreferences preferences){
+    private boolean isTypeColon(List<Symptom> symptoms){
 
-        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_COLITIS)){
+        if(this.preferences.getString(TYPE, null).equalsIgnoreCase(SymptomConstants.TYPE_COLITIS)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -368,14 +353,14 @@ public class CrohnAnalyzer {
                 }
             }
 
-            //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_COLITIS /2;
+            //If the positivity is higher than 50% points of the type, we must notify
+            return positivity >= SymptomConstants.VALUE_TYPE_COLITIS /2;
         } else return false;
     }
 
-    private boolean isPatternUpperTract(List<Symptom> symptoms, SharedPreferences preferences){
+    private boolean isTypeUpperTract(List<Symptom> symptoms){
 
-        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
+        if(this.preferences.getString(TYPE, null).equalsIgnoreCase(SymptomConstants.TYPE_UPPER_TRACT)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -400,14 +385,14 @@ public class CrohnAnalyzer {
                 }
             }
 
-            //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_UPPER_TRACT/2;
+            //If the positivity is higher than 50% points of the type, we must notify
+            return positivity >= SymptomConstants.VALUE_TYPE_UPPER_TRACT /2;
         } else return false;
     }
 
-    private boolean isPatternPerianal(List<Symptom> symptoms, SharedPreferences preferences){
+    private boolean isTypePerianal(List<Symptom> symptoms){
 
-        if(this.preferences.getString("pattern", null).equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
+        if(this.preferences.getString(TYPE, null).equalsIgnoreCase(SymptomConstants.TYPE_PERIANAL)){
             int positivity = 0;
 
             for(Symptom s : symptoms){
@@ -429,8 +414,8 @@ public class CrohnAnalyzer {
                 }
             }
 
-            //If the positivity is higher than 50% points of the pattern, we must notify
-            return positivity >= SymptomConstants.VALUE_PATTERN_PERIANAL/2;
+            //If the positivity is higher than 50% points of the type, we must notify
+            return positivity >= SymptomConstants.VALUE_TYPE_PERIANAL /2;
         } else return false;
     }
 }

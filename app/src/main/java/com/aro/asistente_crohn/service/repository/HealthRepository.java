@@ -55,6 +55,6 @@ public class HealthRepository {
     }
 
     public void deleteAll(){
-        CrohnsAssistDatabase.databaseWriteExecutor.execute(() -> healthDAO.deleteAll());
+        CrohnsAssistDatabase.databaseWriteExecutor.execute(healthDAO::deleteAll);
     }
 }
