@@ -20,7 +20,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
-        android:text="@string/symptom_item_name"
+        android:text="@string/symptom_diaree"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

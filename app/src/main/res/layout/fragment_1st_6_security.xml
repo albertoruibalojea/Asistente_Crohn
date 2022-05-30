@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".firsttime.Fragment1st6Security"
+    tools:context=".view.ui.firsttime.Fragment1st6Security"
     android:orientation="vertical"
     android:background="?attr/backgroundColor">
 
@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="145dp"
         android:fontFamily="@font/bold"
-        android:text="@string/tus_datos"
+        android:text="@string/firstTime_data_title"
         android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,13 +29,13 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="325dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="517dp"
         android:fontFamily="@font/regular"
-        android:text="@string/son_tus_datos_por_lo_que_nada_va_a_salir_de_tu_dispositivo"
+        android:text="@string/firstTime_data_descr"
         android:textAlignment="center"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"

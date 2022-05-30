@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".firsttime.Fragment1st2Symptoms"
+    tools:context=".view.ui.firsttime.Fragment1st2Symptoms"
     android:orientation="vertical"
     android:background="?attr/backgroundColor">
 
@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="145dp"
         android:fontFamily="@font/bold"
-        android:text="@string/registro_de_s_ntomas"
+        android:text="@string/firstTime_symptoms_title"
         android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,8 +33,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
         android:fontFamily="@font/regular"
-        android:text="@string/a_ade_tus_s_ntomas_para_ayudarme_a_detectar_un_posible_brote_y_tener_un_historial_para_ense_rselo_a_tu_especialista"
+        android:text="@string/firstTime_symptoms_descr"
         android:textAlignment="center"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
@@ -42,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <ImageView
         android:id="@+id/imageView2"

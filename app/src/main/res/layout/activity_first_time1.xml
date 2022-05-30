@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firsttime.Activity1stTime"
+    tools:context=".view.ui.firsttime.Activity1stTime"
     android:orientation="vertical"
     android:background="?attr/backgroundColor">
 
@@ -22,7 +22,7 @@
         android:id="@+id/saltar_guia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/saltar_gu_a"
+        android:text="@string/btn_skip_guide"
         android:textColor="?attr/itemTextColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
         android:width="609sp"
         android:height="41sp"
         android:fontFamily="@font/bold"
-        android:text="@string/siguiente"
+        android:text="@string/btn_next"
         android:textColor="?attr/colorSurface"
         android:background="@color/rosa"
         android:textSize="18sp"

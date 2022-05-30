@@ -22,9 +22,9 @@ import java.util.concurrent.Executors;
 // bump version number if the schema changes
 @Database(
             entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class},
-            version=5,
-            autoMigrations = { @AutoMigration(from = 4, to = 5)
-})
+            version=6,
+            autoMigrations = { @AutoMigration(from = 4, to = 5), @AutoMigration(from = 5, to = 6)}
+)
 @TypeConverters({DateConverter.class})
 public abstract class CrohnsAssistDatabase extends RoomDatabase {
 

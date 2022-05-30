@@ -19,7 +19,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
-        android:text="@string/food_item_name"
+        android:text="@string/your_foods"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         android:paddingEnd="96dp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firsttime.FirstTime7TermsActivity"
+    tools:context=".view.ui.firsttime.FirstTime7TermsActivity"
     android:orientation="vertical"
     android:background="?attr/backgroundColor">
 
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
-        android:text="@string/t_rminos_y_condiciones_de_uso"
+        android:text="@string/firstTime_terms_title"
         android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="329dp"
         android:layout_height="25dp"
         android:fontFamily="@font/regular"
-        android:text="@string/es_necesario_que_leas_y_aceptes_estos_t_rminos"
+        android:text="@string/firstTime_terms_descr"
         android:textAlignment="center"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
@@ -45,7 +45,7 @@
         android:width="609sp"
         android:height="41sp"
         android:fontFamily="@font/bold"
-        android:text="@string/aceptar"
+        android:text="@string/btn_accept"
         android:textColor="?attr/colorSurface"
         android:background="?attr/colorPrimary"
         android:textSize="18sp"
@@ -76,7 +76,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/terminos_de_uso_80_completado"
+        android:text="@string/guia_inicio_80_completado"
         android:fontFamily="@font/bold"
         android:textColor="?attr/itemTextColor"
         android:textSize="14sp"
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:justificationMode="inter_word"
-                android:text="@string/terminos_uso"
+                android:text="@string/firstTime_terms_terms"
                 android:textColor="?attr/itemTextColor"
                 android:textSize="16sp" />
         </LinearLayout>

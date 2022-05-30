@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".firsttime.Fragment1st3Food"
+    tools:context=".view.ui.firsttime.Fragment1st3Food"
     android:orientation="vertical"
     android:background="?attr/backgroundColor">
 
@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="145dp"
         android:fontFamily="@font/bold"
-        android:text="@string/tu_alimentaci_n"
+        android:text="@string/firstTime_foods_title"
         android:textColor="?attr/itemTextColor"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,12 +29,12 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="322dp"
-        android:layout_height="68dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/regular"
-        android:text="@string/a_ade_lo_que_has_comido_para_tener_un_historial_de_si_alg_n_alimento_te_hace_da_o_a_adi_ndolo_as_a_tus_quot_alimentos_desaconsejados_quot"
+        android:text="@string/firstTime_food_descr"
         android:textAlignment="center"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"

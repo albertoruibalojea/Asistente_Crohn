@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.SymptomsRegistryFragment">
+    tools:context=".view.ui.SymptomsRegistryFragment">
 
     <RelativeLayout
         android:id="@+id/elipse"
@@ -62,7 +62,7 @@
             android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/tus_sintomas"
+            android:text="@string/your_symptoms"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp" />
 
@@ -96,7 +96,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/bold"
-                android:text="@string/registra_tus_s_ntomas"
+                android:text="@string/register_symptoms"
                 android:textColor="?attr/itemTextColor"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -138,11 +138,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/diarrea"
+                        android:contentDescription="@string/symptom_diaree"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/diarrea"
+                        android:text="@string/symptom_diaree"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -151,7 +151,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/diarrea"
+                        android:contentDescription="@string/symptom_diaree"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_diaree" />
 
@@ -173,11 +173,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/nauseas"
+                        android:contentDescription="@string/symptom_nauseas"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/nauseas"
+                        android:text="@string/symptom_nauseas"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -186,7 +186,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/nauseas"
+                        android:contentDescription="@string/symptom_nauseas"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_vomit" />
 
@@ -208,11 +208,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/menos_apetito"
+                        android:contentDescription="@string/symptom_notHungry"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/menos_apetito"
+                        android:text="@string/symptom_notHungry"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -221,7 +221,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/menos_apetito"
+                        android:contentDescription="@string/symptom_notHungry"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_hungry" />
 
@@ -243,11 +243,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/dolorbarriga"
+                        android:contentDescription="@string/symptom_abdominalPain"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/dolorbarriga"
+                        android:text="@string/symptom_abdominalPain"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -256,7 +256,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/dolorbarriga"
+                        android:contentDescription="@string/symptom_abdominalPain"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_abdompain"
                         tools:ignore="ImageContrastCheck" />
@@ -279,11 +279,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/dolor_articular"
+                        android:contentDescription="@string/symptom_articularPain"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/dolor_articular"
+                        android:text="@string/symptom_articularPain"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -293,7 +293,7 @@
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
                         android:paddingTop="8dp"
-                        android:contentDescription="@string/dolor_articular"
+                        android:contentDescription="@string/symptom_articularPain"
                         app:srcCompat="@drawable/ic_sympt_articularpain"
                         tools:ignore="ImageContrastCheck" />
 
@@ -315,11 +315,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/dolor_anal"
+                        android:contentDescription="@string/symptom_analPain"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/dolor_anal"
+                        android:text="@string/symptom_analPain"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -328,7 +328,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/dolor_anal"
+                        android:contentDescription="@string/symptom_analPain"
                         android:paddingTop="12dp"
                         app:srcCompat="@drawable/ic_sympt_analpain" />
 
@@ -350,11 +350,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/dolor_cabeza"
+                        android:contentDescription="@string/symptom_headache"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/dolor_cabeza"
+                        android:text="@string/symptom_headache"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -363,7 +363,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/dolor_cabeza"
+                        android:contentDescription="@string/symptom_headache"
                         android:paddingTop="4dp"
                         app:srcCompat="@drawable/ic_sympt_headache" />
 
@@ -387,11 +387,11 @@
                         android:layout_row="0"
                         android:layout_column="8"
                         android:layout_weight="1"
-                        android:contentDescription="@string/fiebre"
+                        android:contentDescription="@string/symptom_fever"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/fiebre"
+                        android:text="@string/symptom_fever"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -400,7 +400,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/fiebre"
+                        android:contentDescription="@string/symptom_fever"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_fever" />
 
@@ -422,11 +422,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/cansancio"
+                        android:contentDescription="@string/symptom_tired"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/cansancio"
+                        android:text="@string/symptom_tired"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -436,7 +436,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/cansancio"
+                        android:contentDescription="@string/symptom_tired"
                         android:paddingTop="4dp"
                         app:srcCompat="@drawable/ic_sympt_tired"
                         tools:ignore="ImageContrastCheck" />
@@ -459,11 +459,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/ir_mas_al_bano"
+                        android:contentDescription="@string/symptom_bathroomUrge"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/ir_mas_al_bano"
+                        android:text="@string/symptom_bathroomUrge"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -473,7 +473,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/ir_mas_al_bano"
+                        android:contentDescription="@string/symptom_bathroomUrge"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_bathroom_urge"
                         tools:ignore="ImageContrastCheck" />
@@ -496,11 +496,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/perdi_peso"
+                        android:contentDescription="@string/symptom_less_weight"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/perdi_peso"
+                        android:text="@string/symptom_less_weight"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -510,7 +510,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/perdi_peso"
+                        android:contentDescription="@string/symptom_less_weight"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_lessweight"
                         tools:ignore="ImageContrastCheck" />
@@ -533,11 +533,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/sangrado"
+                        android:contentDescription="@string/symptom_blood"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/sangrado"
+                        android:text="@string/symptom_blood"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp" />
 
@@ -546,7 +546,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/sangrado"
+                        android:contentDescription="@string/symptom_blood"
                         android:paddingTop="16dp"
                         app:srcCompat="@drawable/ic_sympt_blood"
                         tools:ignore="ImageContrastCheck" />
@@ -569,11 +569,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/aphthas"
+                        android:contentDescription="@string/symptom_aphthas"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/aphthas"
+                        android:text="@string/symptom_aphthas"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -583,7 +583,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/aphthas"
+                        android:contentDescription="@string/symptom_aphthas"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_aftas" />
 
@@ -605,11 +605,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/herida_perianal"
+                        android:contentDescription="@string/symptom_perianal"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/herida_perianal"
+                        android:text="@string/symptom_perianal"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -619,7 +619,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/herida_perianal"
+                        android:contentDescription="@string/symptom_perianal"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_perianal" />
 
@@ -641,11 +641,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/skin"
+                        android:contentDescription="@string/symptom_skin"
                         android:fontFamily="@font/regular"
                         android:gravity="bottom|center"
                         android:paddingBottom="4dp"
-                        android:text="@string/skin"
+                        android:text="@string/symptom_skin"
                         android:textColor="?attr/colorSurface"
                         android:textSize="15sp"
                         tools:ignore="TextContrastCheck" />
@@ -655,7 +655,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
-                        android:contentDescription="@string/skin"
+                        android:contentDescription="@string/symptom_skin"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_skin" />
 
@@ -677,7 +677,7 @@
                 android:enabled="false"
                 android:fontFamily="@font/bold"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="@string/finalizar_registro"
+                android:text="@string/save_registries"
                 android:textColor="?attr/colorSurface"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

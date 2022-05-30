@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.FoodForbiddenFragment">
+    tools:context=".view.ui.FoodForbiddenFragment">
 
     <RelativeLayout
         android:id="@+id/elipse"
@@ -39,7 +39,7 @@
             android:layout_marginBottom="32dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/consulta_que_te_hace_dano"
+            android:text="@string/foods_consult_forbidden"
             android:textColor="?attr/colorSurface"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
             android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/tu_alimentacion"
+            android:text="@string/your_foods"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp" />
 
@@ -85,7 +85,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/bold"
-            android:text="@string/anade_lo_que_te_hace_dano"
+            android:text="@string/foods_add_forbidden"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
             android:backgroundTint="@color/morado"
             android:drawableRight="@drawable/ic_baseline_search_24"
             android:fontFamily="@font/bold"
-            android:hint="@string/escribe_aqui_un_alimento"
+            android:hint="@string/foods_search_hint"
             android:text=""
             android:textColor="?attr/itemTextColor"
             android:textColorHint="?attr/itemTextColor"
