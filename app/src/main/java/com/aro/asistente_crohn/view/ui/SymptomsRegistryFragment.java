@@ -93,19 +93,14 @@ public class SymptomsRegistryFragment extends Fragment {
         });
 
         ImageView infoBtn = view.findViewById(R.id.infoBtn);
-        infoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openInfo(view);
-            }
-        });
+        infoBtn.setOnClickListener(this::openInfo);
 
         simpleDateFormat =new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("es", "ES"));
         TextView textDate = view.findViewById(R.id.textDate);
         textDate.setText(simpleDateFormat.format(date));
 
         Button btn = view.findViewById(R.id.btn);
-
+        btn.setEnabled(true);
 
         GridLayout symptomGrid = view.findViewById(R.id.symptomGrid);
         //handler to create the splash screen
@@ -114,8 +109,6 @@ public class SymptomsRegistryFragment extends Fragment {
         for (int i = 0; i < symptomGrid.getChildCount(); i++) {
             CardView card = (CardView) symptomGrid.getChildAt(i);
             card.setOnClickListener(view12 -> {
-                btn.setEnabled(true);
-
                 //Checking the actual color
                 //Select a symptom
                 if (card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.negroGris)) {
@@ -150,7 +143,6 @@ public class SymptomsRegistryFragment extends Fragment {
                         deletedSymptoms.removeIf(o -> o.equalsIgnoreCase(symptom.getName()));
                     }
 
-
                 } //Unselect a symptom
                 else if (card.getCardBackgroundColor().getDefaultColor() == getResources().getColor(R.color.violeta)) {
                     card.setCardBackgroundColor(getResources().getColor(R.color.negroGris));
@@ -164,7 +156,7 @@ public class SymptomsRegistryFragment extends Fragment {
 
         btn.setOnClickListener(view14 -> {
             //we need to check if there is symptoms and the courage level
-            if (!selectedSymptoms.isEmpty()) {
+            if (!selectedSymptoms.isEmpty() || !deletedSymptoms.isEmpty()) {
 
                 //we save the data into the Room Persistence Database
                 for (Symptom s : selectedSymptoms) {
@@ -176,8 +168,8 @@ public class SymptomsRegistryFragment extends Fragment {
                     for(String t : deletedSymptoms){
                         if(s.getName().equalsIgnoreCase(t)){
                             viewModel.deleteSymptom(s);
+                            break;
                         }
-                        break;
                     }
                 }
 
@@ -189,8 +181,6 @@ public class SymptomsRegistryFragment extends Fragment {
                         card.setCardBackgroundColor(getResources().getColor(R.color.negroGris));
                     }
                 }
-
-                btn.setEnabled(false);
 
                 //Success alert dialog
                 this.sendAlert(view);

@@ -109,6 +109,7 @@ public class FoodRegistryFragment extends Fragment {
                 viewModel.insertFood(food);
                 adapter.notifyDataSetChanged();
                 actv.performCompletion();
+                actv.setText("");
             });
         });
 
@@ -123,7 +124,7 @@ public class FoodRegistryFragment extends Fragment {
             cacheFoodList.addAll(foodsList);
         }
 
-        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view);
+        FoodListAdapter adapter = new FoodListAdapter(cacheFoodList, viewModel, view, false);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);

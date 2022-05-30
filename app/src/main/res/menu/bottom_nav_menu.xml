@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_baseline_app_registration_24"/>
     <item
         android:id="@+id/state"
-        android:title="@string/salud"
+        android:title="@string/health"
         android:fontFamily="@font/regular"
         android:icon="@drawable/ic_baseline_person_outline_24"/>
 </menu>

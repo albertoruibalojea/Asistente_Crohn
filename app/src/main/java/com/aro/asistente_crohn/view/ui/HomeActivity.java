@@ -49,4 +49,14 @@ public class HomeActivity extends AppCompatActivity{
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+    public void openFragment(Fragment fragment, String type) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putString("type", type);
+        fragment.setArguments(bundle);
+        fragmentTransaction.replace(R.id.fragmentView, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 }

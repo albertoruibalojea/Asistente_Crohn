@@ -39,11 +39,6 @@ public class HealthFragmentConsult  extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -90,11 +85,11 @@ public class HealthFragmentConsult  extends Fragment {
             }
 
             TextView courageValue = view.findViewById(R.id.valueCourage);
-            String emoji = "😁";
-            if(health.getCourage()==0) emoji="😭";
-            else if(health.getCourage()==1) emoji="😔";
-            else if(health.getCourage()==2) emoji="😑";
-            else if(health.getCourage()==3) emoji="😊";
+            String emoji = getString(R.string.courage_4);
+            if(health.getCourage()==0) emoji=getString(R.string.courage_0);
+            else if(health.getCourage()==1) emoji=getString(R.string.courage_1);
+            else if(health.getCourage()==2) emoji=getString(R.string.courage_2);
+            else if(health.getCourage()==3) emoji=getString(R.string.courage_3);
             courageValue.setText(emoji);
 
             TextView patternValue = view.findViewById(R.id.infoPattern);
@@ -122,15 +117,15 @@ public class HealthFragmentConsult  extends Fragment {
     }
 
     private String getActualPattern(String pattern){
-        if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEOCOLITIS)){
+        if(pattern.equalsIgnoreCase(SymptomConstants.TYPE_ILEOCOLITIS)){
             return "Enfermedad de Crohn -> Ileocolitis";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_ILEITIS)){
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.TYPE_ILEITIS)){
             return "Enfermedad de Crohn -> Ileitis";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_COLITIS)){
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.TYPE_COLITIS)){
             return "Enfermedad de Crohn -> Colitis";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_UPPER_TRACT)){
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.TYPE_UPPER_TRACT)){
             return "Enfermedad de Crohn -> Gastrointestinal alta";
-        } else if(pattern.equalsIgnoreCase(SymptomConstants.PATTERN_PERIANAL)){
+        } else if(pattern.equalsIgnoreCase(SymptomConstants.TYPE_PERIANAL)){
             return "Enfermedad de Crohn -> Perianal";
         } else {
             return "Enfermedad de Crohn -> Actualiza más tarde";

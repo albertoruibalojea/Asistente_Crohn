@@ -14,7 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bold"
-        android:text="@string/significado_de_cada_sintoma"
+        android:text="@string/symptoms_info_title"
         android:textAlignment="gravity"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="?attr/itemTextColor"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:justificationMode="inter_word"
-                android:text="@string/symptoms_meaning"
+                android:text="@string/symptoms_info_descr"
                 android:textColor="?attr/itemTextColor"
                 android:textSize="16sp" />
 

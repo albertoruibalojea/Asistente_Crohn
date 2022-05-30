@@ -39,7 +39,7 @@
             android:layout_marginBottom="26dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/consulta_registro_sintomas"
+            android:text="@string/consult_and_register"
             android:textColor="?attr/colorSurface"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
             android:layout_marginEnd="69dp"
             android:fontFamily="@font/bold"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/tu_alimentacion"
+            android:text="@string/your_foods"
             android:textColor="?attr/colorSurface"
             android:textSize="24sp" />
 
@@ -100,10 +100,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/bold"
-            android:text="@string/fecha_seleccionada"
+            android:text="@string/date_selected"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +132,7 @@
                 android:layout_gravity="start|center"
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
-                android:text="@string/mis_alimentos_desaconsejados"
+                android:text="@string/foods_forbidden"
                 android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
@@ -165,7 +165,7 @@
                 android:layout_gravity="start|center"
                 android:fontFamily="@font/bold"
                 android:paddingStart="16dp"
-                android:text="@string/anadir_mi_alimentacion_de_hoy"
+                android:text="@string/foods_add_today"
                 android:textColor="?attr/colorSurface"
                 android:textSize="18sp" />
 
@@ -181,13 +181,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="225dp"
+            android:layout_width="499dp"
+            android:layout_height="199dp"
             android:layout_below="@+id/dateTextView"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:paddingBottom="16dp"
             android:scrollbars="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -202,7 +202,7 @@
             android:layout_width="35dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/ic_baseline_add_24"
@@ -210,8 +210,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/dateTextView"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView"
-            app:layout_constraintVertical_bias="0.52" />
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

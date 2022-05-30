@@ -35,15 +35,15 @@ public class FirstTime8NameActivity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String name = SymptomConstants.PATTERN_ILEOCOLITIS;
+                String name = SymptomConstants.TYPE_ILEOCOLITIS;
                 if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Ileitis")) {
-                    name = SymptomConstants.PATTERN_ILEITIS;
+                    name = SymptomConstants.TYPE_ILEITIS;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Colitis")) {
-                    name = SymptomConstants.PATTERN_COLITIS;
+                    name = SymptomConstants.TYPE_COLITIS;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Gastrointestinal alta")) {
-                    name = SymptomConstants.PATTERN_UPPER_TRACT;
+                    name = SymptomConstants.TYPE_UPPER_TRACT;
                 } else if (parent.getItemAtPosition(position).toString().equalsIgnoreCase("Perianal")) {
-                    name = SymptomConstants.PATTERN_PERIANAL;
+                    name = SymptomConstants.TYPE_PERIANAL;
                 }
 
                 editor.putString("pattern", name);
@@ -51,7 +51,7 @@ public class FirstTime8NameActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                editor.putString("pattern", SymptomConstants.PATTERN_ILEOCOLITIS);
+                editor.putString("pattern", SymptomConstants.TYPE_ILEOCOLITIS);
             }
         });
 
@@ -62,7 +62,7 @@ public class FirstTime8NameActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btn);
         btn.setOnClickListener(view -> {
 
-            if (username.getText().length() > 0 && !username.getText().equals("Tu nombre")) {
+            if (username.getText().length() > 0 && !username.getText().equals(getString(R.string.firstTime_personalize_name))) {
                 editor.putString("username", username.getText().toString());
             } else {
                 editor.putString("username", "Usuario/a");

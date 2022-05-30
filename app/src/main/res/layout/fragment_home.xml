@@ -54,7 +54,7 @@
                     android:layout_marginStart="132dp"
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/recomendaciones"
+                    android:text="@string/firstTime_recs_title"
                     android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
@@ -70,7 +70,7 @@
                     android:layout_marginEnd="36dp"
                     android:layout_marginBottom="22dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/accede_a_recursos_medicos"
+                    android:text="@string/recommendations_subtitle"
                     android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
@@ -86,7 +86,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
-                    android:contentDescription="@string/state"
+                    android:contentDescription="@string/recommendations_subtitle"
                     android:src="@drawable/ic_baseline_library_books_24"
                     tools:ignore="ImageContrastCheck">
 
@@ -115,7 +115,7 @@
                     android:layout_marginStart="132dp"
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/alimentacion"
+                    android:text="@string/foods"
                     android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
@@ -147,7 +147,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
-                    android:contentDescription="@string/state"
+                    android:contentDescription="@string/registra_lo_que_comes"
                     android:src="@drawable/ic_crockery_1216068"
                     tools:ignore="ImageContrastCheck">
 
@@ -178,7 +178,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="154dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/salud"
+                    android:text="@string/health"
                     android:textColor="?attr/colorSurface"
                     android:textSize="24sp"
                     tools:ignore="TextContrastCheck" />
@@ -194,7 +194,7 @@
                     android:layout_marginEnd="64dp"
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/conoce_tu_salud_actual"
+                    android:text="@string/health_subtitle"
                     android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
@@ -210,7 +210,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
-                    android:contentDescription="@string/state"
+                    android:contentDescription="@string/health_subtitle"
                     android:src="@drawable/ic_baseline_person_outline_24"
                     tools:ignore="ImageContrastCheck">
 
@@ -255,7 +255,7 @@
                     android:layout_marginEnd="89dp"
                     android:layout_marginBottom="25dp"
                     android:fontFamily="@font/bold"
-                    android:text="@string/registra_y_consulta"
+                    android:text="@string/consult_and_register"
                     android:textColor="?attr/colorSurface"
                     android:textSize="15sp"
                     tools:ignore="TextContrastCheck" />
@@ -271,7 +271,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginEnd="214dp"
                     android:layout_marginBottom="17dp"
-                    android:contentDescription="@string/state"
+                    android:contentDescription="@string/recommendations_title"
                     android:src="@drawable/ic_baseline_app_registration_24"
                     tools:ignore="ImageContrastCheck">
 
@@ -323,7 +323,7 @@
             android:layout_marginStart="104dp"
             android:layout_marginTop="21dp"
             android:fontFamily="@font/bold"
-            android:text="@string/hola"
+            android:text="@string/sc1_title"
             android:textColor="?attr/itemTextColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"

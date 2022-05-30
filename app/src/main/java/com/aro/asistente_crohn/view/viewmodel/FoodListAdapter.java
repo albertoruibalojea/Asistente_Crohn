@@ -22,11 +22,13 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     private List<Food> listdata;
     private ItemViewModel viewModel;
     private View view;
+    private boolean isInForbiddenView;
 
-    public FoodListAdapter(List<Food> listdata, ItemViewModel viewModel, View view) {
+    public FoodListAdapter(List<Food> listdata, ItemViewModel viewModel, View view, boolean isInForbiddenView) {
         this.listdata = listdata;
         this.viewModel = viewModel;
         this.view = view;
+        this.isInForbiddenView = isInForbiddenView;
     }
 
     @Override
@@ -45,11 +47,15 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
 
             Food food = listdata.get(position);
 
-            holder.deleteImg.setOnClickListener(view -> {
-                viewModel.deleteFood(food);
-                this.sendAlert("Eliminado", "Registro eliminado correctamente");
-                notifyDataSetChanged();
-            });
+            if(!isInForbiddenView){
+                holder.deleteImg.setOnClickListener(view -> {
+                    viewModel.deleteFood(food);
+                    this.sendAlert("Eliminado", "Registro eliminado correctamente");
+                    notifyDataSetChanged();
+                });
+            } else {
+                holder.deleteImg.setColorFilter(com.google.android.material.R.attr.itemTextColor);
+            }
 
             if(Boolean.TRUE.equals(food.getForbidden())){
                 //we update the icon
