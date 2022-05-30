@@ -13,10 +13,6 @@ X
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-
-Oapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsRegistryFragment.java,e\8\e88b98ece8e266e2ac1f437d237e8c07b46051e0
-w
-Gapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsFragment.java,e\0\e0aa0004fab0029106ef7bdf1dc50cd833d83047
 r
 Bapp/src/main/java/com/aro/asistente_crohn/view/ui/WebFragment.java,9\b\9bca0560ede85ce4722e530a9ea317e99a834a4d
 s
@@ -27,9 +23,5 @@ Vapp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsSubLevelFragme
 Wapp/src/main/java/com/aro/asistente_crohn/view/ui/firsttime/FirstTime8NameActivity.java,d\4\d447472f39c632b4520c7e1b19fcd435b76155cf
 w
 Gapp/src/main/java/com/aro/asistente_crohn/view/ui/SettingsFragment.java,3\e\3e5066cd19e6e2130c0e35a7c55949ebadb247ca
-|
-Lapp/src/main/java/com/aro/asistente_crohn/view/ui/FoodForbiddenFragment.java,d\8\d8b6030a927bc071fdb3baf7a5ef0e6b57afe7b9
-{
-Kapp/src/main/java/com/aro/asistente_crohn/view/ui/FoodRegistryFragment.java,d\5\d53942234c7f0c0b6d10499a2a1ae0b02271dbf0
 }
 Mapp/src/main/java/com/aro/asistente_crohn/view/viewmodel/FoodListAdapter.java,1\5\15a4868d25b6b7d3ca2e9facb6523774ea22e965

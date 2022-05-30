@@ -109,6 +109,7 @@ public class FoodRegistryFragment extends Fragment {
                 viewModel.insertFood(food);
                 adapter.notifyDataSetChanged();
                 actv.performCompletion();
+                actv.setText("");
             });
         });
 

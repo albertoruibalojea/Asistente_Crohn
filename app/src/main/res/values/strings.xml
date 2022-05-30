@@ -46,9 +46,9 @@
     <string name="settings">settings icon</string>
     <string name="consult_and_register">Consulta y registro</string>
     <string name="view_registries">Ver mis registros</string>
-    <string name="end_registry">Finalizar registro</string>
+    <string name="save_registries">Guardar cambios</string>
     <string name="registry">Registro</string>
-    <string name="added_registries">Se han modificado tus registros</string>
+    <string name="added_registries">Se han actualizado tus registros</string>
     <string name="registered">Registrado</string>
     <string name="date_selected">fecha seleccionada</string>
 
