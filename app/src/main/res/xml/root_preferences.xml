@@ -23,8 +23,8 @@
 
         <Preference
             app:key="pattern"
-            app:title="Tu patrón de la enfermedad"
-            app:summary="Selecciona tu patrón actual"
+            app:title="@string/type_title"
+            app:summary="@string/type_summary"
             app:icon="@drawable/ic_baseline_insights_24"/>
 
         <EditTextPreference

@@ -13,8 +13,8 @@ android {
         applicationId "com.aro.asistente_crohn"
         minSdk 28
         targetSdk 32
-        versionCode 15
-        versionName '3.21'
+        versionCode 16
+        versionName '3.22'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

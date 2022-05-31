@@ -100,7 +100,7 @@
     <string name="health_typeTitle">Tipo actual</string>
     <string name="health_typeInfo">Enfermedad de Crohn -> Actualiza más tarde</string>
     <string name="health_typePositivityTitle">Sintomatología compatible con los síntomas</string>
-    <string name="health_positivityTitle">Positividad</string>
+    <string name="health_positivityTitle">Estimación de brote</string>
     <string name="positive">Positiva</string>
     <string name="negative">Negativa</string>
     <string name="health_select_type_title">¿Qué tipo de Crohn tienes?</string>
@@ -147,8 +147,8 @@
     <!-- Messages Preferences -->
     <string name="username_title">Tu nombre</string>
     <string name="daysAnalyze_title">Días a analizar hacia atrás</string>
-
-    <!-- Sync Preferences -->
+    <string name="type_title">Tu tipo de la enfermedad</string>
+    <string name="type_summary">Selecciona tu tipo actual</string>
     <string name="app_alerts_title">Avisos de la aplicación</string>
     <string name="app_alerts_summary_on">Se avisará de cambios en tu salud y alertas varias.</string>
     <string name="app_alerts_summary_off">No se avisará de cambios en tu salud y alertas varias.</string>
