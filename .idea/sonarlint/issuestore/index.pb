@@ -35,9 +35,3 @@ w
 Gapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsFragment.java,e\0\e0aa0004fab0029106ef7bdf1dc50cd833d83047
 €
 Papp/src/main/java/com/aro/asistente_crohn/view/viewmodel/SymptomListAdapter.java,6\9\69d8d92084b6f71598b7a08f82d237f3f1b88009
-
-Oapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsRegistryFragment.java,e\8\e88b98ece8e266e2ac1f437d237e8c07b46051e0
-u
-Eapp/src/main/java/com/aro/asistente_crohn/view/ui/HealthFragment.java,2\9\29023c384536278369fd64a3c61a4d6709e16f31
-{
-Kapp/src/main/java/com/aro/asistente_crohn/service/expert/CrohnAnalyzer.java,6\1\613872400fe58f01cfd6934d6359f9c4e6ede5f2

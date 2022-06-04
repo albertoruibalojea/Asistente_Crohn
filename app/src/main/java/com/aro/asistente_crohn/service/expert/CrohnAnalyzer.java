@@ -58,95 +58,121 @@ public class CrohnAnalyzer {
 
     public void analyze(){
 
-        viewModel.getTodayHealth().observe(this.lifecycleOwner, healthList -> {
-            List<Health> cacheTodayHealthList = new ArrayList<>();
-            Health health = new Health();
-            if (!healthList.isEmpty()) {
-                cacheTodayHealthList = healthList;
-                health = cacheTodayHealthList.get(0);
-            }
+        int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
 
-            if(!health.getCrohnActive() && health.getRelatedSymptoms().isEmpty() && !this.isActivePrevDays()){
-                //Get today´s symptoms
-                Health finalHealth = health;
-                this.viewModel.getTodaySymptoms().observe(this.lifecycleOwner, symptomList -> {
-                    List<Symptom> cacheTodaySymptomList = new ArrayList<>();
-                    if (!symptomList.isEmpty()) {
-                        cacheTodaySymptomList.addAll(symptomList);
-                    }
+        //For the previous days, we set Health.active=true and Health.relatedSymptoms=type
+        for(int i=0; i<=prevDays; i++) {
+            Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DAY_OF_YEAR, -i);
 
-                    //We check today´s symptoms looking for occurrences in the user type
-                    //If coincidence, the Observer in the Health fragment will notify the user via interface
-                    //If the type is repeated a few days before, it means a critical state (ACTIVE) and must notify via push too
-                    if(this.isTypeGeneric(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
-                        viewModel.updateHealth(finalHealth);
-                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEOCOLITIS)){
+            Date before = cal.getTime();
+            before.setHours(00);
+            before.setMinutes(00);
+            before.setSeconds(00);
+            Date after = cal.getTime();
+            after.setHours(23);
+            after.setMinutes(59);
+            after.setSeconds(59);
+
+            this.viewModel.getSelectedDayHealth(before, after).observe(this.lifecycleOwner, healthList -> {
+                List<Health> cacheTodayHealthList = new ArrayList<>();
+                Health health = new Health();
+                health.setDetectionDate(before);
+                if (!healthList.isEmpty()) {
+                    cacheTodayHealthList = healthList;
+                    health = cacheTodayHealthList.get(0);
+                }
+
+                if (!health.getCrohnActive() && health.getRelatedSymptoms().isEmpty() && !this.isActivePrevDays()) {
+                    //Get today´s symptoms
+                    Health finalHealth = health;
+                    this.viewModel.getSelectedDaySymptoms(before, after).observe(this.lifecycleOwner, symptomList -> {
+                        List<Symptom> cacheTodaySymptomList = new ArrayList<>();
+                        if (!symptomList.isEmpty()) {
+                            cacheTodaySymptomList.addAll(symptomList);
+                        }
+
+                        //We check today´s symptoms looking for occurrences in the user type
+                        //If coincidence, the Observer in the Health fragment will notify the user via interface
+                        //If the type is repeated a few days before, it means a critical state (ACTIVE) and must notify too
+                        if (this.isTypeGeneric(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
+                            updateHealthViewModel(healthList, finalHealth);
+                            if (this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEOCOLITIS)) {
+                                this.setActivePrevDays(SymptomConstants.TYPE_ILEOCOLITIS);
+                            }
+                        } else if (this.isTypeSmallBowel(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
+                            updateHealthViewModel(healthList, finalHealth);
+                            if (this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEITIS)) {
+                                this.setActivePrevDays(SymptomConstants.TYPE_ILEITIS);
+                            }
+                        } else if (this.isTypeColon(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
+                            updateHealthViewModel(healthList, finalHealth);
+                            if (this.doesTheTypeRepeat(SymptomConstants.TYPE_COLITIS)) {
+                                this.setActivePrevDays(SymptomConstants.TYPE_COLITIS);
+                            }
+                        } else if (this.isTypeUpperTract(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
+                            updateHealthViewModel(healthList, finalHealth);
+                            if (this.doesTheTypeRepeat(SymptomConstants.TYPE_UPPER_TRACT)) {
+                                this.setActivePrevDays(SymptomConstants.TYPE_UPPER_TRACT);
+                            }
+                        } else if (this.isTypePerianal(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
+                            updateHealthViewModel(healthList, finalHealth);
+                            if (this.doesTheTypeRepeat(SymptomConstants.TYPE_PERIANAL)) {
+                                this.setActivePrevDays(SymptomConstants.TYPE_PERIANAL);
+                            }
+                        }
+
+                    });
+                } else if (!health.getCrohnActive() && this.isActivePrevDays()) {
+                    //In this case, the disease is showing the user type in the last days
+                    //So we just check that type
+                    String actualType = this.preferences.getString(TYPE, null);
+                    Health finalHealth = health;
+                    this.viewModel.getSelectedDaySymptoms(before, after).observe(this.lifecycleOwner, symptomList -> {
+                        List<Symptom> cacheTodaySymptomList = new ArrayList<>();
+                        if (symptomList != null) {
+                            cacheTodaySymptomList.addAll(symptomList);
+                        }
+
+                        //If the type is repeated, it means user is still having a critical state (ACTIVE) and must notify via app only
+                        if (actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEOCOLITIS) && this.isTypeGeneric(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
                             this.setActivePrevDays(SymptomConstants.TYPE_ILEOCOLITIS);
-                        }
-                    } else if(this.isTypeSmallBowel(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
-                        viewModel.updateHealth(finalHealth);
-                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_ILEITIS)){
+                            updateHealthViewModel(healthList, finalHealth);
+                        } else if (actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEITIS) && this.isTypeSmallBowel(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
                             this.setActivePrevDays(SymptomConstants.TYPE_ILEITIS);
-                        }
-                    } else if(this.isTypeColon(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
-                        viewModel.updateHealth(finalHealth);
-                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_COLITIS)){
+                            updateHealthViewModel(healthList, finalHealth);
+                        } else if (actualType.equalsIgnoreCase(SymptomConstants.TYPE_COLITIS) && this.isTypeColon(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
                             this.setActivePrevDays(SymptomConstants.TYPE_COLITIS);
-                        }
-                    } else if(this.isTypeUpperTract(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
-                        viewModel.updateHealth(finalHealth);
-                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_UPPER_TRACT)){
+                            updateHealthViewModel(healthList, finalHealth);
+                        } else if (actualType.equalsIgnoreCase(SymptomConstants.TYPE_UPPER_TRACT) && this.isTypeUpperTract(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
                             this.setActivePrevDays(SymptomConstants.TYPE_UPPER_TRACT);
-                        }
-                    } else if(this.isTypePerianal(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
-                        viewModel.updateHealth(finalHealth);
-                        if(this.doesTheTypeRepeat(SymptomConstants.TYPE_PERIANAL)){
+                            updateHealthViewModel(healthList, finalHealth);
+                        } else if (actualType.equalsIgnoreCase(SymptomConstants.TYPE_PERIANAL) && this.isTypePerianal(cacheTodaySymptomList)) {
+                            finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
                             this.setActivePrevDays(SymptomConstants.TYPE_PERIANAL);
+                            updateHealthViewModel(healthList, finalHealth);
                         }
-                    }
+                    });
+                }
+            });
+        }
+    }
 
-                });
-            } else if(!health.getCrohnActive() && this.isActivePrevDays()){
-                //In this case, the disease is showing the user type in the last days
-                //So we just check that type
-                String actualType = this.preferences.getString(TYPE, null);
-                Health finalHealth = health;
-                this.viewModel.getTodaySymptoms().observe(this.lifecycleOwner, symptomList -> {
-                    List<Symptom> cacheTodaySymptomList = new ArrayList<>();
-                    if (symptomList != null) {
-                        cacheTodaySymptomList.addAll(symptomList);
-                    }
-
-                    //If the type is repeated, it means user is still having a critical state (ACTIVE) and must notify via app only
-                    if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEOCOLITIS) && this.isTypeGeneric(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEOCOLITIS);
-                        this.setActivePrevDays(SymptomConstants.TYPE_ILEOCOLITIS);
-                        viewModel.updateHealth(finalHealth);
-                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_ILEITIS) && this.isTypeSmallBowel(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_ILEITIS);
-                        this.setActivePrevDays(SymptomConstants.TYPE_ILEITIS);
-                        viewModel.updateHealth(finalHealth);
-                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_COLITIS) && this.isTypeColon(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_COLITIS);
-                        this.setActivePrevDays(SymptomConstants.TYPE_COLITIS);
-                        viewModel.updateHealth(finalHealth);
-                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_UPPER_TRACT) && this.isTypeUpperTract(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_UPPER_TRACT);
-                        this.setActivePrevDays(SymptomConstants.TYPE_UPPER_TRACT);
-                        viewModel.updateHealth(finalHealth);
-                    } else if(actualType.equalsIgnoreCase(SymptomConstants.TYPE_PERIANAL) && this.isTypePerianal(cacheTodaySymptomList)){
-                        finalHealth.setRelatedSymptoms(SymptomConstants.TYPE_PERIANAL);
-                        this.setActivePrevDays(SymptomConstants.TYPE_PERIANAL);
-                        viewModel.updateHealth(finalHealth);
-                    }
-                });
-            }
-        });
+    private void updateHealthViewModel(List<Health> healthList,Health health){
+        if(healthList.isEmpty()){
+            this.viewModel.insertHealth(health);
+        } else {
+            this.viewModel.updateHealth(health);
+        }
     }
 
     //Method to update ths Crohn State to TRUE and set the use type to the positive days
@@ -154,7 +180,7 @@ public class CrohnAnalyzer {
         int prevDays = Integer.parseInt(this.preferences.getString(DAYS_TO_ANALYZE, null));
 
         //For the previous days, we set Health.active=true and Health.relatedSymptoms=type
-        for(int i=1; i<=prevDays; i++){
+        for(int i=0; i<=prevDays; i++){
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.DAY_OF_YEAR, -i);
 
@@ -175,7 +201,7 @@ public class CrohnAnalyzer {
                     //Health.relatedSymptoms=type
                     health.setRelatedSymptoms(type);
 
-                    viewModel.updateHealth(health);
+                    updateHealthViewModel(cacheTodayHealthList, health);
                 }
             });
         }
