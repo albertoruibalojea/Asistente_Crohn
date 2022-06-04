@@ -1,0 +1,15 @@
+
+h
+java:S37760"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(¡Œşø
+K
+java:S1874o"0Remove this use of "setHours"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874o"2Remove this use of "setMinutes"; it is deprecated.(¦öªõşÿÿÿÿ
+M
+java:S1874o"2Remove this use of "setSeconds"; it is deprecated.(¦öªõşÿÿÿÿ
+F
+java:S1874p"0Remove this use of "setHours"; it is deprecated.(óÙşÕ
+H
+java:S1874p"2Remove this use of "setMinutes"; it is deprecated.(óÙşÕ
+H
+java:S1874p"2Remove this use of "setSeconds"; it is deprecated.(óÙşÕ
