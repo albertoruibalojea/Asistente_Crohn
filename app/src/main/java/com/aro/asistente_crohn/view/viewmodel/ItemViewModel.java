@@ -102,6 +102,8 @@ public class ItemViewModel extends AndroidViewModel {
         return allFoods;
     }
 
+    public void insertFoodRepo(FoodRepo food) { foodRepoRepository.insert(food); }
+
     public LiveData<List<Food>> getAllEatenFoods() {
         if (allEatenFoods == null) {
             allEatenFoods = foodRepository.getAllFoods();

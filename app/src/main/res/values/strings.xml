@@ -175,5 +175,8 @@
     <string name="privacy_moreInfo_title">Más información</string>
     <string name="privacy_moreInfo_descr">Tienes disponible la Política de Privacidad en la ficha de la App en Tienda de Aplicaciones. Cualquier duda sobre la aplicación puede ser dirigida al correo asistente_crohn@outlook.es o a través de redes sociales en @asistente_crohn.</string>
     <string name="foods_alert_new_forbidden">Nuevo alimento desaconsejado</string>
+    <string name="new_food">Nuevo alimento</string>
+    <string name="write_new_food">Escribe aquí tu nuevo alimento personalizado</string>
+    <string name="create_food">Crear</string>
 
 </resources>
