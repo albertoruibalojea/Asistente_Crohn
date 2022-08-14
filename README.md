@@ -39,6 +39,7 @@ Para más información, es necesario leer la Memoria y/o los Manuales, que será
 
 ## Estado
 Este proyecto se encuentra finalizado desde 2022. Se hará una nueva versión para Android e iOS próximamente.
+Disponible en https://play.google.com/store/apps/details?id=com.aro.asistente_crohn
 
 ## Inspiración
 Idea pensada en 2020 y desarrollada para la finalización de los estudios. Además, ha obtenido un gran alcance público (https://pontevedraviva.com/xeral/86151/app-pontevedresa-ayuda-pacientes-crohn-gestionar-vida-diaria/).
