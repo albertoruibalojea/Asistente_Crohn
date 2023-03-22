@@ -182,7 +182,7 @@ public class HomeFragment extends Fragment {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("FOOD_ID", f1.getId());
         intent.putExtra("DESCRIPTION", description);
-        PendingIntent pendingIntent = PendingIntent.getActivity(requireActivity(), num, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(requireActivity(), num, intent, PendingIntent.FLAG_MUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(requireActivity(), FOOD_ALERT);
         builder.setContentTitle(title);
