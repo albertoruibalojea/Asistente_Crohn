@@ -184,8 +184,6 @@ public class SymptomsRegistryFragment extends Fragment {
 
                 //Success alert dialog
                 this.sendAlert(view);
-
-                ((HomeActivity) requireActivity()).openFragment(new SymptomsFragment());
             }
         });
     }

@@ -181,8 +181,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="499dp"
-            android:layout_height="199dp"
+            android:layout_width="0dp"
+            android:layout_height="184dp"
             android:layout_below="@+id/dateTextView"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"

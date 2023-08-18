@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.view.ui;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,10 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Food;
+import com.aro.asistente_crohn.model.FoodRepo;
 import com.aro.asistente_crohn.view.viewmodel.FoodListAdapter;
 import com.aro.asistente_crohn.view.viewmodel.IgnoreAccentsArrayAdapter;
 import com.aro.asistente_crohn.view.viewmodel.ItemViewModel;
@@ -110,6 +114,26 @@ public class FoodRegistryFragment extends Fragment {
                 adapter.notifyDataSetChanged();
                 actv.performCompletion();
                 actv.setText("");
+            });
+        });
+
+        Button buttonCreateFood = view.findViewById(R.id.buttonCreateFood);
+        buttonCreateFood.setOnClickListener(view12 -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(view12.getContext());
+            ViewGroup viewGroup = view12.findViewById(android.R.id.content);
+            View dialogView = LayoutInflater.from(view12.getContext()).inflate(R.layout.dialog_newfood, viewGroup, false);
+            builder.setView(dialogView);
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            EditText newFood = alertDialog.findViewById(R.id.newFood);
+            alertDialog.findViewById(R.id.buttonOk).setOnClickListener(view1 -> {
+                if(!newFood.getText().toString().isEmpty() && newFood.getText().toString().length() > 0){
+                    FoodRepo newFoodRepo = new FoodRepo();
+                    newFoodRepo.setName(newFood.getText().toString());
+                    viewModel.insertFoodRepo(newFoodRepo);
+                }
+
+                alertDialog.dismiss();
             });
         });
 

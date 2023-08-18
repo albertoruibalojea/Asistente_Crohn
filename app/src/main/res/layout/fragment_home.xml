@@ -128,7 +128,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="54dp"
-                    android:layout_marginEnd="70dp"
+                    android:layout_marginEnd="53dp"
                     android:layout_marginBottom="23dp"
                     android:fontFamily="@font/bold"
                     android:text="@string/registra_lo_que_comes"
