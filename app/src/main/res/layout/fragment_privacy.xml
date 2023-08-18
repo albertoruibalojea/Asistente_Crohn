@@ -88,8 +88,8 @@
             android:fontFamily="@font/regular"
             android:gravity="start"
             android:justificationMode="inter_word"
-            android:paddingBottom="4dp"
             android:paddingEnd="4dp"
+            android:paddingBottom="4dp"
             android:text="@string/privacy_registries_descr"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
@@ -163,8 +163,8 @@
             android:fontFamily="@font/regular"
             android:gravity="start"
             android:justificationMode="inter_word"
-            android:paddingBottom="4dp"
             android:paddingEnd="4dp"
+            android:paddingBottom="4dp"
             android:text="@string/privacy_health_descr"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
@@ -314,8 +314,8 @@
             android:fontFamily="@font/regular"
             android:gravity="start"
             android:justificationMode="inter_word"
-            android:paddingBottom="4dp"
             android:paddingEnd="4dp"
+            android:paddingBottom="4dp"
             android:text="@string/privacy_deletion_descr"
             android:textColor="?attr/colorSurface"
             android:textSize="15sp"
@@ -364,6 +364,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir en la Web"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
