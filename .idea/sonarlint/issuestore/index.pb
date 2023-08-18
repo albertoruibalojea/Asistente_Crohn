@@ -5,8 +5,6 @@ A
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 r
 Bapp/src/main/java/com/aro/asistente_crohn/DatabaseApplication.java,6\2\625ccae915f2c33829ea575d0165732492b84a92
-X
-(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 r
@@ -15,8 +13,6 @@ s
 Capp/src/main/java/com/aro/asistente_crohn/model/Recommendation.java,f\c\fc48a8c62a368f58e5681f8293402a8c15e0d666
 †
 Vapp/src/main/java/com/aro/asistente_crohn/view/ui/RecommendationsSubLevelFragment.java,f\7\f7aaa50f0d8442c10484d5938628a24270c9edcc
-w
-Gapp/src/main/java/com/aro/asistente_crohn/view/ui/SettingsFragment.java,3\e\3e5066cd19e6e2130c0e35a7c55949ebadb247ca
 w
 Gapp/src/main/java/com/aro/asistente_crohn/view/ui/SymptomsFragment.java,e\0\e0aa0004fab0029106ef7bdf1dc50cd833d83047
 €
