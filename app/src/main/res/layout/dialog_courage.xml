@@ -24,7 +24,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/courageGrid"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="?attr/itemTextColor"
-            android:textSize="16sp"
+            android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/courageGrid"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                 android:contentDescription="@string/_0"
                 android:gravity="center"
                 android:text="@string/courage_0"
-                android:textSize="32sp"
+                android:textSize="32dp"
                 tools:ignore="TextContrastCheck" />
 
             <TextView
@@ -79,7 +79,7 @@
                 android:contentDescription="@string/_1"
                 android:gravity="center"
                 android:text="@string/courage_1"
-                android:textSize="32sp" />
+                android:textSize="32dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                 android:contentDescription="@string/_2"
                 android:gravity="center"
                 android:text="@string/courage_2"
-                android:textSize="32sp" />
+                android:textSize="32dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                 android:contentDescription="@string/_3"
                 android:gravity="center"
                 android:text="@string/courage_3"
-                android:textSize="32sp" />
+                android:textSize="32dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
                 android:contentDescription="@string/_4"
                 android:gravity="center"
                 android:text="@string/courage_4"
-                android:textSize="32sp" />
+                android:textSize="32dp" />
 
         </GridLayout>
 
@@ -120,7 +120,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/btn_accept"
             android:textColor="?attr/colorSurface"
-            android:textSize="16sp"
+            android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"

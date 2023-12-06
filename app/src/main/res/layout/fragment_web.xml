@@ -39,7 +39,7 @@
         android:fontFamily="@font/bold"
         android:text="@string/recommendations_webview_hint"
         android:textColor="?attr/itemTextColor"
-        android:textSize="15sp"
+        android:textSize="15dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/webview"
         app:layout_constraintEnd_toEndOf="parent"
