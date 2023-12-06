@@ -41,7 +41,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/consult_and_register"
             android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -62,7 +62,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/your_foods"
             android:textColor="?attr/colorSurface"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </RelativeLayout>
 
@@ -105,7 +105,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/date_selected"
             android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -134,7 +134,7 @@
                 android:paddingStart="16dp"
                 android:text="@string/foods_forbidden"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -167,7 +167,7 @@
                 android:paddingStart="16dp"
                 android:text="@string/foods_add_today"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView5"

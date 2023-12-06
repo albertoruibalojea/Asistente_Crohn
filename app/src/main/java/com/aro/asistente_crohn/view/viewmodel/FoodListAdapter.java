@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Food;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHolder>{
 
@@ -46,6 +48,16 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
             holder.foods.setText(listdata.get(position).getName());
 
             Food food = listdata.get(position);
+
+            // Get the current date and time
+            Date currentDate = food.getEatenDate();
+
+            // Format the date and time
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+            String formattedDateTime = formatter.format(currentDate);
+
+            // Set the formatted date and time to the TextView
+            holder.foodDateTime.setText(formattedDateTime);
 
             if(!isInForbiddenView){
                 holder.deleteImg.setOnClickListener(view -> {
@@ -107,6 +119,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView foodDateTime;
         private TextView foods;
         private ImageView deleteImg;
         private ImageView forbiddenImg;
@@ -114,6 +127,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
             foods =  itemView.findViewById(R.id.foods);
+            foodDateTime = itemView.findViewById(R.id.foodDateTime);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             forbiddenImg = itemView.findViewById(R.id.forbiddenImg);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);

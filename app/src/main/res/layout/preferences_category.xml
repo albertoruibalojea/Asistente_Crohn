@@ -14,7 +14,7 @@
         android:layout_marginEnd="32dp"
         android:textAllCaps="true"
         android:textColor="@color/rosa"
-        android:textSize="16sp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

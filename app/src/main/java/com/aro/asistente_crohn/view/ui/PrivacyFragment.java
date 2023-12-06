@@ -33,13 +33,13 @@ public class PrivacyFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        this.buttonWeb = (Button) view.findViewById(R.id.buttonWeb);
+        buttonWeb = view.findViewById(R.id.buttonWeb);
 
         buttonWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Creamos un intent implícito para abrir el navegador con una URL
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://linktr.ee/asistentecrohn"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://linktr.ee/ibdassistant"));
                 // Comprobamos que haya una actividad que pueda manejar el intent
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     // Iniciamos el intent desde el fragmento
