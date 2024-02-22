@@ -253,6 +253,9 @@ public class HomeFragment extends Fragment {
         RelativeLayout cardRecommendations = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_recommendations);
         cardRecommendations.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new RecommendationsFragment()));
 
+        RelativeLayout cardPoops = (RelativeLayout) ((HomeActivity) requireActivity()).findViewById(R.id.card_poops);
+        cardPoops.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new PoopsFragment()));
+
         ImageView settings = (ImageView) ((HomeActivity) requireActivity()).findViewById(R.id.settingsView);
         settings.setOnClickListener(view -> ((HomeActivity) requireActivity()).openFragment(new SettingsFragment()));
     }

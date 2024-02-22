@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    android:orientation="vertical"
+    tools:context=".view.ui.PoopsRegistryFragment">
+
+    <RelativeLayout
+        android:id="@+id/elipse"
+        android:layout_width="435dp"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-11dp"
+        android:layout_marginTop="-61dp"
+        android:layout_marginEnd="-7dp"
+        android:background="@drawable/brown_elipse"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="208dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="107dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="31dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/poops_subtitle"
+            android:textColor="?attr/colorSurface"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="69dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/your_poops"
+            android:textColor="?attr/colorSurface"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/elipse"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="102dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintView"
+            android:layout_width="match_parent"
+            android:layout_height="715dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/your_poops"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <GridLayout
+                android:id="@+id/poopTypeGrid"
+                android:layout_width="356dp"
+                android:layout_height="363dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:columnCount="3"
+                android:gravity="center"
+                android:rowCount="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_1"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_1"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_1"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_1"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_1" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_2"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_2"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_2"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_vomit"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_2"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_2" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_3"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_3"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_3"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_3"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_3" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_4"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_4"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_4"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_4"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_4"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_5"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_5"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_5"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_5"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_5"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_6"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_6"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_6"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_6"
+                        android:paddingTop="12dp"
+                        app:srcCompat="@drawable/ic_poop_6" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_type_7"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_type_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_type_7"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_type_7"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_type_7"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_type_7"
+                        android:paddingTop="12dp"
+                        app:srcCompat="@drawable/ic_poop_7" />
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/your_color"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poopTypeGrid"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="332dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="36dp"
+                android:width="609sp"
+                android:height="41sp"
+                android:background="@drawable/button"
+                android:enabled="false"
+                android:fontFamily="@font/bold"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/save_registries"
+                android:textColor="?attr/colorSurface"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <ImageView
+                android:id="@+id/infoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_baseline_info_24"
+                app:layout_constraintBottom_toTopOf="@+id/symptomGrid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

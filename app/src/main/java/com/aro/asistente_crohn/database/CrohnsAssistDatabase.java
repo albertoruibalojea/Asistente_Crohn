@@ -13,6 +13,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.aro.asistente_crohn.model.FoodRepo;
 import com.aro.asistente_crohn.model.Health;
 import com.aro.asistente_crohn.model.Food;
+import com.aro.asistente_crohn.model.Poop;
 import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.model.Symptom;
 
@@ -21,9 +22,9 @@ import java.util.concurrent.Executors;
 
 // bump version number if the schema changes
 @Database(
-            entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class},
-            version=6,
-            autoMigrations = { @AutoMigration(from = 4, to = 5), @AutoMigration(from = 5, to = 6)}
+        entities={Health.class, Food.class, Recommendation.class, Symptom.class, FoodRepo.class, Poop.class},
+        version=7,
+        autoMigrations = { @AutoMigration(from = 4, to = 5), @AutoMigration(from = 5, to = 6), @AutoMigration(from = 6, to = 7)}
 )
 @TypeConverters({DateConverter.class})
 public abstract class CrohnsAssistDatabase extends RoomDatabase {
@@ -68,4 +69,6 @@ public abstract class CrohnsAssistDatabase extends RoomDatabase {
     public abstract RecommendationDAO recommendationDAO();
 
     public abstract SymptomDAO symptomDAO();
+
+    public abstract PoopDAO poopDAO();
 }

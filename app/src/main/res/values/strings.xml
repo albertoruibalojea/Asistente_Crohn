@@ -20,6 +20,7 @@
     <string name="firstTime_foods_title">Tu alimentación</string>
     <string name="firstTime_food_descr">Añade tu alimentación para poder detectar si algún alimento te hace daño basado en los síntomas relacionados, y añádelo a tus \"Alimentos Desaconsejados\"</string>
     <string name="firstTime_recs_title">Recomendaciones</string>
+    <string name="firstTime_poops_title">Deposiciones</string>
     <string name="firstTime_recs_descr">Accede a una infinidad de recursos médicos de la mano de la Plataforma G-EducaInflamatoria de GETECCU para mejorar tu calidad de vida</string>
     <string name="firstTime_health_title">Detección de brotes</string>
     <string name="firstTime_health_descr">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado de salud. ¡OJO! esto no sustituye a tu especialista, ante cualquier duda no dudes en recurrir a tu Unidad EII</string>
@@ -139,6 +140,19 @@
     <string name="recommendations_titleBOT">Cuestionarios</string>
     <string name="recommendations_webview_hint">Acceso a Recomendaciones</string>
     <string name="recommendations_search_hint">¿Qué quieres saber?</string>
+
+    <!-- Poop -->
+    <string name="your_poops">Tus deposiciones</string>
+    <string name="your_color">¿Qué color tenían?</string>
+    <string name="poop_add_register">Añadir mis deposiciones de hoy</string>
+    <string name="poops_subtitle">Conoce tus deposiciones</string>
+    <string name="poop_type_1">Muy estreñido</string>
+    <string name="poop_type_2">Estreñido</string>
+    <string name="poop_type_3">Normal</string>
+    <string name="poop_type_4">Perfecta</string>
+    <string name="poop_type_5">Falta de fibra</string>
+    <string name="poop_type_6">Posible diarrea</string>
+    <string name="poop_type_7">Diarrea</string>
 
     <!-- Preference Titles -->
     <string name="common_header">General</string>
