@@ -163,10 +163,12 @@
     <string name="poop_size_1">Pequeña</string>
     <string name="poop_size_2">Normal</string>
     <string name="poop_size_3">Grande</string>
-    <string name="poop_urgency">He ido con urgencia al baño</string>
+    <string name="poop_urgency">Urgencia por ir al baño</string>
     <string name="poop_painful">Ha sido doloroso</string>
     <string name="poop_blood">Había sangre</string>
     <string name="poop_aditional">¿Algo más que quieras añadir?</string>
+    <string name="poop_info_descr">1. Elige el tipo de tus heces según la escala de Bristol (de 1 a 7). Nosotros nos encargamos del resto.\n\n2. El color de tus heces: Marrón (todo bien), Blanca (obstrucciones o medicamentos, consulta a tu médico urgentemente), Negra (por tomar suplementos de hierro u hemorragias), Amarilla (posible síntoma de celiaquía), Verde (comer muchoas verduras, la comida ha pasado demasiado rápido), Roja (posible síntoma de cáncer, acude urgentemente a tu médico)\n\nTamaño: Debería ser normal\n\n</string>
+
 
     <!-- Preference Titles -->
     <string name="common_header">General</string>

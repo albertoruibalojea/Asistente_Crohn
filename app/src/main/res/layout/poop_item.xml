@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="84dp"
+    android:layout_height="121dp"
     android:layout_marginLeft="32dp"
     android:layout_marginRight="32dp"
     android:layout_marginBottom="8dp"
@@ -20,9 +20,9 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
         android:paddingEnd="96dp"
-        android:text="@string/your_poops"
+        android:text="tipo"
         android:textColor="?attr/itemTextColor"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,83 +34,82 @@
 
     <TextView
         android:id="@+id/color"
-        android:layout_width="104dp"
+        android:layout_width="184dp"
         android:layout_height="21dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
         android:paddingEnd="96dp"
-        android:text="@string/your_color"
+        android:text="color"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/poops"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/weight"
-        android:layout_width="104dp"
-        android:layout_height="21dp"
+        android:layout_width="212dp"
+        android:layout_height="18dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="13dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/bold"
         android:paddingEnd="96dp"
-        android:text="@string/your_color"
+        android:text="weight"
         android:textColor="?attr/itemTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/poops"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/color"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/urgency"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/deleteImg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_time_24" />
-
-    <ImageView
-        android:id="@+id/painful"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/deleteImg"
-        app:layout_constraintTop_toBottomOf="@+id/urgency"
-        app:srcCompat="@drawable/ic_hurt_24" />
-
-    <ImageView
-        android:id="@+id/blood"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/deleteImg"
-        app:layout_constraintTop_toBottomOf="@+id/painful"
-        app:srcCompat="@drawable/ic_blood_24" />
-
-    <ImageView
-        android:id="@+id/deleteImg"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/urgency"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_time_24" />
 
+        <ImageView
+            android:id="@+id/painful"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_hurt_24" />
+
+        <ImageView
+            android:id="@+id/blood"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_blood_24" />
+
+        <ImageView
+            android:id="@+id/deleteImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_baseline_delete_24" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

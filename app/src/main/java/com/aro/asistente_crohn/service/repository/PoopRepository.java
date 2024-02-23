@@ -41,10 +41,6 @@ public class PoopRepository {
         return todayPoops;
     }
 
-    public LiveData<List<Poop>> getByPoop(String poop){
-        return poopDao.getByPoop(poop);
-    }
-
     public LiveData<List<Poop>> getSelectedDayPoops(Date before, Date after){
         return poopDao.getTodayPoops(DateConverter.fromDate(before), DateConverter.fromDate(after));
     }

@@ -636,39 +636,45 @@
 
             <CheckBox
                 android:id="@+id/checkbox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
+                android:layout_width="124dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/poop_size_1"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_size_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.086"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
             <CheckBox
                 android:id="@+id/checkbox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/poop_size_2"
+                android:layout_width="124dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_size_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.086"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkbox1"/>
+                app:layout_constraintTop_toBottomOf="@+id/checkbox1" />
 
             <CheckBox
                 android:id="@+id/checkbox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/poop_size_3"
+                android:layout_width="123dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_size_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.085"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkbox2"/>
+                app:layout_constraintTop_toBottomOf="@+id/checkbox2" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -689,39 +695,45 @@
 
             <CheckBox
                 android:id="@+id/checkbox4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/poop_urgency"
+                android:layout_width="229dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_urgency"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.32"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <CheckBox
                 android:id="@+id/checkbox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
+                android:layout_width="229dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/poop_painful"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_painful"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.32"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkbox4"/>
+                app:layout_constraintTop_toBottomOf="@+id/checkbox4" />
 
             <CheckBox
                 android:id="@+id/checkbox6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
+                android:layout_width="228dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/poop_blood"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
+                android:text="@string/poop_blood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.317"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkbox5"/>
+                app:layout_constraintTop_toBottomOf="@+id/checkbox5" />
 
             <Button
                 android:id="@+id/btn"

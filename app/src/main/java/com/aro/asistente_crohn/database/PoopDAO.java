@@ -13,24 +13,21 @@ import java.util.List;
 
 @Dao
 public interface PoopDAO {
-    @Query("SELECT * FROM Symptom where id like :id")
+    @Query("SELECT * FROM Poop where id like :id")
     public Poop getById(int id);
 
-    @Query("SELECT * FROM Symptom where name like :symptom")
-    public LiveData<List<Poop>> getByPoop(String symptom);
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public Long insertPoop(Poop symptom);
+    public Long insertPoop(Poop poop);
 
     @Delete
-    public void deletePoop(Poop symptom);
+    public void deletePoop(Poop poop);
 
-    @Query("DELETE FROM Symptom")
+    @Query("DELETE FROM Poop")
     public void deleteAll();
 
-    @Query("SELECT * FROM Symptom")
+    @Query("SELECT * FROM Poop")
     LiveData<List<Poop>> getPoops();
 
-    @Query("SELECT * FROM Symptom WHERE registeredDate BETWEEN :before AND :after")
+    @Query("SELECT * FROM Poop WHERE registeredDate BETWEEN :before AND :after")
     LiveData<List<Poop>> getTodayPoops(Long before, Long after);
 }
