@@ -144,6 +144,7 @@
     <!-- Poop -->
     <string name="your_poops">Tus deposiciones</string>
     <string name="your_color">¿Qué color tenían?</string>
+    <string name="poop_size">¿Y de tamaño?</string>
     <string name="poop_add_register">Añadir mis deposiciones de hoy</string>
     <string name="poops_subtitle">Conoce tus deposiciones</string>
     <string name="poop_type_1">Muy estreñido</string>
@@ -153,6 +154,19 @@
     <string name="poop_type_5">Falta de fibra</string>
     <string name="poop_type_6">Posible diarrea</string>
     <string name="poop_type_7">Diarrea</string>
+    <string name="poop_color_1">Marrón</string>
+    <string name="poop_color_2">Blanca</string>
+    <string name="poop_color_3">Negra</string>
+    <string name="poop_color_4">Amarilla</string>
+    <string name="poop_color_5">Verde</string>
+    <string name="poop_color_6">Roja</string>
+    <string name="poop_size_1">Pequeña</string>
+    <string name="poop_size_2">Normal</string>
+    <string name="poop_size_3">Grande</string>
+    <string name="poop_urgency">He ido con urgencia al baño</string>
+    <string name="poop_painful">Ha sido doloroso</string>
+    <string name="poop_blood">Había sangre</string>
+    <string name="poop_aditional">¿Algo más que quieras añadir?</string>
 
     <!-- Preference Titles -->
     <string name="common_header">General</string>

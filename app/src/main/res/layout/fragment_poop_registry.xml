@@ -181,7 +181,7 @@
                         android:textSize="15sp" />
 
                     <ImageView
-                        android:id="@+id/image_vomit"
+                        android:id="@+id/image_poop_type_2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="top|center"
@@ -387,6 +387,342 @@
                 app:layout_constraintTop_toBottomOf="@+id/poopTypeGrid"
                 app:layout_constraintVertical_bias="0.0" />
 
+            <GridLayout
+                android:id="@+id/poopColorGrid"
+                android:layout_width="356dp"
+                android:layout_height="251dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:columnCount="3"
+                android:gravity="center"
+                android:rowCount="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_1"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_1"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_1"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_1"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_color_1" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_2"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_2"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_2"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_2"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_color_2" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_3"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_3"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_3"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_3"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_color_3" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_4"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_4"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_4"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_4"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_color_4"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_5"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_5"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_5"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_5"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_poop_color_5"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poop_color_6"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_poop_color_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/poop_color_6"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/poop_color_6"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/image_poop_color_6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/poop_color_6"
+                        android:paddingTop="12dp"
+                        app:srcCompat="@drawable/ic_poop_color_6" />
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/poop_size"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poopColorGrid"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_size_1"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"/>
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_size_2"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox1"/>
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_size_3"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox2"/>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/poop_aditional"
+                android:textColor="?attr/itemTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <CheckBox
+                android:id="@+id/checkbox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_urgency"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"/>
+
+            <CheckBox
+                android:id="@+id/checkbox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_painful"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox4"/>
+
+            <CheckBox
+                android:id="@+id/checkbox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/poop_blood"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox5"/>
+
             <Button
                 android:id="@+id/btn"
                 android:layout_width="332dp"
@@ -408,7 +744,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.466"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/checkbox6" />
 
             <ImageView
                 android:id="@+id/infoBtn"
@@ -418,7 +754,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="16dp"
                 android:src="@drawable/ic_baseline_info_24"
-                app:layout_constraintBottom_toTopOf="@+id/symptomGrid"
+                app:layout_constraintBottom_toTopOf="@+id/poopTypeGrid"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView10"

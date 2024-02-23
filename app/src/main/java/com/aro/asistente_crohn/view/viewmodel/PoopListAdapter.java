@@ -22,7 +22,6 @@ public class PoopListAdapter extends RecyclerView.Adapter<PoopListAdapter.ViewHo
     private List<Poop> listdata;
     private ItemViewModel viewModel;
     private View view;
-    private boolean isInForbiddenView;
 
     public PoopListAdapter(List<Poop> listdata, ItemViewModel viewModel, View view) {
         this.listdata = listdata;
@@ -46,15 +45,11 @@ public class PoopListAdapter extends RecyclerView.Adapter<PoopListAdapter.ViewHo
 
             Poop poop = listdata.get(position);
 
-            if(!isInForbiddenView){
-                holder.deleteImg.setOnClickListener(view -> {
-                    viewModel.deletePoop(poop);
-                    this.sendAlert("Eliminado", "Registro eliminado correctamente");
-                    notifyDataSetChanged();
-                });
-            } else {
-                holder.deleteImg.setColorFilter(com.google.android.material.R.attr.itemTextColor);
-            }
+            holder.deleteImg.setOnClickListener(view -> {
+                viewModel.deletePoop(poop);
+                this.sendAlert("Eliminado", "Registro eliminado correctamente");
+                notifyDataSetChanged();
+            });
         }
     }
 
