@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 7,
-    "identityHash": "e853bdbf78291e89a429c9867807d89e",
+    "identityHash": "24f1d1859e2d9d21807a556181710d6a",
     "entities": [
       {
         "tableName": "Health",
@@ -196,13 +196,13 @@
       },
       {
         "tableName": "Poop",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `registeredDate` INTEGER NOT NULL, `limitDate` INTEGER NOT NULL, `type` INTEGER, `weight` INTEGER, `color` TEXT NOT NULL, `urgency` INTEGER, `painful` INTEGER, `blood` INTEGER, `notes` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `registeredDate` INTEGER NOT NULL, `limitDate` INTEGER NOT NULL, `color` TEXT NOT NULL, `notes` TEXT, `urgency` INTEGER NOT NULL, `weight` INTEGER NOT NULL, `type` INTEGER NOT NULL, `painful` INTEGER NOT NULL, `blood` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "registeredDate",
@@ -217,45 +217,45 @@
             "notNull": true
           },
           {
-            "fieldPath": "type",
-            "columnName": "type",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "weight",
-            "columnName": "weight",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
             "fieldPath": "color",
             "columnName": "color",
             "affinity": "TEXT",
             "notNull": true
           },
           {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "urgency",
             "columnName": "urgency",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
           },
           {
             "fieldPath": "painful",
             "columnName": "painful",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "blood",
             "columnName": "blood",
             "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "notes",
-            "columnName": "notes",
-            "affinity": "TEXT",
             "notNull": true
           }
         ],
@@ -272,7 +272,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e853bdbf78291e89a429c9867807d89e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '24f1d1859e2d9d21807a556181710d6a')"
     ]
   }
 }

@@ -281,6 +281,9 @@ public class PoopsRegistryFragment extends Fragment {
                 checkBox1.setChecked(false);
                 checkBox2.setChecked(false);
                 checkBox3.setChecked(false);
+                urgency.setChecked(false);
+                painful.setChecked(false);
+                blood.setChecked(false);
 
                 //Success alert dialog
                 this.sendAlert(view);

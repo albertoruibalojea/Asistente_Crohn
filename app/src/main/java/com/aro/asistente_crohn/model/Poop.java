@@ -1,5 +1,6 @@
 package com.aro.asistente_crohn.model;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,34 +8,47 @@ import androidx.room.PrimaryKey;
 import java.util.Calendar;
 import java.util.Date;
 
-@Entity
+@Entity(tableName = "Poop")
 public class Poop {
-    @ColumnInfo
     @PrimaryKey(autoGenerate = true)
-    @NonNull
+    @ColumnInfo(name = "id")
+    @Nullable
     private Integer id;
-    @ColumnInfo
+
     @NonNull
+    @ColumnInfo(name = "registeredDate")
     private Date registeredDate;
-    @ColumnInfo
+
     @NonNull
+    @ColumnInfo(name = "limitDate")
     private Date limitDate;
-    @ColumnInfo
-    private Integer type;
-    @ColumnInfo
-    private Integer weight;
-    @ColumnInfo
+
     @NonNull
+    @ColumnInfo(name = "color")
     private String color;
-    @ColumnInfo
-    private Boolean urgency;
-    @ColumnInfo
-    private Boolean painful;
-    @ColumnInfo
-    private Boolean blood;
-    @ColumnInfo
-    @NonNull
+
+    @ColumnInfo(name = "notes")
     private String notes;
+
+    @NonNull
+    @ColumnInfo(name = "urgency")
+    private Boolean urgency;
+
+    @NonNull
+    @ColumnInfo(name = "weight")
+    private Integer weight;
+
+    @NonNull
+    @ColumnInfo(name = "type")
+    private Integer type;
+
+    @NonNull
+    @ColumnInfo(name = "painful")
+    private Boolean painful;
+
+    @NonNull
+    @ColumnInfo(name = "blood")
+    private Boolean blood;
 
     //create constructores, one empty and the other with all attributes, using Symptom.class as reference
     public Poop() {
