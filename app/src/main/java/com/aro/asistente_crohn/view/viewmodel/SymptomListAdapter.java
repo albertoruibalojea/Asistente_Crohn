@@ -13,9 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aro.asistente_crohn.R;
 import com.aro.asistente_crohn.model.Symptom;
 
+import java.text.BreakIterator;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.ViewHolder>{
+public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.ViewHolder> {
 
     private List<Symptom> listdata;
     private ItemViewModel viewModel;
@@ -30,31 +34,42 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.symptom_item, parent, false);
+        View listItem = layoutInflater.inflate(R.layout.symptom_item, parent, false);
         return new ViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        if(listdata.isEmpty()){
+        if (listdata.isEmpty()) {
             holder.symptoms.setText("No hay síntomas registrados");
         } else {
             Symptom symptom = listdata.get(position);
 
             holder.symptoms.setText(symptom.getName());
+
+            // Get the current date and time
+            Date currentDate = symptom.getRegisteredDate();
+
+            // Format the date and time
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+            String formattedDateTime = formatter.format(currentDate);
+
+            // Set the formatted date and time to the TextView
+            holder.symptomDateTime.setText(formattedDateTime);
+
             holder.deleteImg.setOnClickListener(view -> {
                 viewModel.deleteSymptom(symptom);
                 this.sendAlert("Eliminado", "Registro eliminado correctamente");
-                notifyDataSetChanged();
             });
         }
     }
 
-    public void sendAlert(String title, String description){
-        //Success alert dialog
+    public void sendAlert(String title, String description) {
+        // Success alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         ViewGroup viewGroup = view.findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup, false);
+        View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_notification, viewGroup,
+                false);
 
         TextView t = dialogView.findViewById(R.id.title);
         t.setText(title);
@@ -73,12 +88,15 @@ public class SymptomListAdapter extends RecyclerView.Adapter<SymptomListAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView symptomDateTime;
         private TextView symptoms;
         private ImageView deleteImg;
         private ConstraintLayout relativeLayout;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            symptoms =  itemView.findViewById(R.id.symptoms);
+            symptoms = itemView.findViewById(R.id.symptoms);
+            symptomDateTime = itemView.findViewById(R.id.symptomDateTime);
             deleteImg = itemView.findViewById(R.id.deleteImg);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }

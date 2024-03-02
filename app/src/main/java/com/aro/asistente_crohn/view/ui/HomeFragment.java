@@ -44,6 +44,8 @@ public class HomeFragment extends Fragment {
 
     TextView displayName;
     public static final String FOOD_ALERT = "FOOD_ALERT";
+    private static final String PREFS_NAME = "com.aro.asistente_crohn_preferences";
+    private static final String PREF_DIALOG_SHOWN = "dialog_shown";
 
     public HomeFragment() {
         // Required empty public constructor
@@ -79,6 +81,34 @@ public class HomeFragment extends Fragment {
         //Check whether or not symptoms or food changes to detect Health issues
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
+
+        showNotificationDialogOnce();
+    }
+
+    private void showNotificationDialogOnce() {
+        SharedPreferences preferences = requireActivity().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean dialogShown = preferences.getBoolean(PREF_DIALOG_SHOWN, false);
+    
+        if (!dialogShown) {
+            // Create and show the dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+            LayoutInflater inflater = requireActivity().getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.dialog_notification, null);
+    
+            // Get a reference to the TextView and set the text
+            TextView description = dialogView.findViewById(R.id.description);
+            description.setText("¡Bienvenida/o de nuevo! Hemos añadido las horas de registro de síntomas y alimentación, el síntoma de gases y pequeñas correcciones en los tamaños de los textos. Aprovechamos para darte las gracias por usar la App y decirte que próximamente saldrá 'Asistente EII', una nueva versión para todas las EII con MUCHÍSimas novedades. Entérate en https://linktr.ee/ibdassistant");
+    
+            builder.setView(dialogView)
+                    .setPositiveButton("OK", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+    
+            // Update the shared preferences
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean(PREF_DIALOG_SHOWN, true);
+            editor.apply();
+        }
     }
 
     public void relateSymptomsFood(ItemViewModel viewModel, List<Symptom> todaysSymptomList) {

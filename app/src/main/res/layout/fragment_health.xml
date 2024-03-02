@@ -41,7 +41,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/date_selected"
             android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -62,7 +62,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/privacy_health_title"
             android:textColor="?attr/colorSurface"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </RelativeLayout>
 
@@ -102,7 +102,7 @@
                 android:paddingStart="16dp"
                 android:text="@string/courage_register"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -140,7 +140,7 @@
                 android:paddingStart="16dp"
                 android:text="@string/courage_consult"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -164,7 +164,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/privacy_health_title"
             android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -193,7 +193,7 @@
                 android:fontFamily="@font/regular"
                 android:text="😊"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toTopOf="@+id/infoCourage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/titleCourage"
@@ -208,7 +208,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/health_courage_title"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -225,7 +225,7 @@
                 android:fontFamily="@font/regular"
                 android:text="@string/health_courage_descr"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -242,7 +242,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/health_typeTitle"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -258,7 +258,7 @@
                 android:fontFamily="@font/regular"
                 android:text="@string/health_typeInfo"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -274,7 +274,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/health_typePositivityTitle"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -290,7 +290,7 @@
                 android:fontFamily="@font/regular"
                 android:text="@string/negative"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -306,7 +306,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/health_positivityTitle"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -322,7 +322,7 @@
                 android:fontFamily="@font/regular"
                 android:text="@string/negative"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

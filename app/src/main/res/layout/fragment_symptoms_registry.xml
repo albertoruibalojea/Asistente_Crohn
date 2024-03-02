@@ -43,7 +43,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="Registra tus síntomas"
             android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -64,7 +64,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/your_symptoms"
             android:textColor="?attr/colorSurface"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </RelativeLayout>
 
@@ -98,7 +98,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/register_symptoms"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -108,8 +108,8 @@
 
             <GridLayout
                 android:id="@+id/symptomGrid"
-                android:layout_width="360dp"
-                android:layout_height="611dp"
+                android:layout_width="378dp"
+                android:layout_height="733dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -145,7 +145,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_diaree"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_diaree"
@@ -180,7 +180,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_nauseas"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_vomit"
@@ -215,7 +215,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_notHungry"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_hungry"
@@ -250,7 +250,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_abdominalPain"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_abdompain"
@@ -260,6 +260,42 @@
                         android:contentDescription="@string/symptom_abdominalPain"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_abdompain"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_flatulence"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_flatulence"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/symptom_flatulence"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/symptom_flatulence"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/image_flatulence"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/symptom_flatulence"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/symptom_flatulence"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -286,7 +322,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_articularPain"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_articularpain"
@@ -322,7 +358,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_analPain"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_analpain"
@@ -357,7 +393,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_headache"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_headache"
@@ -394,7 +430,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_fever"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_fever"
@@ -429,7 +465,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_tired"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -466,7 +502,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_bathroomUrge"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -503,7 +539,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_less_weight"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -540,7 +576,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_blood"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_blood"
@@ -576,7 +612,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_aphthas"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -612,7 +648,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_perianal"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -648,7 +684,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/symptom_skin"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView

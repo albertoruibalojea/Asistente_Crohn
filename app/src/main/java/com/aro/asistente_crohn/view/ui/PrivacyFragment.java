@@ -35,7 +35,7 @@ public class PrivacyFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        this.buttonWeb = (Button) view.findViewById(R.id.buttonWeb);
+        buttonWeb = view.findViewById(R.id.buttonWeb);
 
         buttonWeb.setOnClickListener(v -> {
             // Check if the fragment is attached to an activity

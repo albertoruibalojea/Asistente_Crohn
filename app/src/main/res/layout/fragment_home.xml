@@ -56,7 +56,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/firstTime_recs_title"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -72,7 +72,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/recommendations_subtitle"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     tools:ignore="TextContrastCheck" />
 
                 <ImageView
@@ -178,7 +178,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/foods"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -194,7 +194,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/registra_lo_que_comes"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     tools:ignore="TextContrastCheck" />
 
                 <ImageView
@@ -241,7 +241,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/health"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -257,7 +257,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/health_subtitle"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     tools:ignore="TextContrastCheck" />
 
                 <ImageView
@@ -302,7 +302,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/sintomas"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -318,7 +318,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/consult_and_register"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     tools:ignore="TextContrastCheck" />
 
                 <ImageView
@@ -386,7 +386,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/sc1_title"
             android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.248"
@@ -409,7 +409,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/username"
             android:textColor="?attr/itemTextColor"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.243"
