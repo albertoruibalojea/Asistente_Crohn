@@ -2,11 +2,13 @@ package com.aro.asistente_crohn.view.ui;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -35,17 +37,38 @@ public class PrivacyFragment extends Fragment {
 
         buttonWeb = view.findViewById(R.id.buttonWeb);
 
-        buttonWeb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Creamos un intent implícito para abrir el navegador con una URL
+        buttonWeb.setOnClickListener(v -> {
+            // Check if the fragment is attached to an activity
+            if (isAdded() && getActivity() != null) {
+                // Create an implicit intent to open the browser with a URL
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://linktr.ee/ibdassistant"));
-                // Comprobamos que haya una actividad que pueda manejar el intent
+                // Check if there is an activity that can handle the intent
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    // Iniciamos el intent desde el fragmento
+                    // Start the intent from the fragment
                     startActivity(intent);
                 }
             }
         });
+
+        ImageView twitterIcon = view.findViewById(R.id.twitterIcon);
+        ImageView instagramIcon = view.findViewById(R.id.instagramIcon);
+        ImageView mailIcon = view.findViewById(R.id.mailIcon);
+
+        twitterIcon.setOnClickListener(v -> openUrl("https://twitter.com/asistente_crohn"));
+        instagramIcon.setOnClickListener(v -> openUrl("https://instagram.com/ibdassistant"));
+        mailIcon.setOnClickListener(v -> openEmailClient("asistente_crohn@outlook.es"));
+    }
+
+    private void openUrl(String url) {
+        Intent intent = new Intent(getActivity(), HomeActivity.class);
+        startActivity(intent);
+    }
+
+    private void openEmailClient(String email) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:" + email));
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 }

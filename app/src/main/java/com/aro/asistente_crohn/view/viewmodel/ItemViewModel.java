@@ -8,11 +8,13 @@ import androidx.lifecycle.LiveData;
 import com.aro.asistente_crohn.model.Food;
 import com.aro.asistente_crohn.model.FoodRepo;
 import com.aro.asistente_crohn.model.Health;
+import com.aro.asistente_crohn.model.Poop;
 import com.aro.asistente_crohn.model.Recommendation;
 import com.aro.asistente_crohn.model.Symptom;
 import com.aro.asistente_crohn.service.repository.FoodRepoRepository;
 import com.aro.asistente_crohn.service.repository.FoodRepository;
 import com.aro.asistente_crohn.service.repository.HealthRepository;
+import com.aro.asistente_crohn.service.repository.PoopRepository;
 import com.aro.asistente_crohn.service.repository.RecommendationRepository;
 import com.aro.asistente_crohn.service.repository.SymptomRepository;
 
@@ -25,6 +27,8 @@ public class ItemViewModel extends AndroidViewModel {
     private FoodRepoRepository foodRepoRepository;
     private FoodRepository foodRepository;
     private RecommendationRepository recommendationRepository;
+
+    private PoopRepository poopRepository;
     // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
@@ -39,6 +43,9 @@ public class ItemViewModel extends AndroidViewModel {
     private LiveData<List<Health>> todayHealth;
 
     private LiveData<List<Recommendation>> allRecommendations;
+
+    private LiveData<List<Poop>> allPoops;
+    private LiveData<List<Poop>> todayPoops;
 
     public ItemViewModel(Application application) {
         super(application);
@@ -58,6 +65,10 @@ public class ItemViewModel extends AndroidViewModel {
 
         recommendationRepository = new RecommendationRepository(application);
         allRecommendations = recommendationRepository.getAllRecommendations();
+
+        poopRepository = new PoopRepository(application);
+        allPoops = poopRepository.getAllPoops();
+        todayPoops = poopRepository.getTodayPoops();
     }
 
     public LiveData<List<Symptom>> getAllSymptoms() {
@@ -160,6 +171,33 @@ public class ItemViewModel extends AndroidViewModel {
             allRecommendations = recommendationRepository.getAllRecommendations();
         }
         return allRecommendations;
+    }
+
+
+    public LiveData<List<Poop>> getAllPoops() {
+        if (allPoops == null) {
+            allPoops = poopRepository.getAllPoops();
+        }
+        return allPoops;
+    }
+
+    public LiveData<List<Poop>> getTodayPoops(){
+        if (todayPoops == null) {
+            todayPoops = poopRepository.getTodayPoops();
+        }
+        return todayPoops;
+    }
+
+    public LiveData<List<Poop>> getSelectedDayPoops(Date before, Date after){
+        return poopRepository.getSelectedDayPoops(before, after);
+    }
+
+    public void insertPoop(Poop poop) {
+        poopRepository.insert(poop);
+    }
+
+    public void deletePoop(Poop poop){
+        poopRepository.delete(poop);
     }
 
 
