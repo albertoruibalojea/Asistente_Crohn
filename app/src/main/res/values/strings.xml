@@ -20,6 +20,7 @@
     <string name="firstTime_foods_title">Tu alimentación</string>
     <string name="firstTime_food_descr">Añade tu alimentación para poder detectar si algún alimento te hace daño basado en los síntomas relacionados, y añádelo a tus \"Alimentos Desaconsejados\"</string>
     <string name="firstTime_recs_title">Recomendaciones</string>
+    <string name="firstTime_poops_title">Deposiciones</string>
     <string name="firstTime_recs_descr">Accede a una infinidad de recursos médicos de la mano de la Plataforma G-EducaInflamatoria de GETECCU para mejorar tu calidad de vida</string>
     <string name="firstTime_health_title">Detección de brotes</string>
     <string name="firstTime_health_descr">En base a tus registros de síntomas, alimentación y ánimo, puedo determinar tu estado de salud. ¡OJO! esto no sustituye a tu especialista, ante cualquier duda no dudes en recurrir a tu Unidad EII</string>
@@ -142,6 +143,35 @@
     <string name="recommendations_webview_hint">Acceso a Recomendaciones</string>
     <string name="recommendations_search_hint">¿Qué quieres saber?</string>
 
+    <!-- Poop -->
+    <string name="your_poops">Tus deposiciones</string>
+    <string name="your_color">¿Qué color tenían?</string>
+    <string name="poop_size">¿Y de tamaño?</string>
+    <string name="poop_add_register">Añadir mis deposiciones de hoy</string>
+    <string name="poops_subtitle">Conoce tus deposiciones</string>
+    <string name="poop_type_1">Muy estreñido</string>
+    <string name="poop_type_2">Estreñido</string>
+    <string name="poop_type_3">Normal</string>
+    <string name="poop_type_4">Perfecta</string>
+    <string name="poop_type_5">Falta de fibra</string>
+    <string name="poop_type_6">Posible diarrea</string>
+    <string name="poop_type_7">Diarrea</string>
+    <string name="poop_color_1">Marrón</string>
+    <string name="poop_color_2">Blanca</string>
+    <string name="poop_color_3">Negra</string>
+    <string name="poop_color_4">Amarilla</string>
+    <string name="poop_color_5">Verde</string>
+    <string name="poop_color_6">Roja</string>
+    <string name="poop_size_1">Pequeña</string>
+    <string name="poop_size_2">Normal</string>
+    <string name="poop_size_3">Grande</string>
+    <string name="poop_urgency">Urgencia por ir al baño</string>
+    <string name="poop_painful">Ha sido doloroso</string>
+    <string name="poop_blood">Había sangre</string>
+    <string name="poop_aditional">¿Algo más que quieras añadir?</string>
+    <string name="poop_info_descr">1. Elige el tipo de tus heces según la escala de Bristol (de 1 a 7). Nosotros nos encargamos del resto.\n\n2. El color de tus heces: Marrón (todo bien), Blanca (obstrucciones o medicamentos, consulta a tu médico urgentemente), Negra (por tomar suplementos de hierro u hemorragias), Amarilla (posible síntoma de celiaquía), Verde (comer muchoas verduras, la comida ha pasado demasiado rápido), Roja (posible síntoma de cáncer, acude urgentemente a tu médico)\n\nTamaño: Debería ser normal\n\n</string>
+
+
     <!-- Preference Titles -->
     <string name="common_header">General</string>
     <string name="fast_settings">Configuraciones rápidas</string>
@@ -175,7 +205,7 @@
     <string name="privacy_deletion_title">Borrado de datos</string>
     <string name="privacy_deletion_descr">Tus datos permanecen en tu dispositivo, pero puedes borrarlos ahora desde la ventana anterior</string>
     <string name="privacy_moreInfo_title">Más información</string>
-    <string name="privacy_moreInfo_descr">Tienes disponible la Política de Privacidad en la ficha de la App en Tienda de Aplicaciones. Cualquier duda sobre la aplicación puede ser dirigida al correo asistente_crohn@outlook.es o a través de redes sociales. Accede a todo esto y más desde https://linktr.ee/eiiassistant.</string>
+    <string name="privacy_moreInfo_descr">Tienes disponible la Política de Privacidad en la ficha de la App en Tienda de Aplicaciones. Cualquier duda sobre la aplicación puede ser dirigida al correo asistente_crohn@outlook.es o a través de redes sociales en @ibdassistant (Instagram)</string>
     <string name="foods_alert_new_forbidden">Nuevo alimento desaconsejado</string>
     <string name="new_food">Nuevo alimento</string>
     <string name="write_new_food">Escribe aquí tu nuevo alimento personalizado</string>
