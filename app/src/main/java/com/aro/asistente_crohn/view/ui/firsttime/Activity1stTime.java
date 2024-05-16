@@ -22,14 +22,14 @@ public class Activity1stTime extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time1);
 
-        openFragment(new Fragment1st1Hello());
-
         saltarGuia = findViewById(R.id.saltar_guia);
         saltarGuia.setOnClickListener(view -> {
-            Intent intent = new Intent(Activity1stTime.this, FirstTime7TermsActivity.class);
+            Intent intent = new Intent(Activity1stTime.this, Fragment1st1Hello.class);
             startActivity(intent);
             finish();
         });
+
+        openFragment(new Fragment1st1Hello());
 
         progressBar = findViewById(R.id.progressBar);
         progressText = findViewById(R.id.progressText);
