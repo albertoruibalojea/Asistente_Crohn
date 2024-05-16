@@ -23,4 +23,12 @@
         <item name="android:textColor">?attr/itemTextColor</item>
     </style>
 
+    <style name="PreferenceStyle" parent="Preference.Category">
+    <item name="android:textColor">?attr/itemTextColor</item>
+</style>
+
+    <style name="EditTextPreferenceStyle" parent="Preference.SwitchPreferenceCompat">
+        <item name="android:textColor">?attr/itemTextColor</item>
+    </style>
+
 </resources>

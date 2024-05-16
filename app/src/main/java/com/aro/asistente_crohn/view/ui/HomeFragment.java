@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
         ItemViewModel viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         viewModel.getTodaySymptoms().observe(getViewLifecycleOwner(), todaysSymptomList -> relateSymptomsFood(viewModel, todaysSymptomList));
 
-        showNotificationDialogOnce();
+        //showNotificationDialogOnce();
     }
 
     private void showNotificationDialogOnce() {

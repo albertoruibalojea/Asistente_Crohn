@@ -115,6 +115,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:columnCount="3"
+                android:padding="20px"
                 android:gravity="center"
                 android:rowCount="3"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -154,7 +155,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_diaree"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_diaree" />
+                        app:srcCompat="@drawable/ic_sympt_diaree1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -189,7 +190,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_nauseas"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_vomit" />
+                        app:srcCompat="@drawable/ic_sympt_vomit1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -224,7 +225,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_notHungry"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_hungry" />
+                        app:srcCompat="@drawable/ic_sympt_nothungry1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -259,7 +260,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_abdominalPain"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_abdompain"
+                        app:srcCompat="@drawable/ic_sympt_abdompain1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -295,7 +296,43 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_flatulence"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/symptom_flatulence"
+                        app:srcCompat="@drawable/ic_sympt_flatulence1"
+                        tools:ignore="ImageContrastCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_swollen"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_swollen"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/symptom_swollen"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/symptom_swollen"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/image_swollen"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/symptom_swollen"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_swollen1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -331,7 +368,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_articularPain"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_articularpain"
+                        app:srcCompat="@drawable/ic_sympt_articularpain1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -367,7 +404,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_analPain"
                         android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_sympt_analpain" />
+                        app:srcCompat="@drawable/ic_sympt_analpain1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -402,7 +439,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_headache"
                         android:paddingTop="4dp"
-                        app:srcCompat="@drawable/ic_sympt_headache" />
+                        app:srcCompat="@drawable/ic_sympt_headache1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -439,7 +476,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_fever"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_fever" />
+                        app:srcCompat="@drawable/ic_sympt_fever1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -475,7 +512,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_tired"
                         android:paddingTop="4dp"
-                        app:srcCompat="@drawable/ic_sympt_tired"
+                        app:srcCompat="@drawable/ic_sympt_tired1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -507,12 +544,12 @@
 
                     <ImageView
                         android:id="@+id/image_bathroom_urge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_bathroomUrge"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_bathroom_urge"
+                        app:srcCompat="@drawable/ic_sympt_bathroom_urge1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -549,7 +586,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_less_weight"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_lessweight"
+                        app:srcCompat="@drawable/ic_sympt_lessweight1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -585,7 +622,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_blood"
                         android:paddingTop="16dp"
-                        app:srcCompat="@drawable/ic_sympt_blood"
+                        app:srcCompat="@drawable/ic_sympt_blood1"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -622,7 +659,43 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/symptom_aphthas"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_aftas" />
+                        app:srcCompat="@drawable/ic_sympt_aftas1" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_skin"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_margin="@dimen/table_symptoms_margin"
+                    app:cardBackgroundColor="@color/negroGris"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.118"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="185dp">
+
+                    <TextView
+                        android:id="@+id/text_skin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/symptom_skin"
+                        android:fontFamily="@font/regular"
+                        android:gravity="bottom|center"
+                        android:paddingBottom="4dp"
+                        android:text="@string/symptom_skin"
+                        android:textColor="?attr/colorSurface"
+                        android:textSize="15dp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <ImageView
+                        android:id="@+id/image_skin"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="top|center"
+                        android:contentDescription="@string/symptom_skin"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_sympt_skin1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -659,42 +732,6 @@
                         android:contentDescription="@string/symptom_perianal"
                         android:paddingTop="8dp"
                         app:srcCompat="@drawable/ic_sympt_perianal" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_skin"
-                    android:layout_width="112dp"
-                    android:layout_height="112dp"
-                    android:layout_margin="@dimen/table_symptoms_margin"
-                    app:cardBackgroundColor="@color/negroGris"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="185dp">
-
-                    <TextView
-                        android:id="@+id/text_skin"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/symptom_skin"
-                        android:fontFamily="@font/regular"
-                        android:gravity="bottom|center"
-                        android:paddingBottom="4dp"
-                        android:text="@string/symptom_skin"
-                        android:textColor="?attr/colorSurface"
-                        android:textSize="15dp"
-                        tools:ignore="TextContrastCheck" />
-
-                    <ImageView
-                        android:id="@+id/image_skin"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="top|center"
-                        android:contentDescription="@string/symptom_skin"
-                        android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_sympt_skin" />
 
                 </androidx.cardview.widget.CardView>
 

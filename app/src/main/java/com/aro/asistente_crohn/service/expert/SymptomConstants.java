@@ -16,6 +16,8 @@ public class SymptomConstants {
     public static final String APHTHAS = "Aftas";
     public static final String PERIANAL = "Herida perianal";
     public static final String SKIN_ISSUE = "Piel";
+    public static final String FLATULENCE = "Gases";
+    public static final String SWOLLEN = "Hinchazón";
 
     //For each symptom, its value
     public static final Integer VALUE_DIAREE = 5; //7dias
@@ -33,6 +35,8 @@ public class SymptomConstants {
     public static final Integer VALUE_APHTHAS = 1;
     public static final Integer VALUE_PERIANAL = 3;
     public static final Integer VALUE_SKIN_ISSUE = 2;
+    public static final Integer VALUE_FLATULENCE = 1;
+    public static final Integer VALUE_SWOLLEN = 1;
 
 
     //Patterns
@@ -43,9 +47,9 @@ public class SymptomConstants {
     public static final String TYPE_PERIANAL = "PATTERN_PERIANAL";
 
     //Total sum of each pattern
-    public static final Integer VALUE_TYPE_ILEOCOLITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_TIRED + VALUE_LESS_WEIGHT + VALUE_BLOOD + VALUE_NOT_HUNGRY + VALUE_ARTICULAR_PAIN + VALUE_HEADACHE + VALUE_SKIN_ISSUE;
-    public static final Integer VALUE_TYPE_ILEITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_TIRED + VALUE_FEVER + VALUE_LESS_WEIGHT + VALUE_APHTHAS + VALUE_SKIN_ISSUE;
-    public static final Integer VALUE_TYPE_COLITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_FEVER + VALUE_BLOOD + VALUE_BATHROOM_URGE + VALUE_APHTHAS + VALUE_SKIN_ISSUE;
-    public static final Integer VALUE_TYPE_UPPER_TRACT = VALUE_FEVER + VALUE_NAUSEAS + VALUE_NOT_HUNGRY + VALUE_LESS_WEIGHT + VALUE_APHTHAS + VALUE_SKIN_ISSUE;
+    public static final Integer VALUE_TYPE_ILEOCOLITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_TIRED + VALUE_LESS_WEIGHT + VALUE_BLOOD + VALUE_NOT_HUNGRY + VALUE_ARTICULAR_PAIN + VALUE_HEADACHE + VALUE_SKIN_ISSUE + VALUE_FLATULENCE + VALUE_SWOLLEN;
+    public static final Integer VALUE_TYPE_ILEITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_TIRED + VALUE_FEVER + VALUE_LESS_WEIGHT + VALUE_APHTHAS + VALUE_SKIN_ISSUE + VALUE_FLATULENCE + VALUE_SWOLLEN;
+    public static final Integer VALUE_TYPE_COLITIS = VALUE_DIAREE + VALUE_ABDOMINAL_PAIN + VALUE_FEVER + VALUE_BLOOD + VALUE_BATHROOM_URGE + VALUE_APHTHAS + VALUE_SKIN_ISSUE + VALUE_FLATULENCE + VALUE_SWOLLEN;
+    public static final Integer VALUE_TYPE_UPPER_TRACT = VALUE_FEVER + VALUE_NAUSEAS + VALUE_NOT_HUNGRY + VALUE_LESS_WEIGHT + VALUE_APHTHAS + VALUE_SKIN_ISSUE + VALUE_FLATULENCE + VALUE_SWOLLEN;
     public static final Integer VALUE_TYPE_PERIANAL = VALUE_DIAREE + VALUE_ANAL_PAIN + VALUE_BLOOD + VALUE_PERIANAL + VALUE_SKIN_ISSUE;
 }
