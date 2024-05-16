@@ -7,11 +7,13 @@
 
         <Preference
             app:key="privacy"
+            android:textColor="?attr/colorSurface"
             app:title="@string/privacy_title"
             app:summary="@string/privacy_summary"/>
 
         <Preference
             app:key="feedback"
+            android:textColor="?attr/colorSurface"
             app:title="@string/feedback_title"
             app:summary="@string/feedback_summary"/>
 
@@ -23,12 +25,14 @@
 
         <Preference
             app:key="pattern"
+            android:textColor="?attr/colorSurface"
             app:title="@string/type_title"
             app:summary="@string/type_summary"
             app:icon="@drawable/ic_baseline_insights_24"/>
 
         <EditTextPreference
             app:key="username"
+            android:textColor="?attr/colorSurface"
             app:title="@string/username_title"
             app:defaultValue="@string/firstTime_personalize_name"
             app:useSimpleSummaryProvider="true"
@@ -36,6 +40,7 @@
 
         <EditTextPreference
             app:key="daysToAnalyze"
+            android:textColor="?attr/colorSurface"
             app:title="@string/daysAnalyze_title"
             app:defaultValue="3"
             app:useSimpleSummaryProvider="true"
@@ -44,6 +49,7 @@
 
         <SwitchPreferenceCompat
             app:key="app_alerts"
+            android:textColor="?attr/colorSurface"
             app:summaryOff="@string/app_alerts_summary_off"
             app:summaryOn="@string/app_alerts_summary_on"
             app:title="@string/app_alerts_title"
@@ -52,6 +58,7 @@
 
         <Preference
             app:key="delete"
+            android:textColor="?attr/colorSurface"
             app:title="@string/delete_title"
             app:summary="@string/delete_summary_on"
             app:icon="@drawable/ic_baseline_delete_24"/>
