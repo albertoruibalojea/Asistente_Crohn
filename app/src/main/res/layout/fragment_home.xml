@@ -117,7 +117,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/firstTime_poops_title"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -133,7 +133,7 @@
                     android:fontFamily="@font/bold"
                     android:text="@string/poops_subtitle"
                     android:textColor="?attr/colorSurface"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     tools:ignore="TextContrastCheck" />
 
                 <ImageView
