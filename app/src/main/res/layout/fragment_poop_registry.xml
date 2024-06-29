@@ -42,7 +42,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/poops_subtitle"
             android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -63,7 +63,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/your_poops"
             android:textColor="?attr/colorSurface"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </RelativeLayout>
 
@@ -97,7 +97,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/your_poops"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -143,7 +143,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_1"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_1"
@@ -152,7 +152,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_1"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_1" />
+                        app:srcCompat="@drawable/ic_poops_type_1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -178,7 +178,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_2"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_2"
@@ -187,7 +187,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_2"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_2" />
+                        app:srcCompat="@drawable/ic_poops_type_2" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -213,7 +213,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_3"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_3"
@@ -222,7 +222,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_3"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_3" />
+                        app:srcCompat="@drawable/ic_poops_type_3" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -248,7 +248,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_4"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_4"
@@ -257,7 +257,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_4"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_4"
+                        app:srcCompat="@drawable/ic_poops_type_4"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -284,7 +284,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_5"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_5"
@@ -293,7 +293,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_5"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_5"
+                        app:srcCompat="@drawable/ic_poops_type_5"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -320,7 +320,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_6"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_6"
@@ -329,7 +329,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_6"
                         android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_poop_6" />
+                        app:srcCompat="@drawable/ic_poops_type_6" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -355,7 +355,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_type_7"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_type_7"
@@ -364,7 +364,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_type_7"
                         android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_poop_7" />
+                        app:srcCompat="@drawable/ic_poops_type_7" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -379,7 +379,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/your_color"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -425,7 +425,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_1"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_1"
@@ -434,7 +434,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_1"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_color_1" />
+                        app:srcCompat="@drawable/ic_poops_color_1" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -460,7 +460,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_2"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_2"
@@ -469,7 +469,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_2"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_color_2" />
+                        app:srcCompat="@drawable/ic_poops_color_2" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -495,7 +495,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_3"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_3"
@@ -504,7 +504,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_3"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_color_3" />
+                        app:srcCompat="@drawable/ic_poops_color_3" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -530,7 +530,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_4"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_4"
@@ -539,7 +539,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_4"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_color_4"
+                        app:srcCompat="@drawable/ic_poops_color_4"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -566,7 +566,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_5"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_5"
@@ -575,7 +575,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_5"
                         android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_poop_color_5"
+                        app:srcCompat="@drawable/ic_poops_color_5"
                         tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
@@ -602,7 +602,7 @@
                         android:paddingBottom="4dp"
                         android:text="@string/poop_color_6"
                         android:textColor="?attr/colorSurface"
-                        android:textSize="15sp" />
+                        android:textSize="15dp" />
 
                     <ImageView
                         android:id="@+id/image_poop_color_6"
@@ -611,7 +611,7 @@
                         android:layout_gravity="top|center"
                         android:contentDescription="@string/poop_color_6"
                         android:paddingTop="12dp"
-                        app:srcCompat="@drawable/ic_poop_color_6" />
+                        app:srcCompat="@drawable/ic_poops_color_6" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -626,7 +626,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/poop_size"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -685,7 +685,7 @@
                 android:fontFamily="@font/bold"
                 android:text="@string/poop_aditional"
                 android:textColor="?attr/itemTextColor"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -743,15 +743,15 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="36dp"
-                android:width="609sp"
-                android:height="41sp"
+                android:width="609dp"
+                android:height="41dp"
                 android:background="@drawable/button"
                 android:enabled="false"
                 android:fontFamily="@font/bold"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:text="@string/save_registries"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.466"
