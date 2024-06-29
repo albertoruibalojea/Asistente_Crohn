@@ -41,7 +41,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/consult_and_register"
             android:textColor="?attr/colorSurface"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -62,7 +62,7 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:text="@string/your_poops"
             android:textColor="?attr/colorSurface"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </RelativeLayout>
 
@@ -103,7 +103,7 @@
                 android:paddingStart="16dp"
                 android:text="@string/poop_add_register"
                 android:textColor="?attr/colorSurface"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -146,7 +146,7 @@
             android:fontFamily="@font/bold"
             android:text="@string/date_selected"
             android:textColor="?attr/itemTextColor"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

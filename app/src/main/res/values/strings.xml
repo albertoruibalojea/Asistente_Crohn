@@ -170,7 +170,7 @@
     <string name="poop_painful">Ha sido doloroso</string>
     <string name="poop_blood">Había sangre</string>
     <string name="poop_aditional">¿Algo más que quieras añadir?</string>
-    <string name="poop_info_descr">1. Elige el tipo de tus heces según la escala de Bristol (de 1 a 7). Nosotros nos encargamos del resto.\n\n2. El color de tus heces: Marrón (todo bien), Blanca (obstrucciones o medicamentos, consulta a tu médico urgentemente), Negra (por tomar suplementos de hierro u hemorragias), Amarilla (posible síntoma de celiaquía), Verde (comer muchoas verduras, la comida ha pasado demasiado rápido), Roja (posible síntoma de cáncer, acude urgentemente a tu médico)\n\nTamaño: Debería ser normal\n\n</string>
+    <string name="poop_info_descr">1. Elige el tipo de tus heces según la escala de Bristol (de 1 a 7). Nosotros nos encargamos del resto.\n\n2. El color de tus heces: Marrón (todo bien), Blanca (obstrucciones o medicamentos, consulta a tu médico urgentemente), Negra (por tomar suplementos de hierro u hemorragias), Amarilla (posible síntoma de celiaquía), Verde (comer muchas verduras o la comida ha pasado demasiado rápido), Roja (sangrado, hemorragia o posible complicación, acude urgentemente a tu médico)\n\nTamaño: Debería ser normal\n\n</string>
 
 
     <!-- Preference Titles -->
