@@ -24,7 +24,7 @@ public class Activity1stTime extends AppCompatActivity {
 
         saltarGuia = findViewById(R.id.saltar_guia);
         saltarGuia.setOnClickListener(view -> {
-            Intent intent = new Intent(Activity1stTime.this, Fragment1st1Hello.class);
+            Intent intent = new Intent(Activity1stTime.this, FirstTime7TermsActivity.class);
             startActivity(intent);
             finish();
         });
