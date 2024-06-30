@@ -82,6 +82,8 @@ public class PoopListAdapter extends RecyclerView.Adapter<PoopListAdapter.ViewHo
                 holder.weight.setText("Mediana");
             } else if (weight == 3) {
                 holder.weight.setText("Grande");
+            } else {
+                holder.weight.setText("No especificada");
             }
 
             holder.urgency.setVisibility(poop.isUrgency() ? View.VISIBLE : View.GONE);

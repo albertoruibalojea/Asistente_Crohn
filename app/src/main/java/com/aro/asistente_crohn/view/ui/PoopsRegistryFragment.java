@@ -35,6 +35,8 @@ public class PoopsRegistryFragment extends Fragment {
 
     String paramDate;
 
+    Integer flag = 0;
+
     Poop poop = new Poop();
 
     public PoopsRegistryFragment() {
@@ -94,7 +96,7 @@ public class PoopsRegistryFragment extends Fragment {
         textDate.setText(simpleDateFormat.format(date));
 
         Button btn = view.findViewById(R.id.btn);
-        btn.setEnabled(true);
+        btn.setEnabled(false);
 
         GridLayout poopTypeGrid = view.findViewById(R.id.poopTypeGrid);
         for (int i = 0; i < poopTypeGrid.getChildCount(); i++) {
@@ -141,6 +143,11 @@ public class PoopsRegistryFragment extends Fragment {
                         }
                     }
                 }
+
+                flag++;
+                if (flag == 3) {
+                    btn.setEnabled(true);
+                }
             });
         }
 
@@ -182,6 +189,11 @@ public class PoopsRegistryFragment extends Fragment {
                         }
                     }
                 }
+
+                flag++;
+                if (flag == 3) {
+                    btn.setEnabled(true);
+                }
             });
         }
 
@@ -196,6 +208,11 @@ public class PoopsRegistryFragment extends Fragment {
                 checkBox3.setChecked(false);
                 // add info to Poop
                 poop.setWeight(1);
+            }
+
+            flag++;
+            if (flag == 3) {
+                btn.setEnabled(true);
             }
         });
 

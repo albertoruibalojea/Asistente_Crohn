@@ -2,6 +2,7 @@ package com.aro.asistente_crohn.view.ui;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,10 +10,12 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
@@ -71,7 +74,7 @@ public class HomeFragment extends Fragment {
             editor.putString("daysToAnalyze", "3");
             editor.apply();
         }
-        if(preferences.getString("pattern", null) == null){
+        if (preferences.getString("pattern", null) == null) {
             this.setPattern(view, getContext(), preferences);
         }
 
@@ -88,22 +91,22 @@ public class HomeFragment extends Fragment {
     private void showNotificationDialogOnce() {
         SharedPreferences preferences = requireActivity().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean dialogShown = preferences.getBoolean(PREF_DIALOG_SHOWN, false);
-    
+
         if (!dialogShown) {
             // Create and show the dialog
             AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
             LayoutInflater inflater = requireActivity().getLayoutInflater();
             View dialogView = inflater.inflate(R.layout.dialog_notification, null);
-    
+
             // Get a reference to the TextView and set the text
             TextView description = dialogView.findViewById(R.id.description);
             description.setText("¡Bienvenida/o de nuevo! Hemos añadido las horas de registro de síntomas y alimentación, el síntoma de gases y pequeñas correcciones en los tamaños de los textos. Aprovechamos para darte las gracias por usar la App y decirte que próximamente saldrá 'Asistente EII', una nueva versión para todas las EII con MUCHÍSimas novedades. Entérate en https://linktr.ee/ibdassistant");
-    
+
             builder.setView(dialogView)
                     .setPositiveButton("OK", (dialog, id) -> dialog.dismiss());
             AlertDialog dialog = builder.create();
             dialog.show();
-    
+
             // Update the shared preferences
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean(PREF_DIALOG_SHOWN, true);
@@ -225,6 +228,16 @@ public class HomeFragment extends Fragment {
         builder.setAutoCancel(true);
 
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(requireActivity());
+        if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         managerCompat.notify(num, builder.build());
     }
 
